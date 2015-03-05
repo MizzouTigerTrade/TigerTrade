@@ -71,11 +71,11 @@
 		
 		<div class="col-xs-12 col-sm-10">
 			
-			<div class="row">
+			<div class="col-xs-12">
 				
 				<!-- Buttons on top of page -->
 				
-				<div class="row text-center">
+				<div class="col-xs-12 text-center">
 					<div class="btn-group hidden-xs">
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 						<?php if ($this->ion_auth->is_admin()) { ?>
@@ -111,7 +111,6 @@
 				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
 				-->
 			</div>
-			
 		</div>
 	</div>
 </div>
