@@ -31,7 +31,9 @@
 					<li class="<?php if (in_array($this->uri->segment(2), array('login'))) { ?>active<?php } ?>"><a href='<?= base_url("auth/login") ?>'>Login</a></li>
 				<?php } else { ?>
 				
-					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('auth', 'new_category', 'new_subcategory'))) { ?>active<?php } ?>">
+				<?php if($this->ion_auth->is_admin()){?>
+				
+					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/auth/manage_flags') ?>">View Flags</a></li>
@@ -40,6 +42,8 @@
 							<li><a href="<?php echo base_url('/market/new_subcategory') ?>">Create Subcategory</a></li>
 						</ul>
 					</li>
+				
+				<?php } ?>
 				
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'edit_user', 'offers'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <b class="caret"></b></a>
