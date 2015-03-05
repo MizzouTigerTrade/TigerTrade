@@ -45,7 +45,7 @@
 				
 				<?php } ?>
 				
-					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'edit_user', 'offers'))) { ?>active<?php } ?>">
+					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'auth/edit_user', 'offers'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/auth/edit_user/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
