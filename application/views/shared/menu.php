@@ -36,7 +36,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo base_url('/auth/manage_flags') ?>">View Flags</a></li>
+							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">View Flags</a></li>
 							<li><a href="<?php echo base_url('/auth') ?>">Manage Users</a></li>
 							<li><a href="<?php echo base_url('/market/new_category') ?>">Create Category</a></li>
 							<li><a href="<?php echo base_url('/market/new_subcategory') ?>">Create Subcategory</a></li>
