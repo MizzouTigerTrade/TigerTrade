@@ -13,6 +13,15 @@
 	<div class="row">
 			
 		<div class="col-xs-3 col-sm-2 hidden-xs">
+			
+			<div class="visible-xs col-xs-12">
+				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
+				<?php if ($this->ion_auth->is_admin()) { ?>
+				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a><br>
+				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
+				<?php } ?>
+			</div>
+
 			<!-- Market Menu -->
 			<div id="market-menu" class="text-center">
 				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>"><b>all</b></a><br>
