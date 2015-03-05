@@ -93,7 +93,7 @@
 				</div>
 
 				<!-- Display Ads -->
-				<!--
+				
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
 					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
@@ -109,7 +109,7 @@
 					<?php if ($count == 2 || $count % 3 == 2) { ?></div><?php } $count++; ?>
 				<?php } ?>
 				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
-				-->
+				
 			</div>
 		</div>
 	</div>
