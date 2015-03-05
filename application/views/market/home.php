@@ -13,17 +13,16 @@
 	<div class="row">
 			
 		<div class="col-xs-3 col-sm-2 hidden-xs">
-			
-			<div class="visible-xs col-xs-12">
-				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
-				<?php if ($this->ion_auth->is_admin()) { ?>
-				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a><br>
-				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
-				<?php } ?>
-			</div>
 
 			<!-- Market Menu -->
 			<div id="market-menu" class="text-center">
+				<div class="col-xs-12">
+					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
+					<?php if ($this->ion_auth->is_admin()) { ?>
+					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a><br>
+					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
+					<?php } ?>
+				</div>
 				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>"><b>all</b></a><br>
 				<?php foreach ($categories->result() as $cat) { ?>
 				    <a class="btn btn-default btn-sm wide-button" role="button" href="<?php echo base_url('/market/category/' . $cat->category_id); ?>"><b><?php echo $cat->name; ?></b></a><br>
@@ -83,7 +82,7 @@
 			<div class="col-xs-12">
 				
 				<!-- Buttons on top of page -->
-				
+				<!--
 				<div class="row text-center">
 					<div class="btn-group hidden-xs">
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
@@ -100,9 +99,9 @@
 						<?php } ?>
 					</div>
 				</div>
+				-->
 
 				<!-- Display Ads -->
-				
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
 					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
