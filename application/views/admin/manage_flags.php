@@ -19,7 +19,7 @@ function deleteConfirm() {
         }
       }
     });
-  });
+  }
 
  </script>
 
