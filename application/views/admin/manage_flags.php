@@ -40,20 +40,17 @@
 			<td><button>Delete Ad</button></td>
 			<td>Active</td>
 		</tr>
-	<?php /* foreach ($users as $user):?>
+	<?php foreach ($flags as $flag):?>
 		<tr>
-            <td><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?></td>
-            <td><?php echo htmlspecialchars($user->last_name,ENT_QUOTES,'UTF-8');?></td>
-            <td><?php echo htmlspecialchars($user->email,ENT_QUOTES,'UTF-8');?></td>
-			<td>
-				<?php foreach ($user->groups as $group):?>
-					<?php echo anchor("auth/edit_group/".$group->id, htmlspecialchars($group->name,ENT_QUOTES,'UTF-8')) ;?> 
-                <?php endforeach?>
-			</td>
-			<td><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
-			<td><?php echo anchor("auth/edit_user/".$user->id, 'Edit') ;?></td>
+            <td><?php echo htmlspecialchars($flag->ad_id,ENT_QUOTES,'UTF-8');?></td>
+            <td><?php echo htmlspecialchars($flag->flag_count,ENT_QUOTES,'UTF-8');?></td>
+            <td><?php echo htmlspecialchars($flag->first_name + $flag->last_name ,ENT_QUOTES,'UTF-8');?></td>
+			<td><?php echo $flag->email ;?> </td>
+			<td><button>Dismiss</button></td>
+			<td><button>Delete Ad</button></td>
+			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
-	<?php endforeach; */ ?>
+	<?php endforeach; ?>
 	</tbody>
 </table>
 

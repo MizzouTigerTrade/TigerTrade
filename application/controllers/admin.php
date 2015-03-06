@@ -43,6 +43,8 @@ class Admin extends CI_Controller {
 	{
 		$data['title'] = 'Flags';
 		$data['message'] = '';
+		
+		$data['flags'] = $this->ad_model->get_flagged_ads();
 
 		$this->layout->view('admin/manage_flags', $data);
 	}

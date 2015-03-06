@@ -81,6 +81,12 @@ class Ad_model extends CI_Model
 		$seller_id = $result->user_id;
 		return $seller_id;
 	}
+	
+	public function get_flagged_ad()
+	{
+		$result = $this->db->query("SELECT * FROM ads JOIN users ON ads.user_id = users.id WHERE flag_count > 0");
+		return $result;
+	}
 
 }
 
