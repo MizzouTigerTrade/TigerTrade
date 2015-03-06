@@ -31,15 +31,6 @@
 	</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>12</td>
-			<td>5</td>
-			<td>Tim Van Horn</td>
-			<td>tjvkv6@mail.missouri.edu</td>
-			<td><button>Dismiss</button></td>
-			<td><button>Delete Ad</button></td>
-			<td>Active</td>
-		</tr>
 	<?php foreach ($flags->result() as $flag):?>
 		<tr>
             <td><?php echo htmlspecialchars($flag->ad_id,ENT_QUOTES,'UTF-8');?></td>
