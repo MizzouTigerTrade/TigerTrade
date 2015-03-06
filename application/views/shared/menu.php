@@ -38,8 +38,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags</a></li>
 							<li><a href="<?php echo base_url('/auth') ?>">Manage Users</a></li>
-							<li><a href="<?php echo base_url('/market/new_category') ?>">Create Category</a></li>
-							<li><a href="<?php echo base_url('/market/new_subcategory') ?>">Create Subcategory</a></li>
+							<li><a href="<?php echo base_url('/admin/new_category') ?>">Create Category</a></li>
+							<li><a href="<?php echo base_url('/admin/new_subcategory') ?>">Create Subcategory</a></li>
 						</ul>
 					</li>
 				
