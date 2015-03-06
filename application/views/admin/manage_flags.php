@@ -1,3 +1,17 @@
+<script>
+
+	function dismissConfirm(){
+		
+		window.confirm("Are you sure you are ok?")
+		
+		
+		
+	};
+
+
+
+
+</script>
 
 <div class="container padding-top-20">
 	<div class="row">
@@ -38,7 +52,7 @@
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button class="btn btn-default">Dismiss</button></td>
+			<td><button onclick="dismissConfirm();" class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default">Delete</button></td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
