@@ -33,7 +33,7 @@
 				
 				<?php if($this->ion_auth->is_admin()){?>
 				
-					<li class="dropdown">
+					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('auth', 'admin'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags</a></li>
