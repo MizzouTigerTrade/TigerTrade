@@ -23,7 +23,32 @@ class Category_model extends CI_Model
 			return $this->db->affected_rows();
 		}
 	}
+	
+	public function get_all_categories()
+	{
+		return $this->db->get('categories');
+	}
 
+	public function get_category($category_id)
+	{
+		$query = $this->db->query("SELECT * FROM categories WHERE category_id = '$category_id'");
+		$query = $query->row();
+		return $query;
+	}
+
+	public function get_subCategory($subCategory_id)
+	{
+		$query = $this->db->query("SELECT * FROM subcategories WHERE subcategory_id = '$subCategory_id'");
+		$query = $query->row();
+		return $query;
+	}
+	
+	public function get_category_by_name($name)
+	{
+		$query = $this->db->query("SELECT * FROM categories WHERE name = '$name'");
+		$query = $query->row();
+		return $query;
+	}
 
 }
 

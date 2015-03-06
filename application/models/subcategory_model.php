@@ -25,6 +25,30 @@ class Subcategory_model extends CI_Model
 		}
 	}
 
+	public function get_all_subcategories()
+	{
+		return $this->db->get('subcategories');
+	}
+
+	public function get_subcategories($category_id)
+	{
+		$query = $this->db->query("SELECT * FROM subcategories WHERE category_id = '$category_id'");
+		return $query;
+	}
+
+	public function get_subcategory($subcategory_id)
+	{
+		$query = $this->db->query("SELECT * FROM subcategories WHERE subcategory_id = '$subcategory_id'");
+		$query = $query->row();
+		return $query;
+	}
+	
+	public function get_subcategory_by_name($name)
+	{
+		$query = $this->db->query("SELECT * FROM subcategories WHERE name = '$name'");
+		$query = $query->row();
+		return $query;
+	}
 
 }
 

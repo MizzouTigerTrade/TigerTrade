@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "home";
 $route['404_override'] = 'custom_404';
+$route['user/edit/(:num)'] = "auth/edit_user/$1";
+$route['kyle'] = "auth/edit_user/2";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

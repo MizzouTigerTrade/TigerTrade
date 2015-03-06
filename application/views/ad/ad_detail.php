@@ -4,12 +4,13 @@
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>404: Not Found</h1>
+			<h1><?php echo $ad->title; ?></h1>
 		</div>
-	</div>
-
-	<hr>
-
-	<p>We're sorry, but there's no content here!</p>
+	</div>	
 	
+	<hr>
+	
+	<h2>$<?php echo $ad->price; ?></h2>
+	<p><?php echo $ad->description; ?></p>
+	<a class="btn btn-default" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
 </div>

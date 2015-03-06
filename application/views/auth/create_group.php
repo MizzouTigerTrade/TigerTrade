@@ -1,37 +1,13 @@
-<!-- OLD CREATE GROUP FORM -->
-
-<!--
-<h1><?php echo lang('create_group_heading');?></h1>
-<p><?php echo lang('create_group_subheading');?></p>
-
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open("auth/create_group");?>
-
-      <p>
-            <?php echo lang('create_group_name_label', 'group_name');?> <br />
-            <?php echo form_input($group_name);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_group_desc_label', 'description');?> <br />
-            <?php echo form_input($description);?>
-      </p>
-
-      <p><?php echo form_submit('submit', lang('create_group_submit_btn'));?></p>
-
-<?php echo form_close();?>
--->
-
-<div class="container">
-      <div class="row">
-            <div class="col-xs-2 col-md-1">
-                <div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
-            </div>
-            <div class="col-xs-10 col-md-11">
-                <h1 class="">Create Group</h1>
-            </div>
-      </div>
+<div class="container padding-top-20">
+	<div class="row">
+		<div class="col-xs-3 col-sm-2 text-center">
+			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
+		</div>
+		<div class="col-xs-9 col-sm-10">
+			<h1>Create Group</h1>
+		</div>
+	</div>
+	
       <hr>
       <?php if ($message != "") { ?>
       <div id="infoMessage">

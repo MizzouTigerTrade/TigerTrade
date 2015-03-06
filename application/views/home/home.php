@@ -16,20 +16,22 @@
 <div class="container">
 	<!-- Three columns of text below the carousel -->
 	<div class="row">
-		<div class="col-md-4">
-			<h2>Buy</h2>
-			<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-			<p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
+		<div class="col-xs-12">
+			<?php foreach ($categories->result() as $category) { ?>
+				<div class="col-xs-12">
+					<a class="btn btn-primary btn-xs" style="width: 105px; margin-bottom: 5px;" href="<?php echo base_url('/market/category/' . $category->category_id) ?>"><?php echo $category->name ?></a>
+					<?php foreach ($subcategories->result() as $subcategory) { ?>
+						<?php if ($subcategory->category_id == $category->category_id) { ?>
+							<a class="btn btn-default btn-xs" style="width: 105px; margin-bottom: 5px;" href="<?php echo base_url('/market/category/' . $subcategory->subcategory_id) ?>"><?php echo $subcategory->name ?></a>
+						<?php } ?>
+					<?php } ?>
+					<br><br>
+				</div>
+			<?php } ?>
 		</div><!-- /.col-lg-4 -->
-		<div class="col-md-4">
-			<h2>Sell</h2>
-			<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-			<p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
-		</div><!-- /.col-lg-4 -->
-		<div class="col-md-4">
-			<h2>Services</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-			<p><a class="btn btn-default" href="#" role="button">Go &raquo;</a></p>
+		
+		<div class="col-md-6">
+			
 		</div><!-- /.col-lg-4 -->
 	</div><!-- /.row -->
 </div>

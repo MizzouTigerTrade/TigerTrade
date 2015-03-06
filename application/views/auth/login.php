@@ -1,46 +1,13 @@
-<!-- OLD LOGIN FORM -->
+<div class="container padding-top-20">
+	<div class="row">
+		<div class="col-xs-3 col-sm-2 text-center">
+			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
+		</div>
+		<div class="col-xs-9 col-sm-10">
+			<h1>Login</h1>
+		</div>
+	</div>
 	
-<!--
-<h1><?php echo lang('login_heading');?></h1>
-<p><?php echo lang('login_subheading');?></p>
-
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open("auth/login");?>
-
-  <p>
-    <?php echo lang('login_identity_label', 'identity');?>
-    <?php echo form_input($identity);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_password_label', 'password');?>
-    <?php echo form_input($password);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_remember_label', 'remember');?>
-    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-  </p>
-
-
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
-
-<?php echo form_close();?>
-
-<p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
--->
-
-
-<div class="container">
-      <div class="row">
-            <div class="col-xs-2 col-md-1">
-                  <div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
-            </div>
-            <div class="col-xs-10 col-md-11">
-                  <h1 class="">Login</h1>
-            </div>
-      </div>
       <hr>
       <?php if ($message != "") { ?>
       <div id="infoMessage">

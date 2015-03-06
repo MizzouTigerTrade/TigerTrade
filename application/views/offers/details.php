@@ -4,14 +4,14 @@
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>Woohoo! You have an offer for:</h1>
+			<h1>Offer Details:</h1>
 			<h3><?php echo $ad->title; ?></h3>
 		</div>
 	</div>
 	
 	<hr>
 		
-	<?php echo form_open("offers/response/" . $offer->offer_id, array('class' => 'form-horizontal', 'id' => 'offer-response-form', 'enctype' => 'multipart/form-data'));?>
+	<?php echo form_open("" . $offer->offer_id, array('class' => 'form-horizontal', 'id' => 'offer-response-form', 'enctype' => 'multipart/form-data'));?>
 		<div class="form-group">
 			<label class="sr-only" for="price">Amount (in dollars)</label>
 			<label for="price" class="col-sm-2 control-label label-20">Price</label>
@@ -25,7 +25,7 @@
 			<label for="description" class="col-sm-2 control-label label-20">Message</label>
 			<div class="col-sm-10">
 				<textarea type="text" class="form-control description-box" id="description" rows="5" disabled="true" value="<?php echo $offer->buyer_message; ?>"><?php echo $offer->buyer_message; ?></textarea>
-				<p class="help-block">Offer message from the buyer.</p>
+				<p class="help-block">Buyer message to Seller.</p>
 			</div>
 		</div>
 		
@@ -34,8 +34,8 @@
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Reply</label>
 			<div class="col-sm-10">
-				<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5"></textarea>
-				<p class="help-block">Write a message for the buyer, including good times to meet or preferred method of contact.</p>
+				<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5" value="<?php echo $offer->seller_response; ?>" disabled="true"><?php echo $offer->seller_response; ?></textarea>
+				<p class="help-block">Seller response to Buyer.</p>
 			</div>
 		</div>
 
@@ -46,13 +46,13 @@
 			<div class="col-sm-10">
 				<div class="radio">
 					<label>
-						<input type="radio" id='accept-offer' name="status" id="status1" value="Accepted" required="true">
+						<input type="radio" id='accept-offer' name="status" id="status1" checked="<?php if ($offer->status == 'Accepted') { ?>true<?php } ?>" value="Accepted" disabled>
 						Accept Offer<p class="text-danger" id='offer-warning' style='display: none; padding-left: 10px'> You and the buyer will exchange contact info.</p>
 					</label>
 				</div>
 				<div class="radio">
 					<label>
-						<input type="radio" name="status" id="status2" value="Declined">
+						<input type="radio" name="status" id="status2" value="Declined" checked="<?php if ($offer->status == 'Declined') { ?>true<?php } ?>" disabled>
 						Decline Offer
 					</label>
 				</div>
@@ -65,14 +65,9 @@
 			<div class="col-sm-offset-2 col-sm-10">
 				<div class="checkbox">
 					<label>
-						<input type="checkbox" required="true"> <a href="<?php echo base_url('/content/terms') ?>">I Agree to the Terms & Conditions</a>
+						<input type="checkbox" checked disabled> <a href="<?php echo base_url('/content/terms') ?>">I Agree to the Terms & Conditions</a>
 					</label>
 				</div>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Submit</button>
 			</div>
 		</div>
 	<?php echo form_close();?>

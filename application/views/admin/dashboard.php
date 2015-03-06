@@ -4,12 +4,11 @@
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>404: Not Found</h1>
+			<h1>Admin Dashboard</h1>
 		</div>
 	</div>
-
-	<hr>
-
-	<p>We're sorry, but there's no content here!</p>
 	
+	<hr>
+	
+	<p>This will be the admin panel/content management system.</p>
 </div>

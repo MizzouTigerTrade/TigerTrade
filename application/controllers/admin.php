@@ -1,26 +1,53 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Market extends CI_Controller
-{
+class Admin extends CI_Controller {
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
+	 
 	function __construct()
 	{
 		parent::__construct();
-		
-		$this->load->model('ad_model');
+
+		$this->load->helper('url');
 		$this->load->model('category_model');
 		$this->load->model('subcategory_model');
 		$data['menu'] = $this->load->view('shared/menu');
 	}
 
-	function index()
+	public function index()
 	{
-		$data['categories'] = $this->category_model->get_all_categories();
-		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
-		$data['ads'] = $this->ad_model->get_all_ads();
-		$data['title'] = 'Market';
-		$this->layout->view('market/home', $data);		
+		//$this->load->view('header');
+		//$this->load->view('welcome_message');
+		//$this->load->view('footer');
+		$data['title'] = 'Admin';
+		$this->layout->view('admin/dashboard', $data);
+		//$this->layout->view('welcome_message', $data);
 	}
+	
+	/*
+	function manage_flags()
+	{
+		
+	
 
+	
+	}
+	*/
+	
 	function new_category()
 	{
 		$data['title'] = 'New Category';
@@ -80,52 +107,5 @@ class Market extends CI_Controller
 		
 		$data['categories'] = $this->category_model->get_all_categories();
 		$this->layout->view('forms/new_subcategory', $data);
-	}
-
-	//shows details of a specific ad
-	function category($category_id)
-	{
-		$data['category_id'] = $category_id;
-		$data['category'] = $this->category_model->get_category($category_id);
-		$data['categories'] = $this->category_model->get_all_categories();
-		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
-		$data['ads'] = $this->ad_model->get_ads_category($category_id);
-		$data['title'] = 'Category Home';
-		$this->layout->view('market/category_home', $data);
-	}
-	
-	function subcategory($subcategory_id)
-	{
-		$data['categories'] = $this->category_model->get_all_categories();
-		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
-		$data['subcategory'] = $this->subcategory_model->get_subcategory($subcategory_id);
-		$data['category'] = $this->category_model->get_category($data['subcategory']->category_id);
-		$data['ads'] = $this->ad_model->get_ads_subcategory($subcategory_id);
-		$data['title'] = 'Subcategory Home';
-		$this->layout->view('market/subcategory_home', $data);
-	}
-
-	//edit ad by id
-	function edit($category_id)
-	{
-
-	}
-
-	//update ad by id
-	function update($category_id)
-	{
-
-	}
-
-	//create an ad
-	function create()
-	{
-
-	}
-
-	//delete a specific ad
-	function delete($category_id)
-	{
-
 	}
 }

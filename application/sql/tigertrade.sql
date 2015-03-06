@@ -47,11 +47,13 @@ CREATE TABLE kylecarlson_tigertrade.subcategories (
 CREATE TABLE kylecarlson_tigertrade.ads (
 	ad_id  	 INTEGER PRIMARY KEY AUTO_INCREMENT,
 	title	VARCHAR (128),
-	description	VARCHAR (512),
+	description	VARCHAR (1024),
 	creation_date 	TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	expiration_date 	TIMESTAMP,
-	price	DECIMAL(7,2),
+	price	INTEGER,
 	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
+	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
+	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id),
 	flag_count	INTEGER	
 );
 
@@ -81,9 +83,11 @@ CREATE TABLE kylecarlson_tigertrade.tags (
 -- 	seller_response	- Message offer of the seller or response from ad
 --	status			- Status of the offer of buyer or seller, could be pending, accepted, declined
 CREATE TABLE kylecarlson_tigertrade.offers (
+	offer_id  	 INTEGER PRIMARY KEY AUTO_INCREMENT,
 	buyer_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	seller_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
+	price	INTEGER,
 	buyer_message BLOB,
 	seller_response BLOB,
 	status VARCHAR(10) DEFAULT "Pending"
@@ -161,9 +165,17 @@ CONSTRAINT `uc_users_groups` UNIQUE (`user_id`, `group_id`),
 CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
 CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 );
+
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1,1,1),
-(2,1,2);
+(2,1,2),
+(3,2,1),
+(4,2,2),
+(5,3,1),
+(6,3,2),
+(7,4,1),
+(8,4,2);
+
 DROP TABLE IF EXISTS `login_attempts`;
 #
 # Table structure for table 'login_attempts'

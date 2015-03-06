@@ -1,53 +1,11 @@
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  padding-top: 50px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: auto;
-  background-color: #f5f5f5;
-}
-
-
 /* Custom page CSS
 -------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-body > .container {
-	padding-top: 10px;
-	padding-bottom: 10px;
-  
-}
-.container .text-muted {
-	margin: 20px 0;
-}
-
-.footer > .container {
-	padding-right: 15px;
-	padding-left: 15px;
-	padding-top: 15px;
-}
 
 code {
 	font-size: 80%;
 }
 
-.jumbotron {
-	padding-top: 0px !important;
-}
-
 .back-button {
-	margin: 0 auto;
 	margin-top: 23px;
 }
 
@@ -69,6 +27,60 @@ code {
 
 .description-box {
     resize: none;
+}
+
+.market-link, .market-link:visited, .market-link:active {
+	text-decoration: none;
+	color: black;
+}	
+
+.market-link:hover {
+	text-decoration: none;
+	color: #373737;
+}
+
+button a, button a:visited, button a:hover, button a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+#category_list {
+	font-size: 1.1rem;
+}
+
+#subcategory_list {
+	font-size: 1.1rem;
+}
+
+#market-menu {
+	font-size: 1.2rem;
+	background-color: white;
+	padding: 10px;
+	border-radius: 10px;
+	position: fixed;
+}
+
+#market_background {
+
+}
+
+#left-header {
+	color: #EEB328;
+	font-weight: 100;
+	letter-spacing: 3px;
+	bottom: -5%;
+}
+
+#right-header {
+	letter-spacing: 2px;
+	color: #4CBD95;
+	font-style: italic;
+	font-weight: 200;
+}
+
+.wide-button {
+	width: 100%;
+	margin-bottom: 5px;
 }
 
 @media (max-width: 599px) {

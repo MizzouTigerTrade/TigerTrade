@@ -1,32 +1,13 @@
-<!-- OLD FORGOT PASSWORD FORM -->
-
-<!--	
-<h1><?php echo lang('forgot_password_heading');?></h1>
-<p><?php echo sprintf(lang('forgot_password_subheading'), $identity_label);?></p>
-
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open("auth/forgot_password");?>
-
-      <p>
-      	<label for="email"><?php echo sprintf(lang('forgot_password_email_label'), $identity_label);?></label> <br />
-      	<?php echo form_input($email);?>
-      </p>
-
-      <p><?php echo form_submit('submit', lang('forgot_password_submit_btn'));?></p>
-
-<?php echo form_close();?>
--->
-
-<div class="container">
-      <div class="row">
-            <div class="col-xs-2 col-md-1">
-                <div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
-            </div>
-            <div class="col-xs-10 col-md-11">
-                <h1 class="">Forgot Password</h1>
-            </div>
-      </div>
+<div class="container padding-top-20">
+	<div class="row">
+		<div class="col-xs-3 col-sm-2 text-center">
+			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
+		</div>
+		<div class="col-xs-9 col-sm-10">
+			<h1>Forgot Password</h1>
+		</div>
+	</div>
+	
       <hr>
       <div class="row">
 			<div class="col-sm-offset-4 col-sm-8">
