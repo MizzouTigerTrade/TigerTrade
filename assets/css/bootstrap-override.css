@@ -5,3 +5,7 @@
     line-height: 1.5;
     border-radius: 3px;
 }
+
+hr {
+	border-color: #9f9f9f -moz-use-text-color #9f9f9f;
+}
