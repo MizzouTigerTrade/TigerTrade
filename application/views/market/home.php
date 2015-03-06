@@ -38,7 +38,7 @@ $(document).ready(function (){
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>Market: All TEST</h1>
+			<h1>Market: All</h1>
 		</div>
 	</div>
 	
