@@ -59,8 +59,8 @@ $(document).ready(function (){
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
 					<option value="/market">All</option>
 					<?php
-						foreach($categories->result() as $category) {
-							echo '<option value="/market/category/'.$category->category_id.'">'.$category->name.'</option>';		
+						foreach($categories->result() as $cat) {
+							echo '<option value="/market/category/'.$cat->category_id.'">'.$cat->name.'</option>';		
 					} ?>	
 				</select>
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
@@ -153,7 +153,7 @@ $(document).ready(function (){
 
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
-					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row" style="border-bottom: 1px solid #d1d1d1;"><?php } ?>
+					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
 					<div class="col-sm-4" style="margin-bottom: 10px;">
 						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 						<h3><?php echo $row->title; ?></h3>
@@ -163,7 +163,7 @@ $(document).ready(function (){
 						<p>Description: <?php echo $row->description; ?></p>
 						<p>Ad ID: <?php echo $row->ad_id; ?></p>
 					</div>
-					<?php if ($count == 2 || $count % 3 == 2) { ?></div><?php } $count++; ?>
+					<?php if ($count == 2 || $count % 3 == 2) { ?></div><hr><?php } $count++; ?>
 				<?php } ?>
 				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
 		
