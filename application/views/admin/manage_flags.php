@@ -2,10 +2,13 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.css') ?>">
 <script src="<?php echo base_url('assets/js/jquery-ui/external/jquery/jquery.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
-
- <div id="delete-confirm" title="Delete Ad?">
-			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
-</div>
+ 
+ <script>
+  $(function(){
+    // did the UI load?
+    console.log(jQuery.ui);
+  });
+</script>
  
 <div class="container padding-top-20">
 	<div class="row">
@@ -54,25 +57,5 @@
 	<?php endforeach; ?>
 	</tbody>
 </table>
-
-<script>
-function deleteConfirm() 
-{
-    $("#delete-confirm").dialog(
-	{
-      resizable: false,
-      height:140,
-      modal: true,
-      buttons: {
-        "Delete all items": function() {
-          $( this ).dialog( "close" );
-        },
-        Cancel: function() {
-          $( this ).dialog( "close" );
-        }
-      }
-    });
-  }
- </script>
 
 </div>
