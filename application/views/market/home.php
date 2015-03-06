@@ -84,10 +84,10 @@
 				<div class="row visible-sm">
 					<div class="col-sm-8">
 						<div class="btn-group">
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
+							<a class="btn btn-default btn-xs" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
+							<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
+							<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
 							<?php } ?>
 						</div>
 					</div>
