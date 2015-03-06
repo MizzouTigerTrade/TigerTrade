@@ -63,7 +63,7 @@ $(document).ready(function (){
 							echo '<option value="/market/category/'.$category->category_id.'">'.$category->name.'</option>';		
 					} ?>	
 				</select>
-				<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
+				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 			    	<option value="">Subcategory<option>	
 				</select>
 			</div>
