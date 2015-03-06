@@ -90,38 +90,14 @@ class User extends CI_Controller
 			//check to see if we are updating the user
 			   if($this->ion_auth->update($user->id, $data))
 			    {
-			    	//redirect them back to the admin page if admin, or to the base url if non admin
-				    $this->session->set_flashdata('message', $this->ion_auth->messages() );
-				    if ($this->ion_auth->is_admin())
-					{
-						if ($this->ion_auth->user()->row()->id == $id)
-						{
-							redirect('auth/edit_user/' . $id, 'refresh');
-						}
-						else
-						{
-							redirect('auth', 'refresh');
-						}
-					}
-					else
-					{
-						redirect('auth/edit_user/' . $id, 'refresh');
-					}
-
+					redirect('user/edit_profile/' . $id, 'refresh');
 			    }
 			    else
 			    {
 			    	//redirect them back to the admin page if admin, or to the base url if non admin
 				    $this->session->set_flashdata('message', $this->ion_auth->errors() );
-				    if ($this->ion_auth->is_admin())
-					{
-						redirect('auth', 'refresh');
-					}
-					else
-					{
-						redirect('/', 'refresh');
-					}
-
+				  
+					redirect('user/edit_profile/' . $id, 'refresh');
 			    }
 
 			}
