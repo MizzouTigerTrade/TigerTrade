@@ -19,9 +19,9 @@
 				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
 				<?php if ($this->ion_auth->is_admin()) { ?>
 					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">New Category</a><br>
-					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a><br>
+					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
 				<?php } ?>
-				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>"><b>all</b></a><br><br>
+				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>" style="padding-bottom: 20px;"><b>all</b></a><br>
 				<?php foreach ($categories->result() as $cat) { ?>
 				    <a class="btn btn-default btn-sm wide-button" role="button" href="<?php echo base_url('/market/category/' . $cat->category_id); ?>"><b><?php echo $cat->name; ?></b></a><br>
 				    <select onchange="location = this.options[this.selectedIndex].value;" class="form-control" id="" >
