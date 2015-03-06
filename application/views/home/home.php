@@ -19,10 +19,10 @@
 		<div class="col-xs-12">
 			<?php foreach ($categories->result() as $category) { ?>
 				<div class="col-xs-12">
-					<a class="btn btn-primary btn-xs" style="width: 100px; margin-bottom: 5px;" href="<?php echo base_url('/market/category/' . $category->category_id) ?>"><?php echo $category->name ?></a>
+					<a class="btn btn-primary btn-xs" style="width: 110px; margin-bottom: 5px;" href="<?php echo base_url('/market/category/' . $category->category_id) ?>"><?php echo $category->name ?></a>
 					<?php foreach ($subcategories->result() as $subcategory) { ?>
 						<?php if ($subcategory->category_id == $category->category_id) { ?>
-							<a class="btn btn-default btn-xs" style="width: 100px; margin-bottom: 5px;" href="<?php echo base_url('/market/category/' . $subcategory->subcategory_id) ?>"><?php echo $subcategory->name ?></a>
+							<a class="btn btn-default btn-xs" style="width: 110px; margin-bottom: 5px;" href="<?php echo base_url('/market/category/' . $subcategory->subcategory_id) ?>"><?php echo $subcategory->name ?></a>
 						<?php } ?>
 					<?php } ?>
 					<br><br>
