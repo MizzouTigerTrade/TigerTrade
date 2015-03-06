@@ -19,7 +19,7 @@
 		<div class="col-md-6">
 			<?php foreach ($categories->result() as $category) { ?>
 				<div class="col-xs-4">
-					<a class="btn btn-default btn-lg wide-button" href="<?php echo base_url('/market/new_category' . $category->category_id) ?>"><?php echo $category->name ?></a><br>
+					<a class="btn btn-default btn-lg wide-button" href="<?php echo base_url('/market/category/' . $category->category_id) ?>"><?php echo $category->name ?></a><br>
 				</div>
 			<?php } ?>
 		</div><!-- /.col-lg-4 -->
