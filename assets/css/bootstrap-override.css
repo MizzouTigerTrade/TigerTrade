@@ -58,7 +58,7 @@ hr {
 	letter-spacing: 2px;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+.navbar-default .navbar-nav>.active>a:focus {
 	color: #59595C;
 }
 
