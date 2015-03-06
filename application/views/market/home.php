@@ -1,3 +1,37 @@
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+
+<script type="text/javascript">
+$(document).ready(function (){
+	$('#categorySelectForm').change(function(){
+	    var category_id = $(this).val();
+	    if (category_id != ""){
+	        var post_url = "<?php echo base_url('ajax') ?>/get_subcategories/" + category_id;
+	        $.ajax({
+	            type: "POST",
+	            url: post_url,
+	            success: function(subCategories) //we're calling the response json array 'cities'
+	            {
+	                $('#subCategory').empty();
+	                subCategories = $.parseJSON(subCategories);
+                   	$.each(subCategories,function(id,name) 
+                   	{	
+                    	var opt = $('<option />'); // here we're creating a new select option for each group
+                      	opt.val(id);
+                      	opt.text(name);
+                      	$('#subCategory').append(opt); 	
+	                });
+	            } //end success
+	         }); //end AJAX
+	    } 
+	    else
+	    {
+	    	$('#subCategory').empty();
+	    }
+	}); //end change 
+});
+
+</script>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -86,23 +120,17 @@
 				<!-- SMALL Screen Menu -->
 				<div class="row visible-sm text-center">
 					<div class="col-sm-3">
-						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="category_list" >
-							<option>Category</option>
-					    	<?php foreach ($categories->result() as $cat) { ?>					    			
-				    			<option value="<?php echo base_url('/market/category/' . $cat->category_id); ?>">
-				    				<?php echo $cat->name; ?>
-				    			</option>
-					    	<?php } ?>
+						<select class="form-control input-sm" id="category_list" >
+							<option value="">Select One</option>
+							<?php
+								foreach($categories->result() as $category) {
+									echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';		
+							} ?>	
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subcategory_list" >
-					    	<option>Subcategory</option>
-					    	<?php foreach ($subcategories->result() as $sub) { ?>					    			
-				    			<option value="<?php echo base_url('/market/subcategory/' . $sub->subcategory_id); ?>">
-				    				<?php echo $sub->name; ?>
-				    			</option>
-					    	<?php } ?>
+						<select class="form-control input-sm" id="subCategory" name="subCategory">
+					    	<option value=""><option>	
 						</select>
 					</div>
 					<div class="col-sm-6">
