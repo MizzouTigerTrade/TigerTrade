@@ -71,7 +71,7 @@ $(document).ready(function (){
 				<div class="search-form">
 					<div class="form-group">
 						<label for="search" class="control-label">Search</label>
-						<input type="text" class="form-control" name="search" ></input>
+						<input type="text" class="form-control input-sm" name="search" ></input>
 					</div>
 				</div>
 
