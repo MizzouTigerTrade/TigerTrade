@@ -69,6 +69,7 @@ $(document).ready(function (){
 			</div>
 			
 			<!-- Filter Form -->
+			<!--
 			<div id="filter-form" class="">
 				<div class="form-group">
 					<label for="list" class="control-label">Categories</label>
@@ -91,7 +92,7 @@ $(document).ready(function (){
 					</select>
 				</div>
 			</div>
-			
+			-->
 			
 			<!-- Search Form -->
 			<div class="search-form">
