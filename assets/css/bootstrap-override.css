@@ -58,6 +58,13 @@ hr {
 	letter-spacing: 2px;
 }
 
+
+
+.navbar-default .navbar-nav>li>a {
+	color: #BCBDC0;
+}
+
+
 .jumbotron {
 	padding-top: 0px !important;
 }
