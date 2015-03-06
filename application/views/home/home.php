@@ -16,20 +16,16 @@
 <div class="container">
 	<!-- Three columns of text below the carousel -->
 	<div class="row">
-		<div class="col-md-4">
-			<h2>Buy</h2>
-			<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-			<p><a class="btn btn-default" href="<?php echo base_url('/market') ?>" role="button">Go &raquo;</a></p>
+		<div class="col-md-6">
+			<?php foreach ($categories->result() as $category) { ?>
+				<div class="col-xs-4">
+					<a class="btn btn-default btn-lg wide-button" href="<?php echo base_url('/market/new_category' . $category->category_id) ?>">New Category</a><br>
+				</div>
+			<?php } ?>
 		</div><!-- /.col-lg-4 -->
-		<div class="col-md-4">
-			<h2>Sell</h2>
-			<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-			<p><a class="btn btn-default" href="<?php echo base_url('/ad/new_ad') ?>" role="button">Go &raquo;</a></p>
-		</div><!-- /.col-lg-4 -->
-		<div class="col-md-4">
-			<h2>Services</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-			<p><a class="btn btn-default" href="<?php echo base_url('/market') ?>" role="button">Go &raquo;</a></p>
+		
+		<div class="col-md-6">
+			
 		</div><!-- /.col-lg-4 -->
 	</div><!-- /.row -->
 </div>
