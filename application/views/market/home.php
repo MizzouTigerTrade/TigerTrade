@@ -82,7 +82,7 @@
 				<!-- Buttons on top of page -->
 				
 				<div class="row row-centered">
-					<div class="btn-group visible-sm">
+					<div class="btn-group visible-sm col-xs-12 col-centered">
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 						<?php if ($this->ion_auth->is_admin()) { ?>
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
