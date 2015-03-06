@@ -54,7 +54,7 @@ hr {
 }
 
 .navbar-default .navbar-brand {
-	letter-spacing: 1px;
+
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -64,7 +64,7 @@ hr {
 
 .navbar-default .navbar-nav>.active>a:hover {
 	color: #59595C;
-	background-color: #808285;
+	background-color: #EEB328;
 }
 
 .navbar-default .navbar-nav>li>a {
