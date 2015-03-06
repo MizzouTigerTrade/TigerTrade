@@ -107,7 +107,7 @@ $(document).ready(function (){
 		
 		
 		
-		<div class="col-xs-12 col-md-10">
+		<div class="col-xs-12 col-md-10" id="market_background">
 			
 			<div class="col-xs-12">
 				
@@ -150,7 +150,7 @@ $(document).ready(function (){
 				</div>
 
 				<!-- Display Ads: rows of 3 -->
-				<!--
+
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
 					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
@@ -166,23 +166,7 @@ $(document).ready(function (){
 					<?php if ($count == 2 || $count % 3 == 2) { ?></div><?php } $count++; ?>
 				<?php } ?>
 				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
-				-->
-				
-				<!-- Display Ads: newspaper columns -->
-				
-				<div class="row">
-					<?php foreach ($ads->result() as $row) { ?>
-						<div class="col-sm-4" style="padding-bottom: 10px;">
-							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-							<h3><?php echo $row->title; ?></h3>
-								<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-								<img src="http://placehold.it/300x200" class="img-thumbnail" alt="Responsive image" style="width: 100%;">
-							</a><br><br>
-							<p>Description: <?php echo $row->description; ?></p>
-							<p>Ad ID: <?php echo $row->ad_id; ?></p>
-						</div>
-					<?php } ?>
-				</div>
+		
 			</div>
 		</div>
 	</div>

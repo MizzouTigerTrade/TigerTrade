@@ -98,6 +98,10 @@ button a, button a:visited, button a:hover, button a:active {
 	font-size: 1.2rem;
 }
 
+#market_background {
+	background-image: url(../assets/images/market/newspaper.jpg);
+}
+
 .wide-button {
 	width: 100%;
 	margin-bottom: 5px;
