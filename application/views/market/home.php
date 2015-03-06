@@ -103,15 +103,10 @@
 					<div class="col-sm-3">
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-xs" id="subcategory_list" >
 					    	<option>Subcategory</option>
-					    	<?php foreach ($subcategories->result() as $sub) { ?>
-						    	
-					    		<?php if ($sub->category_id == $cat->category_id) { ?>
-					    			
-					    			<option value="<?php echo base_url('/market/subcategory/' . $sub->subcategory_id); ?>">
-					    				<?php echo $sub->name; ?>
-					    			</option>
-								<?php } ?>
-						    	
+					    	<?php foreach ($subcategories->result() as $sub) { ?>					    			
+				    			<option value="<?php echo base_url('/market/subcategory/' . $sub->subcategory_id); ?>">
+				    				<?php echo $sub->name; ?>
+				    			</option>
 					    	<?php } ?>
 						</select>
 					</div>
