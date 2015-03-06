@@ -88,14 +88,14 @@
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
 						<?php } ?>
-						<select multiple size="<?php echo $categories->num_rows(); ?>" class="form-control" id="category_list" >
+						<select class="form-control" id="category_list" >
 						<?php 
 							foreach($categories->result() as $cat):
 							echo "<option>" . $cat->name . "</option>";
 							endforeach; 
 						?>
 						</select>
-						<select multiple size="10" class="form-control" id="subcategory_list" >
+						<select class="form-control" id="subcategory_list" >
 						<?php 
 							foreach($subcategories->result() as $sub):
 							echo "<option>" . $sub->name . "</option>";
