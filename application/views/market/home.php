@@ -82,7 +82,7 @@
 				<!-- Buttons on top of page -->
 				
 				<div class="row visible-sm">
-					<div class="col-sm-6">
+					<div class="col-sm-8">
 						<div class="btn-group">
 							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
@@ -91,7 +91,7 @@
 							<?php } ?>
 						</div>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-2">
 						<select class="form-control" id="category_list" >
 						<?php 
 							foreach($categories->result() as $cat):
@@ -100,7 +100,7 @@
 						?>
 						</select>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-2">
 						<select class="form-control" id="subcategory_list" >
 						<?php 
 							foreach($subcategories->result() as $sub):
