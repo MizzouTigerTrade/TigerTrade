@@ -1,14 +1,4 @@
 
-<link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.css') ?>">
-<script src="<?php echo base_url('assets/js/jquery-ui/external/jquery/jquery.js') ?>"></script>
-<script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
- 
- <script>
-  $(function(){
-    // did the UI load?
-    console.log(jQuery.ui);
-  });
-</script>
  
 <div class="container padding-top-20">
 	<div class="row">
@@ -50,7 +40,7 @@
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
 			<td><button class="btn btn-default">Dismiss</button></td>
-			<td><button class="btn btn-default" onclick="deleteConfirm();">Delete</button></td>
+			<td><button class="btn btn-default">Delete</button></td>
 			
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
