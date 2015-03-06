@@ -30,6 +30,16 @@
 		<th>User Status</th>
 	</tr>
 	</thead>
+	<tbody>
+		<tr>
+			<td>12</td>
+			<td>5</td>
+			<td>Tim Van Horn</td>
+			<td>tjvkv6@mail.missouri.edu</td>
+			<td><button>Dismiss</button></td>
+			<td><button>Delete Ad</button></td>
+			<td>Active</td>
+		</tr>
 	<?php /* foreach ($users as $user):?>
 		<tr>
             <td><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?></td>
@@ -44,6 +54,7 @@
 			<td><?php echo anchor("auth/edit_user/".$user->id, 'Edit') ;?></td>
 		</tr>
 	<?php endforeach; */ ?>
+	</tbody>
 </table>
 
 </div>
