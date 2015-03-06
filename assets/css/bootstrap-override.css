@@ -13,3 +13,7 @@ hr {
 .navbar-default {
 	background-color: rgb(51, 51, 51);
 }
+
+.navbar-brand {
+	color: #EEB328;
+}
