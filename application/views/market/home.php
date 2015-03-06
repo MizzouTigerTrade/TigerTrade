@@ -57,7 +57,7 @@ $(document).ready(function (){
 				<?php } ?>
 				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>" style="margin: 13px 0 18px 0;"><b>all</b></a><br>
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
-					<option value="">Category</option>
+					<option value="/market">All</option>
 					<?php
 						foreach($categories->result() as $category) {
 							echo '<option value="/market/category/'.$category->category_id.'">'.$category->name.'</option>';		
