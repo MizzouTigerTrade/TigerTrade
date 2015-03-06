@@ -91,7 +91,7 @@
 							<?php } ?>
 						</div>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-3">
 						<select class="form-control input-xs" id="category_list" >
 						<?php 
 							foreach($categories->result() as $cat):
@@ -99,6 +99,8 @@
 							endforeach; 
 						?>
 						</select>
+					</div>
+					<div class="col-sm-6">
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-xs" id="subcategory_list" >
 					    	<option>Subcategory</option>
 					    	<?php foreach ($subcategories->result() as $sub) { ?>					    			
