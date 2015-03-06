@@ -155,7 +155,6 @@ $(document).ready(function (){
 				<?php foreach ($ads->result() as $row) { ?>
 					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row" style="border-bottom: 1px solid #d1d1d1;"><?php } ?>
 					<div class="col-sm-4" style="margin-bottom: 10px;">
-						<div style="border-right: 1px solid #d1d1d1;">
 						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 						<h3><?php echo $row->title; ?></h3>
 							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
@@ -163,7 +162,6 @@ $(document).ready(function (){
 						</a><br><br>
 						<p>Description: <?php echo $row->description; ?></p>
 						<p>Ad ID: <?php echo $row->ad_id; ?></p>
-						</div>
 					</div>
 					<?php if ($count == 2 || $count % 3 == 2) { ?></div><?php } $count++; ?>
 				<?php } ?>
