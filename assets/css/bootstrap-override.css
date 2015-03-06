@@ -72,7 +72,7 @@ hr {
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-	color: #BCBDC0;
+	color: rgb(51, 51, 51);
 	background-color: #EEB328;
 }
 
