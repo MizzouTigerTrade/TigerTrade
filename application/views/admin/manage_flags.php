@@ -5,18 +5,13 @@
 
 <script>
 
-$( document ).ready(function(){
-
-  function deleteConfirm() 
-  {
-    $( "#delete-confirm" ).dialog(
-	{
+$(function deleteConfirm() {
+    $( "#delete-confirm" ).dialog({
       resizable: false,
-      height:200,
+      height:140,
       modal: true,
-      buttons: 
-	  {
-        "Yes": function() {
+      buttons: {
+        "Delete all items": function() {
           $( this ).dialog( "close" );
         },
         Cancel: function() {
@@ -24,9 +19,8 @@ $( document ).ready(function(){
         }
       }
     });
-  }
-   
-}
+  });
+
  </script>
 
  <div id="delete-confirm" title="Delete Ad?">
