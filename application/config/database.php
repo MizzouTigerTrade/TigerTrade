@@ -49,10 +49,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'kylecarlson';
-$db['default']['password'] = 'QRvC3TMCBt';
-$db['default']['database'] = 'kylecarlson_tigertrade';
-$db['default']['dbdriver'] = 'mysqli';
+$db['default']['username'] = '';
+$db['default']['password'] = '';
+$db['default']['database'] = 'tigertrade';
+$db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
