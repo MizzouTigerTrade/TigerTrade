@@ -75,7 +75,7 @@
 			</div>
 		</div>
 		
-		<div class="col-xs-12 col-sm-10">
+		<div class="col-xs-12 col-md-10">
 			
 			<div class="col-xs-12">
 				
