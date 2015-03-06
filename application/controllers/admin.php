@@ -25,6 +25,7 @@ class Admin extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('category_model');
 		$this->load->model('subcategory_model');
+		$this->load->model('ad_model');
 		$data['menu'] = $this->load->view('shared/menu');
 	}
 
