@@ -84,15 +84,15 @@
 				<div class="row visible-sm text-center">
 					<div class="col-sm-6">
 						<div class="btn-group">
-							<a class="btn btn-default btn-xs" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
 							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">New Category</a>
-							<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
 							<?php } ?>
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-xs" id="category_list" >
+						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="category_list" >
 							<option>Category</option>
 					    	<?php foreach ($categories->result() as $cat) { ?>					    			
 				    			<option value="<?php echo base_url('/market/category/' . $cat->category_id); ?>">
@@ -102,7 +102,7 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-xs" id="subcategory_list" >
+						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subcategory_list" >
 					    	<option>Subcategory</option>
 					    	<?php foreach ($subcategories->result() as $sub) { ?>					    			
 				    			<option value="<?php echo base_url('/market/subcategory/' . $sub->subcategory_id); ?>">
