@@ -103,6 +103,14 @@ button a, button a:visited, button a:hover, button a:active {
 	z-index: 1;
 }
 
+.ad-row {
+	border-bottom: 1px solid black;
+}
+
+.ad-border {
+	border-right: 1px solid black;
+}
+
 .wide-button {
 	width: 100%;
 	margin-bottom: 5px;
