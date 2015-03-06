@@ -62,7 +62,7 @@ button a, button a:visited, button a:hover, button a:active {
 
 #left-header {
 	color: #EEB328;
-	font-weight: 300;
+	font-weight: 200;
 	letter-spacing: 3px;
 	bottom: -5%;
 }
@@ -71,7 +71,7 @@ button a, button a:visited, button a:hover, button a:active {
 	letter-spacing: 2px;
 	color: #4CBD95;
 	font-style: italic;
-	font-weight: 500;
+	font-weight: 300;
 }
 
 .wide-button {
