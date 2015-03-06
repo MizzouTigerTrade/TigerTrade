@@ -66,6 +66,7 @@ button a, button a:visited, button a:hover, button a:active {
 
 #right-header {
 	color: #4CBD95;
+	font-style: italic;
 }
 
 .wide-button {
