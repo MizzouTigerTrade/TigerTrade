@@ -10,7 +10,7 @@
     $( "#delete-confirm" ).dialog(
 	{
       resizable: false,
-      height:140,
+      height:200,
       modal: true,
       buttons: 
 	  {
@@ -71,14 +71,16 @@
 			<td><button class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default" onclick="deleteConfirm()">Delete</button></td>
 			
-			<div id="delete-confirm" title="Delete Ad?">
-			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
-			</div>
+			
 			
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
 	<?php endforeach; ?>
 	</tbody>
 </table>
+
+<div id="delete-confirm" title="Delete Ad?">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
+</div>
 
 </div>
