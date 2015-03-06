@@ -1,3 +1,28 @@
+<script>
+
+  $(function deleteConfirm() {
+    $( "#delete-confirm" ).dialog({
+      resizable: false,
+      height:140,
+      modal: true,
+      buttons: {
+        "Yes": function() {
+          $( this ).dialog( "close" );
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  });
+  
+ </script>
+
+
+<div id="delete-confirm" title="Delete Ad?">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
+</div>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -34,11 +59,11 @@
 	<?php foreach ($flags->result() as $flag):?>
 		<tr>
             <td><?php echo "<a href='" . base_url() . "/ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
-            <td><?php echo htmlspecialchars($flag->flag_count,ENT_QUOTES,'UTF-8');?></td>
-            <td><?php echo htmlspecialchars($flag->first_name . " " . $flag->last_name ,ENT_QUOTES,'UTF-8');?></td>
+            <td><?php echo $flag->flag_count ;?></td>
+            <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
 			<td><button class="btn btn-default">Dismiss</button></td>
-			<td><button class="btn btn-default">Delete</button></td>
+			<td><button class="btn btn-default" onclick="deleteConfirm()">Delete</button></td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
 	<?php endforeach; ?>
