@@ -9,3 +9,7 @@
 hr {
 	border-top: 1px solid #d1d1d1;
 }
+
+.navbar-default {
+	background-color: #6E6F72;
+}
