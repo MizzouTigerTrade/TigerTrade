@@ -1,37 +1,3 @@
-<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-
-<script type="text/javascript">
-$(document).ready(function (){
-	$('#categorySelectForm').change(function(){
-	    var category_id = $(this).val();
-	    if (category_id != ""){
-	        var post_url = "<?php echo base_url('ajax') ?>/get_subcategories/" + category_id;
-	        $.ajax({
-	            type: "POST",
-	            url: post_url,
-	            success: function(subCategories) //we're calling the response json array 'cities'
-	            {
-	                $('#subCategory').empty();
-	                subCategories = $.parseJSON(subCategories);
-                   	$.each(subCategories,function(id,name) 
-                   	{	
-                    	var opt = $('<option />'); // here we're creating a new select option for each group
-                      	opt.val('/market/subcategory/' + id);
-                      	opt.text(name);
-                      	$('#subCategory').append(opt); 	
-	                });
-	            } //end success
-	         }); //end AJAX
-	    } 
-	    else
-	    {
-	    	$('#subCategory').empty();
-	    }
-	}); //end change 
-});
-
-</script>
-
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
