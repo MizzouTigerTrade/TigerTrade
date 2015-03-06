@@ -59,7 +59,8 @@ hr {
 }
 
 .navbar-default .navbar-nav>.active>a {
-	color: #59595C;
+	color: #808285;
+	background-color: #59595C;
 }
 
 .navbar-default .navbar-nav>li>a {
