@@ -33,7 +33,7 @@
 	<tbody>
 	<?php foreach ($flags->result() as $flag):?>
 		<tr>
-            <td><?php echo htmlspecialchars($flag->ad_id,ENT_QUOTES,'UTF-8');?></td>
+            <td><?php echo "<a href='" .base_url() . "/ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
             <td><?php echo htmlspecialchars($flag->flag_count,ENT_QUOTES,'UTF-8');?></td>
             <td><?php echo htmlspecialchars($flag->first_name . " " . $flag->last_name ,ENT_QUOTES,'UTF-8');?></td>
 			<td><?php echo $flag->email ;?> </td>
