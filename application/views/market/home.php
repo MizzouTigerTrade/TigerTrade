@@ -16,7 +16,7 @@ $(document).ready(function (){
                    	$.each(subCategories,function(id,name) 
                    	{	
                     	var opt = $('<option />'); // here we're creating a new select option for each group
-                      	opt.val(id);
+                      	opt.val('/market/subcategory/' + id);
                       	opt.text(name);
                       	$('#subCategory').append(opt); 	
 	                });
