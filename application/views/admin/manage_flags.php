@@ -21,13 +21,12 @@
 <table class="table">
 	<tr>
 		<th>Ad</th>
-		<th><?php echo lang('index_fname_th');?></th>
-		<th><?php echo lang('index_lname_th');?></th>
-		<th><?php echo lang('index_email_th');?></th>
+		<th>Flag Count</th>
+		<th>Name</th>
+		<th>Email</th>
 		<th>Dismiss Flag</th>
 		<th>Delete Ad</th>
-		<th><?php echo lang('index_status_th');?></th>
-
+		<th>Status</th>
 	</tr>
 	<?php /* foreach ($users as $user):?>
 		<tr>
@@ -44,5 +43,5 @@
 		</tr>
 	<?php endforeach; */ ?>
 </table>
-<p><?php echo anchor('auth/create_user', lang('index_create_user_link'))?> | <?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
+
 </div>
