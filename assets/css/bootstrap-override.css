@@ -55,6 +55,7 @@ hr {
 
 .navbar-default .navbar-brand {
 	letter-spacing: 2px;
+	font-weight: 500;
 }
 
 .navbar-default .navbar-nav>.active>a {
