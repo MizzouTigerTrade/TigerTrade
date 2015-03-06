@@ -129,7 +129,7 @@ $(document).ready(function (){
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control input-sm" id="subCategory" name="subCategory">
+						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 					    	<option value=""><option>	
 						</select>
 					</div>
