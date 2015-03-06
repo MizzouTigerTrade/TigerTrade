@@ -18,7 +18,7 @@
 	  <?php }; ?>
       
 	
-<table class="table table-hover">
+<table class="table table-hover table-condensed">
 	<tr>
 		<th>Ad</th>
 		<th>Flag Count</th>
