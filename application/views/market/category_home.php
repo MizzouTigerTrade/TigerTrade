@@ -26,7 +26,7 @@
 					<option value="">Category</option>
 					<?php
 						foreach($categories->result() as $cat) { ?>
-							<option value="/market/category/<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
+							<option value="/market/category/<?php echo $cat->category_id; ?>" <?php if ($category->category_id == $cat->category_id) { echo 'selected'; } ?>><?php echo $cat->name; ?></option>	
 					<?php } ?>	
 				</select>
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
