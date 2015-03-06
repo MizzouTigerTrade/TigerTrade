@@ -81,7 +81,7 @@
 				
 				<!-- Buttons on top of page -->
 				
-				<div class="row visible-sm">
+				<div class="row visible-sm text-center">
 					<div class="col-sm-6">
 						<div class="btn-group">
 							<a class="btn btn-default btn-xs" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
@@ -100,7 +100,7 @@
 						?>
 						</select>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-3">
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-xs" id="subcategory_list" >
 					    	<option>Subcategory</option>
 					    	<?php foreach ($subcategories->result() as $sub) { ?>					    			
