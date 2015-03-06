@@ -19,15 +19,17 @@
       
 	
 <table class="table table-hover table-condensed">
+	<thead>
 	<tr>
-		<th class="col-sm-2">Ad</th>
-		<th class="col-sm-2">Flag Count</th>
+		<th>Ad</th>
+		<th>Flag Count</th>
 		<th>Name</th>
 		<th>Email</th>
 		<th>Dismiss Flag</th>
 		<th>Delete Ad</th>
 		<th>Status</th>
 	</tr>
+	</thead>
 	<?php /* foreach ($users as $user):?>
 		<tr>
             <td><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?></td>
