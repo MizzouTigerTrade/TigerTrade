@@ -71,7 +71,7 @@ hr {
 	color: #BCBDC0;
 }
 
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav>li>a:hover {
 	color: #BCBDC0;
 	background-color: #EEB328;
 }
