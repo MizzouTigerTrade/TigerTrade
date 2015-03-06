@@ -6,17 +6,31 @@
  <script type="text/javascript">
             $(document).ready(function() {
 
-                $('#dismissConfirm').dialog({
-                    autoOpen: false,
-                    title: 'Basic Dialog'
-                });
-                $('#dismissButton').click(function() {
-                    $('#dismissConfirm').dialog('open');
-          
-                });
+               function showDialog()
+			   {
+					$( "#dialog-confirm" ).dialog({
+						resizable: false,
+						height:140,
+						modal: true,
+						buttons: {
+							"Delete all items": function() {
+							$( this ).dialog( "close" );
+							},
+							Cancel: function() {
+							$( this ).dialog( "close" );
+							}
+						}
+					});
+				   
+			   }
+			   	   
             });
 			
  </script>
+ 
+ <div id="dialog-confirm" title="Empty the recycle bin?">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
  
 <div class="container padding-top-20">
 	<div class="row">
@@ -57,7 +71,8 @@
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button id="dismissButton" class="btn btn-default">Dismiss</button></td>
+			<td><button onclick="showDialog();" class="btn btn-default">Dismiss</button></td>
+			
 			<div id="dismissConfirm">
 			<p>Some txt goes here</p>
 			</div>
