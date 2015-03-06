@@ -80,15 +80,17 @@
 			<div class="col-xs-12">
 				
 				<!-- Buttons on top of page -->
-				<!--
+				
 				<div class="row text-center">
-					<div class="btn-group hidden-xs">
+					<div class="btn-group visible-sm">
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 						<?php if ($this->ion_auth->is_admin()) { ?>
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
 						<?php } ?>
 					</div>
+				</div>
+				<!--
 					<div class="visible-xs col-xs-12">
 						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
 						<?php if ($this->ion_auth->is_admin()) { ?>
