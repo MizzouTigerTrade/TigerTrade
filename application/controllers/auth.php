@@ -20,7 +20,7 @@ class Auth extends CI_Controller {
 	function index()
 	{
 
-		/*if (!$this->ion_auth->logged_in())
+		if (!$this->ion_auth->logged_in())
 		{
 			//redirect them to the login page
 			redirect('auth/login', 'refresh');
@@ -31,7 +31,7 @@ class Auth extends CI_Controller {
 			return show_error('You must be an administrator to view this page.');
 		}
 		else
-		{*/
+		{
 			//set the flash data error message if there is one
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
