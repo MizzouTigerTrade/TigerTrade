@@ -70,6 +70,9 @@
 			<td><?php echo $flag->email ;?> </td>
 			<td><button class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default" onclick="deleteConfirm()">Delete</button></td>
+			<div id="delete-confirm" title="Delete Ad?">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
+			</div>
 			
 			
 			
@@ -79,8 +82,6 @@
 	</tbody>
 </table>
 
-<div id="delete-confirm" title="Delete Ad?">
-	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
-</div>
+
 
 </div>
