@@ -4,8 +4,6 @@
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
 
  <script type="text/javascript">
-            $(document).ready(function() {
-
                function showDialog()
 			   {
 					$( "#dialog-confirm" ).dialog({
@@ -23,8 +21,6 @@
 					});
 				   
 			   }
-			   	   
-            });
 			
  </script>
  
