@@ -14,7 +14,7 @@
 			
 		<div class="col-xs-3 col-sm-2 hidden-sm hidden-xs">
 
-			<!-- Market Menu -->
+			<!-- MEDIUM+ Screen Menu -->
 			<div id="market-menu" class="text-center">
 				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a><br>
 				<?php if ($this->ion_auth->is_admin()) { ?>
@@ -75,22 +75,16 @@
 			</div>
 		</div>
 		
+		
+		
+		
+		
 		<div class="col-xs-12 col-md-10">
 			
 			<div class="col-xs-12">
 				
-				<!-- Buttons on top of page -->
-				
+				<!-- SMALL Screen Menu -->
 				<div class="row visible-sm text-center">
-					<div class="col-sm-6">
-						<div class="btn-group">
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
-							<?php if ($this->ion_auth->is_admin()) { ?>
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">New Category</a>
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
-							<?php } ?>
-						</div>
-					</div>
 					<div class="col-sm-3">
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="category_list" >
 							<option>Category</option>
@@ -111,7 +105,18 @@
 					    	<?php } ?>
 						</select>
 					</div>
+					<div class="col-sm-6">
+						<div class="btn-group">
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
+							<?php if ($this->ion_auth->is_admin()) { ?>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">New Category</a>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
+							<?php } ?>
+						</div>
+					</div>
 				</div>
+				
+				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
 					<div class="col-xs-12">
 						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
