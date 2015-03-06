@@ -63,11 +63,11 @@ button a, button a:visited, button a:hover, button a:active {
 #left-header {
 	color: #EEB328;
 	font-weight: 300;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 }
 
 #right-header {
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	color: #4CBD95;
 	font-style: italic;
 	font-weight: 500;
