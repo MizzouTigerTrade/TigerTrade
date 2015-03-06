@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href='<?= base_url() ?>'>TigerTrade</a>
+			<a class="navbar-brand" href='<?= base_url() ?>'><span id='left-header'>Tiger</span><span id='right-header'>Trade</span></a>
 		</div>
 		<!-- MENU OPTIONS -->
 		<nav class="collapse navbar-collapse bs-navbar-collapse" id="navbar">

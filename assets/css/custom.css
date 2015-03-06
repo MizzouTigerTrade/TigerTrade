@@ -60,6 +60,14 @@ button a, button a:visited, button a:hover, button a:active {
 
 }
 
+#left-header {
+	color: #EEB328;
+}
+
+#right-header {
+	color: #208A6E;
+}
+
 .wide-button {
 	width: 100%;
 	margin-bottom: 5px;
