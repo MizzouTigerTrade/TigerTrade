@@ -38,7 +38,7 @@ class Admin extends CI_Controller {
 		//$this->layout->view('welcome_message', $data);
 	}
 	
-	function manage_flags
+	function manage_flags()
 	{
 		
 	
