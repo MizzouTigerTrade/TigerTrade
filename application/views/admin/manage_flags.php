@@ -35,7 +35,7 @@
 		<tr>
             <td><?php echo htmlspecialchars($flag->ad_id,ENT_QUOTES,'UTF-8');?></td>
             <td><?php echo htmlspecialchars($flag->flag_count,ENT_QUOTES,'UTF-8');?></td>
-            <td><?php echo htmlspecialchars($flag->first_name . $flag->last_name ,ENT_QUOTES,'UTF-8');?></td>
+            <td><?php echo htmlspecialchars($flag->first_name . " " . $flag->last_name ,ENT_QUOTES,'UTF-8');?></td>
 			<td><?php echo $flag->email ;?> </td>
 			<td><button>Dismiss</button></td>
 			<td><button>Delete Ad</button></td>
