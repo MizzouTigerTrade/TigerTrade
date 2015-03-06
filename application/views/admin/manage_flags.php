@@ -25,7 +25,7 @@
 		<th>Count</th>
 		<th>Name</th>
 		<th>Email</th>
-		<th>Dismiss Flag</th>
+		<th>Dismiss</th>
 		<th>Delete Ad</th>
 		<th>Status</th>
 	</tr>
