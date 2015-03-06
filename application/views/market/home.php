@@ -92,12 +92,13 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control input-xs" id="category_list" >
-						<?php 
-							foreach($categories->result() as $cat):
-							echo "<option>" . $cat->name . "</option>";
-							endforeach; 
-						?>
+						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-xs" id="category_list" >
+							<option>Category</option>
+					    	<?php foreach ($categories->result() as $cat) { ?>					    			
+				    			<option value="<?php echo base_url('/market/category/' . $cat->category_id); ?>">
+				    				<?php echo $cat->name; ?>
+				    			</option>
+					    	<?php } ?>
 						</select>
 					</div>
 					<div class="col-sm-3">
