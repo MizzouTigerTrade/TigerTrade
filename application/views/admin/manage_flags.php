@@ -26,7 +26,7 @@ $( document ).ready(function(){
     });
   }
    
-};
+}
  </script>
 
  <div id="delete-confirm" title="Delete Ad?">
