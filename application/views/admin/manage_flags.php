@@ -4,6 +4,13 @@
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
  
  <script>
+ 
+	 $(document).ready(function() {
+        $("#dialog_open").button().click(function () {
+             $("#dialog_confirm").open();
+        });
+        });
+ 
   $(function() {
     $( "#dialog-confirm" ).dialog({
       resizable: false,
@@ -21,7 +28,7 @@
   });
   </script>
 
-  <div id="dialog-confirm" title="Empty the recycle bin?">
+  <div id="dialog-confirm" style="display:none;" title="Empty the recycle bin?">
   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
 </div>
  
@@ -64,7 +71,7 @@
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button onclick="showDialog();" class="btn btn-default">Dismiss</button></td>
+			<td><button id="dialog_open" class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default">Delete</button></td>
 			
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
