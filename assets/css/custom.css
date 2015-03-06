@@ -99,7 +99,7 @@ button a, button a:visited, button a:hover, button a:active {
 }
 
 #market_background {
-	background-image: url('../assets/Images/market/newspaper.jpg');
+	background-image: url('assets/Images/market/newspaper.jpg');
 	z-index: 1;
 }
 
