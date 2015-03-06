@@ -83,7 +83,7 @@
 				
 				<div class="row visible-sm">
 					<div class="col-sm-6">
-						<div class="btn-group btn-group-xs">
+						<div class="btn-group">
 							<a class="btn btn-default btn-xs" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
 							<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
@@ -92,7 +92,7 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control" id="category_list" >
+						<select class="form-control input-sm" id="category_list" >
 						<?php 
 							foreach($categories->result() as $cat):
 							echo "<option>" . $cat->name . "</option>";
