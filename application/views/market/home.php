@@ -170,7 +170,7 @@ $(document).ready(function (){
 				
 				<!-- Display Ads: newspaper columns -->
 				
-				<div class="row-fluid">
+				<div class="row">
 					<?php foreach ($ads->result() as $row) { ?>
 						<div class="col-sm-4" style="padding-bottom: 10px;">
 							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
@@ -181,11 +181,8 @@ $(document).ready(function (){
 							<p>Description: <?php echo $row->description; ?></p>
 							<p>Ad ID: <?php echo $row->ad_id; ?></p>
 						</div>
-						<?php if ($count == 2 || $count % 3 == 2) { ?></div><?php } $count++; ?>
 					<?php } ?>
-					<?php if ($count % 3 != 0) { ?></div><?php } ?>
 				</div>
-				
 			</div>
 		</div>
 	</div>
