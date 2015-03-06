@@ -53,10 +53,6 @@ hr {
 	border-top: 0px;
 }
 
-.navbar-brand>a:hover {
-	background-color: #EEB328;
-}
-
 .navbar-default .navbar-nav>.active>a {
 	color: rgb(51, 51, 51);
 	background-color: #4CBD95;
