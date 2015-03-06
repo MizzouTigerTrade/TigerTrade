@@ -29,7 +29,7 @@
 							<option value="/market/category/<?php echo $cat->category_id; ?>" <?php if ($category->category_id == $cat->category_id) { echo 'selected'; } ?>><?php echo $cat->name; ?></option>	
 					<?php } ?>	
 				</select>
-				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory_list">
+				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="" name="">
 			    	<option value=""><option>
 					<?php
 						foreach($subcategories->result() as $sub) {
