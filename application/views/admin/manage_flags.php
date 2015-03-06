@@ -2,6 +2,21 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.css') ?>">
 <script src="<?php echo base_url('assets/js/jquery-ui/external/jquery/jquery.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
+
+ <script type="text/javascript">
+            $(document).ready(function() {
+
+                $('#dismissConfirm').dialog({
+                    autoOpen: false,
+                    title: 'Basic Dialog'
+                });
+                $('#dismissButton').click(function() {
+                    $('#dismissConfirm').dialog('open');
+          
+                });
+            });
+			
+ </script>
  
 <div class="container padding-top-20">
 	<div class="row">
@@ -42,7 +57,11 @@
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button class="btn btn-default">Dismiss</button></td>
+			<td><button id="dismissButton" class="btn btn-default">Dismiss</button></td>
+			<div id="dismissConfirm">
+			<p>Some txt goes here</p>
+			</div>
+			
 			<td><button class="btn btn-default">Delete</button></td>
 			
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
