@@ -66,8 +66,10 @@ $(document).ready(function (){
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 			    	<option value="">Subcategory<option>
 					<?php
-						foreach($subcategories->result() as $sub) { ?>
-							<option value="/market/subcategory/<?php echo $sub->subcategory_id; ?>" <?php if ($category->category_id == $sub->category_id) { echo 'selected'; } ?>><?php echo $sub->name; ?></option>	
+						foreach($subcategories->result() as $sub) {
+							if ($category->category_id == $sub->category_id) { ?>
+								<option value="/market/subcategory/<?php echo $sub->subcategory_id; ?>"><?php echo $sub->name; ?></option>
+						<?php } ?>	
 					<?php } ?>		
 				</select>
 			</div>
