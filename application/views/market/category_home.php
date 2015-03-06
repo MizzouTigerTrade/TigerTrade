@@ -57,14 +57,18 @@ $(document).ready(function (){
 				<?php } ?>
 				<a class="btn btn-default btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>" style="margin: 13px 0 18px 0;"><b>all</b></a><br>
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
-					<option value="">Category</option>
+					<option value="/market">All</option>
 					<?php
 						foreach($categories->result() as $cat) { ?>
 							<option value="/market/category/<?php echo $cat->category_id; ?>" <?php if ($category->category_id == $cat->category_id) { echo 'selected'; } ?>><?php echo $cat->name; ?></option>	
 					<?php } ?>	
 				</select>
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
-			    	<option value="">Subcategory<option>	
+			    	<option value="">Subcategory<option>
+					<?php
+						foreach($subcategories->result() as $sub) { ?>
+							<option value="/market/subcategory/<?php echo $sub->subcategory_id; ?>" <?php if ($category->category_id == $sub->category_id) { echo 'selected'; } ?>><?php echo $sub->name; ?></option>	
+					<?php } ?>		
 				</select>
 			</div>
 			
