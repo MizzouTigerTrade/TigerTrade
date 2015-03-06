@@ -2,12 +2,6 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.css') ?>">
 <script src="<?php echo base_url('assets/js/jquery-ui/external/jquery/jquery.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
-
-<input type="text" name="date" id="date">
-
-<script>
-$( "#date" ).datepicker();
- </script>
  
 <div class="container padding-top-20">
 	<div class="row">
