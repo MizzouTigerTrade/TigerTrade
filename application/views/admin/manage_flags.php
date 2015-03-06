@@ -1,7 +1,7 @@
 
-<link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui.min.css') ?>">
-<script src="<?php echo base_url('assets/js/external/jquery/jquery.js') ?>"></script>
-<script src="<?php echo base_url('assets/js/jquery-ui.min.js') ?>"></script>
+<link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.css') ?>">
+<script src="<?php echo base_url('assets/js/jquery-ui/external/jquery/jquery.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
 
 <script>
 
