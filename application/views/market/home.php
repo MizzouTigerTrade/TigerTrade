@@ -38,7 +38,7 @@ $(document).ready(function (){
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>Market: All TEST</h1>
+			<h1>Market: All</h1>
 		</div>
 	</div>
 	
@@ -56,26 +56,20 @@ $(document).ready(function (){
 					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
 				<?php } ?>
 				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>" style="margin: 13px 0 18px 0;"><b>all</b></a><br>
-				<?php foreach ($categories->result() as $cat) { ?>
-				    <a class="btn btn-default btn-sm wide-button" role="button" href="<?php echo base_url('/market/category/' . $cat->category_id); ?>"><b><?php echo $cat->name; ?></b></a><br>
-				    <select onchange="location = this.options[this.selectedIndex].value;" class="form-control" id="" >
-					    	<option>Subcategory</option>
-			    	<?php foreach ($subcategories->result() as $sub) { ?>
-				    	
-			    		<?php if ($sub->category_id == $cat->category_id) { ?>
-			    			
-			    			<option value="<?php echo base_url('/market/subcategory/' . $sub->subcategory_id); ?>">
-			    				<?php echo $sub->name; ?>
-			    			</option>
-						<?php } ?>
-				    	
-			    	<?php } ?>
-			    	</select>
-			    	<br>
-				<?php } ?>
+				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+					<option value="/market">All</option>
+					<?php
+						foreach($categories->result() as $category) {
+							echo '<option value="/market/category/'.$category->category_id.'">'.$category->name.'</option>';		
+					} ?>	
+				</select>
+				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
+			    	<option value="">Subcategory<option>	
+				</select>
 			</div>
 			
 			<!-- Filter Form -->
+			<!--
 			<div id="filter-form" class="">
 				<div class="form-group">
 					<label for="list" class="control-label">Categories</label>
@@ -98,7 +92,7 @@ $(document).ready(function (){
 					</select>
 				</div>
 			</div>
-			
+			-->
 			
 			<!-- Search Form -->
 			<div class="search-form">
