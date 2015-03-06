@@ -64,6 +64,7 @@ button a, button a:visited, button a:hover, button a:active {
 	color: #EEB328;
 	font-weight: 300;
 	letter-spacing: 2px;
+	bottom: -5px;
 }
 
 #right-header {
