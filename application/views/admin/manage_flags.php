@@ -33,12 +33,12 @@
 	<tbody>
 	<?php foreach ($flags->result() as $flag):?>
 		<tr>
-            <td><?php echo "<a href='" .base_url() . "/ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
+            <td><?php echo "<a href='" . base_url() . "/ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
             <td><?php echo htmlspecialchars($flag->flag_count,ENT_QUOTES,'UTF-8');?></td>
             <td><?php echo htmlspecialchars($flag->first_name . " " . $flag->last_name ,ENT_QUOTES,'UTF-8');?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button>Dismiss</button></td>
-			<td><button>Delete Ad</button></td>
+			<td><button class="btn btn-default">Dismiss</button></td>
+			<td><button class="btn btn-default">Delete Ad</button></td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
 	<?php endforeach; ?>
