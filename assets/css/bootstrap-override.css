@@ -18,3 +18,7 @@ hr {
 	color: #EEB328;
 	letter-spacing: 2px;
 }
+
+.jumbotron {
+	padding-top: 0px !important;
+}
