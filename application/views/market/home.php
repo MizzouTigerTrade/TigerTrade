@@ -66,6 +66,15 @@ $(document).ready(function (){
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 			    	<option value="">Subcategory<option>	
 				</select>
+				
+				<!-- Search Form -->
+				<div class="search-form">
+					<div class="form-group">
+						<label for="search" class="control-label">Search</label>
+						<input type="text" class="form-control" name="search" ></input>
+					</div>
+				</div>
+
 			</div>
 			
 			<!-- Filter Form -->
@@ -93,14 +102,6 @@ $(document).ready(function (){
 				</div>
 			</div>
 			-->
-			
-			<!-- Search Form -->
-			<div class="search-form">
-				<div class="form-group">
-					<label for="search" class="control-label">Search</label>
-					<input type="text" class="form-control" name="search" ></input>
-				</div>
-			</div>
 		</div>
 		
 		
