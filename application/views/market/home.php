@@ -12,7 +12,7 @@
 	
 	<div class="row">
 			
-		<div class="col-xs-3 col-sm-2 hidden-xs">
+		<div class="col-xs-3 col-sm-2 hidden-sm hidden-xs">
 
 			<!-- Market Menu -->
 			<div id="market-menu" class="text-center">
