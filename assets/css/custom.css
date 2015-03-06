@@ -9,6 +9,7 @@ body {
   margin-bottom: 10px;
   padding-top: 50px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -83,6 +84,23 @@ code {
 button a, button a:visited, button a:hover, button a:active {
 	text-decoration: none;
 	color: inherit;
+}
+
+#category_list {
+	font-size: 1.1rem;
+}
+
+#subcategory_list {
+	font-size: 1.1rem;
+}
+
+#market-menu {
+	font-size: 1.2rem;
+}
+
+.wide-button {
+	width: 100%;
+	margin-bottom: 5px;
 }
 
 @media (max-width: 599px) {

@@ -11,38 +11,88 @@
 	<hr>
 	
 	<div class="row">
-		<div class="col-xs-3 col-sm-2">
-			<a href="<?php echo base_url('/market') ?>"><b>all</b></a><br><br>
-			<?php foreach ($categories->result() as $category) { ?>
-			    <a href="<?php echo base_url('/market/category/' . $category->category_id); ?>"><b><?php echo $category->name; ?></b></a><br>
-		    	<?php foreach ($subcategories->result() as $subcategory) {
-		    		if ($subcategory->category_id == $category->category_id) { ?>
-					    <a href="<?php echo base_url('/market/subcategory/' . $subcategory->subcategory_id); ?>"><?php echo $subcategory->name; ?></a><br>
-					<?php } ?>
-		    	<?php } ?>
-		    	<br>
-			<?php } ?>
+			
+		<div class="col-xs-3 col-sm-2 hidden-xs">
+			<!-- Market Menu -->
+			<div id="market-menu" class="text-center">
+				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>"><b>all</b></a><br>
+				<?php foreach ($categories->result() as $cat) { ?>
+				    <a class="btn btn-default btn-sm wide-button" role="button" href="<?php echo base_url('/market/category/' . $cat->category_id); ?>"><b><?php echo $cat->name; ?></b></a><br>
+				    <select onchange="location = this.options[this.selectedIndex].value;" class="form-control" id="" >
+					    	<option>Subcategory</option>
+			    	<?php foreach ($subcategories->result() as $sub) { ?>
+				    	
+			    		<?php if ($sub->category_id == $cat->category_id) { ?>
+			    			
+			    			<option value="<?php echo base_url('/market/subcategory/' . $sub->subcategory_id); ?>">
+			    				<?php echo $sub->name; ?>
+			    			</option>
+						<?php } ?>
+				    	
+			    	<?php } ?>
+			    	</select>
+			    	<br>
+				<?php } ?>
+			</div>
+			
+			<!-- Filter Form -->
+			<div id="filter-form" class="">
+				<div class="form-group">
+					<label for="list" class="control-label">Categories</label>
+					<select multiple size="<?php echo $categories->num_rows(); ?>" class="form-control" id="category_list" >
+					<?php 
+						foreach($categories->result() as $cat):
+						echo "<option>" . $cat->name . "</option>";
+						endforeach; 
+					?>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="list" class="control-label">Subcategories</label>
+					<select multiple size="10" class="form-control" id="subcategory_list" >
+					<?php 
+						foreach($subcategories->result() as $sub):
+						echo "<option>" . $sub->name . "</option>";
+						endforeach; 
+					?>
+					</select>
+				</div>
+			</div>
+			
+			
+			<!-- Search Form -->
+			<div class="search-form">
+				<div class="form-group">
+					<label for="search" class="control-label">Search</label>
+					<input type="text" class="form-control" name="search" ></input>
+				</div>
+			</div>
 		</div>
 		
-		<div class="col-xs-9 col-sm-10">
+		<div class="col-xs-12 col-sm-10">
+			
 			<div class="row">
+				
+				<!-- Buttons on top of page -->
+				
 				<div class="row text-center">
 					<div class="btn-group hidden-xs">
-						<a class="btn btn-default" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
+						<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 						<?php if ($this->ion_auth->is_admin()) { ?>
-						<a class="btn btn-default" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
-						<a class="btn btn-default" href="<?php echo base_url('/ad/new_subcategory') ?>">Create a Subcategory</a>
+						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
+						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
 						<?php } ?>
 					</div>
-					<div class="visible-xs">
-						<a class="btn btn-default" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br><br>
+					<div class="visible-xs col-xs-12">
+						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
 						<?php if ($this->ion_auth->is_admin()) { ?>
-						<a class="btn btn-default" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a><br><br>
-						<a class="btn btn-default" href="<?php echo base_url('/ad/new_subcategory') ?>">Create a Subcategory</a><br>
+						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a><br>
+						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
 						<?php } ?>
 					</div>
 				</div>
-				
+
+								
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
 					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
@@ -59,6 +109,7 @@
 				<?php } ?>
 				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
 			</div>
+			
 		</div>
 	</div>
 </div>

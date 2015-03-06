@@ -29,7 +29,22 @@ class Market extends CI_Controller
 		{
 			$category_name = $this->input->post('category_name');
 			$category_description = $this->input->post('category_description');
-			$this->category_model->insert_new_category($category_name, $category_description);
+			
+			if($this->category_model->get_category_by_name($category_name))
+			{
+					$data['error'] = "Category already exists";
+			}
+			else
+			{
+				if($this->category_model->insert_new_category($category_name, $category_description))
+				{
+					$data['created'] = true;
+				}
+				else
+				{
+					$data['error'] = true;
+				}
+			}
 		}
 		
 		$data['categories'] = $this->category_model->get_all_categories();
@@ -39,12 +54,38 @@ class Market extends CI_Controller
 	function new_subcategory()
 	{
 		$data['title'] = 'New Subcategory';
+		
+		if (isset($_POST) && !empty($_POST))
+		{
+			$category_id = $this->input->post('category_id');
+			$subcategory_name = $this->input->post('subcategory_name');
+			$subcategory_description = $this->input->post('subcategory_description');
+			
+			if($this->subcategory_model->get_subcategory_by_name($subcategory_name))
+			{
+					$data['error'] = "Subcategory already exists";
+			}
+			else
+			{
+				if($this->subcategory_model->insert_new_subcategory($subcategory_name, $subcategory_description, $category_id))
+				{
+					$data['created'] = true;
+				}
+				else
+				{
+					$data['error'] = true;
+				}
+			}
+		}
+		
+		$data['categories'] = $this->category_model->get_all_categories();
 		$this->layout->view('forms/new_subcategory', $data);
 	}
 
 	//shows details of a specific ad
 	function category($category_id)
 	{
+		$data['category_id'] = $category_id;
 		$data['category'] = $this->category_model->get_category($category_id);
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
