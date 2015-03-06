@@ -5,13 +5,8 @@
  
  <script>
  
-	 $(document).ready(function() {
-        $("#dialog_open").button().click(function () {
-             $("#dialog_confirm").open();
-        });
-        });
  
-  $(function() {
+   $(function() {
     $( "#dialog-confirm" ).dialog({
       resizable: false,
       height:140,
@@ -26,6 +21,15 @@
       }
     });
   });
+ 
+ 
+	 $(document).ready(function() {
+        $("#dialog_open").button().click(function () {
+             $("#dialog_confirm").dialog('open');
+        });
+        });
+ 
+
   </script>
 
   <div id="dialog-confirm" style="display:none;" title="Empty the recycle bin?">
