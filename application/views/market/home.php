@@ -97,7 +97,6 @@
 						<?php } ?>
 					</div>
 				</div>
-				-->
 
 				<!-- Display Ads -->
 				<?php $count = 0; ?>
