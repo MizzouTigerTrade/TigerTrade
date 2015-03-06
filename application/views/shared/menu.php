@@ -27,14 +27,28 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<?php if (!$this->ion_auth->logged_in()) { ?>
-					<li><a href='<?= base_url("auth/create_user") ?>'>Register</a></li>
-					<li><a href='<?= base_url("auth/login") ?>'>Login</a></li>
+					<li class="<?php if (in_array($this->uri->segment(2), array('create_user'))) { ?>active<?php } ?>"><a href='<?= base_url("auth/create_user") ?>'>Register</a></li>
+					<li class="<?php if (in_array($this->uri->segment(2), array('login'))) { ?>active<?php } ?>"><a href='<?= base_url("auth/login") ?>'>Login</a></li>
 				<?php } else { ?>
 				
-					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'auth', 'offers'))) { ?>active<?php } ?>">
+				<?php if($this->ion_auth->is_admin()){?>
+				
+					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('auth', 'admin'))) { ?>active<?php } ?>">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags</a></li>
+							<li><a href="<?php echo base_url('/auth') ?>">Manage Users</a></li>
+							<li><a href="<?php echo base_url('/admin/new_category') ?>">Create Category</a></li>
+							<li><a href="<?php echo base_url('/admin/new_subcategory') ?>">Create Subcategory</a></li>
+						</ul>
+					</li>
+				
+				<?php } ?>
+				
+					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'offers'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo base_url('/auth/edit_user/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
+							<li><a href="<?php echo base_url('/user/edit_profile/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
 							<li><a href="<?php echo base_url('/offers') ?>">Offers</a></li>
 							<li><a href="<?php echo base_url('/user') ?>">User</a></li>
 						</ul>

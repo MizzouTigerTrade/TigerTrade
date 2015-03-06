@@ -42,6 +42,13 @@ class Subcategory_model extends CI_Model
 		$query = $query->row();
 		return $query;
 	}
+	
+	public function get_subcategory_by_name($name)
+	{
+		$query = $this->db->query("SELECT * FROM subcategories WHERE name = '$name'");
+		$query = $query->row();
+		return $query;
+	}
 
 }
 

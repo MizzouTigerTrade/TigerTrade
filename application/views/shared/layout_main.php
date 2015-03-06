@@ -8,6 +8,7 @@
     <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/custom.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/bootstrap-override.css') ?>" rel="stylesheet">
 
 </head>
 <body>
@@ -45,6 +46,8 @@
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/back_button.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/show_hidden_message.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/new_ad.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/clickable_row.js') ?>"></script>
+
 </body>
 </html>
