@@ -81,7 +81,7 @@
 				
 				<!-- Buttons on top of page -->
 				
-				<div class="col-xs-12 text-center">
+				<div class="row row-centered">
 					<div class="btn-group visible-sm">
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 						<?php if ($this->ion_auth->is_admin()) { ?>
