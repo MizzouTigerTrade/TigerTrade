@@ -29,9 +29,5 @@
 				</div>
 			<?php } ?>
 		</div><!-- /.col-lg-4 -->
-		
-		<div class="col-md-6">
-			
-		</div><!-- /.col-lg-4 -->
 	</div><!-- /.row -->
 </div>
