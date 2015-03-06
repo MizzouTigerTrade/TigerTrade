@@ -60,7 +60,7 @@ hr {
 
 .navbar-default .navbar-nav>.active>a {
 	color: #808285;
-	background-color: #F1C47D;
+	background-color: rgba(241, 196, 125, 0.66);
 }
 
 .navbar-default .navbar-nav>.active>a:hover {
