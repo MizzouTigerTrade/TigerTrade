@@ -21,9 +21,7 @@
  </script>
 
 
-<div id="delete-confirm" title="Delete Ad?">
-  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
-</div>
+
 
 <div class="container padding-top-20">
 	<div class="row">
@@ -43,7 +41,7 @@
 		</div>
 	  </div>
 	  <?php }; ?>
-      
+     
 	
 <table class="table table-hover table-condensed">
 	<thead>
@@ -66,6 +64,11 @@
 			<td><?php echo $flag->email ;?> </td>
 			<td><button class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default" onclick="deleteConfirm()">Delete</button></td>
+			
+			<div id="delete-confirm" title="Delete Ad?">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
+			</div>
+			
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
 	<?php endforeach; ?>
