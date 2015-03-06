@@ -20,8 +20,8 @@
 	
 <table class="table table-hover table-condensed">
 	<tr>
-		<th>Ad</th>
-		<th>Flag Count</th>
+		<th class="col-sm-2">Ad</th>
+		<th class="col-sm-2">Flag Count</th>
 		<th>Name</th>
 		<th>Email</th>
 		<th>Dismiss Flag</th>
