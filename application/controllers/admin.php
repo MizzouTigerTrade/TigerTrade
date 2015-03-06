@@ -26,6 +26,7 @@ class Admin extends CI_Controller {
 		$this->load->model('category_model');
 		$this->load->model('subcategory_model');
 		$data['menu'] = $this->load->view('shared/menu');
+		$this->lang->load('auth');
 	}
 
 	public function index()
@@ -41,7 +42,8 @@ class Admin extends CI_Controller {
 	
 	function manage_flags()
 	{
-		
+		$data['title'] = 'Flags';
+		$data['message'] = '';
 
 		$this->layout->view('admin/manage_flags', $data);
 	}
