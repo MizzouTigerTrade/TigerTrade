@@ -120,7 +120,7 @@ $(document).ready(function (){
 				<!-- SMALL Screen Menu -->
 				<div class="row visible-sm text-center">
 					<div class="col-sm-3">
-						<select class="form-control input-sm" id="category_list" >
+						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select One</option>
 							<?php
 								foreach($categories->result() as $category) {
