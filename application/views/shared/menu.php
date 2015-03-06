@@ -1,5 +1,5 @@
 <?php $user = $this->ion_auth->user()->row(); ?>
-<nav class="navbar navbar-default navbar-fixed-top box-shadow" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
 		<!-- HEADER/MOBILE NAVIGATION TOGGLE -->
 		<div class="navbar-header">
