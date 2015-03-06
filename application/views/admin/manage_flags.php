@@ -5,8 +5,10 @@
 
 <script>
 
-function deleteConfirm() {
-    $( "#delete-confirm" ).dialog({
+function deleteConfirm() 
+{
+    $("#delete-confirm").dialog(
+	{
       resizable: false,
       height:140,
       modal: true,
