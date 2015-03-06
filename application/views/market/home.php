@@ -81,13 +81,27 @@
 				
 				<!-- Buttons on top of page -->
 				
-				<div class="row row-centered">
-					<div class="btn-group visible-sm col-xs-6 col-centered">
+				<div class="row">
+					<div class="btn-group visible-sm">
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 						<?php if ($this->ion_auth->is_admin()) { ?>
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
 						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
 						<?php } ?>
+						<select multiple size="<?php echo $categories->num_rows(); ?>" class="form-control" id="category_list" >
+						<?php 
+							foreach($categories->result() as $cat):
+							echo "<option>" . $cat->name . "</option>";
+							endforeach; 
+						?>
+						</select>
+						<select multiple size="10" class="form-control" id="subcategory_list" >
+						<?php 
+							foreach($subcategories->result() as $sub):
+							echo "<option>" . $sub->name . "</option>";
+							endforeach; 
+						?>
+						</select>
 					</div>
 					<div class="visible-xs col-xs-12">
 						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
