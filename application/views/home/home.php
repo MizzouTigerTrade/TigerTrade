@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<?php foreach ($categories->result() as $category) { ?>
-				<div class="col-xs-12">
+				<div class="col-xs-4">
 					<a class="btn btn-primary btn-xs" style="width: 105px; margin-bottom: 5px;" href="<?php echo base_url('/market/category/' . $category->category_id) ?>"><?php echo $category->name ?></a>
 					<?php foreach ($subcategories->result() as $subcategory) { ?>
 						<?php if ($subcategory->category_id == $category->category_id) { ?>
