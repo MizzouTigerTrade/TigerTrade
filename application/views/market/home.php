@@ -69,7 +69,7 @@ $(document).ready(function (){
 				
 				<!-- Search Form -->
 				<div class="search-form">
-					<div class="form-group">
+					<div class="form-group" style="margin-bottom: 0;">
 						<label for="search" class="control-label">Search</label>
 						<input type="text" class="form-control input-sm" name="search" ></input>
 					</div>
