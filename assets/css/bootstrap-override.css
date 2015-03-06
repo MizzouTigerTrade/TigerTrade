@@ -63,6 +63,11 @@ hr {
 	background-color: #59595C;
 }
 
+.navbar-default .navbar-nav>.active>a:hover {
+	color: #59595C;
+	background-color: #808285;
+}
+
 .navbar-default .navbar-nav>li>a {
 	color: #BCBDC0;
 }
