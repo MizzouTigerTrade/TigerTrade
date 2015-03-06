@@ -30,7 +30,6 @@
 					<?php } ?>	
 				</select>
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
-			    	<option value="">Subcategory<option>
 					<?php
 						foreach($subcategories->result() as $sub) {
 							if ($category->category_id == $sub->category_id) { ?>
