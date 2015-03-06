@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.css') ?>">
-<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/jquery-ui/external/jquery/jquery.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
 
  <script type="text/javascript">
@@ -72,11 +72,6 @@
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
 			<td><button onclick="showDialog();" class="btn btn-default">Dismiss</button></td>
-			
-			<div id="dismissConfirm">
-			<p>Some txt goes here</p>
-			</div>
-			
 			<td><button class="btn btn-default">Delete</button></td>
 			
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
