@@ -3,28 +3,6 @@
 <script src="<?php echo base_url('assets/js/jquery-ui/external/jquery/jquery.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
 
-<script>
-
-function deleteConfirm() 
-{
-    $("#delete-confirm").dialog(
-	{
-      resizable: false,
-      height:140,
-      modal: true,
-      buttons: {
-        "Delete all items": function() {
-          $( this ).dialog( "close" );
-        },
-        Cancel: function() {
-          $( this ).dialog( "close" );
-        }
-      }
-    });
-  }
-
- </script>
-
  <div id="delete-confirm" title="Delete Ad?">
 			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete this user?</p>
 </div>
@@ -77,6 +55,24 @@ function deleteConfirm()
 	</tbody>
 </table>
 
-
+<script>
+function deleteConfirm() 
+{
+    $("#delete-confirm").dialog(
+	{
+      resizable: false,
+      height:140,
+      modal: true,
+      buttons: {
+        "Delete all items": function() {
+          $( this ).dialog( "close" );
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  }
+ </script>
 
 </div>
