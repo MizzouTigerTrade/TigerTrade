@@ -59,8 +59,8 @@ hr {
 }
 
 .navbar-default .navbar-nav>.active>a {
-	color: #208A6E;
-	background-color: rgba(240, 184, 72, 0.68);
+	color: rgb(51, 51, 51);
+	background-color: #208A6E;
 }
 
 .navbar-default .navbar-nav>.active>a:hover {
