@@ -40,7 +40,7 @@
 			<td><button>Delete Ad</button></td>
 			<td>Active</td>
 		</tr>
-	<?php foreach ($flags as $flag):?>
+	<?php foreach ($flags->result() as $flag):?>
 		<tr>
             <td><?php echo htmlspecialchars($flag->ad_id,ENT_QUOTES,'UTF-8');?></td>
             <td><?php echo htmlspecialchars($flag->flag_count,ENT_QUOTES,'UTF-8');?></td>
