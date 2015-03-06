@@ -71,6 +71,8 @@ hr {
 
 .navbar-default .navbar-nav>li>a {
 	color: #BCBDC0;
+	font-weight: 300;
+	letter-spacing: 1px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
