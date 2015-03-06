@@ -21,13 +21,13 @@
 <table class="table table-hover table-condensed">
 	<thead>
 	<tr>
-		<th>Ad</th>
-		<th>Flag Count</th>
-		<th>Name</th>
-		<th>Email</th>
-		<th>Dismiss Flag</th>
-		<th>Delete Ad</th>
-		<th>Status</th>
+		<th class="col-md-1">Ad</th>
+		<th class="col-md-1">Flag Count</th>
+		<th class="col-md-2">Name</th>
+		<th class="col-md-2">Email</th>
+		<th class="col-md-2">Dismiss Flag</th>
+		<th class="col-md-2">Delete Ad</th>
+		<th class="col-md-2">Status</th>
 	</tr>
 	</thead>
 	<?php /* foreach ($users as $user):?>
