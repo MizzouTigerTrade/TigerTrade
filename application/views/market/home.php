@@ -16,7 +16,7 @@
 
 			<!-- Market Menu -->
 			<div id="market-menu" class="text-center">
-				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
+				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a><br>
 				<?php if ($this->ion_auth->is_admin()) { ?>
 					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">New Category</a><br>
 					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
@@ -84,10 +84,10 @@
 				<div class="row visible-sm">
 					<div class="col-sm-6">
 						<div class="btn-group">
-							<a class="btn btn-default btn-xs" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
+							<a class="btn btn-default btn-xs" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
-							<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
-							<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
+							<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_category') ?>">New Category</a>
+							<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
 							<?php } ?>
 						</div>
 					</div>
