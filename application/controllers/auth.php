@@ -43,7 +43,7 @@ class Auth extends CI_Controller {
 			}
 
 			$this->layout->view('auth/index', $this->data);
-		/*}*/
+		}
 	}
 
 	//log the user in
