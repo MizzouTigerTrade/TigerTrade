@@ -92,7 +92,7 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control input-sm" id="category_list" >
+						<select class="form-control input-xs" id="category_list" >
 						<?php 
 							foreach($categories->result() as $cat):
 							echo "<option>" . $cat->name . "</option>";
@@ -101,7 +101,7 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control" id="subcategory_list" >
+						<select class="form-control input-xs" id="subcategory_list" >
 						<?php 
 							foreach($subcategories->result() as $sub):
 							echo "<option>" . $sub->name . "</option>";
