@@ -50,6 +50,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/user/edit_profile/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
 							<li><a href="<?php echo base_url('/offers') ?>">Offers</a></li>
+							<li><a href="<?php echo base_url('/ad/user_ads') ?>">My Ads</a></li>
 							<li><a href="<?php echo base_url('/user') ?>">User</a></li>
 						</ul>
 					</li>
