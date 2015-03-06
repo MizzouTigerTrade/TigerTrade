@@ -49,7 +49,7 @@ $(document).ready(function (){
 		<div class="col-xs-3 col-sm-2 hidden-sm hidden-xs">
 
 			<!-- MEDIUM+ Screen Menu -->
-			<div id="market-menu" class="text-center">
+			<div id="market-menu" class="text-center box-shadow">
 				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a><br>
 				<?php if ($this->ion_auth->is_admin()) { ?>
 					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">New Category</a><br>
