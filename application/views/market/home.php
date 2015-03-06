@@ -63,9 +63,11 @@ $(document).ready(function (){
 							echo '<option value="/market/category/'.$cat->category_id.'">'.$cat->name.'</option>';		
 					} ?>	
 				</select>
+				<!-- Save for categories/subcategories pages
 				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 			    	<option value="">Subcategory<option>	
 				</select>
+				-->
 				
 				<!-- Search Form -->
 				<div class="search-form">
