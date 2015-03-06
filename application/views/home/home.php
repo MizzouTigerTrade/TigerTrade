@@ -21,7 +21,7 @@
 				<div class="col-xs-4">
 					<a class="btn btn-default btn-lg wide-button" href="<?php echo base_url('/market/category/' . $category->category_id) ?>"><?php echo $category->name ?></a>
 					<?php foreach ($subcategories->result() as $subcategory) { ?>
-						<?php if ($subcategory->category_id as $category_id->category_id) { ?>
+						<?php if ($subcategory->category_id == $category_id->category_id) { ?>
 							<a class="btn btn-default btn-xs wide-button" href="<?php echo base_url('/market/category/' . $subcategory->subcategory_id) ?>"><?php echo $subcategory->name ?></a>
 						<?php } ?>
 					<?php } ?>
