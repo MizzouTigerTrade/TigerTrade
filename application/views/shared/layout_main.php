@@ -9,9 +9,6 @@
     <link href="<?php echo base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/custom.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/bootstrap-override.css') ?>" rel="stylesheet">
-	
-	<link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.css') ?>">
-	<script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>"></script>
 
 </head>
 <body>
