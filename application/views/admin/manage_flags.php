@@ -5,7 +5,7 @@
 
 <script>
 
-$( document ).ready(){
+$( document ).ready(function(){
 
   function deleteConfirm() 
   {
