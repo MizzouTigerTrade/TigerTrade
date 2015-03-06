@@ -27,6 +27,7 @@ class Admin extends CI_Controller {
 		$this->load->model('subcategory_model');
 		$this->load->model('ad_model');
 		$data['menu'] = $this->load->view('shared/menu');
+		$this->lang->load('auth');
 	}
 
 	public function index()
