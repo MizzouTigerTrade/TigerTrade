@@ -82,7 +82,7 @@
 				<!-- Buttons on top of page -->
 				
 				<div class="row visible-sm">
-					<div class="col-sm-6">
+					<div class="col-sm-5">
 						<div class="btn-group">
 							<a class="btn btn-default btn-xs" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
@@ -101,13 +101,22 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control input-xs" id="subcategory_list" >
-						<?php 
-							foreach($subcategories->result() as $sub):
-							echo "<option>" . $sub->name . "</option>";
-							endforeach; 
-						?>
+						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-xs" id="subcategory_list" >
+					    	<option>Subcategory</option>
+					    	<?php foreach ($subcategories->result() as $sub) { ?>
+						    	
+					    		<?php if ($sub->category_id == $cat->category_id) { ?>
+					    			
+					    			<option value="<?php echo base_url('/market/subcategory/' . $sub->subcategory_id); ?>">
+					    				<?php echo $sub->name; ?>
+					    			</option>
+								<?php } ?>
+						    	
+					    	<?php } ?>
 						</select>
+					</div>
+					<div class="col-sm-1">
+						<a class="btn btn-default btn-xs" href="<?php echo base_url('/market/new_subcategory') ?>">Search</a>
 					</div>
 				</div>
 				<div class="row visible-xs">
