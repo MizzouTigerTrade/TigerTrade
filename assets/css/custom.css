@@ -58,7 +58,7 @@ button a, button a:visited, button a:hover, button a:active {
 	padding: 10px;
 	border-radius: 10px;
 	margin-top: 25px;
-	position: absolute;
+	position: fixed;
 }
 
 #market_background {
