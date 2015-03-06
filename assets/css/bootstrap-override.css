@@ -60,6 +60,7 @@ hr {
 .navbar-default .navbar-nav>.active>a {
 	color: rgb(51, 51, 51);
 	background-color: #4CBD95;
+	font-style: bold;
 }
 
 .navbar-default .navbar-nav>.active>a:hover {
