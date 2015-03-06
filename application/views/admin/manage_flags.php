@@ -22,12 +22,12 @@
 	<thead>
 	<tr>
 		<th>Ad</th>
-		<th>Count</th>
+		<th>Flag Count</th>
 		<th>Name</th>
 		<th>Email</th>
 		<th>Dismiss</th>
 		<th>Delete Ad</th>
-		<th>Status</th>
+		<th>User Status</th>
 	</tr>
 	</thead>
 	<?php /* foreach ($users as $user):?>
