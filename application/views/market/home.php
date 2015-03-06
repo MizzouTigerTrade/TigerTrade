@@ -81,13 +81,17 @@
 				
 				<!-- Buttons on top of page -->
 				
-				<div class="row">
-					<div class="btn-group visible-sm">
-						<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
-						<?php if ($this->ion_auth->is_admin()) { ?>
-						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
-						<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
-						<?php } ?>
+				<div class="row visible-sm">
+					<div class="col-sm-6">
+						<div class="btn-group">
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
+							<?php if ($this->ion_auth->is_admin()) { ?>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">Create a Subcategory</a>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="col-sm-3">
 						<select class="form-control" id="category_list" >
 						<?php 
 							foreach($categories->result() as $cat):
@@ -95,6 +99,8 @@
 							endforeach; 
 						?>
 						</select>
+					</div>
+					<div class="col-sm-3">
 						<select class="form-control" id="subcategory_list" >
 						<?php 
 							foreach($subcategories->result() as $sub):
@@ -103,7 +109,9 @@
 						?>
 						</select>
 					</div>
-					<div class="visible-xs col-xs-12">
+				</div>
+				<div class="row visible-xs">
+					<div class="col-xs-12">
 						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
 						<?php if ($this->ion_auth->is_admin()) { ?>
 						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a><br>
