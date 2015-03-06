@@ -60,7 +60,7 @@
  <script type="text/javascript">
                function showDialog()
 			   {
-					$( "#dialog-confirm" ).dialog({
+					$("#dialog-confirm").dialog({
 						resizable: false,
 						height:140,
 						modal: true,
