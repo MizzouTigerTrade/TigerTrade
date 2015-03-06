@@ -23,11 +23,15 @@ class Home extends CI_Controller {
 		parent::__construct();
 
 		$this->load->helper('url');
+		$this->load->model('category_model');
+		$this->load->model('subcategory_model');
 		$data['menu'] = $this->load->view('shared/menu');
 	}
 
 	public function index()
 	{
+		$data['categories'] = $this->category_model->get_all_categories();
+		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
 		$data['title'] = 'Home';
 		$this->layout->view('home/home', $data);
 	}
