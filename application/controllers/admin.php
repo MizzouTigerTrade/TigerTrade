@@ -38,15 +38,14 @@ class Admin extends CI_Controller {
 		//$this->layout->view('welcome_message', $data);
 	}
 	
-	/*
+	
 	function manage_flags()
 	{
 		
-	
 
-	
+		$this->layout->view('admin/manage_flags', $data);
 	}
-	*/
+
 	
 	function new_category()
 	{
