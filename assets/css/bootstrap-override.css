@@ -53,8 +53,8 @@ hr {
 	border-top: 0px;
 }
 
-.navbar-default .navbar-brand {
-
+.navbar-default .navbar-brand:hover {
+	background-color: rgba(51, 51, 51, 0.76);
 }
 
 .navbar-default .navbar-nav>.active>a {
