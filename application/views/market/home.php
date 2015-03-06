@@ -57,14 +57,14 @@ $(document).ready(function (){
 				<?php } ?>
 				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>" style="margin: 13px 0 18px 0;"><b>all</b></a><br>
 				<select class="form-control input-sm" id="categorySelectForm" name="category"> 
-					<option value="">Select One</option>
+					<option value="">Category</option>
 					<?php
 						foreach($categories->result() as $category) {
 							echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';		
 					} ?>	
 				</select>
 				<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
-			    	<option value=""><option>	
+			    	<option value="">Subcategory<option>	
 				</select>
 			</div>
 			
