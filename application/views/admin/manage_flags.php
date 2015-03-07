@@ -4,11 +4,13 @@
 
 <script>
 
-$(function($) {
+$(function($) 
+{
     // Dialog
     $('#dialog').dialog({
             autoOpen: false,
             width: 600,
+			modal: true;
             buttons: {
                     "Ok": function() {
                             $(this).dialog("close");
