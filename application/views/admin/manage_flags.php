@@ -1,3 +1,5 @@
+
+<?php /*
 <link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.css') ?>">
 <script src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.js') ?>"></script>
@@ -29,6 +31,8 @@ $(function($)
 }); 
 
 </script>
+*/ ?>
+
 
 <div class="container padding-top-20">
 	<div class="row">
@@ -73,7 +77,18 @@ $(function($)
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button id="dialog_link" class="btn btn-default">Dismiss</button></td>
+			<td>
+				<!--<button id="dialog_link" class="btn btn-default">Dismiss</button>-->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+				</div>
+				</div>
+				</div>
+			
+			</td>
 			<td><button class="btn btn-default">Delete</button></td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
