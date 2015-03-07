@@ -91,7 +91,7 @@ $(function($)
 								<h4 class="modal-title" id="myModalLabel">Dismiss Flag?</h4>
 							</div>
 							<div class="modal-body">
-								Are you sure you want to dismiss this flag?
+								Are you sure you want to dismiss the flags on Ad <?php echo $flag->ad_id; ?>?
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-primary">Yes</button>
@@ -113,7 +113,7 @@ $(function($)
 								<h4 class="modal-title" id="myModalLabel">Delete Ad?</h4>
 							</div>
 							<div class="modal-body">
-								Are you sure you want to delete this Ad? <?php echo $flag->ad_id; ?>
+								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-primary">Yes</button>
