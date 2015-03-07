@@ -3,23 +3,29 @@
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.js') ?>"></script>
 
 <script>
-function dismissButtonClick($)
-{	
-    $( "#dialog-confirm" ).dialog({
-      resizable: false,
-      height:140,
-      modal: true,
-      buttons: {
-        "Delete all items": function() {
-          $( this ).dialog( "close" );
-        },
-        Cancel: function() {
-          $( this ).dialog( "close" );
-        }
-      }
+
+$(function() {
+    // Dialog
+    $('#dialog').dialog({
+            autoOpen: false,
+            width: 600,
+            buttons: {
+                    "Ok": function() {
+                            $(this).dialog("close");
+                    },
+                    "Cancel": function() {
+                            $(this).dialog("close");
+                    }
+            }
     });
 
-};
+    // Dialog Link
+    $('#dialog_link').click(function(){
+            $('#dialog').dialog('open');
+            return false;
+    });
+}); 
+
 </script>
 
 <div class="container padding-top-20">
@@ -41,7 +47,7 @@ function dismissButtonClick($)
 	  </div>
 	  <?php }; ?>
 	  
-	<div id="dialog-confirm" title="Empty the recycle bin?">
+	<div id="dialog" title="Empty the recycle bin?">
 	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to dismiss this flag?</p>
 	</div>
 
@@ -65,7 +71,7 @@ function dismissButtonClick($)
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button onclick="dismissButtonClick();" class="btn btn-default">Dismiss</button></td>
+			<td><button id="dialog_link" class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default">Delete</button></td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
