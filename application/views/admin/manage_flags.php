@@ -4,7 +4,7 @@
 
 <script>
 
-function fnOpenNormalDialog() {
+function fnOpenNormalDialog($) {
     $("#dialog-confirm").html("Confirm Dialog Box");
 
     // Define the Dialog and its properties.
