@@ -4,11 +4,11 @@
 
 <script>
 
-	 $(function() {
+	 $(function($) {
     $( "#dialog" ).dialog();
 	});
 
-	$(function() {
+	$(function($) {
     $( "#datepicker" ).datepicker();
   });
 	
