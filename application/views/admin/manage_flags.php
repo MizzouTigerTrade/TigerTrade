@@ -4,7 +4,7 @@
 
 <script>
 
-	$(function dismissConfirm($) {
+	function dismissConfirm($) {
     $( "#dismiss-confirm" ).dialog({
       resizable: false,
       height:140,
@@ -18,7 +18,7 @@
         }
       }
     });
-  });
+  }
 
 	
 </script>
