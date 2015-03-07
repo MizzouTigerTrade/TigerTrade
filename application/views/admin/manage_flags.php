@@ -4,22 +4,37 @@
 
 <script>
 
-	function dismissConfirm($) {
-    $( "#dismiss-confirm" ).dialog({
-      resizable: false,
-      height:140,
-      modal: true,
-      buttons: {
-        "Delete all items": function() {
-          $( this ).dialog( "close" );
-        },
-        Cancel: function() {
-          $( this ).dialog( "close" );
-        }
-      }
-    });
-  }
+function fnOpenNormalDialog() {
+    $("#dialog-confirm").html("Confirm Dialog Box");
 
+    // Define the Dialog and its properties.
+    $("#dialog-confirm").dialog({
+        resizable: false,
+        modal: true,
+        title: "Modal",
+        height: 250,
+        width: 400,
+        buttons: {
+            "Yes": function () {
+                $(this).dialog('close');
+                callback(true);
+            },
+                "No": function () {
+                $(this).dialog('close');
+                callback(false);
+            }
+        }
+    });
+
+	$('#dismissButton').click(fnOpenNormalDialog);
+	
+	function callback(value) {
+    if (value) {
+        alert("Confirmed");
+    } else {
+        alert("Rejected");
+    }
+}
 	
 </script>
 
@@ -42,7 +57,7 @@
 	  </div>
 	  <?php }; ?>
 	  
-	<div id="dismiss-confirm" title="Empty the recycle bin?">
+	<div id="dialog-confirm" title="Empty the recycle bin?">
 	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to dismiss this flag?</p>
 	</div>
 
@@ -66,7 +81,7 @@
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button onclick="dismissConfirm($);" class="btn btn-default">Dismiss</button></td>
+			<td><button id="dismissButton" class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default">Delete</button></td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
