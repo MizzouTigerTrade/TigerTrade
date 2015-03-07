@@ -66,7 +66,7 @@
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button onclick="dismissConfirm();" class="btn btn-default">Dismiss</button></td>
+			<td><button onclick="dismissConfirm($);" class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default">Delete</button></td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
