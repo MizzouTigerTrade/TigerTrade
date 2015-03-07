@@ -49,8 +49,8 @@ $(function($)
 	  </div>
 	  <?php }; ?>
 	  
-	<div id="dialog" >
-	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to dismiss this flag?</p>
+	<div id="dialog" title="Dismiss Flag">
+	<p>Are you sure you want to dismiss this flag?</p>
 	</div>
 
  
