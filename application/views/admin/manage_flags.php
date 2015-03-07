@@ -3,7 +3,7 @@
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.js') ?>"></script>
 
 <script>
-function dismissButtonClick()
+function dismissButtonClick($)
 {	
 $(function($) {
     $( "#dialog-confirm" ).dialog({
