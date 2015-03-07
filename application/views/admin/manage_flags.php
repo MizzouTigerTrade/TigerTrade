@@ -1,15 +1,11 @@
+<script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.js') ?>"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+
 <script>
 
-	function dismissConfirm(){
-		
-		window.confirm("Are you sure you are ok?")
-		
-		
-		
-	};
-
-
-
+	 $(function() {
+    $( "#dialog" ).dialog();
+	});
 
 </script>
 
@@ -31,6 +27,11 @@
 		</div>
 	  </div>
 	  <?php }; ?>
+	  
+	  <div id="dialog" title="Basic dialog">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+ 
      
 	
 <table class="table table-hover table-condensed">
