@@ -88,7 +88,7 @@ $(function($)
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Dismiss Flag?</h4>
+								<h4 class="modal-title" id="myModalLabel">Dismiss Flag</h4>
 							</div>
 							<div class="modal-body">
 								Are you sure you want to dismiss the flags on Ad <?php echo $flag->ad_id; ?>?
@@ -110,7 +110,7 @@ $(function($)
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Delete Ad?</h4>
+								<h4 class="modal-title" id="myModalLabel">Delete Ad</h4>
 							</div>
 							<div class="modal-body">
 								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?
