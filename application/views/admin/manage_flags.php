@@ -5,7 +5,6 @@
 <script>
 function dismissButtonClick($)
 {	
-$(function($) {
     $( "#dialog-confirm" ).dialog({
       resizable: false,
       height:140,
@@ -19,7 +18,7 @@ $(function($) {
         }
       }
     });
-  });
+
 };
 </script>
 
