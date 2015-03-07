@@ -131,6 +131,15 @@ class Ad extends CI_Controller
 			$this->layout->view('forms/new_ad', $data);
 		
 	}
+	
+	function flag_ad($ad_id)
+	{
+		$this->ad_model->flag_ad($ad_id);
+		
+		$this->session->set_flashdata('message', "Thank you for flagging this Ad. The content of this Ad will be reviewed.");
+		redirect('/', 'refresh');
+		
+	}
 
 	//delete a specific ad
 	function delete($ad_id)
