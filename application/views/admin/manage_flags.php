@@ -81,20 +81,20 @@ $(function($)
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
 			<td>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Dismiss</button>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".dismissModal">Dismiss</button>
 
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal fade dismissModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Confirm</h4>
+								<h4 class="modal-title" id="myModalLabel">Dismiss Flag?</h4>
 							</div>
 							<div class="modal-body">
 								Are you sure you want to dismiss this flag?
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-danger">Yes</button>
+								<button type="button" class="btn btn-primary">Yes</button>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
@@ -102,7 +102,28 @@ $(function($)
 				</div>
 			
 			</td>
-			<td><button class="btn btn-default">Delete</button></td>
+			<td>
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target=".deleteModal">Delete</button>
+
+				<div class="modal fade deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">Delete Ad?</h4>
+							</div>
+							<div class="modal-body">
+								Are you sure you want to delete this Ad?
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary">Yes</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
 	<?php endforeach; ?>
