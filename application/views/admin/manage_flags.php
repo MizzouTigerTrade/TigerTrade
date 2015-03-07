@@ -33,10 +33,6 @@ $(function($)
 </script>
 */ ?>
 
-<script src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
-<script src="<?php echo base_url('assets/js/bootstrap.js') ?>"></script>
-
-
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
