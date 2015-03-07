@@ -8,8 +8,12 @@
     $( "#dialog" ).dialog();
 	});
 
+	$(function() {
+    $( "#datepicker" ).datepicker();
+  });
+	
 </script>
-
+<p>Date: <input type="text" id="datepicker"></p>
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
