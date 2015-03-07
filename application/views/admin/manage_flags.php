@@ -43,6 +43,7 @@ $(function($)
 			<h1>Flag Management</h1>
 		</div>
 	</div>
+	<hr>
 	
       <?php if ($message != "") { ?>
       <div id="infoMessage">
