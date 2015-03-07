@@ -4,7 +4,7 @@
 
 <script>
 
-$(function() {
+$(function($) {
     // Dialog
     $('#dialog').dialog({
             autoOpen: false,
