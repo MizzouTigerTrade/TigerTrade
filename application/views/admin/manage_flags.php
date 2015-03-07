@@ -81,9 +81,9 @@ $(function($)
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
 			<td>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dismissModal">Dismiss</button>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dismissModal<?php echo $flag->ad_id; ?>">Dismiss</button>
 
-				<div class="modal fade" id="dismissModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal fade" id="dismissModal<?php echo $flag->ad_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
