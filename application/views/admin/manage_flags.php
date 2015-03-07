@@ -81,9 +81,9 @@ $(function($)
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
 			<td>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".dismissModal">Dismiss</button>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dismissModal">Dismiss</button>
 
-				<div class="modal fade dismissModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal fade" id="dismissModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -103,9 +103,9 @@ $(function($)
 			
 			</td>
 			<td>
-				<button type="button" class="btn btn-danger" data-toggle="modal" data-target=".deleteModal">Delete</button>
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
 
-				<div class="modal fade deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -113,7 +113,7 @@ $(function($)
 								<h4 class="modal-title" id="myModalLabel">Delete Ad?</h4>
 							</div>
 							<div class="modal-body">
-								Are you sure you want to delete this Ad?
+								Are you sure you want to delete this Ad? <?php echo $flag->ad_id; ?>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-primary">Yes</button>
