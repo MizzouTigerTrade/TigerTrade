@@ -3,7 +3,8 @@
 <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.js') ?>"></script>
 
 <script>
-
+function dismissButtonClick()
+{	
 $(function($) {
     $( "#dialog-confirm" ).dialog({
       resizable: false,
@@ -19,7 +20,7 @@ $(function($) {
       }
     });
   });
-
+};
 </script>
 
 <div class="container padding-top-20">
@@ -65,7 +66,7 @@ $(function($) {
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
-			<td><button id="dismissButton" class="btn btn-default">Dismiss</button></td>
+			<td><button onclick="dismissButtonClick();" class="btn btn-default">Dismiss</button></td>
 			<td><button class="btn btn-default">Delete</button></td>
 			<td><?php echo ($flag->active) ? anchor("auth/deactivate/".$flag->id, lang('index_active_link')) : anchor("auth/activate/". $flag->id, lang('index_inactive_link'));?></td>
 		</tr>
