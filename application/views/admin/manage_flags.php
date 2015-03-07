@@ -94,8 +94,8 @@ $(function($)
 								Are you sure you want to dismiss this flag?
 							</div>
 							<div class="modal-footer">
+								<button type="button" class="btn btn-danger">Yes</button>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-								<button type="button" class="btn btn-primary">Yes</button>
 							</div>
 						</div>
 					</div>
