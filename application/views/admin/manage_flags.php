@@ -10,7 +10,7 @@ $(function($)
     $('#dialog').dialog({
             autoOpen: false,
             width: 600,
-			modal: true;
+			modal: true,
             buttons: {
                     "Ok": function() {
                             $(this).dialog("close");
