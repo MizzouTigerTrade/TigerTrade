@@ -4,9 +4,21 @@
 
 <script>
 
-	 $(function($) {
-    $( "#dialog" ).dialog();
-	});
+	$(function dismissConfirm() {
+    $( "#dismiss-confirm" ).dialog({
+      resizable: false,
+      height:140,
+      modal: true,
+      buttons: {
+        "Delete all items": function() {
+          $( this ).dialog( "close" );
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  });
 
 	
 </script>
@@ -30,9 +42,10 @@
 	  </div>
 	  <?php }; ?>
 	  
-	<div id="dialog" title="Basic dialog">
-	<p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+	<div id="dismiss-confirm" title="Empty the recycle bin?">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to dismiss this flag?</p>
 	</div>
+
  
 <table class="table table-hover table-condensed">
 	<thead>
