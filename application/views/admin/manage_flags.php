@@ -33,6 +33,9 @@ $(function($)
 </script>
 */ ?>
 
+<link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 
 <div class="container padding-top-20">
 	<div class="row">
@@ -54,9 +57,12 @@ $(function($)
 	  </div>
 	  <?php }; ?>
 	  
+	  
+	 <?php /* 
 	<div id="dialog" title="Dismiss Flag">
 	<p>Are you sure you want to dismiss this flag?</p>
 	</div>
+	*/ ?>
 
  
 <table class="table table-hover table-condensed">
