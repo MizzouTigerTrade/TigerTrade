@@ -8,12 +8,9 @@
     $( "#dialog" ).dialog();
 	});
 
-	$(function($) {
-    $( "#datepicker" ).datepicker();
-  });
 	
 </script>
-<p>Date: <input type="text" id="datepicker"></p>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -33,12 +30,10 @@
 	  </div>
 	  <?php }; ?>
 	  
-	  <div id="dialog" title="Basic dialog">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
+	<div id="dialog" title="Basic dialog">
+	<p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+	</div>
  
-     
-	
 <table class="table table-hover table-condensed">
 	<thead>
 	<tr>
