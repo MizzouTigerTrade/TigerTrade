@@ -52,7 +52,7 @@
 								Are you sure you want to dismiss the flags on Ad <?php echo $flag->ad_id; ?>?
 							</div>
 							<div class="modal-footer">
-								<a class="btn btn-primary" href="<?php echo base_url('ad/dismiss_flag') . $flag->ad_id ?>">Yes</a>
+								<a class="btn btn-primary" href="<?php echo base_url('ad/dismiss_flag/') . $flag->ad_id ?>">Yes</a>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
@@ -74,7 +74,7 @@
 								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-primary">Yes</button>
+								<a class="btn btn-primary" href="<?php echo base_url('ad/delete_ad/') . $flag->ad_id ?>">Yes</a>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
