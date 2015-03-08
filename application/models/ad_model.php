@@ -103,6 +103,21 @@ class Ad_model extends CI_Model
 		}
 		
 	}
+	
+	public function dismiss_flag($ad_id)
+	{
+		$this->db->set('flag_count', 0);
+		$this->db->where('ad_id', $ad_id);
+		
+		if( $this->db->update('ads') != TRUE)
+		{
+			throw new Exception("Cannot Update Flag Count");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
 
 }
 

@@ -112,4 +112,15 @@ class Admin extends CI_Controller {
 		$data['categories'] = $this->category_model->get_all_categories();
 		$this->layout->view('forms/new_subcategory', $data);
 	}
+	
+	function dismiss_flag($ad_id)
+	{
+		$data['title'] = 'Flags';
+		
+		$this->ad_model->dismiss_flag($ad_id);
+		
+		$data['message'] = 'Removed flag from ad' . $ad_id;
+
+		$this->layout->view('admin/manage_flags', $data);
+	}
 }
