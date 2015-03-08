@@ -138,7 +138,7 @@ class Ad extends CI_Controller
 		$this->ad_model->flag_ad($ad_id);
 		
 		$data['message'] = "Thank you for flagging this Ad. The content of this Ad will be reviewed.";
-		$this->layout->view('ad/ad_detail' . $ad_id, $data);
+		$this->layout->view('ad/ad_detail/' . $ad_id, $data);
 		
 	}
 
