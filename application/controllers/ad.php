@@ -178,15 +178,7 @@ class Ad extends CI_Controller
 	{
 		$this->ad_model->delete_ad($ad_id);
 
-		if( $this->ion_auth->is_admin() )
-		{
-			$this->session->set_flashdata('message', "Removed Ad");
-			redirect ('admin/manage_flags');
-		}
-		else
-		{
-			redirect ('ad/user_ads');
-		}
+		redirect ('ad/user_ads');
 		
 		
 	}
