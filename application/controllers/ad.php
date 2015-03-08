@@ -136,7 +136,7 @@ class Ad extends CI_Controller
 	{
 		$this->ad_model->flag_ad($ad_id);
 		
-		$this->session->set_flashdata('message', "Thank you for flagging this Ad. The content of this Ad will be reviewed.");
+		$data['message'] = "Thank you for flagging this Ad. The content of this Ad will be reviewed.";
 		redirect('ad/details/' . $ad_id , 'refresh');
 		
 	}

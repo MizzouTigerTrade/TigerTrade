@@ -1,38 +1,4 @@
 
-<?php /*
-<link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui/jquery-ui.css') ?>">
-<script src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
-<script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.js') ?>"></script>
-
-<script>
-
-$(function($) 
-{
-    // Dialog
-    $('#dialog').dialog({
-            autoOpen: false,
-            width: 600,
-			modal: true,
-            buttons: {
-                    "Ok": function() {
-                            $(this).dialog("close");
-                    },
-                    "Cancel": function() {
-                            $(this).dialog("close");
-                    }
-            }
-    });
-
-    // Dialog Link
-    $('#dialog_link').click(function(){
-            $('#dialog').dialog('open');
-            return false;
-    });
-}); 
-
-</script>
-*/ ?>
-
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -52,15 +18,7 @@ $(function($)
 		</div>
 	  </div>
 	  <?php }; ?>
-	  
-	  
-	 <?php /* 
-	<div id="dialog" title="Dismiss Flag">
-	<p>Are you sure you want to dismiss this flag?</p>
-	</div>
-	*/ ?>
 
- 
 <table class="table table-hover table-condensed">
 	<thead>
 	<tr>
