@@ -74,7 +74,7 @@
 								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?
 							</div>
 							<div class="modal-footer">
-								<a class="btn btn-primary" href="<?php echo base_url('ad/delete') . '/' . $flag->ad_id ;?>">Yes</a>
+								<a class="btn btn-primary" href="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">Yes</a>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>

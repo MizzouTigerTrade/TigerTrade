@@ -181,7 +181,6 @@ class Ad_model extends CI_Model
 	{
 		$this->db->where('ad_id', $ad_id);
 		$this->db->delete('ads'); 
-
 	}
 
 }
