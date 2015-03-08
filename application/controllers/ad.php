@@ -25,6 +25,7 @@ class Ad extends CI_Controller
 	{
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['title'] = 'Ad Detail';
+		$data['message'] = "";
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
@@ -147,6 +148,17 @@ class Ad extends CI_Controller
 		}
 			$data['title'] = 'New Ad';
 			$this->layout->view('forms/new_ad', $data);
+		
+	}
+	
+	function flag_ad($ad_id)
+	{
+		$this->ad_model->flag_ad($ad_id);
+	
+		$data['ad'] = $this->ad_model->get_ad($ad_id);
+		$data['title'] = 'Ad Detail';
+		$data['message'] = "Thank you for flagging this Ad. The content of this Ad will be reviewed.";
+		$this->layout->view('ad/ad_detail', $data);
 		
 	}
 

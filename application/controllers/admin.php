@@ -25,7 +25,9 @@ class Admin extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('category_model');
 		$this->load->model('subcategory_model');
+		$this->load->model('ad_model');
 		$data['menu'] = $this->load->view('shared/menu');
+		$this->lang->load('auth');
 	}
 
 	public function index()
@@ -38,15 +40,18 @@ class Admin extends CI_Controller {
 		//$this->layout->view('welcome_message', $data);
 	}
 	
-	/*
+	
 	function manage_flags()
 	{
+		$data['title'] = 'Flags';
 		
-	
+		$data['message'] = $this->session->flashdata('message');
+		
+		$data['flags'] = $this->ad_model->get_flagged_ads();
 
-	
+		$this->layout->view('admin/manage_flags', $data);
 	}
-	*/
+
 	
 	function new_category()
 	{
@@ -107,5 +112,22 @@ class Admin extends CI_Controller {
 		
 		$data['categories'] = $this->category_model->get_all_categories();
 		$this->layout->view('forms/new_subcategory', $data);
+	}
+	
+	function dismiss_flag($ad_id)
+	{
+		
+		$this->ad_model->dismiss_flag($ad_id);
+		
+		/*
+		$data['title'] = 'Flags';
+		$data['message'] = 'Removed flag from Ad ' . $ad_id;
+		$data['flags'] = $this->ad_model->get_flagged_ads();
+		*/
+		
+		$this->session->set_flashdata('message', "Removed flag from Ad " . $ad_id);
+		redirect('admin/manage_flags', 'refresh');
+		
+	
 	}
 }

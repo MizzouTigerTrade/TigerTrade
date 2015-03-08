@@ -104,6 +104,43 @@ class Ad_model extends CI_Model
 		$seller_id = $result->user_id;
 		return $seller_id;
 	}
+	
+	public function get_flagged_ads()
+	{
+		$result = $this->db->query("SELECT * FROM ads JOIN users ON ads.user_id = users.id WHERE flag_count > 0");
+		return $result;
+	}
+	
+	public function flag_ad($ad_id)
+	{
+		$this->db->set('flag_count', 'flag_count+1', FALSE);
+		$this->db->where('ad_id', $ad_id);
+		
+		if( $this->db->update('ads') != TRUE)
+		{
+			throw new Exception("Cannot Update Flag Count");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+		
+	}
+	
+	public function dismiss_flag($ad_id)
+	{
+		$this->db->set('flag_count', 0);
+		$this->db->where('ad_id', $ad_id);
+		
+		if( $this->db->update('ads') != TRUE)
+		{
+			throw new Exception("Cannot Update Flag Count");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
 
 	public function get_user_ads($user_id)
 	{
