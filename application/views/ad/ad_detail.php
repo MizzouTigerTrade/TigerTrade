@@ -22,5 +22,5 @@
 	<h2>$<?php echo $ad->price; ?></h2>
 	<p><?php echo $ad->description; ?></p>
 	<a class="btn btn-default" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
-	<a class="btn btn-default" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Flag Ad</a>
+	<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Flag Ad</a>
 </div>

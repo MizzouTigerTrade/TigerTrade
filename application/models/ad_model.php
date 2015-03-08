@@ -95,7 +95,7 @@ class Ad_model extends CI_Model
 		
 		if( $this->db->update('ads') != TRUE)
 		{
-			throw new Exception("Cannot Update");
+			throw new Exception("Cannot Update Flag Count");
 		}
 		else
 		{
