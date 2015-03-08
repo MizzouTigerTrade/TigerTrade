@@ -34,7 +34,7 @@
 	<tbody>
 	<?php foreach ($flags as $flag):?>
 		<tr>
-            <td><?php echo "<a href='" . base_url() . "/ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
+            <td><?php echo "<a href='" . base_url() . "ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
             <td><?php echo $flag->flag_count ;?></td>
             <td><?php echo $flag->first_name . " " . $flag->last_name;?></td>
 			<td><?php echo $flag->email ;?> </td>
@@ -74,7 +74,7 @@
 								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?
 							</div>
 							<div class="modal-footer">
-								<a class="btn btn-primary" href="<?php echo base_url('ad/delete_ad') . '/' . $flag->ad_id ;?>">Yes</a>
+								<a class="btn btn-primary" href="<?php echo base_url('ad/delete') . '/' . $flag->ad_id ;?>">Yes</a>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
