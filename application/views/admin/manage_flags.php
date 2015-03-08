@@ -32,7 +32,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($flags->result() as $flag):?>
+	<?php foreach ($flags as $flag):?>
 		<tr>
             <td><?php echo "<a href='" . base_url() . "/ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
             <td><?php echo $flag->flag_count ;?></td>

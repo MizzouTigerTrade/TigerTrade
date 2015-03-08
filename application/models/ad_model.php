@@ -107,7 +107,8 @@ class Ad_model extends CI_Model
 	
 	public function get_flagged_ads()
 	{
-		$result = $this->db->query("SELECT * FROM ads JOIN users ON ads.user_id = users.id WHERE flag_count > 0");
+		$query = $this->db->query("SELECT * FROM ads JOIN users ON ads.user_id = users.id WHERE flag_count > 0");
+		$result = $query->result();
 		return $result;
 	}
 	
@@ -178,8 +179,9 @@ class Ad_model extends CI_Model
 
 	public function delete_ad($ad_id)
 	{
-		//delete ad here
-		return 0;
+		$this->db->where('ad_id', $ad_id);
+		$this->db->delete('ads'); 
+
 	}
 
 }

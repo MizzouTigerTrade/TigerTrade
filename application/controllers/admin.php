@@ -115,19 +115,11 @@ class Admin extends CI_Controller {
 	}
 	
 	function dismiss_flag($ad_id)
-	{
-		
+	{	
 		$this->ad_model->dismiss_flag($ad_id);
-		
-		/*
-		$data['title'] = 'Flags';
-		$data['message'] = 'Removed flag from Ad ' . $ad_id;
-		$data['flags'] = $this->ad_model->get_flagged_ads();
-		*/
 		
 		$this->session->set_flashdata('message', "Removed flag from Ad " . $ad_id);
 		redirect('admin/manage_flags', 'refresh');
 		
-	
 	}
 }
