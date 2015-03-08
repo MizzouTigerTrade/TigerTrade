@@ -45,6 +45,8 @@ class Admin extends CI_Controller {
 	{
 		$data['title'] = 'Flags';
 		
+		$data['message'] = $this->session->flashdata('message');
+		
 		$data['flags'] = $this->ad_model->get_flagged_ads();
 
 		$this->layout->view('admin/manage_flags', $data);
@@ -123,7 +125,7 @@ class Admin extends CI_Controller {
 		$data['flags'] = $this->ad_model->get_flagged_ads();
 		*/
 		
-		$this->session->set_flashdata('message', 'Removed flag from Ad ' . $ad_id);
+		$this->session->set_flashdata('message', "Removed flag from Ad" . $ad_id);
 		redirect('admin/manage_flags', 'refresh');
 		
 	
