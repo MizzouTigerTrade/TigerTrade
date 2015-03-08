@@ -176,7 +176,7 @@ class Ad extends CI_Controller
 	//delete a specific ad
 	function delete($ad_id)
 	{
-		$delete = $this->ad_model->delete_ad($ad_id);
+		$this->ad_model->delete_ad($ad_id);
 
 		if( $this->ion_auth->is_admin() )
 		{

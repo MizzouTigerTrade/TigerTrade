@@ -122,4 +122,13 @@ class Admin extends CI_Controller {
 		redirect('admin/manage_flags', 'refresh');
 		
 	}
+	
+	function delete_ad($ad_id)
+	{
+		$this->ad_model->delete_ad($ad_id);
+
+		$this->session->set_flashdata('message', "Removed Ad");
+		redirect('admin/manage_flags', 'refresh');
+		
+	}
 }
