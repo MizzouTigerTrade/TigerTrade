@@ -90,7 +90,7 @@ class Ad_model extends CI_Model
 	
 	public function flag_ad($ad_id)
 	{
-		$this->db->set('flag_count', 'flag_count'+1, FALSE);
+		$this->db->set('flag_count', 'flag_count+1', FALSE);
 		$this->db->where('ad_id', $ad_id);
 		
 		if( $this->db->update('ads') != TRUE)
