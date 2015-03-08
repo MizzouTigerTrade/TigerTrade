@@ -44,7 +44,6 @@ class Admin extends CI_Controller {
 	function manage_flags()
 	{
 		$data['title'] = 'Flags';
-		$data['message'] = '';
 		
 		$data['flags'] = $this->ad_model->get_flagged_ads();
 
