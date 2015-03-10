@@ -5,13 +5,13 @@ class Notifications
 {
     function __construct()
     {
-		parent::__construct();
-        $this->load->model('ad_model');
+		$this->CI =& get_instance();
+        $this->CI->load->model('ad_model');
     }
 
     function get_flagged_ads_count()
     {
-		$flag_count = $this->ad_model->get_flagged_ads_count();
+		$flag_count = $this->CI->ad_model->get_flagged_ads_count();
 		return $flag_count;
     }
 
