@@ -1,4 +1,6 @@
-<?php $user = $this->ion_auth->user()->row(); ?>
+<?php $user = $this->ion_auth->user()->row(); 
+		$flag_notification = $this->notifications->get_flagged_ads_count();
+?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
 		<!-- HEADER/MOBILE NAVIGATION TOGGLE -->
@@ -36,7 +38,7 @@
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('auth', 'admin'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags</a></li>
+							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags <strong><?php echo $flag_notification ?></strong></a></li>
 							<li><a href="<?php echo base_url('/auth') ?>">Manage Users</a></li>
 							<li><a href="<?php echo base_url('/admin/new_category') ?>">Create Category</a></li>
 							<li><a href="<?php echo base_url('/admin/new_subcategory') ?>">Create Subcategory</a></li>
