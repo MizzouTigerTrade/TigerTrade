@@ -5,6 +5,7 @@ class Notifications
 {
     function __construct()
     {
+		parent::__construct();
         $this->load->model('ad_model');
     }
 
