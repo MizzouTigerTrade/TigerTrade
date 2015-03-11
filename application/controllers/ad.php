@@ -11,6 +11,8 @@ class Ad extends CI_Controller
 		$this->load->model('subcategory_model');
 		$this->load->model('category_model');
 		$data['menu'] = $this->load->view('shared/menu');
+		
+		$data['flag_notification'] = $this->ad_model->get_flagged_ads_count();
 	}
 
 	function index()
