@@ -27,8 +27,6 @@ class Home extends CI_Controller {
 		$this->load->model('subcategory_model');
 		$this->load->model('ad_model');
 		
-		
-		$data['flag_notification'] = $this->ad_model->get_flagged_ads_count();
 		$data['menu'] = $this->load->view('shared/menu');
 	}
 
