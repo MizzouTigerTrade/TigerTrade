@@ -1,5 +1,4 @@
 <?php $user = $this->ion_auth->user()->row(); 
-	$this->load->model('ad_model');
 	$flag_notification = $this->ad_model->get_flagged_ads_count();
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
