@@ -97,7 +97,7 @@ $(document).ready(function (){
 					<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
 					</a>
 					</div>
-					<div class="media-body col-md-4">
+					<div class="media-body col-md-10">
 					<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
 					<?php echo $row->description; ?>
 					</div>
