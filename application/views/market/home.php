@@ -92,12 +92,12 @@ $(document).ready(function (){
 				<?php foreach ($ads->result() as $row) { ?>
 				<div class="col-xs-12">
 				<div class="media">
-					<div class="media-left col-md-3">
+					<div class="media-left col-md-2">
 					<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 					<img class="media-object img-thumbnail" src="http://placehold.it/100x100" alt="ad_image" width="100%" height="100%">
 					</a>
 					</div>
-					<div class="media-body col-md-9">
+					<div class="media-body col-md-8">
 					<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
 					<?php echo $row->description; ?>
 					</div>
