@@ -93,7 +93,7 @@ $(document).ready(function (){
 				<div class="col-md-6">
 				<div class="media">
 					<div class="media-left">
-					<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+					<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 					<img class="media-object" src="http://placehold.it/300x200" alt="ad_image">
 					</a>
 					</div>
