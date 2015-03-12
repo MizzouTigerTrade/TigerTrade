@@ -1,5 +1,6 @@
 <?php $user = $this->ion_auth->user()->row(); 
 	$flag_notification = $this->ad_model->get_flagged_ads_count();
+	$offer_notification = $this->offer_model->get_seller_pending_offers($user);
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -48,10 +49,10 @@
 				<?php } ?>
 				
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'offers'))) { ?>active<?php } ?>">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?><span class="badge badge-info" style="background-color: red;"><?php if($offer_notification>0){echo $flag_notification ;} ?></span> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/user/edit_profile/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
-							<li><a href="<?php echo base_url('/offers') ?>">Offers</a></li>
+							<li><a href="<?php echo base_url('/offers') ?>">Offers &nbsp <span class="badge badge-info" style="background-color: red;"><?php if($offer_notification>0){echo $flag_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/ad/user_ads') ?>">My Ads</a></li>
 							<li><a href="<?php echo base_url('/user') ?>">User</a></li>
 						</ul>
