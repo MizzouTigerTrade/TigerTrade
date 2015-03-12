@@ -1,17 +1,6 @@
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"></script>
-
+<script src="/js/jqBootstrapValidation.js"></script>
 <script>
- 
-$.validate({
-	modules : 'location, date, security, file',
-	onModulesLoaded : function() {
-	$('#country').suggestCountry();
-	}
-});
- 
-// Restrict presentation length
-$('#presentation').restrictLength( $('#pres-max-length') );
- 
+  $(function () { $("input,select,textarea,password").not("[type=submit]").jqBootstrapValidation(); } );
 </script>
 
 <div class="container padding-top-20">
@@ -35,7 +24,7 @@ $('#presentation').restrictLength( $('#pres-max-length') );
 	  <?php }; ?>
       
 
-      <?php echo form_open("auth/create_user", array('class' => 'form-horizontal', 'id' => 'ad-form', 'data-toggle' => 'validator'));?>
+      <?php echo form_open("auth/create_user", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
             <div class="form-group">
                   <label for="first_name" class="col-sm-4 control-label label-20">First Name</label>
                   <div class="col-sm-4">
@@ -64,10 +53,11 @@ $('#presentation').restrictLength( $('#pres-max-length') );
             </div>
             <div class="form-group">
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
-                  <div class="col-sm-4">
-                        <input type="email" name="email" class="form-control" data-validation="email" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+                  <div class="col-sm-4 help-block">
+                 	 <input type="email" name="email" id="email" class="form-control" />
+                        
                   </div>
-                  <div class="help-block with-errors"></div>
+                  <p class="help-block"></p>
             </div>
             <div class="form-group">
                   <label for="phone" class="col-sm-4 control-label label-20">Phone</label>
@@ -85,16 +75,28 @@ $('#presentation').restrictLength( $('#pres-max-length') );
             <div class="form-group">
                   <label for="password" class="col-sm-4 control-label label-20">Password</label>
                   <div class="col-sm-4">
-                        <input type="password" name="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+                        <?php
+	                         $data = array(
+					          'name'        => 'password',
+					          'id'          => 'password',
+					          'class'       => 'form-control'
+					        );
+	                        echo form_password($data);
+	                    ?>
                   </div>
-                  <span class="help-block">Minimum of 6 characters</span>
             </div>
             <div class="form-group">
                   <label for="password_confirm" class="col-sm-4 control-label label-20">Confirm Password</label>
                   <div class="col-sm-4">
-                        <input type="password" name="password_confirm" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+                        <?php
+	                         $data = array(
+					          'name'        => 'password_confirm',
+					          'id'          => 'password_confirm',
+					          'class'       => 'form-control'
+					        );
+	                        echo form_password($data);
+	                    ?>
                   </div>
-                  <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                   <div class="col-sm-offset-4 col-sm-4">
@@ -104,3 +106,5 @@ $('#presentation').restrictLength( $('#pres-max-length') );
       <?php echo form_close();?>
       
 </div>
+
+
