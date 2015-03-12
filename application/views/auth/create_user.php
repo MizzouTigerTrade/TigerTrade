@@ -1,4 +1,7 @@
-
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script>
+  $(function () { $("input,select,textarea,password").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
 
 <div class="container padding-top-20">
 	<div class="row">
@@ -104,7 +107,4 @@
       
 </div>
 
-<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-<script>
-  $(function () { $("input,select,textarea,password").not("[type=submit]").jqBootstrapValidation(); } );
-</script>
+
