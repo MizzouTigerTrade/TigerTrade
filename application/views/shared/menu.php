@@ -1,6 +1,6 @@
 <?php $user = $this->ion_auth->user()->row(); 
 	$flag_notification = $this->ad_model->get_flagged_ads_count();
-	$offer_notification = 0;
+	$offer_notification = 1;
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
