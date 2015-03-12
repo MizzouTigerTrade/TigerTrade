@@ -1,3 +1,19 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"></script>
+
+<script>
+ 
+$.validate({
+	modules : 'location, date, security, file',
+	onModulesLoaded : function() {
+	$('#country').suggestCountry();
+	}
+});
+ 
+// Restrict presentation length
+$('#presentation').restrictLength( $('#pres-max-length') );
+ 
+</script>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -49,7 +65,7 @@
             <div class="form-group">
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
                   <div class="col-sm-4">
-                        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+                        <input type="email" name="email" class="form-control" data-validation="email" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
                   </div>
                   <div class="help-block with-errors"></div>
             </div>
