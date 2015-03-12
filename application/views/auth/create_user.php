@@ -1,3 +1,9 @@
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/validator.js') ?>"></script>
+<script type="text/javascript">
+	$('#ad-form').validator()
+</script>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -19,7 +25,7 @@
 	  <?php }; ?>
       
 
-      <?php echo form_open("auth/create_user", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
+      <form action="<?php echo base_url('application/controller/auth/create_user.php') ?>" class="form-horizontal" id="ad-form" data-toggle="validator" role="form">
             <div class="form-group">
                   <label for="first_name" class="col-sm-4 control-label label-20">First Name</label>
                   <div class="col-sm-4">
@@ -49,14 +55,8 @@
             <div class="form-group">
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
                   <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'email',
-					          'id'          => 'email',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_input($data);
-	                    ?>
+					    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+					    <div class="help-block with-errors"></div>
                   </div>
             </div>
             <div class="form-group">
@@ -75,27 +75,15 @@
             <div class="form-group">
                   <label for="password" class="col-sm-4 control-label label-20">Password</label>
                   <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'password',
-					          'id'          => 'password',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_password($data);
-	                    ?>
+                        <input type="password" data-minlength="6" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
+      					<span class="help-block">Minimum of 6 characters</span>
                   </div>
             </div>
             <div class="form-group">
                   <label for="password_confirm" class="col-sm-4 control-label label-20">Confirm Password</label>
                   <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'password_confirm',
-					          'id'          => 'password_confirm',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_password($data);
-	                    ?>
+                        <input type="password" name="password_confirm" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+      					<div class="help-block with-errors"></div>
                   </div>
             </div>
             <div class="form-group">
@@ -103,6 +91,6 @@
                         <button type="submit" class="btn btn-default">Create User</button>
                   </div>
             </div>
-      <?php echo form_close();?>
+      </form>
       
 </div>

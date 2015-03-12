@@ -43,7 +43,7 @@ class Ad extends CI_Controller
 	//update ad by id
 	function update()
 	{
-
+		
 	}
 
 	//shows form to create a new ad
@@ -146,8 +146,11 @@ class Ad extends CI_Controller
 			}
 
 		}
-			$data['title'] = 'New Ad';
-			$this->layout->view('forms/new_ad', $data);
+
+		$data['title'] = 'New Ad';
+		$data['categories'] = $this->category_model->get_all_categories();
+		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
+		$this->layout->view('forms/new_ad', $data);
 		
 	}
 	

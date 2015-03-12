@@ -53,6 +53,22 @@ class Ad_model extends CI_Model
 
 	}
 
+	public function insert_img_ad($ad_id, $target_path)
+	{
+		$this->db->set('ad_id', $ad_id);
+		$this->db->set('image_path', $target_path);
+
+		//insert into db, throw error if data not inserted
+		if( $this->db->insert('images') != TRUE)
+		{
+			throw new Exception("Cannot insert");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+
 
 	public function get_subcategories($category_id){
         $this->db->select('subcategory_id, name');
