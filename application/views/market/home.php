@@ -89,6 +89,22 @@ $(document).ready(function (){
 
 				<!-- Display Ads: rows of 3 -->
 
+				<?php foreach ($ads->result() as $row) { ?>
+				<div class="col-md-6">
+				<div class="media">
+					<div class="media-left">
+					<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+					<img class="media-object" src="http://placehold.it/300x200" alt="ad_image">
+					</a>
+					</div>
+					<div class="media-body">
+					<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+					<?php echo $row->description; ?>
+					</div>
+				</div>
+				</div>
+				<? } ?>
+				
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
 					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
