@@ -25,7 +25,7 @@
 	  <?php }; ?>
       
 
-      <form data-toggle="validator" role="form">
+      <form action="<?php echo base_url('controller/auth/create_user.php') ?>" class="form-horizontal" id="ad-form" data-toggle="validator" role="form">
             <div class="form-group">
                   <label for="first_name" class="col-sm-4 control-label label-20">First Name</label>
                   <div class="col-sm-4">
