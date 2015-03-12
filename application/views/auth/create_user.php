@@ -1,3 +1,7 @@
+<script type="text/javascript">
+	$('#ad-form').validator()
+</script>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -79,11 +83,13 @@
 	                         $data = array(
 					          'name'        => 'password',
 					          'id'          => 'password',
-					          'class'       => 'form-control'
+					          'class'       => 'form-control',
+					          'data-minlength' => '6'
 					        );
 	                        echo form_password($data);
 	                    ?>
                   </div>
+                  <span class="help-block">Minimum of 6 characters</span>
             </div>
             <div class="form-group">
                   <label for="password_confirm" class="col-sm-4 control-label label-20">Confirm Password</label>
