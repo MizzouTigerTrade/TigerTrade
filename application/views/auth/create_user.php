@@ -1,8 +1,3 @@
-<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-<script>
-  $(function () { $("input,select,textarea,password").not("[type=submit]").jqBootstrapValidation(); } );
-</script>
-
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -53,11 +48,16 @@
             </div>
             <div class="form-group">
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
-                  <div class="col-sm-4 help-block">
-                 	 <input type="email" name="email" id="email" class="form-control" />
-                        
+                  <div class="col-sm-4">
+                        <?php
+	                         $data = array(
+					          'name'        => 'email',
+					          'id'          => 'email',
+					          'class'       => 'form-control'
+					        );
+	                        echo form_input($data);
+	                    ?>
                   </div>
-                  <p class="help-block"></p>
             </div>
             <div class="form-group">
                   <label for="phone" class="col-sm-4 control-label label-20">Phone</label>
@@ -106,5 +106,3 @@
       <?php echo form_close();?>
       
 </div>
-
-

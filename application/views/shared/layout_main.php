@@ -48,8 +48,6 @@
 	<script src="<?php echo base_url('assets/js/show_hidden_message.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/add_upload_button.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/clickable_row.js') ?>"></script>
-	<script src="<?php echo base_url('assets/js/jqBootstrapValidation.js') ?>"></script>
-
 
 </body>
 </html>
