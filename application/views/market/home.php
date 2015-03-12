@@ -112,7 +112,7 @@ $(document).ready(function (){
 						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 						<h3><?php echo $row->title; ?></h3>
 							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-							<img src="http://placehold.it/64x64" class="img-thumbnail" alt="Responsive image" style="width: 100%;">
+							<img src="http://placehold.it/64x64" class="img-thumbnail" alt="Responsive image">
 						</a><br><br>
 						<p>Description: <?php echo $row->description; ?></p>
 						<p>Ad ID: <?php echo $row->ad_id; ?></p>
