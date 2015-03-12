@@ -94,7 +94,7 @@ $(document).ready(function (){
 				<div class="media">
 					<div class="media-left col-md-3">
 					<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-					<img class="media-object img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+					<img class="img-thumbnail" src="http://placehold.it/100x100" alt="ad_image" width="100%" height="100%">
 					</a>
 					</div>
 					<div class="media-body col-md-9">
