@@ -84,7 +84,7 @@
                         <?php
 	                         $data = array(
 					          'name'        => 'password',
-					          'id'          => 'password',
+					          'id'          => 'inputPassword',
 					          'class'       => 'form-control',
 					          'data-minlength' => '6'
 					        );
