@@ -146,8 +146,9 @@ class Ad extends CI_Controller
 			}
 
 		}
-			$data['title'] = 'New Ad';
-			$this->layout->view('forms/new_ad', $data);
+		
+		$data['title'] = 'New Ad';
+		$this->layout->view('forms/new_ad', $data);
 		
 	}
 	
