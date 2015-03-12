@@ -1,4 +1,4 @@
-<script src="/js/jqBootstrapValidation.js"></script>
+<script src="<?php echo base_url('assets/js/jqBootstrapValidation.js') ?>"></script>
 <script>
   $(function () { $("input,select,textarea,password").not("[type=submit]").jqBootstrapValidation(); } );
 </script>
