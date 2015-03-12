@@ -53,7 +53,7 @@ $(document).ready(function (){
 				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a><br>
 				<?php if ($this->ion_auth->is_admin()) { ?>
 					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">New Category</a><br>
-					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
+					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a><br>
 				<?php } ?>
 				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>" style="margin: 13px 0 18px 0;"><b>all</b></a><br>
 				<label for="category" class="control-label text-left">Category</label>
