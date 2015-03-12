@@ -27,6 +27,8 @@ class Home extends CI_Controller {
 		$this->load->model('subcategory_model');
 		$this->load->model('ad_model');
 		
+		
+		
 		$data['menu'] = $this->load->view('shared/menu');
 	}
 
