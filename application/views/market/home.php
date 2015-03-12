@@ -91,7 +91,7 @@ $(document).ready(function (){
 
 				<?php foreach ($ads->result() as $row) { ?>
 				<div class="row">
-				<div class="media">
+				<div class="media" style="margin-top: 10px; margin-bottom: 10px;">
 					<div class="media-left col-md-2 col-md-offset-1">
 					<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 					<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
