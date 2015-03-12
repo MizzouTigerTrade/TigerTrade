@@ -55,14 +55,8 @@
             <div class="form-group">
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
                   <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'email',
-					          'id'          => 'email',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_input($data);
-	                    ?>
+					    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+					    <div class="help-block with-errors"></div>
                   </div>
             </div>
             <div class="form-group">
