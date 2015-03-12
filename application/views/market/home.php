@@ -90,7 +90,7 @@ $(document).ready(function (){
 				<!-- Display Ads: rows of 3 -->
 
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="col-xs-12">
+				<div class="row">
 				<div class="media">
 					<div class="media-left col-md-3">
 					<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
