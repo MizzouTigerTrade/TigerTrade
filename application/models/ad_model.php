@@ -56,7 +56,7 @@ class Ad_model extends CI_Model
 	public function insert_img_ad($ad_id, $target_path)
 	{
 		$this->db->set('ad_id', $ad_id);
-		$this->db->set('image_path', $image_path);
+		$this->db->set('image_path', $target_path);
 
 		//insert into db, throw error if data not inserted
 		if( $this->db->insert('images') != TRUE)
