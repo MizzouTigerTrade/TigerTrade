@@ -146,8 +146,10 @@ class Ad extends CI_Controller
 			}
 
 		}
-		
+
 		$data['title'] = 'New Ad';
+		$data['categories'] = $this->category_model->get_all_categories();
+		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
 		$this->layout->view('forms/new_ad', $data);
 		
 	}
