@@ -81,17 +81,9 @@
             <div class="form-group">
                   <label for="password" class="col-sm-4 control-label label-20">Password</label>
                   <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'password',
-					          'id'          => 'inputPassword',
-					          'class'       => 'form-control',
-					          'data-minlength' => '6'
-					        );
-	                        echo form_password($data);
-	                    ?>
+                        <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+      					<span class="help-block">Minimum of 6 characters</span>
                   </div>
-                  <span class="help-block">Minimum of 6 characters</span>
             </div>
             <div class="form-group">
                   <label for="password_confirm" class="col-sm-4 control-label label-20">Confirm Password</label>
