@@ -237,16 +237,3 @@ Plugin.call($form, $form.data())
 })
 }(jQuery);
 
-    Status
-    API
-    Training
-    Shop
-    Blog
-    About
-
-    © 2015 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Contact
-
