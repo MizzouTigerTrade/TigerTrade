@@ -1,4 +1,5 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/validator.js') ?>"></script>
 <script type="text/javascript">
 	$('#ad-form').validator()
 </script>
