@@ -43,7 +43,7 @@ class Ad extends CI_Controller
 	//update ad by id
 	function update()
 	{
-
+		
 	}
 
 	//shows form to create a new ad
