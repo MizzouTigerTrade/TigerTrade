@@ -81,21 +81,15 @@
             <div class="form-group">
                   <label for="password" class="col-sm-4 control-label label-20">Password</label>
                   <div class="col-sm-4">
-                        <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+                        <input type="password" data-minlength="6" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
       					<span class="help-block">Minimum of 6 characters</span>
                   </div>
             </div>
             <div class="form-group">
                   <label for="password_confirm" class="col-sm-4 control-label label-20">Confirm Password</label>
                   <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'password_confirm',
-					          'id'          => 'password_confirm',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_password($data);
-	                    ?>
+                        <input type="password" name="password_confirm" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+      					<div class="help-block with-errors"></div>
                   </div>
             </div>
             <div class="form-group">
