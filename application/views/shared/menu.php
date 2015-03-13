@@ -53,7 +53,7 @@
 				
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'offers'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <span class="badge badge-info" style="background-color: red;"><?php if($total_offer_notification>0){echo $total_offer_notification ;} ?></span> <b class="caret"></b></a>
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu .dropdown-menu-right">
 							<li><a href="<?php echo base_url('/ad/user_ads') ?>">My Ads</a></li>
 							<li><a href="<?php echo base_url('/offers/sent') ?>">Sent Offers  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span class="badge badge-info" style="background-color: red;"><?php if($sent_offer_notification>0){echo $sent_offer_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/offers/received') ?>">Received Offers &nbsp <span class="badge badge-info" style="background-color: red;"><?php if($received_offer_notification>0){echo $received_offer_notification ;} ?></span></a></li>
