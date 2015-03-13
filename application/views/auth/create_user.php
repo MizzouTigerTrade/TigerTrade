@@ -29,33 +29,29 @@
             <div class="form-group">
                   <label for="first_name" class="col-sm-4 control-label label-20">First Name</label>
                   <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'first_name',
-					          'id'          => 'first_name',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_input($data);
-	                    ?>
+                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Joe" required>
                   </div>
+                  <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                   <label for="last_name" class="col-sm-4 control-label label-20">Last Name</label>
                   <div class="col-sm-4">
-	                    <?php
-	                         $data = array(
-					          'name'        => 'last_name',
-					          'id'          => 'last_name',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_input($data);
-	                    ?>
+	                    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Smith" required>
                   </div>
+                  <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
                   <div class="col-sm-4">
-					    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+                  	<div class="input-group">
+				      	<input type="text" pattern="^([_A-z0-9]){3,}$" name="email" maxlength="20" class="form-control" id="inputTwitter" placeholder="pawprint" required>
+				    	<span class="input-group-addon">
+				    		<select name="email_option">
+							  <option value="@mail.missouri.edu">@mail.missouri.edu</option>
+							  <option value="@missouri.edu">@missouri.edu</option>
+							</select>
+						</span>
+				    </div>
 					    <div class="help-block with-errors"></div>
                   </div>
             </div>
@@ -75,8 +71,8 @@
             <div class="form-group">
                   <label for="password" class="col-sm-4 control-label label-20">Password</label>
                   <div class="col-sm-4">
-                        <input type="password" data-minlength="6" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
-      					<span class="help-block">Minimum of 6 characters</span>
+                        <input type="password" data-minlength="8" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
+      					<span class="help-block">Minimum of 8 characters</span>
                   </div>
             </div>
             <div class="form-group">
