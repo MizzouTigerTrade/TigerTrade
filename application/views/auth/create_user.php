@@ -46,9 +46,9 @@
                   	<div class="input-group">
 				      	<input type="text" pattern="^([_A-z0-9]){3,}$" name="email" maxlength="20" class="form-control" id="inputTwitter" placeholder="pawprint" required>
 				    	<span class="input-group-addon">
-				    		<select>
-							  <option>@mail.missouri.edu</option>
-							  <option>@missouri.edu</option>
+				    		<select name="email_option">
+							  <option value="@mail.missouri.edu">@mail.missouri.edu</option>
+							  <option value="@missouri.edu">@missouri.edu</option>
 							</select>
 						</span>
 				    </div>
