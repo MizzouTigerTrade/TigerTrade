@@ -102,7 +102,7 @@ $(document).ready(function (){
 					<?php echo $row->description; ?>
 					</div>
 				</div><hr>
-				</div><hr>
+				</div>
 				<? } ?>
 				
 				<?php $count = 0; ?>
