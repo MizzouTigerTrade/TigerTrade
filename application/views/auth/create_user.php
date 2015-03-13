@@ -56,6 +56,7 @@
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
                   <div class="col-sm-4">
 					    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+					    <span class="input-group-addon">@mail.missouri.edu</span>
 					    <div class="help-block with-errors"></div>
                   </div>
             </div>
@@ -75,8 +76,8 @@
             <div class="form-group">
                   <label for="password" class="col-sm-4 control-label label-20">Password</label>
                   <div class="col-sm-4">
-                        <input type="password" data-minlength="6" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
-      					<span class="help-block">Minimum of 6 characters</span>
+                        <input type="password" data-minlength="8" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
+      					<span class="help-block">Minimum of 8 characters</span>
                   </div>
             </div>
             <div class="form-group">
