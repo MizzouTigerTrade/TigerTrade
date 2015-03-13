@@ -31,12 +31,14 @@
                   <div class="col-sm-4">
                         <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Cina Saffary" required>
                   </div>
+                  <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                   <label for="last_name" class="col-sm-4 control-label label-20">Last Name</label>
                   <div class="col-sm-4">
 	                    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Smith" required>
                   </div>
+                  <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
