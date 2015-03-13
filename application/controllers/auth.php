@@ -435,7 +435,7 @@ class Auth extends CI_Controller {
 		{
 			$username = strtolower($this->input->post('first_name')) . ' ' . strtolower($this->input->post('last_name'));
 			$email    = strtolower($this->input->post('email'));
-			$email_option = $this->input->post('email_option')
+			$email_option = $this->input->post('email_option');
 			$email = $email.$email_option;
 			$password = $this->input->post('password');
 
