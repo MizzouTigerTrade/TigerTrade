@@ -45,79 +45,12 @@ $(document).ready(function (){
 	<hr>
 	
 	<div class="row">
-			
-		<div class="col-xs-3 col-sm-2 hidden-sm hidden-xs">
-
-			<!-- MEDIUM+ Screen Menu -->
-			<div id="market-menu" class="text-center box-shadow">
-				<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a><br>
-				<?php if ($this->ion_auth->is_admin()) { ?>
-					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">New Category</a><br>
-					<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
-				<?php } ?>
-				<a class="btn btn-primary btn-sm wide-button" role="button" href="<?php echo base_url('/market') ?>" style="margin: 13px 0 18px 0;"><b>all</b></a><br>
-				<label for="category" class="control-label text-left">Category</label>
-				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
-					<option value="/market">All</option>
-					<?php
-						foreach($categories->result() as $cat) {
-							echo '<option value="/market/category/'.$cat->category_id.'">'.$cat->name.'</option>';		
-					} ?>	
-				</select>
-				<!-- Save for categories/subcategories pages
-					<label for="subcategory" class="control-label text-left">Subcategory</label>
-				<select style="margin-bottom: 5px;" onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
-			    	<option value="">Subcategory<option>	
-				</select>
-				-->
-				
-				<!-- Search Form -->
-				<div class="search-form">
-					<div class="form-group" style="margin-bottom: 0;">
-						<label for="search" class="control-label text-left">Search</label>
-						<input type="text" class="form-control input-sm" name="search" ></input>
-					</div>
-				</div>
-
-			</div>
-			
-			<!-- Filter Form -->
-			<!--
-			<div id="filter-form" class="">
-				<div class="form-group">
-					<label for="list" class="control-label">Categories</label>
-					<select multiple size="<?php echo $categories->num_rows(); ?>" class="form-control" id="category_list" >
-					<?php 
-						foreach($categories->result() as $cat):
-						echo "<option>" . $cat->name . "</option>";
-						endforeach; 
-					?>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="list" class="control-label">Subcategories</label>
-					<select multiple size="10" class="form-control" id="subcategory_list" >
-					<?php 
-						foreach($subcategories->result() as $sub):
-						echo "<option>" . $sub->name . "</option>";
-						endforeach; 
-					?>
-					</select>
-				</div>
-			</div>
-			-->
-		</div>
-		
-		
-		
-		
-		
-		<div class="col-xs-12 col-md-10" id="market_background">
+		<div class="col-xs-12" id="market_background">
 			
 			<div class="col-xs-12">
 				
 				<!-- SMALL Screen Menu -->
-				<div class="row visible-sm text-center">
+				<div class="row hidden-xs text-center">
 					<div class="col-sm-3">
 						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select One</option>
@@ -156,6 +89,22 @@ $(document).ready(function (){
 
 				<!-- Display Ads: rows of 3 -->
 
+				<?php foreach ($ads->result() as $row) { ?>
+				<div class="col-xs-12">
+				<div class="media">
+					<div class="media-left">
+					<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+					<img class="media-object" src="http://placehold.it/300x200" alt="ad_image">
+					</a>
+					</div>
+					<div class="media-body">
+					<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+					<?php echo $row->description; ?>
+					</div>
+				</div>
+				</div>
+				<? } ?>
+				
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
 					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
