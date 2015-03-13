@@ -29,27 +29,13 @@
             <div class="form-group">
                   <label for="first_name" class="col-sm-4 control-label label-20">First Name</label>
                   <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'first_name',
-					          'id'          => 'first_name',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_input($data);
-	                    ?>
+                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Cina Saffary" required>
                   </div>
             </div>
             <div class="form-group">
                   <label for="last_name" class="col-sm-4 control-label label-20">Last Name</label>
                   <div class="col-sm-4">
-	                    <?php
-	                         $data = array(
-					          'name'        => 'last_name',
-					          'id'          => 'last_name',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_input($data);
-	                    ?>
+	                    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Smith" required>
                   </div>
             </div>
             <div class="form-group">
