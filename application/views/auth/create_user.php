@@ -55,8 +55,8 @@
             <div class="form-group">
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
                   <div class="col-sm-4">
-					    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
-					    <span class="input-group-addon">@mail.missouri.edu</span>
+					    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required <span class="input-group-addon">@mail.missouri.edu</span>>
+					    
 					    <div class="help-block with-errors"></div>
                   </div>
             </div>
