@@ -101,8 +101,8 @@ $(document).ready(function (){
 					<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
 					<?php echo $row->description; ?>
 					</div>
-				</div>
 				</div><hr>
+				</div>
 				<? } ?>
 				
 				<?php $count = 0; ?>
