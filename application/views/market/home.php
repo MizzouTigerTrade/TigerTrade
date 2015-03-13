@@ -49,9 +49,9 @@ $(document).ready(function (){
 			
 			<div class="col-xs-12">
 				
-				<!-- SMALL Screen Menu -->
+				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-md-4">
 						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select One</option>
 							<?php
@@ -60,12 +60,12 @@ $(document).ready(function (){
 							} ?>	
 						</select>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-md-4">
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 					    	<option value=""><option>	
 						</select>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-md-4">
 						<div class="btn-group">
 							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
@@ -93,13 +93,13 @@ $(document).ready(function (){
 				<div class="row">
 				<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 					<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
-					<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-					<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
-					</a>
+						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+						<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+						</a>
 					</div>
 					<div class="media-body col-xs-9 col-md-8">
-					<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
-					<?php echo $row->description; ?>
+						<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+						<?php echo $row->description; ?>
 					</div>
 				</div>
 				</div><hr>
