@@ -49,15 +49,9 @@ $(document).ready(function (){
 			
 			<div class="col-xs-12">
 				
-<<<<<<< HEAD
-				<!-- SMALL Screen Menu -->
-				<div class="row hidden-xs text-center">
-					<div class="col-sm-3">
-=======
 				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
->>>>>>> feature/market_layout
 						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select One</option>
 							<?php
@@ -96,35 +90,19 @@ $(document).ready(function (){
 				<!-- Display Ads: rows of 3 -->
 
 				<?php foreach ($ads->result() as $row) { ?>
-<<<<<<< HEAD
-				<div class="col-xs-12">
-				<div class="media">
-					<div class="media-left">
-					<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-					<img class="media-object" src="http://placehold.it/300x200" alt="ad_image">
-					</a>
-					</div>
-					<div class="media-body">
-					<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
-					<?php echo $row->description; ?>
-					</div>
-				</div>
-				</div>
-=======
 				<div class="row">
-				<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
-					<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
-						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-						<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
-						</a>
+					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
+						<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
+							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+							<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+							</a>
+						</div>
+						<div class="media-body col-xs-9 col-md-8">
+							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+							<?php echo $row->description; ?>
+						</div>
 					</div>
-					<div class="media-body col-xs-9 col-md-8">
-						<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
-						<?php echo $row->description; ?>
-					</div>
-				</div>
 				</div><hr>
->>>>>>> feature/market_layout
 				<? } ?>
 				
 				<?php $count = 0; ?>
