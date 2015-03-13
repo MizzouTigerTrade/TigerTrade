@@ -3,6 +3,7 @@
 	$flag_notification = $this->ad_model->get_flagged_ads_count();
 	$sent_offer_notification = $this->offer_model->get_buyer_pending_offers_count($user->id);
 	$received_offer_notification = $this->offer_model->get_seller_pending_offers_count($user->id);
+	$total_offer_notification = $sent_offer_notification + $received_offer_notification;
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -51,7 +52,7 @@
 				<?php } ?>
 				
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'offers'))) { ?>active<?php } ?>">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <span class="badge badge-info" style="background-color: red;"><?php if($offer_notification>0){echo $offer_notification ;} ?></span> <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <span class="badge badge-info" style="background-color: red;"><?php if($total_offer_notification>0){echo $total_offer_notification ;} ?></span> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/ad/user_ads') ?>">My Ads</a></li>
 							<li><a href="<?php echo base_url('/offers') ?>">Sent Offers &nbsp <span class="badge badge-info" style="background-color: red;"><?php if($sent_offer_notification>0){echo $sent_offer_notification ;} ?></span></a></li>
