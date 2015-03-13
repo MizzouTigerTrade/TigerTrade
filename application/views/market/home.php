@@ -49,9 +49,15 @@ $(document).ready(function (){
 			
 			<div class="col-xs-12">
 				
+<<<<<<< HEAD
 				<!-- SMALL Screen Menu -->
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3">
+=======
+				<!-- SMALL+ Screen Menu -->
+				<div class="row hidden-xs text-center">
+					<div class="col-sm-3 col-md-offset-1">
+>>>>>>> feature/market_layout
 						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select One</option>
 							<?php
@@ -65,7 +71,7 @@ $(document).ready(function (){
 					    	<option value=""><option>	
 						</select>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-md-4">
 						<div class="btn-group">
 							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
@@ -90,6 +96,7 @@ $(document).ready(function (){
 				<!-- Display Ads: rows of 3 -->
 
 				<?php foreach ($ads->result() as $row) { ?>
+<<<<<<< HEAD
 				<div class="col-xs-12">
 				<div class="media">
 					<div class="media-left">
@@ -103,6 +110,21 @@ $(document).ready(function (){
 					</div>
 				</div>
 				</div>
+=======
+				<div class="row">
+				<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
+					<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
+						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+						<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+						</a>
+					</div>
+					<div class="media-body col-xs-9 col-md-8">
+						<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+						<?php echo $row->description; ?>
+					</div>
+				</div>
+				</div><hr>
+>>>>>>> feature/market_layout
 				<? } ?>
 				
 				<?php $count = 0; ?>
@@ -112,7 +134,7 @@ $(document).ready(function (){
 						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 						<h3><?php echo $row->title; ?></h3>
 							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-							<img src="http://placehold.it/300x200" class="img-thumbnail" alt="Responsive image" style="width: 100%;">
+							<img src="http://placehold.it/300x200" class="img-thumbnail" alt="Responsive image" width="100%">
 						</a><br><br>
 						<p>Description: <?php echo $row->description; ?></p>
 						<p>Ad ID: <?php echo $row->ad_id; ?></p>
