@@ -56,7 +56,7 @@
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
                   <div class="col-sm-4">
                   	<div class="input-group">
-				      	<input type="text" pattern="^([_A-z0-9]){3,}$" maxlength="20" class="form-control" id="inputTwitter" placeholder="1000hz" required>
+				      	<input type="text" pattern="^([_A-z0-9]){3,}$" name="email" maxlength="20" class="form-control" id="inputTwitter" placeholder="pawprint" required>
 				    	<span class="input-group-addon">@mail.missouri.edu</span>
 				    </div>
 					    <div class="help-block with-errors"></div>
