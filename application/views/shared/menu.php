@@ -1,9 +1,16 @@
 <?php 
-	$user = $this->ion_auth->user()->row(); 
-	$flag_notification = $this->ad_model->get_flagged_ads_count();
-	$sent_offer_notification = $this->offer_model->get_buyer_pending_offers_count($user->id);
-	$received_offer_notification = $this->offer_model->get_seller_pending_offers_count($user->id);
-	$total_offer_notification = $sent_offer_notification + $received_offer_notification;
+	if($user = $this->ion_auth->user()->row()){		
+		$flag_notification = $this->ad_model->get_flagged_ads_count();
+		$sent_offer_notification = $this->offer_model->get_buyer_pending_offers_count($user->id);
+		$received_offer_notification = $this->offer_model->get_seller_pending_offers_count($user->id);
+		$total_offer_notification = $sent_offer_notification + $received_offer_notification;
+	}
+	else{
+		$flag_notification = 0;
+		$sent_offer_notification = 0;
+		$received_offer_notification = 0;
+		$total_offer_notification = 0;
+	}
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -40,7 +47,7 @@
 				<?php if($this->ion_auth->is_admin()){?>
 				
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('auth', 'admin'))) { ?>active<?php } ?>">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <span class="badge badge-info" style="background-color: red;"><?php if($flag_notification>0){echo $flag_notification ;} ?></span><b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <span class="badge badge-info" style="background-color: #780000 ;"><?php if($flag_notification>0){echo $flag_notification ;} ?></span><b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags &nbsp <span class="badge badge-info" style="background-color: red;"><?php if($flag_notification>0){echo $flag_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/auth') ?>">Manage Users</a></li>
