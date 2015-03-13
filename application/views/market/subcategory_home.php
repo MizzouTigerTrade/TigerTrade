@@ -38,7 +38,7 @@ $(document).ready(function (){
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>Market:<?php echo ucfirst($category->name) . ' - ' . ucfirst($subcategory->name); ?></h1>
+			<h1>Market: <?php echo ucfirst($category->name) . ' - ' . ucfirst($subcategory->name); ?></h1>
 		</div>
 	</div>
 	
@@ -52,11 +52,11 @@ $(document).ready(function (){
 				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
-						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select One</option>
 							<?php
 								foreach($categories->result() as $category) {
-									echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';		
+									echo '<option value="/market/subcategory/'.$category->category_id.'">'.$category->name.'</option>';		
 							} ?>	
 						</select>
 					</div>
