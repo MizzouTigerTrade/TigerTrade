@@ -1,8 +1,8 @@
 <?php 
 	$user = $this->ion_auth->user()->row(); 
 	$flag_notification = $this->ad_model->get_flagged_ads_count();
-	$sent_offer_notification = $this->offer_model->get_buyer_pending_offers_count();
-	$received_offer_notification = $this->offer_model->get_seller_pending_offers_count();
+	$sent_offer_notification = $this->offer_model->get_buyer_pending_offers_count($user);
+	$received_offer_notification = $this->offer_model->get_seller_pending_offers_count($user);
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
