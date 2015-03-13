@@ -49,6 +49,13 @@ class Offer_model extends CI_Model
 		return $result;
 	}
 
+	public function get_buyer_pending_offers_count($buyer_id)
+	{
+		$query = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$buyer_id' AND status = 'Pending'");
+		$result = $query->num_rows();
+		return $result;
+	}
+	
 	public function get_buyer_declined_offers($buyer_id)
 	{
 		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$buyer_id' AND status = 'Declined'");
@@ -63,7 +70,14 @@ class Offer_model extends CI_Model
 
 	public function get_seller_pending_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Pending'");
+		$query = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Pending'");
+		return $result;
+	}
+	
+	public function get_seller_pending_offers_count($seller_id)
+	{
+		$query = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Pending'");
+		$result = $query->num_rows();
 		return $result;
 	}
 	
