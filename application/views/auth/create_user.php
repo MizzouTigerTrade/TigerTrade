@@ -29,7 +29,7 @@
             <div class="form-group">
                   <label for="first_name" class="col-sm-4 control-label label-20">First Name</label>
                   <div class="col-sm-4">
-                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Cina Saffary" required>
+                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Joe" required>
                   </div>
                   <div class="help-block with-errors"></div>
             </div>
