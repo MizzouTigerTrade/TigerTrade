@@ -128,9 +128,10 @@ class Admin extends CI_Controller {
 		$this->ad_model->delete_ad($ad_id);
 
 		$message_to_user = $this->input->post('message_to_user');
+		$message_to_user = "testing email";
 		
 		$to = "tjvkv6@mail.missouri.edu";
-		$subject = "Ad deleted due to inappropriate content";
+		$subject = "Flagged Ad";
 		
 		$message = "
 		<html>
@@ -138,14 +139,15 @@ class Admin extends CI_Controller {
 		<title>HTML email</title>
 		</head>
 		<body>
-		<h1>Testing</h1>" 
+		<h1>Testing</h1><p>" 
 		. $message_to_user . 
-		"</body>
+		"</p></body>
 		</html>
 		";
 		
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		$headers .= 'From: <admin@thetigertrade.com>' . "\r\n";
 		
 		mail($to,$subject,$message,$headers);
 		
