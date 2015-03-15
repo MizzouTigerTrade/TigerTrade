@@ -64,7 +64,7 @@
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $flag->ad_id; ?>">Delete</button>
 
 				<div class="modal fade" id="deleteModal<?php echo $flag->ad_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog" style="width: 350px;">
+					<div class="modal-dialog" style="width: 450px;">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -73,7 +73,7 @@
 							<div class="modal-body">
 								Message to user<br>
 								<form action="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">
-								<textarea rows="3" cols="40" name="message_to_user"></textarea>
+								<textarea rows="3" cols="60" name="message_to_user"></textarea>
 							</div>
 							<div class="modal-footer">
 								<input class="btn btn-primary"type="submit" value="Yes">
