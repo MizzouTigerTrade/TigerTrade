@@ -71,9 +71,9 @@
 								<h4 class="modal-title" id="myModalLabel">Delete Ad</h4>
 							</div>
 							<div class="modal-body">
-								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?<br>
+								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?<br><br>
 								Message to user:<br>
-								<textarea rows="3" cols="10" name="message_to_user"></textarea>
+								<textarea rows="3" cols="40" name="message_to_user"></textarea>
 							</div>
 							<div class="modal-footer">
 								<a class="btn btn-primary" href="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">Yes</a>
