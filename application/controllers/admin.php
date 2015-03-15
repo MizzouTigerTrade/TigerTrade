@@ -124,7 +124,7 @@ class Admin extends CI_Controller {
 		<title>HTML email</title>
 		</head>
 		<body>
-		<img src=" . base_url() . "assets/Images/ttradeimage.png' alt='Tiger Trade' />
+		<h1><div style='color: yellow'>Tiger</div><div style='color: black'>Trade</div></h1>
 		<p>" 
 		. $message_to_user . 
 		"</p></body>
