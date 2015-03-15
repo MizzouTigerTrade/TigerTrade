@@ -129,6 +129,26 @@ class Admin extends CI_Controller {
 
 		$message_to_user = $this->input->post('message_to_user');
 		
+		$to = "tjvkv6@mail.missouri.edu";
+		$subject = "Ad deleted due to inappropriate content"
+		
+		$message = "
+		<html>
+		<head>
+		<title>HTML email</title>
+		</head>
+		<body>
+		<h1>Testing</h1>" 
+		. echo $message_to_user . 
+		"</body>
+		</html>
+		";
+		
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		
+		mail($to,$subject,$message,$headers)
+		
 		$this->session->set_flashdata('message', "Removed Ad");
 		redirect('admin/manage_flags', 'refresh');
 		
