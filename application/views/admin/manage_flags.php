@@ -72,11 +72,11 @@
 							</div>
 							<div class="modal-body">
 								Message to user<br>
-								<form action="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">
+								<form action="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>"  method="POST">
 								<textarea rows="3" cols="50" name="message_to_user"></textarea>
 							</div>
 							<div class="modal-footer">
-								<input class="btn btn-primary"type="submit" value="Yes">
+								<input class="btn btn-primary" type="submit" value="Yes">
 								</form>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
