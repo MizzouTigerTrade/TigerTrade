@@ -63,8 +63,8 @@
 			<td>
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $flag->ad_id; ?>">Delete</button>
 
-				<div style="width: 350px;" class="modal fade" id="deleteModal<?php echo $flag->ad_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
+				<div class="modal fade" id="deleteModal<?php echo $flag->ad_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" style="width: 350px;">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
