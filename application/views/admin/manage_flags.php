@@ -68,10 +68,9 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Delete Ad</h4>
+								<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?</h4>
 							</div>
 							<div class="modal-body">
-								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?<br><br>
 								Message to user:<br>
 								<textarea rows="3" cols="40" name="message_to_user"></textarea>
 							</div>
