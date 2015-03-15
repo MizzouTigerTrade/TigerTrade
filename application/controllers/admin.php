@@ -130,7 +130,7 @@ class Admin extends CI_Controller {
 		$message_to_user = $this->input->post('message_to_user');
 		
 		$to = "tjvkv6@mail.missouri.edu";
-		$subject = "Ad deleted due to inappropriate content"
+		$subject = "Ad deleted due to inappropriate content";
 		
 		$message = "
 		<html>
