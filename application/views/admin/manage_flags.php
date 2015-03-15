@@ -73,7 +73,7 @@
 							<div class="modal-body">
 								Message to user<br>
 								<form action="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">
-								<textarea rows="3" cols="60" name="message_to_user"></textarea>
+								<textarea rows="3" cols="50" name="message_to_user"></textarea>
 							</div>
 							<div class="modal-footer">
 								<input class="btn btn-primary"type="submit" value="Yes">
