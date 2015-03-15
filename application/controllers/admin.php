@@ -147,7 +147,7 @@ class Admin extends CI_Controller {
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 		
-		mail($to,$subject,$message,$headers)
+		mail($to,$subject,$message,$headers);
 		
 		$this->session->set_flashdata('message', "Removed Ad");
 		redirect('admin/manage_flags', 'refresh');
