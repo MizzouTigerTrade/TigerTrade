@@ -128,7 +128,6 @@ class Admin extends CI_Controller {
 		$this->ad_model->delete_ad($ad_id);
 
 		$message_to_user = $this->input->post('message_to_user');
-		$message_to_user = "testing email";
 		
 		$to = "tjvkv6@mail.missouri.edu";
 		$subject = "Flagged Ad";
