@@ -139,7 +139,7 @@ class Admin extends CI_Controller {
 		</head>
 		<body>
 		<h1>Testing</h1>" 
-		. echo $message_to_user . 
+		. $message_to_user . 
 		"</body>
 		</html>
 		";
