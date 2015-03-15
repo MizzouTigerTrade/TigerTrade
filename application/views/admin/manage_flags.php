@@ -77,7 +77,7 @@
 							</div>
 							<div class="modal-footer">
 								<input class="btn btn-primary"type="submit" value="Yes">
-								<a class="btn btn-primary" href="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">Yes</a>
+								</form>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
