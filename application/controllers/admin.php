@@ -120,14 +120,10 @@ class Admin extends CI_Controller {
 		
 		$message = "
 		<html>
-		<head>
-		<title>HTML email</title>
-		</head>
 		<body>
-		<h1><div style='color: yellow'>Tiger</div><div style='color: black'>Trade</div></h1>
-		<p>" 
-		. $message_to_user . 
-		"</p></body>
+		<h1 style='border-bottom: underline;'>TigerTrade</h1>
+		<p>" . $message_to_user . "</p>
+		</body>
 		</html>
 		";
 		
@@ -139,6 +135,5 @@ class Admin extends CI_Controller {
 		
 		$this->session->set_flashdata('message', "Removed Ad");
 		redirect('admin/manage_flags', 'refresh');
-		
 	}
 }
