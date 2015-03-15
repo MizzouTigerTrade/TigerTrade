@@ -71,10 +71,12 @@
 								<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?</h4>
 							</div>
 							<div class="modal-body">
-								Message to user:<br>
+								Message to user<br>
+								<form action="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">
 								<textarea rows="3" cols="40" name="message_to_user"></textarea>
 							</div>
 							<div class="modal-footer">
+								<input class="btn btn-primary"type="submit" value="Yes">
 								<a class="btn btn-primary" href="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">Yes</a>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
