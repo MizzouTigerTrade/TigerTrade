@@ -73,7 +73,7 @@
 							<div class="modal-body">
 								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?<br>
 								Message to user:<br>
-								<textarea rows="3" cols="10" name="message_to_user">
+								<textarea rows="3" cols="10" name="message_to_user"></textarea>
 							</div>
 							<div class="modal-footer">
 								<a class="btn btn-primary" href="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">Yes</a>
