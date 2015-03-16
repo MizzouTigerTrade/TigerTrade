@@ -109,7 +109,7 @@ class Admin extends CI_Controller {
 	
 	function delete_ad($ad_id)
 	{
-		$this->ad_model->delete_ad($ad_id);
+		$ad = $this->ad_model->get_ad($ad_id);
 
 		$message_to_user = $this->input->post('message_to_user');
 		
@@ -122,6 +122,7 @@ class Admin extends CI_Controller {
 		<html>
 		<body>
 		<h1 style='border-bottom: 2px solid black;'>TigerTrade</h1>
+		<p> Ad <strong>" . $ad->title . "</strong> was deleted from Tiger Trade</p><br>
 		<p>" . $message_to_user . "</p>
 		</body>
 		</html>
@@ -133,6 +134,7 @@ class Admin extends CI_Controller {
 		
 		mail($to,$subject,$message,$headers);
 		
+		$this->ad_model->delete_ad($ad_id);
 		$this->session->set_flashdata('message', "Removed Ad");
 		redirect('admin/manage_flags', 'refresh');
 	}
