@@ -116,7 +116,7 @@ class Admin extends CI_Controller {
 		$user = $this->ion_auth->user()->row();
 		$to = $user->email;
 	
-		$subject = "Flagged Ad Removed";
+		$subject = "Tiger Trade Ad Removed";
 		
 		$message = "
 		<html>
