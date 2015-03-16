@@ -122,7 +122,7 @@ class Admin extends CI_Controller {
 		<html>
 		<body>
 		<h1 style='border-bottom: 2px solid black;'>TigerTrade</h1>
-		<p> Ad <strong>" . $ad->title . "</strong> was deleted from Tiger Trade</p><br>
+		<p> Ad <strong style='color: red;'>" . $ad->title . "</strong> was deleted from Tiger Trade</p>
 		<p>" . $message_to_user . "</p>
 		</body>
 		</html>
