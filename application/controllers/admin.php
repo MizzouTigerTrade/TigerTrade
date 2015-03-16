@@ -121,7 +121,7 @@ class Admin extends CI_Controller {
 		$message = "
 		<html>
 		<body>
-		<h1 style='border-bottom: underline;'>TigerTrade</h1>
+		<h1 style='border-bottom: 2px solid black;'>TigerTrade</h1>
 		<p>" . $message_to_user . "</p>
 		</body>
 		</html>
