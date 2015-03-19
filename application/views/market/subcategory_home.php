@@ -96,7 +96,7 @@ $(document).ready(function (){
 							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 								<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 								<?php if($image->ad_id == $row->ad_id) {
-									echo '<img class="img-thumbnail" src="'base_url($image->image_path)'" alt="ad_image" width="100%" height="100%">';
+									echo '<img class="img-thumbnail" src="'base_url($image->image_path);'" alt="ad_image" width="100%" height="100%">';
 								}
 								else
 									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
@@ -120,7 +120,7 @@ $(document).ready(function (){
 						<h3><?php echo $row->title; ?></h3>
 							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
 							<?php if($image->ad_id == $row->ad_id) {
-									echo '<img class="img-thumbnail" src="'base_url($image->image_path)'" alt="ad_image" width="100%" height="100%">';
+									echo '<img class="img-thumbnail" src="'base_url($image->image_path);'" alt="ad_image" width="100%" height="100%">';
 								}
 								else
 									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
