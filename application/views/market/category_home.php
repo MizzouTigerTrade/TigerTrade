@@ -56,7 +56,7 @@ $(document).ready(function (){
 							<option value="">Select One</option>
 							<?php
 								foreach($categories->result() as $category) { ?>
-									<option value="<?php echo $category->category_id; ?>" <?php if ($this->uri->segment(3) == $category.category_id) { ?>selected<?php } ?>><?php echo $category->name; ?></option>	
+									<option value="<?php echo $category->category_id; ?>" ><?php echo $category->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
