@@ -32,7 +32,7 @@
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
 								<?php if ($subcat->category_id == $category->category_id) { ?>
-									<option value="<?php echo $subcat->subcategory_id; ?>" <?php if ($subcategory->subcategory_id == $subcat->category_id) { ?>selected<?php } ?>><?php echo $subcat->name; ?></option>	
+									<option value="<?php echo $subcat->subcategory_id; ?>" <?php if ($subcategory->subcategory_id == $subcat->subcategory_id) { ?>selected<?php } ?>><?php echo $subcat->name; ?></option>	
 								<?php } ?>
 							<?php } ?>	
 						</select>
