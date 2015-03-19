@@ -51,17 +51,23 @@
 				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
 					<div class="col-xs-12">
-						<select onchange="location = 'market/category/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
-									<option value="<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
+									<option value="<?php echo $cat->category_id; ?>" <?php if ($category->category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
-					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
-						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
+					<div class="col-xs-12">
+						<select onchange="location = '../subcategory/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
+							<?php
+								foreach($subcategories->result() as $subcat) { ?>
+								<?php if ($subcat->category_id == $category->category_id) { ?>
+									<option value="<?php echo $subcat->subcategory_id; ?>"><?php echo $subcat->name; ?></option>	
+								<?php } ?>
+							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-xs-12">
