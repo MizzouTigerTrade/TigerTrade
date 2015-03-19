@@ -99,9 +99,9 @@ $(document).ready(function (){
 									<?php echo $image->image_path; ?>
 									<img class="img-thumbnail" src="<?php echo base_url($image->image_path); ?>'" alt="ad_image" width="100%" height="100%">';
 								<? } ?>
-								<?php else { ?>
+								<?php else ?>
 									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
-								<? } ?>
+								
 								</a>
 							</div>
 							<div class="media-body col-xs-9 col-md-8">
