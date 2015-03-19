@@ -98,7 +98,7 @@
 									}
 								} 
 								if($i == 0)
-									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
+									echo '<img class="img-thumbnail" src="http://guswpc.co.uk/wp-content/gallery/bucs-waterpolo/placeholder.jpg" alt="ad_image" width="100%" height="100%">';
 								?>
 								
 								</a>
@@ -131,7 +131,7 @@
 									}
 								} 
 								if($i == 0)
-									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
+									echo '<img class="img-thumbnail" src="http://guswpc.co.uk/wp-content/gallery/bucs-waterpolo/placeholder.jpg" alt="ad_image" width="100%" height="100%">';
 								?>
 						</a><br><br>
 						<p>Description: <?php echo $row->description; ?></p>
