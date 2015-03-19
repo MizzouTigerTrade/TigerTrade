@@ -106,12 +106,12 @@ class Ad extends CI_Controller
 					{
 						// Loop to get individual element from the array
 						$validextensions = array("jpeg", "jpg", "png");      // Extensions which are allowed.
-						$ext = explode('.', basename($eachfile['userfile']['name'][$i]));   // Explode file name from dot(.)
+						$ext = explode('.', basename($eachfile['name']));   // Explode file name from dot(.)
 						$file_extension = end($ext); // Store extensions in the variable.
 						$target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext) - 1];     // Set the target path with a new name of image.
 						$j = $j + 1;      // Increment the number of uploaded images according to the files in array.
-						if (($eachfile["userfile"]["size"][$i] < 100000)  && in_array($file_extension, $validextensions)) {
-							if (move_uploaded_file($eachfile['userfile']['tmp_name'][$i], $target_path)) {
+						if (($eachfile["size"] < 100000)  && in_array($file_extension, $validextensions)) {
+							if (move_uploaded_file($eachfile['tmp_name'], $target_path)) {
 
 							// If file moved to uploads folder.
 								echo '<div class="alert alert-success">
