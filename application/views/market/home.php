@@ -1,37 +1,3 @@
-<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-
-<script type="text/javascript">
-$(document).ready(function (){
-	$('#categorySelectForm').change(function(){
-	    var category_id = $(this).val();
-	    if (category_id != ""){
-	        var post_url = "<?php echo base_url('ajax') ?>/get_subcategories/" + category_id;
-	        $.ajax({
-	            type: "POST",
-	            url: post_url,
-	            success: function(subCategories) //we're calling the response json array 'cities'
-	            {
-	                $('#subCategory').empty();
-	                subCategories = $.parseJSON(subCategories);
-                   	$.each(subCategories,function(id,name) 
-                   	{	
-                    	var opt = $('<option />'); // here we're creating a new select option for each group
-                      	opt.val('/market/subcategory/' + id);
-                      	opt.text(name);
-                      	$('#subCategory').append(opt); 	
-	                });
-	            } //end success
-	         }); //end AJAX
-	    } 
-	    else
-	    {
-	    	$('#subCategory').empty();
-	    }
-	}); //end change 
-});
-
-</script>
-
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -52,27 +18,18 @@ $(document).ready(function (){
 				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
-						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
-							<option value="">Select One</option>
+						<select onchange="location = 'market/category/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+							<option value="">Select Category</option>
 							<?php
-								foreach($categories->result() as $category) {
-									echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';		
-							} ?>	
+								foreach($categories->result() as $cat) { ?>
+									<option value="<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
+							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
-					    	<option value=""><option>	
+						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
+							<option value="">Select Subcategory</option>
 						</select>
-					</div>
-					<div class="col-sm-6 col-md-4">
-						<div class="btn-group">
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
-							<?php if ($this->ion_auth->is_admin()) { ?>
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">New Category</a>
-							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
-							<?php } ?>
-						</div>
 					</div>
 				</div>
 				
