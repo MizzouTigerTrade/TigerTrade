@@ -53,11 +53,11 @@
 				<!-- Display Ads: rows of 3 -->
 
 				<?php foreach ($ads->result() as $row) { ?>
-					<?php foreach ($images->result() as $image) { ?>
 						<div class="row">
 						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 								<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+								<?php foreach ($images->result() as $image) { ?>
 								<?php if($image->ad_id == $row->ad_id) {
 									$test = base_url("") . $image->image_path;
 									//echo $test;
@@ -66,6 +66,7 @@
 								else
 									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
 								?>
+								<? } ?>
 								</a>
 							</div>
 							<div class="media-body col-xs-9 col-md-8">
@@ -74,7 +75,6 @@
 							</div>
 						</div>
 						</div><hr>
-					<? } ?>
 				<? } ?>
 				
 				<?php $count = 0; ?>
@@ -84,14 +84,16 @@
 						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 						<h3><?php echo $row->title; ?></h3>
 							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-							<?php if($image->ad_id == $row->ad_id) {
-								$test = base_url("") . $image->image_path;
-									//echo $test;
-									echo '<img class="img-thumbnail" src="$test" alt="ad_image" width="100%" height="100%">';
-								}
-								else
-									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
-								?>
+							<?php foreach ($images->result() as $image) { ?>
+								<?php if($image->ad_id == $row->ad_id) {
+									$test = base_url("") . $image->image_path;
+										//echo $test;
+										echo '<img class="img-thumbnail" src="$test" alt="ad_image" width="100%" height="100%">';
+									}
+									else
+										echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
+									?>
+								<? } ?>
 						</a><br><br>
 						<p>Description: <?php echo $row->description; ?></p>
 						<p>Ad ID: <?php echo $row->ad_id; ?></p>
