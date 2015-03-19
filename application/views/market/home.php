@@ -27,8 +27,8 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
-							<option disabled="true" value="">Select Subcategory</option>
+						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
+							<option value="">Select Subcategory</option>
 						</select>
 					</div>
 				</div>
