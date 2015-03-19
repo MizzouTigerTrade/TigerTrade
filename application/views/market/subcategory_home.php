@@ -95,13 +95,14 @@ $(document).ready(function (){
 						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 								<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-								<?php if($image->ad_id == $row->ad_id) { ?>
-									<?php echo $image->image_path; ?>
-									<img class="img-thumbnail" src="<?php echo base_url($image->image_path); ?>'" alt="ad_image" width="100%" height="100%">';
-								<? } ?>
-								<?php else ?>
+								<?php if($image->ad_id == $row->ad_id) {
+									$test = base_url("assets/images");
+									echo $test;
+									echo '<img class="img-thumbnail" src="" alt="ad_image" width="100%" height="100%">';
+								}
+								else
 									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
-								
+								?>
 								</a>
 							</div>
 							<div class="media-body col-xs-9 col-md-8">
@@ -120,13 +121,14 @@ $(document).ready(function (){
 						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 						<h3><?php echo $row->title; ?></h3>
 							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-							<?php if($image->ad_id == $row->ad_id) { ?>
-									<?php echo $image->image_path; ?>
-									<img class="img-thumbnail" src="<?php echo base_url($image->image_path); ?>'" alt="ad_image" width="100%" height="100%">';
-								<? } ?>
-								<?php else { ?>
+							<?php if($image->ad_id == $row->ad_id) {
+								$test = base_url("assets/images");
+									echo $test;
+									echo '<img class="img-thumbnail" src="" alt="ad_image" width="100%" height="100%">';
+								}
+								else
 									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
-								<? } ?>
+								?>
 						</a><br><br>
 						<p>Description: <?php echo $row->description; ?></p>
 						<p>Ad ID: <?php echo $row->ad_id; ?></p>
