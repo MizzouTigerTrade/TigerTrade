@@ -101,6 +101,8 @@ class Ad extends CI_Controller
 			$target_path = "assets/Images/";     // Declaring Path for uploaded images.
 			if(count($_FILES['userfile']['name']) > 0)
 			{
+				echo (count($_FILES['your_variable_array_in_html']['tmp_name']));
+				/*
 				for ($i = 0; isset($_FILES['userfile']['name'][$i]); $i++) {
 					echo $j . ' image';
 					// Loop to get individual element from the array
@@ -140,6 +142,7 @@ class Ad extends CI_Controller
 				$data['created'] = true;
 					
 				}
+				*/
 				
 			}
 			else
