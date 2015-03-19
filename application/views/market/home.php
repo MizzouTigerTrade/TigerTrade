@@ -31,6 +31,15 @@
 							<option value="">Select Subcategory</option>
 						</select>
 					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="btn-group">
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
+							<?php if ($this->ion_auth->is_admin()) { ?>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">New Category</a>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
+							<?php } ?>
+						</div>
+					</div>
 				</div>
 				
 				<!-- EXTRA SMALL Screen Menu -->
