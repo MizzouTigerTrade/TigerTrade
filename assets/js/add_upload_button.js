@@ -6,7 +6,7 @@ $(document).ready(function() {
 		$(this).before($("<div/>", {
 			id: 'filediv'
 			}).fadeIn('slow').append($("<input/>", {
-			name: 'file[]',
+			name: 'userfile[]',
 			type: 'file',
 			id: 'file'
 			}), $("<br/><br/>")));
@@ -38,7 +38,7 @@ $(document).ready(function() {
 	};
 		
 	$('#upload').click(function(e) {
-		var name = $(":userfile").val();
+		var name = $(":file").val();
 		if (!name) {
 			alert("First Image Must Be Selected");
 			e.preventDefault();
