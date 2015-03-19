@@ -90,19 +90,26 @@ $(document).ready(function (){
 				<!-- Display Ads: rows of 3 -->
 
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="row">
-				<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
-					<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
-						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-						<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
-						</a>
-					</div>
-					<div class="media-body col-xs-9 col-md-8">
-						<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
-						<?php echo $row->description; ?>
-					</div>
-				</div>
-				</div><hr>
+					<?php foreach ($images->result() as $image) { ?>
+						<div class="row">
+						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
+							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
+								<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+								<?php if($image->ad_id == $row->ad_id) {?>
+									<img class="img-thumbnail" src="<?php echo base_url() . $image->image_path ?>" alt="ad_image" width="100%" height="100%">
+								<? } ?>
+								<?php else { ?>
+									<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+								<? } ?>
+								</a>
+							</div>
+							<div class="media-body col-xs-9 col-md-8">
+								<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+								<?php echo $row->description; ?>
+							</div>
+						</div>
+						</div><hr>
+					<? } ?>
 				<? } ?>
 				
 				<?php $count = 0; ?>
@@ -112,7 +119,12 @@ $(document).ready(function (){
 						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 						<h3><?php echo $row->title; ?></h3>
 							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-							<img src="http://placehold.it/300x200" class="img-thumbnail" alt="Responsive image" width="100%">
+							<?php if($image->ad_id == $row->ad_id) {?>
+									<img class="img-thumbnail" src="<?php echo base_url() . $image->image_path ?>" alt="ad_image" width="100%" height="100%">
+								<? } ?>
+								<?php else { ?>
+									<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+								<? } ?>
 						</a><br><br>
 						<p>Description: <?php echo $row->description; ?></p>
 						<p>Ad ID: <?php echo $row->ad_id; ?></p>
