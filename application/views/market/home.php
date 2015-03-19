@@ -53,7 +53,7 @@
 							<?php } ?>	
 						</select>
 					</div>
-					<div class="col-xs-12" style="margin: 0 10px;">
+					<div class="col-xs-12" style="margin: 10px 0;">
 						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
 						</select>
