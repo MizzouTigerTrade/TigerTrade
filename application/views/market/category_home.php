@@ -62,7 +62,10 @@ $(document).ready(function (){
 					</div>
 					<div class="col-sm-3">
 						<select onchange="location = '../subcategory/' . this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
-					    	<option value=""><option>	
+							<?php
+								foreach($subcategories->result() as $subcategory) { ?>
+									<option value="<?php echo $subcategory->subcategory_id; ?>"><?php echo $subcategory->name; ?></option>	
+							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-sm-6 col-md-4">
