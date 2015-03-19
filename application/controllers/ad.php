@@ -102,6 +102,7 @@ class Ad extends CI_Controller
 			if(count($_FILES['userfile']['name']) > 0)
 			{
 				for ($i = 0; isset($_FILES['userfile']['name'][$i]); $i++) {
+					echo $j . ' image';
 					// Loop to get individual element from the array
 					$validextensions = array("jpeg", "jpg", "png");      // Extensions which are allowed.
 					$ext = explode('.', basename($_FILES['userfile']['name'][$i]));   // Explode file name from dot(.)
