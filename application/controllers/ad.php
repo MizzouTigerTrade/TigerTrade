@@ -37,7 +37,6 @@ class Ad extends CI_Controller
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
 		$this->layout->view('ad/edit_ad', $data);
-
 	}
 
 	//update ad by id
@@ -49,10 +48,14 @@ class Ad extends CI_Controller
 	//shows form to create a new ad
 	function new_ad()
 	{
-		$data['title'] = 'New Ad';
-		$data['categories'] = $this->category_model->get_all_categories();
-		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
-		$this->layout->view('forms/new_ad', $data);
+		if($this->ion_auth->logged_in() === true) {
+			$data['title'] = 'New Ad';
+			$data['categories'] = $this->category_model->get_all_categories();
+			$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
+			$this->layout->view('forms/new_ad', $data);
+		} else {
+			redirect('/auth/login', 'refresh');
+		}
 	}
 
 	//shows form to create a new ad
