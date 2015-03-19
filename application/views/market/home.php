@@ -55,9 +55,9 @@ $(document).ready(function (){
 						<select onchange="location = 'market/category/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select One</option>
 							<?php
-								foreach($categories->result() as $category) {
-									echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';		
-							} ?>	
+								foreach($categories->result() as $category) { ?>
+									<option value="<?php echo $category->category_id; ?>" <?php if ($this->uri->segment(3) == $category.category_id) { ?>selected<?php } ?>><?php echo $category->name; ?></option>	
+							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-sm-3">
