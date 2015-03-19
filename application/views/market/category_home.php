@@ -55,16 +55,18 @@ $(document).ready(function (){
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select One</option>
 							<?php
-								foreach($categories->result() as $category) { ?>
-									<option value="<?php echo $category->category_id; ?>" <?php if ($this->uri->segment(3) == $category->category_id) { ?>selected<?php } ?>><?php echo $category->name; ?></option>	
+								foreach($categories->result() as $cat) { ?>
+									<option value="<?php echo $cat->category_id; ?>" <?php if ($this->uri->segment(3) == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-sm-3">
 						<select onchange="location = '../subcategory/' . this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 							<?php
-								foreach($subcategories->result() as $subcategory) { ?>
-									<option value="<?php echo $subcategory->subcategory_id; ?>"><?php echo $subcategory->name; ?></option>	
+								foreach($subcategories->result() as $subcat) { ?>
+								<?php if ($subcat->category_id == $category->category_id) { ?>
+									<option value="<?php echo $subcat->subcategory_id; ?>"><?php echo $subcat->name; ?></option>	
+								<?php } ?>
 							<?php } ?>	
 						</select>
 					</div>
