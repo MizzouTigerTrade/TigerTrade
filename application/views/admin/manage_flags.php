@@ -64,17 +64,20 @@
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $flag->ad_id; ?>">Delete</button>
 
 				<div class="modal fade" id="deleteModal<?php echo $flag->ad_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
+					<div class="modal-dialog" style="width: 450px;">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Delete Ad</h4>
+								<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?</h4>
 							</div>
 							<div class="modal-body">
-								Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?
+								Message to user<br>
+								<form action="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>"  method="POST">
+								<textarea rows="4" cols="50" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
 							</div>
 							<div class="modal-footer">
-								<a class="btn btn-primary" href="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>">Yes</a>
+								<input class="btn btn-primary" type="submit" value="Yes">
+								</form>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>

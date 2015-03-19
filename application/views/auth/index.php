@@ -7,6 +7,7 @@
 			<h1>User Management</h1>
 		</div>
 	</div>
+	<hr>
 	
       <?php if ($message != "") { ?>
       <div id="infoMessage">
@@ -18,7 +19,8 @@
 	  <?php }; ?>
       
 	
-<table class="table">
+<table class="table table-hover">
+	<thead>
 	<tr>
 		<th><?php echo lang('index_fname_th');?></th>
 		<th><?php echo lang('index_lname_th');?></th>
@@ -27,6 +29,8 @@
 		<th><?php echo lang('index_status_th');?></th>
 		<th><?php echo lang('index_action_th');?></th>
 	</tr>
+	</thead>
+	<tbody>
 	<?php foreach ($users as $user):?>
 		<tr>
             <td><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?></td>
@@ -41,6 +45,7 @@
 			<td><?php echo anchor("auth/edit_user/".$user->id, 'Edit') ;?></td>
 		</tr>
 	<?php endforeach;?>
+	</tbody>
 </table>
 <p><?php echo anchor('auth/create_user', lang('index_create_user_link'))?> | <?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
 </div>
