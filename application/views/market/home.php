@@ -22,7 +22,7 @@
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
-									<option value="<?php echo $cat->category_id; ?>" <?php if ($this->uri->segment(3) == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
+									<option value="<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
