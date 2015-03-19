@@ -19,7 +19,7 @@
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
-							<option value="">Select One</option>
+							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
 									<option value="<?php echo $cat->category_id; ?>" <?php if ($this->uri->segment(3) == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
@@ -28,7 +28,7 @@
 					</div>
 					<div class="col-sm-3">
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
-							<option value=""></option>
+							<option value="">Select Subcategory</option>
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
 								<?php if ($subcat->category_id == $category->category_id) { ?>
