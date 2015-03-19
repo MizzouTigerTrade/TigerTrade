@@ -90,7 +90,7 @@
 									$i = 0;
 									foreach ($images->result() as $image) { 
 
-									 if($image->ad_id == $row->ad_id) {
+									 if($image->ad_id == $row->ad_id && $i == 0) {
 									 	$i++;
 										$test = base_url("") . $image->image_path;
 										//echo $test;
@@ -122,7 +122,7 @@
 									$i = 0;
 									foreach ($images->result() as $image) { 
 
-									 if($image->ad_id == $row->ad_id) {
+									 if($image->ad_id == $row->ad_id && $i == 0) {
 									 	$i++;
 									 	//$test = "http://kylecarlson.hosted.nfoservers.com/tgilman/TigerTrade/assets/Images/2fbf5c1c1bc463306e8d4bb7b88d9773.jpg";
 										$test = base_url("") . $image->image_path;
