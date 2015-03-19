@@ -65,7 +65,7 @@
 									 	$i++;
 										$test = base_url("") . $image->image_path;
 										//echo $test;
-										echo '<img class="img-thumbnail" src="$test" alt="ad_image" width="100%" height="100%">';
+										echo '<img class="img-thumbnail" src="'.$test.'" alt="ad_image" width="100%" height="100%">';
 									}
 								} 
 								if($i == 0)
@@ -95,9 +95,10 @@
 
 									 if($image->ad_id == $row->ad_id) {
 									 	$i++;
+									 	//$test = "http://kylecarlson.hosted.nfoservers.com/tgilman/TigerTrade/assets/Images/2fbf5c1c1bc463306e8d4bb7b88d9773.jpg";
 										$test = base_url("") . $image->image_path;
 										//echo $test;
-										echo '<img class="img-thumbnail" src="$test" alt="ad_image" width="100%" height="100%">';
+										echo '<img class="img-thumbnail" src="'.$test.'" alt="ad_image" width="100%" height="100%">';
 									}
 								} 
 								if($i == 0)
