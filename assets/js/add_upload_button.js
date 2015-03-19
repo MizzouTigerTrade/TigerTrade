@@ -38,7 +38,7 @@ $(document).ready(function() {
 	};
 		
 	$('#upload').click(function(e) {
-		var name = $(":file").val();
+		var name = $(":userfile").val();
 		if (!name) {
 			alert("First Image Must Be Selected");
 			e.preventDefault();
