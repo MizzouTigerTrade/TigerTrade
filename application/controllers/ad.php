@@ -101,34 +101,30 @@ class Ad extends CI_Controller
 			$target_path = "assets/Images/";     // Declaring Path for uploaded images.
 			if(count($_FILES['userfile']['name']) > 0)
 			{
-				foreach ($_FILES as $eachfile) {
-					if($eachfile['size'] > 0)
-					{
-						// Loop to get individual element from the array
-						$validextensions = array("jpeg", "jpg", "png");      // Extensions which are allowed.
-						$ext = explode('.', basename($eachfile['name']));   // Explode file name from dot(.)
-						$file_extension = end($ext); // Store extensions in the variable.
-						$target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext) - 1];     // Set the target path with a new name of image.
-						$j = $j + 1;      // Increment the number of uploaded images according to the files in array.
-						if (($eachfile["size"] < 100000)  && in_array($file_extension, $validextensions)) {
-							if (move_uploaded_file($eachfile['tmp_name'], $target_path)) {
+				for ($i = 0; isset($_FILES['userfile']['name'][$i]); $i++) {
+					// Loop to get individual element from the array
+					$validextensions = array("jpeg", "jpg", "png");      // Extensions which are allowed.
+					$ext = explode('.', basename($_FILES['userfile']['name'][$i]));   // Explode file name from dot(.)
+					$file_extension = end($ext); // Store extensions in the variable.
+					$target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext) - 1];     // Set the target path with a new name of image.
+					$j = $j + 1;      // Increment the number of uploaded images according to the files in array.
+					if (($_FILES["userfile"]["size"][$i] < 100000)  && in_array($file_extension, $validextensions)) {
+						if (move_uploaded_file($_FILES['userfile']['tmp_name'][$i], $target_path)) {
 
-							// If file moved to uploads folder.
-								echo '<div class="alert alert-success">
-				        			<a href="#" class="close" data-dismiss="alert">&times;</a>
-				       				 <strong>Success!</strong> '.$j .' Image Uploaded.</div>';
+						// If file moved to uploads folder.
+							echo '<div class="alert alert-success">
+			        			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			       				 <strong>Success!</strong> '.$j .' Image Uploaded.</div>';
 
-				       				 echo count($eachfile['size']);
-				       				//$this->ad_model->insert_img_ad($ad_id, $target_path);
-							} 
-							else {     //  If File Was Not Moved.
-								echo '<div class="alert alert-error">
-				        			<a href="#" class="close" data-dismiss="alert">&times;</a>
-				       				 <strong>Success!</strong> '.$j .' Image Not Uploaded.
-				    			</div>';
-							}
+			       				 //echo count($_FILES['userfile']['name'])
+			       				//$this->ad_model->insert_img_ad($ad_id, $target_path);
+						} 
+						else {     //  If File Was Not Moved.
+							echo '<div class="alert alert-error">
+			        			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			       				 <strong>Success!</strong> '.$j .' Image Not Uploaded.
+			    			</div>';
 						}
-					
 					}
 					else 
 					{     //   If File Size And File Type Was Incorrect.
