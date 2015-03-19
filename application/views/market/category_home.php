@@ -51,6 +51,20 @@
 				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
 					<div class="col-xs-12">
+						<select onchange="location = 'market/category/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+							<option value="">Select Category</option>
+							<?php
+								foreach($categories->result() as $cat) { ?>
+									<option value="<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
+							<?php } ?>	
+						</select>
+					</div>
+					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
+						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
+							<option value="">Select Subcategory</option>
+						</select>
+					</div>
+					<div class="col-xs-12">
 						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
 						<?php if ($this->ion_auth->is_admin()) { ?>
 						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/market/new_category') ?>">Create a Category</a><br>
