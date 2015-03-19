@@ -61,7 +61,7 @@ $(document).ready(function (){
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = '../subcategory/' . this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
+						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
 								<?php if ($subcat->category_id == $category->category_id) { ?>
