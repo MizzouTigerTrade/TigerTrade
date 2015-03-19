@@ -116,7 +116,7 @@ class Ad extends CI_Controller
 			        			<a href="#" class="close" data-dismiss="alert">&times;</a>
 			       				 <strong>Success!</strong> '.$j .' Image Uploaded.</div>';
 
-			       				 echo count($_FILES['userfile']['name']);
+			       				 echo count($_FILES['userfile']);
 			       				//$this->ad_model->insert_img_ad($ad_id, $target_path);
 						} 
 						else {     //  If File Was Not Moved.
