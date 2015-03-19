@@ -31,10 +31,33 @@
 							<option value="">Select Subcategory</option>
 						</select>
 					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="btn-group">
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
+							<?php if ($this->ion_auth->is_admin()) { ?>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_category') ?>">New Category</a>
+							<a class="btn btn-default btn-sm" href="<?php echo base_url('/market/new_subcategory') ?>">New Subcategory</a>
+							<?php } ?>
+						</div>
+					</div>
 				</div>
 				
 				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
+					<div class="col-xs-12">
+						<select onchange="location = 'market/category/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+							<option value="">Select Category</option>
+							<?php
+								foreach($categories->result() as $cat) { ?>
+									<option value="<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
+							<?php } ?>	
+						</select>
+					</div>
+					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
+						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
+							<option value="">Select Subcategory</option>
+						</select>
+					</div>
 					<div class="col-xs-12">
 						<a class="btn btn-default btn-sm wide-button" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a><br>
 						<?php if ($this->ion_auth->is_admin()) { ?>
@@ -44,8 +67,8 @@
 					</div>
 				</div>
 
-				<!-- Display Ads: rows of 3 -->
-
+				<!-- Display Ads: rows of 1 -->
+				
 				<?php foreach ($ads->result() as $row) { ?>
 				<div class="row">
 					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
@@ -61,6 +84,8 @@
 					</div>
 				</div><hr>
 				<? } ?>
+				
+				<!-- Display Ads: rows of 3 -->
 				
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
