@@ -59,7 +59,7 @@
 							<?php } ?>	
 						</select>
 					</div>
-					<div class="col-xs-12">
+					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
 						<select onchange="location = this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
 							<?php
