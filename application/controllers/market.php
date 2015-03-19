@@ -101,6 +101,7 @@ class Market extends CI_Controller
 		$data['subcategory'] = $this->subcategory_model->get_subcategory($subcategory_id);
 		$data['category'] = $this->category_model->get_category($data['subcategory']->category_id);
 		$data['ads'] = $this->ad_model->get_ads_subcategory($subcategory_id);
+		$data['images'] = $this->ad_model->get_image_of_ads($ads->result());
 		$data['title'] = 'Subcategory Home';
 		$this->layout->view('market/subcategory_home', $data);
 	}

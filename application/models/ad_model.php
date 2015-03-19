@@ -103,6 +103,21 @@ class Ad_model extends CI_Model
 	public function get_ads_subcategory($subcategory_id)
 	{
 		$result = $this->db->query("SELECT * FROM ads WHERE subcategory_id = '$subcategory_id'");
+
+		return $result;
+	}
+
+	public function check_if_image_exists($ad_id)
+	{
+		$result = $this->db->query("SELECT * FROM images where ad_id = '$ad_id'");
+
+		return $result;
+	}
+
+	public function get_image_of_ads($ads)
+	{
+		$result = $this->db->query("SELECT * FROM images");
+
 		return $result;
 	}
 

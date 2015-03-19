@@ -82,7 +82,7 @@ class Ad extends CI_Controller
 		//if validation passes
 		else
 		{
-			
+			/*
 			$title = $this->security->xss_clean($this->input->post('title'));
 			$description = $this->security->xss_clean($this->input->post('description'));
 			$price = $this->security->xss_clean($this->input->post('price'));
@@ -95,7 +95,7 @@ class Ad extends CI_Controller
 			$this->ad_model->insert_new_ad($title, $description, $price, $user_id, $category, $subCategory);
 
 			$ad_id = $this->ad_model->get_new_ad_id($title, $description, $price, $user_id, $category, $subCategory);
-
+			*/
 
 			$j = 0;     // Variable for indexing uploaded image.
 			$target_path = "assets/Images/";     // Declaring Path for uploaded images.
@@ -116,7 +116,8 @@ class Ad extends CI_Controller
 			        			<a href="#" class="close" data-dismiss="alert">&times;</a>
 			       				 <strong>Success!</strong> '.$j .' Image Uploaded.</div>';
 
-			       				$this->ad_model->insert_img_ad($ad_id, $target_path);
+			       				 echo count($_FILES['userfile']['name']);
+			       				//$this->ad_model->insert_img_ad($ad_id, $target_path);
 						} 
 						else {     //  If File Was Not Moved.
 							echo '<div class="alert alert-error">
