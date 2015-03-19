@@ -82,19 +82,33 @@
 				<!-- Display Ads: rows of 3 -->
 
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="row">
-				<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
-					<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
-						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-						<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
-						</a>
-					</div>
-					<div class="media-body col-xs-9 col-md-8">
-						<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
-						<?php echo $row->description; ?>
-					</div>
-				</div>
-				</div><hr>
+						<div class="row">
+						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
+							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
+								<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+								<?php 
+									$i = 0;
+									foreach ($images->result() as $image) { 
+
+									 if($image->ad_id == $row->ad_id) {
+									 	$i++;
+										$test = base_url("") . $image->image_path;
+										//echo $test;
+										echo '<img class="img-thumbnail" src="'.$test.'" alt="ad_image" width="100%" height="100%">';
+									}
+								} 
+								if($i == 0)
+									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
+								?>
+								
+								</a>
+							</div>
+							<div class="media-body col-xs-9 col-md-8">
+								<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+								<?php echo $row->description; ?>
+							</div>
+						</div>
+						</div><hr>
 				<? } ?>
 				
 				<?php $count = 0; ?>
@@ -104,7 +118,21 @@
 						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 						<h3><?php echo $row->title; ?></h3>
 							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-							<img src="http://placehold.it/300x200" class="img-thumbnail" alt="Responsive image" width="100%">
+							<?php 
+									$i = 0;
+									foreach ($images->result() as $image) { 
+
+									 if($image->ad_id == $row->ad_id) {
+									 	$i++;
+									 	//$test = "http://kylecarlson.hosted.nfoservers.com/tgilman/TigerTrade/assets/Images/2fbf5c1c1bc463306e8d4bb7b88d9773.jpg";
+										$test = base_url("") . $image->image_path;
+										//echo $test;
+										echo '<img class="img-thumbnail" src="'.$test.'" alt="ad_image" width="100%" height="100%">';
+									}
+								} 
+								if($i == 0)
+									echo '<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">';
+								?>
 						</a><br><br>
 						<p>Description: <?php echo $row->description; ?></p>
 						<p>Ad ID: <?php echo $row->ad_id; ?></p>

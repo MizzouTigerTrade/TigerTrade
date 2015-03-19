@@ -6,7 +6,7 @@ $(document).ready(function() {
 		$(this).before($("<div/>", {
 			id: 'filediv'
 			}).fadeIn('slow').append($("<input/>", {
-			name: 'file[]',
+			name: 'userfile[]',
 			type: 'file',
 			id: 'file'
 			}), $("<br/><br/>")));
