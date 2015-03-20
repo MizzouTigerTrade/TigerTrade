@@ -44,7 +44,7 @@
                   <label for="email" class="col-sm-4 control-label label-20">Email</label>
                   <div class="col-sm-4">
                   	<div class="input-group">
-				      	<input type="text" pattern="^([_A-z0-9]){3,}$" name="email" maxlength="20" class="form-control" id="inputTwitter" placeholder="pawprint" required>
+				      	<input type="text" pattern="^([_A-z0-9]){3,}$" name="email" minlength="6" maxlength="20" class="form-control" id="inputTwitter" placeholder="pawprint" required>
 				    	<span class="input-group-addon">
 				    		<select name="email_option">
 							  <option value="@mail.missouri.edu">@mail.missouri.edu</option>
