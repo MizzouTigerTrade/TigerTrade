@@ -70,7 +70,7 @@
 				<!-- Display Ads: rows of 1 -->
 				
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="row">
+				<div class="row" id="<?= $row->ad_id ?>">
 					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 						<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
