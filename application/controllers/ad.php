@@ -24,8 +24,10 @@ class Ad extends CI_Controller
 	function details($ad_id)
 	{
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
-		$data['category'] = $this->category_model->get_category($ad['category_id']);
-		$data['subcategory'] = $this->subcategory_model->get_subcategory($data['ad']['category_id']);
+		$cat_id = $data['ad']['category_id'];
+		$subcat_id = $data['ad']['subcategory_id'];
+		$data['category'] = $this->category_model->get_category();
+		$data['subcategory'] = $this->subcategory_model->get_subcategory();
 		$data['title'] = 'Ad Detail';
 		$data['message'] = "";
 		$this->layout->view('ad/ad_detail', $data);
