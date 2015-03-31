@@ -37,10 +37,10 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="form-group">
-					<label for="buyer_message" class="col-sm-2 control-label label-20">Message</label>
-					<div class="col-sm-10">
-						<textarea type="text" class="form-control description-box" name="buyer_message" id="buyer_message" rows="5"></textarea>
-						<p class="help-block">Post a comment anonymously.</p>
+					<label for="buyer_message" class="col-xs-12 control-label label-20">Message</label>
+					<div class="col-xs-12">
+						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
+						<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 					</div>
 				</div>
 			</div>
