@@ -17,10 +17,37 @@
 		  <?php echo $message;?>
 		</div>
 	  </div>
-	  <?php }; ?>
+	<?php }; ?>
 	
-	<h2>$<?php echo $ad->price; ?></h2>
-	<p><?php echo $ad->description; ?></p>
-	<a class="btn btn-default" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
-	<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Flag Ad</a>
+	<!-- Devices >= Small -->
+	<div class="row hidden-xs">
+		<div class="col-sm-7">
+			<h2>$<?php echo $ad->price; ?></h2>
+			<p><?php echo $ad->description; ?></p>
+			<a class="btn btn-default" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
+			<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Flag Ad</a>
+		</div>
+		<div class="col-sm-5">
+			<div class="col-sm-12">
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+			</div>
+			<div class="col-sm-2 col-sm-offset-1">
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+			</div>
+			<div class="col-sm-2">
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+			</div>
+			<div class="col-sm-2">
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+			</div>
+			<div class="col-sm-2">
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+			</div>
+			<div class="col-sm-2">
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+			</div>
+		</div>
+	</div>
+	
+	<!-- Devices == Extra Small (Mobile) -->
 </div>
