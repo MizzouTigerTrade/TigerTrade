@@ -28,7 +28,7 @@
 			<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Flag Ad</a>
 		</div>
 		<div class="col-sm-5">
-				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 		</div>
 	</div>
 	
