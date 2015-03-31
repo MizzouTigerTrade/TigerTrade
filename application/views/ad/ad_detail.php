@@ -22,7 +22,7 @@
 	<!-- Devices >= Small -->
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
-			<h2>Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
+			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<p class="text-justify">Details: <?php echo $ad->description; ?></p>
 			<a class="btn btn-default" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
 			<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Flag Ad</a>
