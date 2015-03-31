@@ -32,7 +32,8 @@
 				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 		</div>
 	</div>
-	
+	<br>
+	<br>
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row">
 			<div class="col-xs-12" style="padding: 0;">
