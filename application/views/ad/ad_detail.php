@@ -40,7 +40,12 @@
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
 					<div class="col-xs-12">
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
-						<p class="help-block">Post a comment anonymously. Please be respectful.</p>
+						<div class="col-sm-8">
+							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
+						</div>
+						<div class="col-sm-4">
+							SUBMIT FUCKING BUTTON
+						</div>
 					</div>
 				</div>
 			</div>
