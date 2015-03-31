@@ -43,7 +43,7 @@
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
 						<div class="col-sm-4">
-							SUBMIT FUCKING BUTTON
+							FUCKING SUBMIT BUTTON
 						</div>
 					</div>
 				</div>
