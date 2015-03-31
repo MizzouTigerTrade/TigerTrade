@@ -33,7 +33,7 @@
 		</div>
 	</div>
 	
-	<?php if (!$this->ion_auth->logged_in()) { ?>
+	<?php if ($this->ion_auth->logged_in()) { ?>
 		LOGGED IN MOTHERFUCKER
 	<?php } ?>
 	
