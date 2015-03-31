@@ -39,7 +39,7 @@
 				<div class="form-group">
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Message</label>
 					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
+						<textarea type="text" style="padding: 6px 0;" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
 						<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 					</div>
 				</div>
