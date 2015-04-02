@@ -30,7 +30,7 @@ class Ad extends CI_Controller
 			$data['subcategory'] = '';
 		} else {
 			$sub = $this->subcategory_model->get_subcategory($data['ad']->subcategory_id);
-			$data['subcategory'] = $sub->name;
+			$data['subcategory'] = ' > ' . $sub->name;
 		}
 		$data['title'] = 'Ad Detail';
 		$data['message'] = "";
