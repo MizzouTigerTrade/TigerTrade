@@ -2,9 +2,7 @@
 	$(function(){
       // bind change event to select
       $('#categorySelectForm').bind('change', function () {
-          var val = $(this).val(); // get selected value
-          console.log(val);
-          var url = <?php echo base_url('market/index/')?> + '1';
+          var url = $(this).val(); // get selected value
           if (url) { // require a URL
               window.location = url; // redirect
           }
@@ -37,7 +35,7 @@
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
-									<option value="<?php echo $cat->category_id; ?>" <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
+									<option value="<?php echo base_url('market/index/') . $category_id;?>  ?>" <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
@@ -66,11 +64,11 @@
 				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
 					<div class="col-xs-12">
-						<select onchange="location = 'market/category/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
-									<option value="<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
+									<option value="<?php echo base_url('market/index/') . $category_id;?>  ?>" <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
