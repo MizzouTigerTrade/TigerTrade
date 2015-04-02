@@ -4,7 +4,7 @@
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>Market: All</h1>
+			<h1>Market: </h1>
 		</div>
 	</div>
 	
@@ -18,7 +18,7 @@
 				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
-						<select onchange="location = 'market/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select onchange="location = '../' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
@@ -27,7 +27,7 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = 'market/<?php echo $category_id; ?>/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
+						<select onchange="location = '../<?php echo $category_id; ?>/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
