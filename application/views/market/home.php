@@ -3,6 +3,7 @@
       // bind change event to select
       $('#categorySelectForm').bind('change', function () {
           var val = $(this).val(); // get selected value
+          console.log(val);
           var url = <?php echo base_url('market/index/')?> + val;
           if (url) { // require a URL
               window.location = url; // redirect
