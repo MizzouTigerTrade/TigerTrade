@@ -83,7 +83,12 @@ class Ad extends CI_Controller
 		$this->form_validation->set_rules('price', 'Price', 'required');
 		$this->form_validation->set_rules('description', 'Description', 'required');
 		$this->form_validation->set_rules('category', 'Category', 'required');
-		$this->form_validation->set_rules('subCategory', 'Sub-Category', 'required');
+		$category = $this->security->xss_clean($this->input->post('category'));
+		$sub_category_check = $this->ad_model->check_subCategory($category);
+		if($sub_category_check > 0)
+		{
+			$this->form_validation->set_rules('subCategory', 'Sub-Category', 'required');
+		}
 
 		//if validation fails
 		if ($this->form_validation->run() == false)
@@ -99,7 +104,7 @@ class Ad extends CI_Controller
 			$price = $this->security->xss_clean($this->input->post('price'));
 			$category = $this->security->xss_clean($this->input->post('category'));
 			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
-
+			
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
 
@@ -136,6 +141,7 @@ class Ad extends CI_Controller
 			    			</div>';
 						}
 					}
+					/*
 					else 
 					{     //   If File Size And File Type Was Incorrect.
 						echo '<div class="alert alert-error">
@@ -143,6 +149,7 @@ class Ad extends CI_Controller
 			       				 <strong>Success!</strong> '.$j .' Image Not Uploaded.
 			    			</div>';
 					}
+					*/
 
 
 

@@ -1,10 +1,35 @@
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script type="text/javascript">
+	$(function(){
+      // bind change event to select
+      $('#categorySelectForm').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+
+    $(function(){
+      // bind change event to select
+      $('#subCategory').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+</script>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>Market: All</h1>
+			<h1>Market: <?php echo $market_name; ?></h1>
 		</div>
 	</div>
 	
@@ -18,17 +43,23 @@
 				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
-						<select onchange="location = 'market/category/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
-									<option value="<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
+									<option value="<?php echo base_url('market/index/') . '/' . $cat->category_id;?>  " <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
+						<select class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
+							<?php
+								foreach($subcategories->result() as $subcat) { ?>
+								<?php if ($subcat->category_id == $category_id) { ?>
+									<option value="<?php echo base_url('market/index/') . '/' . $category_id . '/' . $subcat->subcategory_id;?>"<?php if ($subcategory_id == $subcat->subcategory_id) { ?>selected<?php } ?>><?php echo $subcat->name; ?></option>	
+								<?php } ?>
+							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-sm-6 col-md-4">
@@ -45,17 +76,23 @@
 				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
 					<div class="col-xs-12">
-						<select onchange="location = 'market/category/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
-									<option value="<?php echo $cat->category_id; ?>"><?php echo $cat->name; ?></option>	
+									<option value="<?php echo base_url('market/index/') . '/' . $cat->category_id;?>  " <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
-						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
+						<select class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
+							<?php
+								foreach($subcategories->result() as $subcat) { ?>
+								<?php if ($subcat->category_id == $category_id) { ?>
+									<option value="<?php echo base_url('market/index/') . '/' . $category_id . '/' . $subcat->subcategory_id;?>"<?php if ($subcategory_id == $subcat->subcategory_id) { ?>selected<?php } ?>><?php echo $subcat->name; ?></option>	
+								<?php } ?>
+							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-xs-12">
@@ -70,7 +107,7 @@
 				<!-- Display Ads: rows of 1 -->
 				
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="row">
+				<div class="row" id="<?= $row->ad_id ?>">
 					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 						<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">

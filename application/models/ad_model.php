@@ -158,6 +158,13 @@ class Ad_model extends CI_Model
 		}
 		
 	}
+
+	public function check_subCategory($category)
+	{
+		$result = $this->db->query("SELECT * FROM subcategories WHERE category_id = '$category'");
+
+		return $result->num_rows();
+	}
 	
 	public function dismiss_flag($ad_id)
 	{
