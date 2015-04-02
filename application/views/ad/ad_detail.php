@@ -22,7 +22,7 @@
 	<!-- Devices >= Small -->
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
-			<p style="font-size: .9em;"><?php echo $category->name; ?> > <?php echo $subcategory->name; ?></p>
+			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<p class="text-justify">Details: <?php echo $ad->description; ?></p>
 			<a class="btn btn-default" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
