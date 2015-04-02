@@ -32,24 +32,6 @@
 				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 		</div>
 	</div>
-	<?php if ($this->ion_auth->logged_in()) { ?>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col-xs-12" style="padding: 0;">
-				<div class="form-group">
-					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
-					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
-						<div class="col-sm-8">
-							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
-						</div>
-						<div class="col-sm-4">
-							<button class="btn btn-sm btn-default">FUCKING SUBMIT BUTTON</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	<?php } ?>
 	
 	<!-- Devices == Extra Small (Mobile) -->
 	<div class="row visible-xs">
@@ -64,6 +46,8 @@
 				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 		</div>
 	</div>
+	
+	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
 			<div class="col-xs-12" style="padding: 0;">
