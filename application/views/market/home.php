@@ -36,7 +36,7 @@
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
-									<option value="<?php echo base_url('market/index/') . $category_id;?>  ?>" <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
+									<option value="<?php echo base_url('market/index/')?> + <?php echo $category_id;?>  ?>" <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
