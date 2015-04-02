@@ -10,6 +10,17 @@
           return false;
       });
     });
+
+    $(function(){
+      // bind change event to select
+      $('#subCategory').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
 </script>
 
 <div class="container padding-top-20">
@@ -41,12 +52,12 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = '../<?php echo $category_id; ?>/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
+						<select class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
 								<?php if ($subcat->category_id == $category_id) { ?>
-									<option value="<?php echo $subcat->subcategory_id; ?>"><?php echo $subcat->name; ?></option>	
+									<option value="<?php echo base_url('market/index/') . '/' . $category_id . '/' . $subcat->subcategory_id;?>"><?php if ($subcategory_id == $subcat->subcategory_id) { ?>selected<?php } ?>><?php echo $subcat->name; ?></option>	
 								<?php } ?>
 							<?php } ?>	
 						</select>
