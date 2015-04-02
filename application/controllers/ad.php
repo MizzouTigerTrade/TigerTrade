@@ -101,7 +101,7 @@ class Ad extends CI_Controller
 			}
 			else
 			{
-				$SubCategory = null;
+				$subCategory = null;
 			}
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
