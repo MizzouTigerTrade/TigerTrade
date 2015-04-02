@@ -27,7 +27,7 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select onchange="location = 'market/"<?=category_id?>"/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
+						<select onchange="location = 'market/"<?=$category_id?>"/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
