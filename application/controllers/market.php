@@ -30,7 +30,8 @@ class Market extends CI_Controller
 		}
 		else
 		{
-			$data['market_name'] = 'Subcategory Name here';
+			$category = $this->category_model->get_category($cat);
+			$data['market_name'] = $category->name . ' - ' . 'subName';
 			$data['ads'] = $this->ad_model->get_ads_subcategory($sub);
 		}
 		
