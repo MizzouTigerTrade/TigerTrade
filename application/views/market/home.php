@@ -18,7 +18,7 @@
 			<div class="back-button"><button class="btn btn-default" onclick="goBack()">Back</button></div>
 		</div>
 		<div class="col-xs-9 col-sm-10">
-			<h1>Market: <?php echo $category_id; ?></h1>
+			<h1>Market: <?php echo $market_name; ?></h1>
 		</div>
 	</div>
 	
@@ -69,7 +69,7 @@
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
-									<option value="<?php echo base_url('market/index/') . $category_id;?>  ?>" <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
+									<option value="<?php echo base_url('market/index/') . '/' . $cat->category_id;?>  " <?php if ($category_id == $cat->category_id) { ?>selected<?php } ?>><?php echo $cat->name; ?></option>	
 							<?php } ?>	
 						</select>
 					</div>
