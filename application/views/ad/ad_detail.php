@@ -57,7 +57,7 @@
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
 						<div class="col-sm-4 text-right">
-							<button class="btn btn-xs btn-default" style="margin-top: 5px;">FUCKING SUBMIT BUTTON</button>
+							<button class="btn btn-xs btn-default" style="margin-top: 5px;">Submit</button>
 						</div>
 					</div>
 				</div>
