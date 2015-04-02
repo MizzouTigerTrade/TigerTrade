@@ -27,7 +27,7 @@ class Market extends CI_Controller
 		else
 		{
 			$data['subcategory_id'] = $sub;
-			$data['ads'] = $this->ad_model->get_ads_subcategory($sub;
+			$data['ads'] = $this->ad_model->get_ads_subcategory($sub);
 		}
 		
 		$data['categories'] = $this->category_model->get_all_categories();
