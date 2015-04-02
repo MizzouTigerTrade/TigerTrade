@@ -57,7 +57,7 @@
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
 								<?php if ($subcat->category_id == $category_id) { ?>
-									<option value="<?php echo base_url('market/index/') . '/' . $category_id . '/' . $subcat->subcategory_id;?>"><?php if ($subcategory_id == $subcat->subcategory_id) { ?>selected<?php } ?>><?php echo $subcat->name; ?></option>	
+									<option value="<?php echo base_url('market/index/') . '/' . $category_id . '/' . $subcat->subcategory_id;?>"<?php if ($subcategory_id == $subcat->subcategory_id) { ?>selected<?php } ?>><?php echo $subcat->name; ?></option>	
 								<?php } ?>
 							<?php } ?>	
 						</select>
