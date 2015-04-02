@@ -24,6 +24,7 @@
 	  </div>
 	  <?php }; ?>
       
+      
       <form action="<?php echo base_url('auth/create_user') ?>" method="POST" class="form-horizontal" id="ad-form" data-toggle="validator" role="form">
 
             <div class="form-group">
