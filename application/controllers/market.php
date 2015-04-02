@@ -17,14 +17,17 @@ class Market extends CI_Controller
 
 		if($cat == null)
 		{
+			$data['market_name'] = 'All';
 			$data['ads'] = $this->ad_model->get_all_ads();
 		}
 		elseif($sub == null)
 		{
+			$data['market_name'] = 'Category Name here';
 			$data['ads'] = $this->ad_model->get_ads_category($cat);
 		}
 		else
 		{
+			$data['market_name'] = 'Subcategory Name here';
 			$data['ads'] = $this->ad_model->get_ads_subcategory($sub);
 		}
 		
