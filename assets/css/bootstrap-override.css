@@ -92,3 +92,8 @@ hr {
 	background-color: #4CBD95;
 	border-color: #42a985;	
 }
+
+.btn-success:hover {
+	background-color: #42a985;
+	border-color: #3a9877;	
+}
