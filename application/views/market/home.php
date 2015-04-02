@@ -85,8 +85,14 @@
 						</select>
 					</div>
 					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
-						<select disabled="true" class="form-control input-sm" id="subCategory" name="subCategory">
+						<select class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
+							<?php
+								foreach($subcategories->result() as $subcat) { ?>
+								<?php if ($subcat->category_id == $category_id) { ?>
+									<option value="<?php echo base_url('market/index/') . '/' . $category_id . '/' . $subcat->subcategory_id;?>"<?php if ($subcategory_id == $subcat->subcategory_id) { ?>selected<?php } ?>><?php echo $subcat->name; ?></option>	
+								<?php } ?>
+							<?php } ?>	
 						</select>
 					</div>
 					<div class="col-xs-12">
