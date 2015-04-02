@@ -81,7 +81,7 @@ class Ad extends CI_Controller
 		{
 			$this->form_validation->set_rules('subCategory', 'Sub-Category', 'required');
 		}
-		
+
 		//if validation fails
 		if ($this->form_validation->run() == false)
 		{
@@ -95,8 +95,14 @@ class Ad extends CI_Controller
 			$description = $this->security->xss_clean($this->input->post('description'));
 			$price = $this->security->xss_clean($this->input->post('price'));
 			$category = $this->security->xss_clean($this->input->post('category'));
-			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
-
+			if($sub_category_check > 0)
+			{
+				$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
+			}
+			else
+			{
+				$SubCategory = null;
+			}
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
 
