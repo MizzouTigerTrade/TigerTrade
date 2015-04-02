@@ -53,10 +53,10 @@
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
 					<div class="col-xs-12">
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
-						<div class="col-sm-8">
+						<div class="col-xs-10">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
-						<div class="col-sm-4 text-right">
+						<div class="col-xs-2 text-right">
 							<button class="btn btn-xs btn-default" style="margin-top: 5px;">Submit</button>
 						</div>
 					</div>
