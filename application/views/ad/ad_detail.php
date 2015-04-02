@@ -56,8 +56,8 @@
 						<div class="col-sm-8">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
-						<div class="col-sm-4">
-							<button class="text-right btn btn-sm btn-default">FUCKING SUBMIT BUTTON</button>
+						<div class="col-sm-4 text-right">
+							<button class="btn btn-sm btn-default">FUCKING SUBMIT BUTTON</button>
 						</div>
 					</div>
 				</div>
