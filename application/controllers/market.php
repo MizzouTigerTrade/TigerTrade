@@ -12,8 +12,10 @@ class Market extends CI_Controller
 		$data['menu'] = $this->load->view('shared/menu');
 	}
 
-	function index($cat = null, $sub = null)
+	function index()
 	{
+		$cat = $this->uri->segment(3);
+        $sub  = $this->uri->segment(4);
 
 		if($cat == null)
 		{
