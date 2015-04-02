@@ -24,7 +24,7 @@ class Market extends CI_Controller
 		}
 		elseif($sub == null)
 		{
-			$category = = $this->category_model->get_category($cat);
+			$category = $this->category_model->get_category($cat);
 			$data['market_name'] = $category->name;
 			$data['ads'] = $this->ad_model->get_ads_category($cat);
 		}
