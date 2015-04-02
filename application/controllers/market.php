@@ -31,7 +31,7 @@ class Market extends CI_Controller
 		else
 		{
 			$category = $this->category_model->get_category($cat);
-			$subcategory = $this->Subcategory->get_subcategory($sub);
+			$subcategory = $this->subcategory_model->get_subcategory($sub);
 
 			$data['market_name'] = $category->name . ' - ' . $subcategory->name;
 			$data['ads'] = $this->ad_model->get_ads_subcategory($sub);
