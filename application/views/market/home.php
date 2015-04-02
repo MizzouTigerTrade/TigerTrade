@@ -1,3 +1,17 @@
+<script type="text/javascript">
+	$(function(){
+      // bind change event to select
+      $('#categorySelectForm').bind('change', function () {
+          var val = $(this).val(); // get selected value
+          var url = <?php echo base_url('market/index/')?> + val;
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+</script>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-3 col-sm-2 text-center">
@@ -18,7 +32,7 @@
 				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
-						<select onchange="location = 'market/index/' + this.options[this.selectedIndex].value;" class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
