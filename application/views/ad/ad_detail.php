@@ -22,16 +22,30 @@
 	<!-- Devices >= Small -->
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
-			<p style="font-size: .9em;"><?php echo $category->name; ?> > <?php echo $subcategory->name; ?></p>
+			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
-			<p class="text-justify">Details: <?php echo $ad->description; ?></p>
-			<a class="btn btn-default" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
-			<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Flag Ad</a>
+			<a class="btn btn-success" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
+			<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
+			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 		<div class="col-sm-5">
 				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 		</div>
 	</div>
+	
+	<!-- Devices == Extra Small (Mobile) -->
+	<div class="row visible-xs">
+		<div class="col-xs-12">
+			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
+			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
+			<a class="btn btn-sm btn-success" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
+			<a class="btn btn-sm btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
+			<img style="margin-top: 10px;" class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
+			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
+		</div>
+	</div>
+	
+	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
 			<div class="col-xs-12" style="padding: 0;">
@@ -39,17 +53,15 @@
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
 					<div class="col-xs-12">
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
-						<div class="col-sm-8">
+						<div class="col-xs-9">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
-						<div class="col-sm-4">
-							FUCKING SUBMIT BUTTON
+						<div class="col-xs-3 text-right">
+							<button class="btn btn-xs btn-default" style="margin-top: 5px;">Submit</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	<?php } ?>
-	
-	<!-- Devices == Extra Small (Mobile) -->
 </div>
