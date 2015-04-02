@@ -95,14 +95,8 @@ class Ad extends CI_Controller
 			$description = $this->security->xss_clean($this->input->post('description'));
 			$price = $this->security->xss_clean($this->input->post('price'));
 			$category = $this->security->xss_clean($this->input->post('category'));
-			if($sub_category_check > 0)
-			{
-				$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
-			}
-			else
-			{
-				$subCategory = null;
-			}
+			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
+			
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
 
@@ -139,6 +133,7 @@ class Ad extends CI_Controller
 			    			</div>';
 						}
 					}
+					/*
 					else 
 					{     //   If File Size And File Type Was Incorrect.
 						echo '<div class="alert alert-error">
@@ -146,6 +141,7 @@ class Ad extends CI_Controller
 			       				 <strong>Success!</strong> '.$j .' Image Not Uploaded.
 			    			</div>';
 					}
+					*/
 
 
 
