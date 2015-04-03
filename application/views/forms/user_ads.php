@@ -5,14 +5,16 @@
 		</div>
 	</div>
 	
+	<hr>
+	
 	<table class="table table-hover">
-		<theaad>
+		<thead>
 			<th>Ad Name</th>
 			<th>Price</th>
 			<th>Category</th>
 			<th>Sub-Category</th>
 			<th></th>
-		</theaad>
+		</thead>
 		<tbody>
 	<?php
 	foreach($ads as $ad)
