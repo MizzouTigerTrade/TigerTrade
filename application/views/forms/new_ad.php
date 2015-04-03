@@ -1,5 +1,5 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-
+<script src="<?php echo base_url('assets/js/jquery.tagsinput.js') ?>"></script>
 <script type="text/javascript">
 $(document).ready(function (){
 	$('#categorySelectForm').change(function(){
@@ -28,6 +28,8 @@ $(document).ready(function (){
 	    	$('#subCategory').empty();
 	    }
 	}); //end change 
+
+	$('#tags').tagsInput();
 });
 
 </script>
