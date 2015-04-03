@@ -8,7 +8,7 @@ $(document).ready(function(){
         var filter = $(this).val(), count = 0;
  		alert(filter);
         // Loop through the comment list
-        $(".media-heading h4").each(function(){
+        $(".heading h4").each(function(){
  
             // If the list item does not contain the text phrase fade it out
             if ($(this).text().search(new RegExp(filter, "i")) < 0) {
@@ -152,7 +152,7 @@ $(document).ready(function(){
 							</a>
 						</div>
 						<div class="media-body col-xs-9 col-md-8">
-							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+							<h4 class="media-heading heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
 							<?php echo $row->description; ?>
 						</div>
 					</div>
