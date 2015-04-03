@@ -71,6 +71,7 @@ CREATE TABLE kylecarlson_tigertrade.images (
 --	ad_id			- References to the ad, to organize the tags to the ad.
 --	description		- A description of the tag.
 CREATE TABLE kylecarlson_tigertrade.tags (
+	tag_id INTEGER PRIMARY KEY AUTO_INCREMENT,
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
 	description VARCHAR (100)
 );
