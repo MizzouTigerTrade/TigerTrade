@@ -7,6 +7,7 @@
 			<h1>User Management</h1>
 		</div>
 	</div>
+	
 	<hr>
 	
       <?php if ($message != "") { ?>
