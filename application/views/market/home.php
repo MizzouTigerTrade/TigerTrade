@@ -3,10 +3,10 @@
 
 $(document).ready(function(){
     $("#filter").keyup(function(){
- 
+ 		
         // Retrieve the input field text and reset the count to zero
         var filter = $(this).val(), count = 0;
- 
+ 		alert(filter);
         // Loop through the comment list
         $(".media-heading h4").each(function(){
  
