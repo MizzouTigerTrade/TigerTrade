@@ -5,8 +5,6 @@
 		</div>
 	</div>
 	
-	<hr>
-	
 	<table class="table table-hover">
 		<theaad>
 			<th>Ad Name</th>
