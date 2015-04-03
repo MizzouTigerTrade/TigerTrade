@@ -128,7 +128,7 @@ $(document).ready(function(){
 				<!-- custom search bar -->
 				<div id="custom-search-input" style="margin-top: 10px">
                     <div class="input-group col-xs-12 col-sm-10 col-sm-offset-1">
-                        <input type="text" class="search-query form-control" id="filter" placeholder="Search" />
+                        <input type="text" class="search-query input-sm form-control" id="filter" placeholder="Search" />
                         <span class="input-group-btn">
                             <button class="btn btn-danger" type="button">
                                 <span class=" glyphicon glyphicon-search"></span>
