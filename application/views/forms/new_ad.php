@@ -1,5 +1,7 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+
 <script src="<?php echo base_url('assets/js/jquery.tagsinput.js') ?>"></script>
+
 <script type="text/javascript">
 $(document).ready(function (){
 	$('#categorySelectForm').change(function(){
@@ -104,7 +106,7 @@ $(document).ready(function (){
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
 			<div class="col-sm-10">
-				<input type="text" data-role="tagsinput" class="form-control description-box" name="tags" id="tags"></input>
+				<input type="text" class="form-control description-box" name="tags" id="tags"></input>
 			</div>
 		</div>
 
