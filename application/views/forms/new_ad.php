@@ -31,8 +31,9 @@ $(document).ready(function (){
 	    }
 	}); //end change 
 
-	$('#tags').tagsInput();
 });
+
+$('#tags').tagsInput();
 
 </script>
 
