@@ -63,7 +63,8 @@ CREATE TABLE kylecarlson_tigertrade.ads (
 --  image_path		- The file path to the image.
 CREATE TABLE kylecarlson_tigertrade.images (
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
-	image_path	VARCHAR (100) NOT NULL
+	image_path	VARCHAR (100) NOT NULL,
+	tag_id INTEGER PRIMARY KEY AUTO_INCREMENT
 );
 
 -- Table: kylecarlson_tigertrade.tags
