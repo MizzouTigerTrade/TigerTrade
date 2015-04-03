@@ -154,7 +154,8 @@ $(document).ready(function(){
 							<?php echo $row->description; ?>
 						</div>
 					</div>
-				</div><hr>
+					<hr>
+				</div>
 				<? } ?>
 				
 				<!-- Display Ads: rows of 3 -->
