@@ -151,7 +151,7 @@ $(document).ready(function(){
 						</div>
 						<div class="media-body col-xs-9 col-md-8">
 							<h4 class="media-heading"><div class="title"><?php echo $row->title; ?>:</div> $<?php echo $row->price; ?></h4>
-							<?php echo $row->description; ?>
+							<div class="title"<?php echo $row->description; ?></div>
 						</div>
 					</div>
 				</div>
