@@ -8,9 +8,8 @@ $(document).ready(function(){
         var filter = $(this).val(), count = 0;
         // Loop through the comment list
         $(".ad_display").each(function(){
- 			
             // If the list item does not contain the text phrase fade it out
-            if ($(this).find('.heading').text().search(new RegExp(filter, "i")) < 0) {
+            if ($(this).find('.title').text().search(new RegExp(filter, "i")) < 0) {
                 $(this).fadeOut();
  
             // Show the list item if the phrase matches and increase the count by 1
