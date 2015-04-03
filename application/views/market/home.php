@@ -7,7 +7,7 @@ $(document).ready(function(){
         // Retrieve the input field text and reset the count to zero
         var filter = $(this).val(), count = 0;
         // Loop through the comment list
-        $(".row").each(function(){
+        $(".ad_display").each(function(){
  			
             // If the list item does not contain the text phrase fade it out
             if ($(this).find('.heading').text().search(new RegExp(filter, "i")) < 0) {
@@ -143,7 +143,7 @@ $(document).ready(function(){
 				<!-- Display Ads: rows of 1 -->
 				
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="row" id="<?= $row->ad_id ?>">
+				<div class="row ad_display" id="<?= $row->ad_id ?>">
 					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 						<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
