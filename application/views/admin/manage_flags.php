@@ -58,7 +58,7 @@
 			
 			</td>
 			<td>
-				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $flag->ad_id; ?>">Delete</button>
+				<button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#deleteModal<?php echo $flag->ad_id; ?>">Delete</button>
 
 				<div class="modal fade" id="deleteModal<?php echo $flag->ad_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog" style="width: 450px;">
@@ -73,9 +73,9 @@
 								<textarea rows="4" cols="50" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
 							</div>
 							<div class="modal-footer">
-								<input class="btn btn-primary" type="submit" value="Yes">
+								<input class="btn btn-xs btn-primary" type="submit" value="Yes">
 								</form>
-								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+								<button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
 					</div>
