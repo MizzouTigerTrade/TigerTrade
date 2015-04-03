@@ -1,5 +1,28 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 <script type="text/javascript">
+
+$(document).ready(function(){
+    $("#filter").keyup(function(){
+ 		
+        // Retrieve the input field text and reset the count to zero
+        var filter = $(this).val(), count = 0;
+        // Loop through the comment list
+        $(".ad_display").each(function(){
+            // If the list item does not contain the text phrase fade it out
+            if ($(this).find('.title').text().search(new RegExp(filter, "i")) < 0) {
+                $(this).fadeOut();
+ 
+            // Show the list item if the phrase matches and increase the count by 1
+            } else {
+                $(this).show();
+            }
+        });
+ 
+        // Update the count
+        var numberItems = count;
+        $("#filter-count").text("Number of Comments = "+count);
+    });
+
 	$(function(){
       // bind change event to select
       $('#categorySelectForm').bind('change', function () {
@@ -21,6 +44,7 @@
           return false;
       });
     });
+});
 </script>
 
 <div class="container padding-top-20">
@@ -101,10 +125,21 @@
 					</div>
 				</div>
 
+				<!-- custom search bar -->
+				<div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="search-query form-control" id="filter" placeholder="Search" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger" type="button">
+                                <span class=" glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
 				<!-- Display Ads: rows of 1 -->
 				
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="row" id="<?= $row->ad_id ?>">
+				<div class="row ad_display" id="<?= $row->ad_id ?>">
 					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 						<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
@@ -112,11 +147,11 @@
 							</a>
 						</div>
 						<div class="media-body col-xs-9 col-md-8">
-							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+							<h4 class="media-heading"><div class="title"><?php echo $row->title; ?>:</div> $<?php echo $row->price; ?></h4>
 							<?php echo $row->description; ?>
 						</div>
 					</div>
-				</div><hr>
+				</div>
 				<? } ?>
 				
 				<!-- Display Ads: rows of 3 -->

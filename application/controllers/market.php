@@ -25,7 +25,7 @@ class Market extends CI_Controller
 		elseif($sub == null)
 		{
 			$category = $this->category_model->get_category($cat);
-			$data['market_name'] = $category->name;
+			$data['market_name'] = ucwords($category->name);
 			$data['ads'] = $this->ad_model->get_ads_category($cat);
 		}
 		else
@@ -33,7 +33,7 @@ class Market extends CI_Controller
 			$category = $this->category_model->get_category($cat);
 			$subcategory = $this->subcategory_model->get_subcategory($sub);
 
-			$data['market_name'] = $category->name . ' - ' . $subcategory->name;
+			$data['market_name'] = ucwords($category->name) . ' - ' . ucwords($subcategory->name);
 			$data['ads'] = $this->ad_model->get_ads_subcategory($sub);
 		}
 		
