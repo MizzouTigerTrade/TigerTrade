@@ -27,7 +27,7 @@ class Offer_model extends CI_Model
 		}
 		else
 		{
-			$this->add_received_offer_notification("seller_id");
+			$this->add_received_offer_notification($seller_id);
 			return $this->db->affected_rows();
 		}
 	}
