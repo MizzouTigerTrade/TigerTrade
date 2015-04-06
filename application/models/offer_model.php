@@ -27,6 +27,7 @@ class Offer_model extends CI_Model
 		}
 		else
 		{
+			$this->add_received_offer_notification("seller_id");
 			return $this->db->affected_rows();
 		}
 	}
@@ -87,6 +88,12 @@ class Offer_model extends CI_Model
             );
         $this->db->where('offer_id', $offer_id);
 		$this->db->update('offers', $data); 
+		
+		$this->db->where('offer_id', $offer_id);
+		$query = $this->db->get('offers');
+		$result = $query->row();
+		$buyer_id = $result->buyer_id;
+		$this->add_sent_offer_notification($buyer_id);
 	}
 	
 	public function get_received_offer_notification($user_id)
@@ -133,7 +140,6 @@ class Offer_model extends CI_Model
 			return $this->db->affected_rows();
 		}
 	}
-	
 	
 	public function set_received_offer_notification($user_id, $value)
 	{
