@@ -88,6 +88,48 @@ class Offer_model extends CI_Model
         $this->db->where('offer_id', $offer_id);
 		$this->db->update('offers', $data); 
 	}
+	
+	public function get_received_offers_notification($user_id)
+	{
+		$result = $this->db->query("SELECT received_offers FROM notifications WHERE user_id = '$user_id'");
+		return $result;
+	}
+	
+	public function get_sent_offers_notification($user_id)
+	{
+		$result = $this->db->query("SELECT sent_offers FROM notifications WHERE user_id = '$user_id'");
+		return $result;
+	}
+	
+	public function add_received_offer_notification($user_id)
+	{
+		$this->db->set('received_offers', 'received_offers+1', FALSE);
+		$this->db->where('user_id', $user_id);
+		
+		if( $this->db->update('notifications') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
+	public function add_sent_offer_notification($user_id)
+	{
+		$this->db->set('sent_offers', 'sent_offers+1', FALSE);
+		$this->db->where('user_id', $user_id);
+		
+		if( $this->db->update('notifications') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
 
 }
 
