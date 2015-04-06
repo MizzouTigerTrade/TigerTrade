@@ -132,8 +132,8 @@ CREATE TABLE `users` (
 `first_name` varchar(50) DEFAULT NULL,
 `last_name` varchar(50) DEFAULT NULL,
 `phone` varchar(20) DEFAULT NULL,
-sent_offers_notification INTEGER DEFAULT "0",
-received_offers_notification INTEGER DEFAULT "0",
+sent_offer_notification INTEGER DEFAULT "0",
+received_offer_notification INTEGER DEFAULT "0",
 PRIMARY KEY (`id`)
 );
 #

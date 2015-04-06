@@ -93,7 +93,7 @@ class Offer_model extends CI_Model
 	{
 		$this->db->where('id', $user_id);
 		$this->db->select('sent_offer_notification');
-		$query = $this->db->get('user');
+		$query = $this->db->get('users');
 		$result = $query->row();
 		return $result->sent_offers;
 		
@@ -103,7 +103,7 @@ class Offer_model extends CI_Model
 	{
 		$this->db->where('id', $user_id);
 		$this->db->select('sent_offer_notification');
-		$query = $this->db->get('user');
+		$query = $this->db->get('users');
 		$result = $query->row();
 		return $result->sent_offers;
 	}
@@ -113,7 +113,7 @@ class Offer_model extends CI_Model
 		$this->db->set('received_offer_notification', 'received_offer_notification+1', FALSE);
 		$this->db->where('id', $user_id);
 		
-		if( $this->db->update('user') != TRUE)
+		if( $this->db->update('users') != TRUE)
 		{
 			throw new Exception("Cannot Update Notifications");
 		}
@@ -128,7 +128,7 @@ class Offer_model extends CI_Model
 		$this->db->set('sent_offer_notification', 'sent_offer_notification+1', FALSE);
 		$this->db->where('id', $user_id);
 		
-		if( $this->db->update('user') != TRUE)
+		if( $this->db->update('users') != TRUE)
 		{
 			throw new Exception("Cannot Update Notifications");
 		}
