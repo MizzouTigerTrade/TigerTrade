@@ -143,6 +143,13 @@ class Ad_model extends CI_Model
 		return $result;
 	}
 	
+	public function get_flagged_ads_count()
+	{
+		$query= $this->db->query("SELECT * FROM ads WHERE flag_count > 0");
+		$result = $query->num_rows();
+		return $result;
+	}
+	
 	public function flag_ad($ad_id)
 	{
 		$this->db->set('flag_count', 'flag_count+1', FALSE);
