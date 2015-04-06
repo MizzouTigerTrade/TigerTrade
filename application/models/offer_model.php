@@ -93,16 +93,16 @@ class Offer_model extends CI_Model
 	{
 		$this->db->select('received_offers');
 		$query = $this->db->get('notifications');
-		$result = $query->result();
-		return $result;
+		$result = $query->row();
+		return $result->received_offers;
 	}
 	
 	public function get_sent_offers_notification($user_id)
 	{
 		$this->db->select('sent_offers');
 		$query = $this->db->get('notifications');
-		$result = $query->result();
-		return $result;
+		$result = $query->row();
+		return $result->sent_offers;
 	}
 	
 	public function add_received_offer_notification($user_id)
