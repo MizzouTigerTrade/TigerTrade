@@ -104,7 +104,7 @@ CREATE TABLE kylecarlson_tigertrade.offers (
 CREATE TABLE kylecarlson_tigertrade.notifications (
 	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	sent_offers INTEGER DEFAULT "0",
-	receieved_offers INTEGER DEFAULT "0"
+	received_offers INTEGER DEFAULT "0"
 );
 
 DROP TABLE IF EXISTS `groups`;
