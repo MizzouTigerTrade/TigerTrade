@@ -95,18 +95,6 @@ CREATE TABLE kylecarlson_tigertrade.offers (
 	status VARCHAR(10) DEFAULT "Pending"
 );
 
--- Table: kylecarlson_tigertrade.notifications
--- Column:
---	user_id		- ID of the user
---	sent_offers		- Number of sent offers that have a new status
--- 	receieved_offers	- Number of new received offers
-
-CREATE TABLE kylecarlson_tigertrade.notifications (
-	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
-	sent_offers INTEGER DEFAULT "0",
-	received_offers INTEGER DEFAULT "0"
-);
-
 DROP TABLE IF EXISTS `groups`;
 #
 # Table structure for table 'groups'
@@ -144,6 +132,8 @@ CREATE TABLE `users` (
 `first_name` varchar(50) DEFAULT NULL,
 `last_name` varchar(50) DEFAULT NULL,
 `phone` varchar(20) DEFAULT NULL,
+sent_offers_notification INTEGER DEFAULT "0",
+received_offers_notification INTEGER DEFAULT "0",
 PRIMARY KEY (`id`)
 );
 #
