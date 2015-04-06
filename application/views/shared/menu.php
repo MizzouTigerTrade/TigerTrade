@@ -1,4 +1,17 @@
-<?php $user = $this->ion_auth->user()->row(); ?>
+<<?php 
+	if($user = $this->ion_auth->user()->row()){		
+		$flag_notification = $this->ad_model->get_flagged_ads_count();
+		$sent_offer_notification = $this->offer_model->get_buyer_pending_offers_count($user->id);
+		$received_offer_notification = $this->offer_model->get_seller_pending_offers_count($user->id);
+		$total_offer_notification = $sent_offer_notification + $received_offer_notification;
+	}
+	else{
+		$flag_notification = 0;
+		$sent_offer_notification = 0;
+		$received_offer_notification = 0;
+		$total_offer_notification = 0;
+	}
+?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
 		<!-- HEADER/MOBILE NAVIGATION TOGGLE -->
@@ -36,7 +49,7 @@
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('auth', 'admin'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags</a></li>
+							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags &nbsp <span class="badge badge-info" style="background-color: #980000;"><?php if($flag_notification>0){echo $flag_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/auth') ?>">Manage Users</a></li>
 							<li><a href="<?php echo base_url('/admin/new_category') ?>">Create Category</a></li>
 							<li><a href="<?php echo base_url('/admin/new_subcategory') ?>">Create Subcategory</a></li>
@@ -48,9 +61,10 @@
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'offers'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo base_url('/user/edit_profile/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
-							<li><a href="<?php echo base_url('/offers') ?>">Offers</a></li>
 							<li><a href="<?php echo base_url('/ad/user_ads') ?>">My Ads</a></li>
+							<li><a href="<?php echo base_url('/offers/sent') ?>">Sent Offers <span class="badge badge-info" style="background-color: #980000;"><?php if($sent_offer_notification>0){echo $sent_offer_notification ;} ?></span></a></li>
+							<li><a href="<?php echo base_url('/offers/received') ?>">Received Offers <span class="badge badge-info" style="background-color: #980000;"><?php if($received_offer_notification>0){echo $received_offer_notification ;} ?></span></a></li>
+							<li><a href="<?php echo base_url('/user/edit_profile/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
 							<li><a href="<?php echo base_url('/user') ?>">User</a></li>
 						</ul>
 					</li>
