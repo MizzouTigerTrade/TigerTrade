@@ -2,7 +2,7 @@
 	if($user = $this->ion_auth->user()->row()){		
 		$user_id = $this->ion_auth->get_user_id();
 		$flag_notification = $this->ad_model->get_flagged_ads_count();
-		$sent_offer_notification = $this->offer_model->get_received_offer_notification($user_id);
+		$sent_offer_notification = $this->offer_model->get_sent_offer_notification($user_id);
 		$received_offer_notification = $this->offer_model->get_received_offer_notification($user_id);
 		$total_offer_notification = $sent_offer_notification + $received_offer_notification;
 	}
