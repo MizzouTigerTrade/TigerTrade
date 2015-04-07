@@ -33,7 +33,9 @@ class Ad extends CI_Controller
 			$data['subcategory'] = ' > ' . $sub->name;
 		}
 		$data['title'] = 'Ad Detail';
-		$data['message'] = "";
+		
+		$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+		//$data['message'] = "";
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
@@ -176,6 +178,10 @@ class Ad extends CI_Controller
 	{
 		$this->ad_model->flag_ad($ad_id);
 		
+		$this->session->set_flashdata('message', "Thank you for flagging this Ad. The content of this Ad will be reviewed.");
+		
+		/*
+		
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
 		
@@ -188,7 +194,9 @@ class Ad extends CI_Controller
 		$data['title'] = 'Ad Detail';
 		$data['message'] = "Thank you for flagging this Ad. The content of this Ad will be reviewed.";
 		$this->layout->view('ad/ad_detail', $data);
+		*/
 		
+		$this->details($ad_id);
 	}
 
 	function user_ads()
