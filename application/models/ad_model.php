@@ -70,24 +70,6 @@ class Ad_model extends CI_Model
 	}
 
 
-	public function get_subcategories($category_id){
-        $this->db->select('subcategory_id, name');
-        $this->db->where('category_id', $category_id);
-        $query = $this->db->get('subcategories');
-        $subcategories = array();
-
-        if($query->result()){
-            foreach ($query->result() as $sub) {
-                $subcategories[$sub->subcategory_id] = ucfirst($sub->name);
-            }
-            return $subcategories;
-        } else {
-            return FALSE;
-        }
-    } 
-
-
-
 	public function get_all_ads()
 	{
 		$result = $this->db->query("SELECT * FROM ads");
