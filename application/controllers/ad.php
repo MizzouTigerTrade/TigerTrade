@@ -196,7 +196,7 @@ class Ad extends CI_Controller
 		$this->layout->view('ad/ad_detail', $data);
 		*/
 		
-		redirect('ad/details' . $ad_id, 'refresh');
+		redirect('ad/details/' . $ad_id, 'refresh');
 	}
 
 	function user_ads()
