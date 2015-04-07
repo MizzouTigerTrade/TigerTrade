@@ -41,7 +41,7 @@ class Subcategory_model extends CI_Model
 
 	public function get_subcategories($category_id){
 		
-        $this->db->select('subcategory_id, name');
+        $this->db->select('name, subcategory_id');
 		$this->db->order_by("name", "asc"); 
         $this->db->where('category_id', $category_id);
         $query = $this->db->get('subcategories');
