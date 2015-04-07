@@ -26,16 +26,16 @@ class Ad extends CI_Controller
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
 		
-		if ($data['ad']->subcategory_id == 0) {
+		if ($data['ad']->subcategory_id == 0) 
+		{
 			$data['subcategory'] = '';
 		} else {
 			$sub = $this->subcategory_model->get_subcategory($data['ad']->subcategory_id);
 			$data['subcategory'] = ' > ' . $sub->name;
 		}
-		$data['title'] = 'Ad Detail';
 		
-		$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-		//$data['message'] = "";
+		$data['title'] = 'Ad Detail';
+		$data['message'] = $this->session->flashdata('message');
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
@@ -177,25 +177,7 @@ class Ad extends CI_Controller
 	function flag_ad($ad_id)
 	{
 		$this->ad_model->flag_ad($ad_id);
-		
 		$this->session->set_flashdata('message', "Thank you for flagging this Ad. The content of this Ad will be reviewed.");
-		
-		/*
-		
-		$data['ad'] = $this->ad_model->get_ad($ad_id);
-		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
-		
-		if ($data['ad']->subcategory_id == 0) {
-			$data['subcategory'] = '';
-		} else {
-			$sub = $this->subcategory_model->get_subcategory($data['ad']->subcategory_id);
-			$data['subcategory'] = ' > ' . $sub->name;
-		}
-		$data['title'] = 'Ad Detail';
-		$data['message'] = "Thank you for flagging this Ad. The content of this Ad will be reviewed.";
-		$this->layout->view('ad/ad_detail', $data);
-		*/
-		
 		redirect('ad/details/' . $ad_id, 'refresh');
 	}
 
@@ -209,14 +191,10 @@ class Ad extends CI_Controller
 		$this->layout->view('forms/user_ads', $data);
 	}
 
-
 	//delete a specific ad
 	function delete($ad_id)
 	{
 		$this->ad_model->delete_ad($ad_id);
-
 		redirect ('ad/user_ads');
-		
-		
 	}
 }
