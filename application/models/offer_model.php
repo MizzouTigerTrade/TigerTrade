@@ -79,6 +79,15 @@ class Offer_model extends CI_Model
 		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Accepted'");
 		return $result;
 	}
+	
+	public function get_buyer_id($offer_id)
+	{
+		$this->db->where('offer_id', $offer_id);
+		$query = $this->db->get('offers');
+		$result = $query->row();
+		$buyer_id = $result->buyer_id;
+		return $buyer_id;
+	}
 
 	public function respond_to_offer($seller_response, $status, $offer_id)
 	{
@@ -89,10 +98,7 @@ class Offer_model extends CI_Model
         $this->db->where('offer_id', $offer_id);
 		$this->db->update('offers', $data); 
 		
-		$this->db->where('offer_id', $offer_id);
-		$query = $this->db->get('offers');
-		$result = $query->row();
-		$buyer_id = $result->buyer_id;
+		$buyer_id = $this->get_buyer_id($offer_id);
 		$this->add_sent_offer_notification($buyer_id);
 	}
 	
