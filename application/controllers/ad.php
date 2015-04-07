@@ -175,8 +175,16 @@ class Ad extends CI_Controller
 	function flag_ad($ad_id)
 	{
 		$this->ad_model->flag_ad($ad_id);
-	
+		
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
+		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
+		
+		if ($data['ad']->subcategory_id == 0) {
+			$data['subcategory'] = '';
+		} else {
+			$sub = $this->subcategory_model->get_subcategory($data['ad']->subcategory_id);
+			$data['subcategory'] = ' > ' . $sub->name;
+		}
 		$data['title'] = 'Ad Detail';
 		$data['message'] = "Thank you for flagging this Ad. The content of this Ad will be reviewed.";
 		$this->layout->view('ad/ad_detail', $data);
