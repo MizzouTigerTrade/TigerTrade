@@ -192,15 +192,14 @@ class Ad_model extends CI_Model
 	//false returned if ad has NOT been flagged by user
 	public function check_if_ad_flagged($ad_id, $user_id)
 	{
-		$this->db->where('ad_id', $ad_id);
-		$this->db->where('user_id', $user_id);
-		$query = $this->db->get('flags');
+		
+		$query = $this->db->get_where('flags', array('ad_id' => $ad_id, 'user_id' => $user_id));
 		
 		if ($query->num_rows() > 0) {
-			return true;
+			return TRUE;
 		}
 		else {
-			return false;
+			return FALSE;
 		}
 		
 	}
