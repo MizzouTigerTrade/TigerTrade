@@ -11,7 +11,7 @@
 		</ol>
 		
 		<!-- Wrapper for slides -->
-		<div class="carousel-inner" role="listbox" style="height: 100%;">
+		<div class="carousel-inner" role="listbox" style="height: 300px;">
 			<div class="item active">
 				<img src="" alt="Chania">
 			</div>
