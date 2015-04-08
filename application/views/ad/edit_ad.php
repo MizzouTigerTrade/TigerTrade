@@ -109,7 +109,7 @@ $(document).ready(function (){
 						else
 						{
 							foreach ($categories->result() as $category) {
-								if($category->category_id == $subcategory->category_id)
+								if($category->category_id == $subcategory->category_id && $ad->category_id == $category->category_id)
 								{
 									echo '<option value="'.$subcategory->category_id.'">'.$subcategory->name.'</option>';
 								}
