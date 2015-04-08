@@ -77,11 +77,13 @@ $(document).ready(function (){
 			<select name="category" id="categorySelectForm"> 
 				<option value="">Select One</option>
 				<?php
+					$sub = 0;
 					foreach($categories->result() as $category)
 					{
 						if($category->category_id == $ad->category_id)
 						{
-							echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';
+							$sub = 1;
+							echo '<option value="'.$category->category_id.'" selected>'.$category->name.'</option>';
 						}
 						else
 						{
@@ -95,8 +97,21 @@ $(document).ready(function (){
 		<div class="form-group" id="subCategoryForm">
 			<label for="sub-category" class="col-sm-2 control-label label-20">Sub-Category</label>
 			<div class="col-sm-10">
-			<select name="subCategory" id="subCategory"> 
-				<option value=""><option>	
+			<select name="subCategory" id="subCategory"> 	
+				<?php
+					foreach($subcategories->result() as $subcategory)
+					{
+						if($subcategory->subcategory_id == $ad->subcategory_id)
+						{
+							$sub = 1;
+							echo '<option value="'.$subcategory->subcategory_id.'" selected>'.$subcategory->name.'</option>';
+						}
+						else
+						{
+							echo '<option value="'.$subcategory->category_id.'">'.$subcategory->name.'</option>';
+						}
+					}
+				?>	
 			</select>
 			</div>
 		</div>
