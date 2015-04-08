@@ -1,7 +1,7 @@
 
 
 		
-	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(255,  255,  255, 0.36);">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>

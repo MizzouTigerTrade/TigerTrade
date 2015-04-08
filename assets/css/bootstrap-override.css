@@ -83,12 +83,6 @@ hr {
 	color: rgb(51, 51, 51);
 }
 
-.jumbotron {
-	padding-top: 0px !important;
-	padding-bottom: 0px !important;
-	background-color: rgba(255,  255,  255, 0.36);
-}
-
 .btn-success {
 	background-color: #4CBD95;
 	border-color: #42a985;	
