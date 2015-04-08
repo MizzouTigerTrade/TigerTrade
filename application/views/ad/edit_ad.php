@@ -131,7 +131,6 @@ $(document).ready(function (){
 		<?php 
 		$images = $images->result();
 		if(!empty($images)) { 
-			var_dump($images);
 			  foreach ($images as $img) { ?>
 				
 				<div class="form-group" >
