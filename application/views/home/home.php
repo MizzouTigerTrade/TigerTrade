@@ -10,7 +10,7 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox" style="height: 300px;">
 		<div class="item active text-center" >
-			<h1>Welcome to the TigerTrade!</h1>
+			<h1 style="font-size: 3em;">Welcome to the TigerTrade!</h1>
 		</div>
 			
 		<div class="item">
