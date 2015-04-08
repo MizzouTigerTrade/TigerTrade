@@ -155,6 +155,7 @@ $(document).ready(function(){
 									}
 								}
 							?>
+							<br />
 							<?php echo $row->description; ?>
 						</div>
 					</div>
