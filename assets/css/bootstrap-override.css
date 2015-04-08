@@ -92,3 +92,7 @@ hr {
 	background-color: #42a985;
 	border-color: #3a9877;	
 }
+
+.carousel-control.right, .carousel-control.left {
+	background-color: rgba(0, 0, 0, 0.45);
+}
