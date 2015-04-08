@@ -1,9 +1,5 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 
-<script src="<?php echo base_url('assets/js/bootstrap-tagsinput-angular.js') ?>"></script>
-
-<script src="<?php echo base_url('assets/js/bootstrap-tagsinput.js') ?>"></script>
-
 <script type="text/javascript">
 $(document).ready(function (){
 	$('#categorySelectForm').change(function(){
@@ -32,18 +28,14 @@ $(document).ready(function (){
 	    	$('#subCategory').empty();
 	    }
 	}); //end change 
-
-	$('#tags').tagsInput();
 });
-
-
 
 </script>
 
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>New Ad Form</h1>
+			<h1>Edit Ad Form</h1>
 		</div>
 	</div>
 
@@ -62,11 +54,12 @@ $(document).ready(function (){
 	    </div>
     <?php }?>
 
-	<?php echo form_open("ad/create", array('class' => 'form-horizontal', 'id' => 'ad-form', 'enctype' => 'multipart/form-data'));?>		
+	<?php echo form_open("ad/update", array('class' => 'form-horizontal', 'id' => 'ad-form', 'enctype' => 'multipart/form-data'));?>		
+		<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 		<div class="form-group">
 			<label for="title" class="col-sm-2 control-label label-20">Title</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" name="title" id="title" placeholder="..." onkeyup="document.getElementById('preview_title').innerHTML = this.value">
+				<input type="text" class="form-control" name="title" id="title" value="<?= $ad->title?>" onkeyup="document.getElementById('preview_title').innerHTML = this.value">
 			</div>
 		</div>
 		<div class="form-group">
@@ -74,7 +67,7 @@ $(document).ready(function (){
 			<label for="price" class="col-sm-2 control-label label-20">Price</label>
 			<div class="input-group col-sm-3 col-sm-offset-2" style="padding: 0 15px;">
 				<div class="input-group-addon">$</div>
-					<input type="text" class="form-control" name="price" id="price" placeholder="Amount">
+					<input type="text" class="form-control" name="price" id="price" value="<?= $ad->price?>">
 				<div class="input-group-addon">.00</div>
 			</div>
 		</div>
@@ -86,7 +79,14 @@ $(document).ready(function (){
 				<?php
 					foreach($categories->result() as $category)
 					{
-						echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';
+						if($category->category_id == $ad->category_id)
+						{
+							echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';
+						}
+						else
+						{
+							echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';
+						}
 					}
 				?>	
 			</select>
@@ -103,14 +103,7 @@ $(document).ready(function (){
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Description</label>
 			<div class="col-sm-10">
-				<textarea type="text" class="form-control description-box" name="description" id="description" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"></textarea>
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control description-box" name="tags" data-role="tagsinput" id="tags"></input>
+				<textarea type="text" class="form-control description-box" name="description" id="description" value="<?= $ad->description?>" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"></textarea>
 			</div>
 		</div>
 
@@ -146,16 +139,5 @@ $(document).ready(function (){
 			</div>
 		</div>
 	<?php echo form_close();?>
-	<hr>
-	
-	<div class="row">
-		<label class="col-sm-2 control-label label-20">Preview</label>
-		<div class="col-sm-10">
-			<h2 id="preview_title">Title</h2>
-			<h3 style="display: inline;">$</h3><h3 id="preview_price" style="display: inline;">Price</h3>
-			<p style="padding-top: 10px;" id="preview_message">Message</p>
-			<img id="pic1" src="#" alt="your image" />
-		</div>
-	</div>
 	
 </div>
