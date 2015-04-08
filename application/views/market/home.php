@@ -149,10 +149,17 @@ $(document).ready(function(){
 						<div class="media-body col-xs-9 col-md-8 search">
 							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4> 
 							<?php echo $row->description; ?>
-							<?php foreach($tags->result() as $tag) { 
+							<?php 
+							$count = 0;
+							foreach($tags->result() as $tag) { 
 									if($tag->ad_id == $row->ad_id)
 									{
+										if($count == 0)
+										{
+											echo '\nTags: ';
+										}
 										echo $tag->description . ' ';
+										$count++;
 									}
 								}
 							?>
