@@ -154,8 +154,10 @@ class Ad_model extends CI_Model
 		return $result;
 	}
 	
-	public function flag_ad($ad_id)
+	//user_id is the id of user who is flagging an ad
+	public function flag_ad($ad_id, $user_id)
 	{
+		/* Old Way
 		$this->db->set('flag_count', 'flag_count+1', FALSE);
 		$this->db->where('ad_id', $ad_id);
 		
@@ -166,6 +168,39 @@ class Ad_model extends CI_Model
 		else
 		{
 			return $this->db->affected_rows();
+		}
+		*/
+		
+		$data = array(
+		'ad_id' => $ad_id ,
+		'user_id' => $user_id ,
+		);
+
+		if( $this->db->insert('flags', $data) != TRUE)
+		{
+			throw new Exception("Cannot Update Flag Count");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+		
+	}
+	
+	//checks if user has flagged an ad
+	//true returned if ad has been flagged by user
+	//false returned if ad has NOT been flagged by user
+	public function check_if_ad_flagged($ad_id, $user_id)
+	{
+		$this->db->where('ad_id', $ad_id);
+		$this->db->where('user_id', $user_id);
+		$query = $this->db->get('flags');
+		
+		if ($query->num_rows() > 0) {
+			return true;
+		}
+		else {
+			return false;
 		}
 		
 	}

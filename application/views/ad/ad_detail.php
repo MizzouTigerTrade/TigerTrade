@@ -36,7 +36,11 @@
 			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<a class="btn btn-sm btn-success" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
+			
+			<?php if ($flagged != true) { ?>
 			<a class="btn btn-sm btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
+			<?php }; ?> 
+			
 			<img style="margin-top: 10px;" class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
