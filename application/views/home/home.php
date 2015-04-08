@@ -12,8 +12,8 @@
 		
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox" style="height: 300px;">
-			<div class="item active">
-				<div class="text-center" style="width: 0 auto;">MIDDLE BITCH</div>
+			<div class="item active text-center" >
+				<h1>Welcome to the TigerTrade!</h1>
 			</div>
 				
 			<div class="item">
