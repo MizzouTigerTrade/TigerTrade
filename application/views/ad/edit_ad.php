@@ -127,6 +127,18 @@ $(document).ready(function (){
 			</div>
 		</div>
 
+
+		<?php if(count($images) > 0) { 
+			  foreach ($images as $img) { ?>
+				
+				<div class="form-group" >
+					<div class="col-sm-10">
+						<div id="filediv"><img class="img-thumbnail" src="<?php echo base_url('/assets/images/' . $img->image_path); ?>" alt="ad_image" width="100%" height="100%"></div>
+					</div>
+				</div>
+				
+		<?php } }?>
+
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload Image</label>
 			<div class="col-sm-10">
@@ -140,7 +152,7 @@ $(document).ready(function (){
 				<input type="button" id="add_more" class="upload" value="Add More Files"/>
 			</div>
 		</div>
-		
+			
 		<hr>
 		
 		<div class="form-group">

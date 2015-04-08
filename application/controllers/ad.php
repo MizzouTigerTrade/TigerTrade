@@ -43,6 +43,7 @@ class Ad extends CI_Controller
 	function edit($ad_id)
 	{
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
+		$data['images'] = $this->ad_model->get_ad_images($ad_id);
 		$data['title'] = 'Edit Ad';
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
