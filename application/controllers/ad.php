@@ -115,8 +115,10 @@ class Ad extends CI_Controller
 			if(!empty($tags))
 			{
 				$tags = explode(',', $tags);
-				foreach ($tags as $tag) {
-				$this->ad_model->insert_new_tag($ad_id, $tag);	
+				foreach ($tags as $tag) 
+				{
+					$this->ad_model->insert_new_tag($ad_id, $tag);	
+				}
 			}
 			
 			$j = 0;     // Variable for indexing uploaded image.
