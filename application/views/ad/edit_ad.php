@@ -137,7 +137,9 @@ $(document).ready(function (){
 					</div>
 				</div>
 				
-		<?php } }?>
+		<?php } }
+
+		else { ?>
 
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload Image</label>
@@ -152,6 +154,7 @@ $(document).ready(function (){
 				<input type="button" id="add_more" class="upload" value="Add More Files"/>
 			</div>
 		</div>
+		<?php } ?>
 			
 		<hr>
 		
