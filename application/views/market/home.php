@@ -156,7 +156,7 @@ $(document).ready(function(){
 									{
 										if($count == 0)
 										{
-											echo '\nTags: ';
+											echo nl2br("Tags:\n");
 										}
 										echo $tag->description . ' ';
 										$count++;
