@@ -80,7 +80,6 @@ class Ad extends CI_Controller
 	//create an ad
 	function create()
 	{
-		
 		$this->form_validation->set_rules('title', 'Title', 'required');
 		$this->form_validation->set_rules('price', 'Price', 'required');
 		$this->form_validation->set_rules('description', 'Description', 'required');
@@ -106,6 +105,7 @@ class Ad extends CI_Controller
 			$price = $this->security->xss_clean($this->input->post('price'));
 			$category = $this->security->xss_clean($this->input->post('category'));
 			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
+			$tags = $this->security->xss_clean($this->input->post('tags'));
 			
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
@@ -113,6 +113,15 @@ class Ad extends CI_Controller
 			$this->ad_model->insert_new_ad($title, $description, $price, $user_id, $category, $subCategory);
 
 			$ad_id = $this->ad_model->get_new_ad_id($title, $description, $price, $user_id, $category, $subCategory);
+
+			if(!empty($tags))
+			{
+				$tags = explode(',', $tags);
+				foreach ($tags as $tag) 
+				{
+					$this->ad_model->insert_new_tag($ad_id, $tag);	
+				}
+			}
 			
 			$j = 0;     // Variable for indexing uploaded image.
 			$target_path = "assets/Images/";     // Declaring Path for uploaded images.
