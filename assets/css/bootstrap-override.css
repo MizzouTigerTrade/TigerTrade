@@ -93,6 +93,10 @@ hr {
 	border-color: #3a9877;	
 }
 
-.carousel-control.right, .carousel-control.left {
-	background-color: rgba(0, 0, 0, 0.45);
+.carousel-control.right {
+	background-color: linear-gradient(to right,rgba(0,0,0,.0) 0,rgba(0,0,0,.4) 100%);
+}
+
+.carousel-control.left {
+	background-color: linear-gradient(to right,rgba(0,0,0,.4) 0,rgba(0,0,0,.0) 100%)
 }
