@@ -118,7 +118,7 @@ $(document).ready(function (){
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Description</label>
 			<div class="col-sm-10">
-				<textarea type="text" class="form-control description-box" name="description" id="description" value="<?= $ad->description?>" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"></textarea>
+				<textarea type="text" class="form-control description-box" name="description" id="description" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"><?php echo $ad->description; ?></textarea>
 			</div>
 		</div>
 
