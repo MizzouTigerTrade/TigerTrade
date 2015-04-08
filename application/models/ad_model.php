@@ -47,6 +47,12 @@ class Ad_model extends CI_Model
 		}
 	}
 
+	public function get_all_tags()
+	{
+		$result = $this->db->query("SELECT * FROM tags");
+		return $result;
+	}
+
 	public function get_new_ad_id($title, $description, $price, $user_id, $category, $subCategory)
 	{
 		$this->db->select('ad_id, title');		

@@ -147,7 +147,15 @@ $(document).ready(function(){
 							</a>
 						</div>
 						<div class="media-body col-xs-9 col-md-8 search">
-							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4> 
+							<?php foreach($tags->result() as $tag) { 
+									if($tag->ad_id == $row->ad_id)
+									{
+										echo $tag->description . ' ';
+									}
+								}
+							?>
+							<br />
 							<?php echo $row->description; ?>
 						</div>
 					</div>
