@@ -10,6 +10,7 @@
     <link href="<?php echo base_url('assets/css/custom.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/bootstrap-override.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/jquery.tagsinput.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/bootstrap-tagsinput.css') ?>" rel="stylesheet">
 
 </head>
 <body>
