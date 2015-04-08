@@ -8,8 +8,8 @@
 	</ol>
 	
 	<!-- Wrapper for slides -->
-	<div class="carousel-inner" role="listbox" style="height: 300px;">
-		<div class="item active text-center" >
+	<div class="carousel-inner text-center" role="listbox" style="height: 300px;">
+		<div class="item active" >
 			<h1 style="font-size: 3.5em; margin-top: 30px;">Welcome to the TigerTrade!</h1>
 			<p style="font-size: 1.5em;">Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
@@ -32,11 +32,11 @@
 	
 	<!-- Left and right controls -->
 	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 		<span class="sr-only">Previous</span>
 	</a>
 	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	</a>
 </div>
