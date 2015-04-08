@@ -9,7 +9,7 @@ $(document).ready(function(){
         // Loop through the comment list
         $(".ad_display").each(function(){
             // If the list item does not contain the text phrase fade it out
-            if ($(this).find('.title').text().search(new RegExp(filter, "i")) < 0) {
+            if ($(this).find('.testing').text().search(new RegExp(filter, "i")) < 0) {
                 $(this).fadeOut();
  
             // Show the list item if the phrase matches and increase the count by 1
@@ -147,7 +147,7 @@ $(document).ready(function(){
 							</a>
 						</div>
 						<div class="media-body col-xs-9 col-md-8">
-							<h4 class="media-heading"><div class="title"><?php echo $row->title; ?>:</div> $<?php echo $row->price; ?></h4>
+							<h4 class="media-heading testing"><div class="title"><?php echo $row->title; ?>:</div> $<?php echo $row->price; ?></h4>
 							<?php echo $row->description; ?>
 						</div>
 					</div>
