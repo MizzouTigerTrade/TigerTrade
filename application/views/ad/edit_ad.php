@@ -129,7 +129,7 @@ $(document).ready(function (){
 
 
 		<?php if(count($images) > 0) { 
-			  foreach ($images as $img) { ?>
+			  foreach ($images->result() as $img) { ?>
 				
 				<div class="form-group" >
 					<div class="col-sm-10">
