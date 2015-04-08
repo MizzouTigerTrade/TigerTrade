@@ -141,7 +141,6 @@ $(document).ready(function (){
 			</div>
 		</div>
 		
-		
 		<hr>
 		
 		<div class="form-group">
