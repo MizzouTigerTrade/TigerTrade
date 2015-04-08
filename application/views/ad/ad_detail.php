@@ -37,7 +37,7 @@
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<a class="btn btn-sm btn-success" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
 			
-			<?php if ($flagged != TRUE) { ?>
+			<?php if ($flagged == false) { ?>
 			<a class="btn btn-sm btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
 			<?php }; ?> 
 			
