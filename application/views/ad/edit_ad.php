@@ -108,7 +108,12 @@ $(document).ready(function (){
 						}
 						else
 						{
-							echo '<option value="'.$subcategory->category_id.'">'.$subcategory->name.'</option>';
+							foreach ($categories->result() as $category) {
+								if($category->category_id == $subcategory->category_id)
+								{
+									echo '<option value="'.$subcategory->category_id.'">'.$subcategory->name.'</option>';
+								}
+							}
 						}
 					}
 				?>	
