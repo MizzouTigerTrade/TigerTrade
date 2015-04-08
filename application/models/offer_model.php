@@ -27,6 +27,7 @@ class Offer_model extends CI_Model
 		}
 		else
 		{
+			$this->add_received_offer_notification($seller_id);
 			return $this->db->affected_rows();
 		}
 	}
@@ -78,6 +79,15 @@ class Offer_model extends CI_Model
 		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Accepted'");
 		return $result;
 	}
+	
+	public function get_buyer_id($offer_id)
+	{
+		$this->db->where('offer_id', $offer_id);
+		$query = $this->db->get('offers');
+		$result = $query->row();
+		$buyer_id = $result->buyer_id;
+		return $buyer_id;
+	}
 
 	public function respond_to_offer($seller_response, $status, $offer_id)
 	{
@@ -87,7 +97,86 @@ class Offer_model extends CI_Model
             );
         $this->db->where('offer_id', $offer_id);
 		$this->db->update('offers', $data); 
+		
+		$buyer_id = $this->get_buyer_id($offer_id);
+		$this->add_sent_offer_notification($buyer_id);
 	}
+	
+	public function get_received_offer_notification($user_id)
+	{
+		$result = $this->db->query("SELECT * FROM users WHERE id = '$user_id'");
+		$result = $result->row();
+		return $result->received_offer_notification;
+		
+	}
+	
+	public function get_sent_offer_notification($user_id)
+	{
+		$result = $this->db->query("SELECT * FROM users WHERE id = '$user_id'");
+		$result = $result->row();
+		return $result->sent_offer_notification;
+	}
+	
+	public function add_received_offer_notification($user_id)
+	{
+		$this->db->set('received_offer_notification', 'received_offer_notification+1', FALSE);
+		$this->db->where('id', $user_id);
+		
+		if( $this->db->update('users') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
+	public function add_sent_offer_notification($user_id)
+	{
+		$this->db->set('sent_offer_notification', 'sent_offer_notification+1', FALSE);
+		$this->db->where('id', $user_id);
+		
+		if( $this->db->update('users') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
+	public function set_received_offer_notification($user_id, $value)
+	{
+		$this->db->set('received_offer_notification', $value, FALSE);
+		$this->db->where('id', $user_id);
+		
+		if( $this->db->update('users') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
+	public function set_sent_offer_notification($user_id, $value)
+	{
+		$this->db->set('sent_offer_notification', $value, FALSE);
+		$this->db->where('id', $user_id);
+		
+		if( $this->db->update('users') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
 
 }
 
