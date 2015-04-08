@@ -78,7 +78,9 @@ class Ad extends CI_Controller
 	//create an ad
 	function create()
 	{
-		
+		$tags = $this->security->xss_clean($this->input->post('tags'));
+		var_dump($tags);
+		/*
 		$this->form_validation->set_rules('title', 'Title', 'required');
 		$this->form_validation->set_rules('price', 'Price', 'required');
 		$this->form_validation->set_rules('description', 'Description', 'required');
@@ -141,7 +143,7 @@ class Ad extends CI_Controller
 			    			</div>';
 						}
 					}
-					/*
+					
 					else 
 					{     //   If File Size And File Type Was Incorrect.
 						echo '<div class="alert alert-error">
@@ -149,7 +151,7 @@ class Ad extends CI_Controller
 			       				 <strong>Success!</strong> '.$j .' Image Not Uploaded.
 			    			</div>';
 					}
-					*/
+					
 
 
 
@@ -169,6 +171,8 @@ class Ad extends CI_Controller
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
 		$this->layout->view('forms/new_ad', $data);
+
+	*/
 		
 	}
 	
