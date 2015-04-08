@@ -125,7 +125,7 @@ class Ad extends CI_Controller
 			}
 			
 			$j = 0;     // Variable for indexing uploaded image.
-			$target_path = "assets/images/";     // Declaring Path for uploaded images.
+			$target_path = "assets/Images/";     // Declaring Path for uploaded images.
 			if(count($_FILES['userfile']['name']) > 0)
 			{
 				for ($i = 0; isset($_FILES['userfile']['name'][$i]); $i++) {
