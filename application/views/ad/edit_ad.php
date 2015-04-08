@@ -129,6 +129,7 @@ $(document).ready(function (){
 
 
 		<?php if(count($images) > 0) { 
+			echo "images";
 			  foreach ($images->result() as $img) { ?>
 				
 				<div class="form-group" >
