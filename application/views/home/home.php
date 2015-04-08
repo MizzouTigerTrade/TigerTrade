@@ -11,18 +11,22 @@
 	<div class="carousel-inner" role="listbox" style="height: 300px;">
 		<div class="item active text-center" >
 			<h1 style="font-size: 3.5em; margin-top: 10px;">Welcome to the TigerTrade!</h1>
+			<p>Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
 			
 		<div class="item">
-			<img src="" alt="Chania">
+			<h1 style="font-size: 3.5em; margin-top: 10px;">Your source for all things Mizzou!</h1>
+			<p>Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
 			
 		<div class="item">
-			<img src="" alt="Flower">
+			<h1 style="font-size: 3.5em; margin-top: 10px;">Buy!</h1>
+			<p>Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
 			
 		<div class="item">
-			<img src="" alt="Flower">
+			<h1 style="font-size: 3.5em; margin-top: 10px;">Sell!</h1>
+			<p>Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
 	</div>
 	
