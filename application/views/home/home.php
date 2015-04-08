@@ -13,7 +13,7 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox" style="height: 300px;">
 			<div class="item active">
-				<img src="" alt="Chania">
+				<div style="width: 0 auto;">MIDDLE BITCH</div>
 			</div>
 				
 			<div class="item">
