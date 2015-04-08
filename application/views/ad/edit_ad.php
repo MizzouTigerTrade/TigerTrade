@@ -128,7 +128,7 @@ $(document).ready(function (){
 		</div>
 
 
-		<?php if(!empty($images) { 
+		<?php if(!empty($images)) { 
 			var_dump($images);
 			  foreach ($images->result() as $img) { ?>
 				
