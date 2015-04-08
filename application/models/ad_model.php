@@ -31,6 +31,22 @@ class Ad_model extends CI_Model
 		}
 	}
 
+	public function insert_new_tag($ad_id, $tag)
+	{
+		$this->db->set('ad_id', $ad_id);
+		$this->db->set('description', $tag);
+
+		//insert into db, throw error if data not inserted
+		if( $this->db->insert('tags') != TRUE)
+		{
+			throw new Exception("Cannot insert");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+
 	public function get_new_ad_id($title, $description, $price, $user_id, $category, $subCategory)
 	{
 		$this->db->select('ad_id, title');		
