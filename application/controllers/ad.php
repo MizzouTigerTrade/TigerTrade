@@ -62,6 +62,7 @@ class Ad extends CI_Controller
 		$this->form_validation->set_rules('price', 'Price', 'required');
 		$this->form_validation->set_rules('description', 'Description', 'required');
 		$this->form_validation->set_rules('category', 'Category', 'required');
+		$this->form_validation->set_rules('ad_id', 'Ad id', 'required');
 		$category = $this->security->xss_clean($this->input->post('category'));
 		$sub_category_check = $this->ad_model->check_subCategory($category);
 		if($sub_category_check > 0)
