@@ -1,7 +1,7 @@
 <style>
 .team-member-description {
 	padding-top: 5px;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 </style>
 
