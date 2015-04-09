@@ -37,8 +37,8 @@
 						<a href="<?php echo base_url('content/terms') ?>">Terms of Use</a>
 					</p>
 				</div>
-				<div class="col-xs-4">
-					<p class="text-center">&copy; 2015 TigerTrade Team</p>
+				<div class="col-xs-4 text-center">
+					<a href="<?php echo base_url('content/team') ?>">&copy; 2015 TigerTrade Team</a>
 				</div>
 			</div>
 		</div>

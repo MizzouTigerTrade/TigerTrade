@@ -35,4 +35,14 @@ class Content extends CI_Controller {
 		$this->layout->view('terms/terms', $data);
 		//$this->layout->view('welcome_message', $data);
 	}
+
+	public function team()
+	{
+		//$this->load->view('header');
+		//$this->load->view('welcome_message');
+		//$this->load->view('footer');
+		$data['title'] = 'Team';
+		$this->layout->view('team/index', $data);
+		//$this->layout->view('welcome_message', $data);
+	}
 }
