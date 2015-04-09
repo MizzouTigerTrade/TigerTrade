@@ -58,7 +58,40 @@ class Ad extends CI_Controller
 	//update ad by id
 	function update()
 	{
-		
+		$this->form_validation->set_rules('title', 'Title', 'required');
+		$this->form_validation->set_rules('price', 'Price', 'required');
+		$this->form_validation->set_rules('description', 'Description', 'required');
+		$this->form_validation->set_rules('category', 'Category', 'required');
+		$this->form_validation->set_rules('ad_id', 'Ad id', 'required');
+		$category = $this->security->xss_clean($this->input->post('category'));
+		$sub_category_check = $this->ad_model->check_subCategory($category);
+		if($sub_category_check > 0)
+		{
+			$this->form_validation->set_rules('subCategory', 'Sub-Category', 'required');
+		}
+
+		//if validation fails
+		if ($this->form_validation->run() == false)
+		{
+			echo "error";
+		}
+		else
+		{
+			
+			$ad_id = $this->security->xss_clean($this->input->post('ad_id'));
+			$title = $this->security->xss_clean($this->input->post('title'));
+			$description = $this->security->xss_clean($this->input->post('description'));
+			$price = $this->security->xss_clean($this->input->post('price'));
+			$category = $this->security->xss_clean($this->input->post('category'));
+			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
+			$tags = $this->security->xss_clean($this->input->post('tags'));
+
+			$this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory);
+			
+			$this->ad_model->update_tags($ad_id, $tags);
+		}
+
+		redirect('/ad/edit/'.$ad_id);
 	}
 
 	//shows form to create a new ad
@@ -120,14 +153,7 @@ class Ad extends CI_Controller
 
 			$ad_id = $this->ad_model->get_new_ad_id($title, $description, $price, $user_id, $category, $subCategory);
 
-			if(!empty($tags))
-			{
-				$tags = explode(',', $tags);
-				foreach ($tags as $tag) 
-				{
-					$this->ad_model->insert_new_tag($ad_id, $tag);	
-				}
-			}
+			$this->ad_model->insert_new_tags($ad_id, $tags);
 			
 			$j = 0;     // Variable for indexing uploaded image.
 			$target_path = "assets/Images/";     // Declaring Path for uploaded images.

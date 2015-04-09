@@ -31,15 +31,9 @@ $(document).ready(function (){
 	    }
 	}); //end change 
 
-
 });
 
-$( document ).ready(function() {
-    <?php foreach($tags->result() as $tag) { ?>
-		var tag = "<?php echo $tag->description; ?>";
-		$('#tags').val($('#tags').val() + ', ' + tag );
-<?php }?>
-});
+
 
 
 
@@ -143,7 +137,7 @@ $( document ).ready(function() {
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control description-box" value="" name="tags" data-role="tagsinput" id="tags"></input>
+				<input type="text" class="form-control description-box" value="<?php echo $tags; ?>" name="tags" data-role="tagsinput" id="tags"></input>
 			</div>
 		</div>
 
@@ -151,15 +145,31 @@ $( document ).ready(function() {
 		<?php 
 		$images = $images->result();
 		if(!empty($images)) { 
+				$inc = 20;
 			  foreach ($images as $img) { ?>
 				
 				<div class="form-group" >
 					<div class="col-sm-10">
-						<div id="filediv"><img class="img-thumbnail" src="<?php echo base_url('/assets/Images/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%"></div>
+						<div id="filediv">
+							<div id="abcd<?= $inc ?>" class="abcd">
+								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%">
+								<img id="img" src="x.png" alt=" delete" onclick="$(this).parent().parent().remove();"></img>
+							</div>
+						</div>
 					</div>
 				</div>
+
 				
-		<?php } }
+		<?php $inc++;
+		 }  ?>
+		 <div class="form-group" >
+			<label for="description" class="col-sm-2 control-label label-20">Upload More Images</label>
+			<div class="col-sm-10">
+				<input type="button" id="add_more" class="upload" value="Add More Files"/>
+			</div>
+		</div>
+		<?php 
+			}
 
 		else { ?>
 
@@ -191,7 +201,7 @@ $( document ).ready(function() {
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default">Edit</button>
 			</div>
 		</div>
 	<?php echo form_close();?>
