@@ -90,8 +90,9 @@ class Ad extends CI_Controller
 			$this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory);
 			$this->ad_model->update_tags($ad_id, $tags);
 			*/
-			echo "ad_id " . $ad_id;
-			echo "title " . $title;
+
+			echo nl2br('ad_id ' . $ad_id . '\n');
+			echo nl2br('title ' . $title . '\n');
 
 		}
 
