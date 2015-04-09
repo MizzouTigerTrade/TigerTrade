@@ -74,7 +74,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags &nbsp <span class="badge badge-info" style="background-color: #D43F3A;"><?php if($flag_notification>0){echo $flag_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/auth') ?>">Manage Users</a></li>
-							<li><a href="<?php echo base_url('/admin/new_category') ?>">Create Category</a><span class="glyphicon glyphicon-search text-right" aria-hidden="true"></span></li>
+							<li><a href="<?php echo base_url('/admin/new_category') ?>">Create Category</a></li>
 							<li><a href="<?php echo base_url('/admin/new_subcategory') ?>">Create Subcategory</a></li>
 						</ul>
 					</li>
@@ -84,7 +84,7 @@
 					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('user', 'offers'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <span class="badge badge-info" style="background-color: #D43F3A;"><?php if($total_offer_notification>0){echo $total_offer_notification ;} ?></span> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo base_url('/ad/user_ads') ?>">My Ads</a></li>
+							<li><a href="<?php echo base_url('/ad/user_ads') ?>"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span> My Ads</a></li>
 							<li><a href="<?php echo base_url('/offers/sent') ?>">Sent Offers <span class="badge badge-info" style="background-color: #d9534e;"><?php if($sent_offer_notification>0){echo $sent_offer_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/offers/received') ?>">Received Offers <span class="badge badge-info" style="background-color: #D43F3A;"><?php if($received_offer_notification>0){echo $received_offer_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/user/edit_profile/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
