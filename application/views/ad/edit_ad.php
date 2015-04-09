@@ -141,7 +141,7 @@ $(document).ready(function (){
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control description-box" value="" name="tags" data-role="tagsinput" id="tags">test</input>
+				<input type="text" class="form-control description-box" value="" name="tags" data-role="tagsinput" id="tags"></input>
 			</div>
 		</div>
 
