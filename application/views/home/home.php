@@ -17,21 +17,21 @@
 		</div>
 			
 		<div class="item">
-			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 40px;">
 				<h1 style="font-size: 3.5em; margin-top: 30px;">Your source for all things Mizzou!</h1>
 				<p style="font-size: 1.5em;">Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 			</div>
 		</div>
 			
 		<div class="item">
-			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 40px;">
 				<h1 style="font-size: 3.5em; margin-top: 30px;">Buy!</h1>
 				<p style="font-size: 1.5em;">Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 			</div>
 		</div>
 			
 		<div class="item">
-			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 40px;">
 				<h1 style="font-size: 3.5em; margin-top: 30px;">Sell!</h1>
 				<p style="font-size: 1.5em;">Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 			</div>
