@@ -100,3 +100,25 @@ hr {
 .carousel-control.left {
 	background-color: linear-gradient(to right,rgba(0,0,0,.4) 0,rgba(0,0,0,.0) 100%)
 }
+
+.dropdown-menu {
+	color: #BCBDC0;
+	background-color: rgb(51, 51, 51);
+}
+
+.dropdown-menu>li>a {
+	color: #BCBDC0;
+	font-weight: 200;
+	letter-spacing: 1px;
+	font-size: .9em;
+}
+
+.dropdown-menu>li>a:hover {
+	background-color: #EEB328;
+	color: rgb(51, 51, 51)
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	background-color: #EEB328;
+	color: rgb(51, 51, 51);
+}
