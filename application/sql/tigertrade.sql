@@ -63,8 +63,7 @@ CREATE TABLE kylecarlson_tigertrade.ads (
 	price	INTEGER,
 	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
-	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id),
-	flag_count	INTEGER	DEFAULT "0"
+	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id)
 );
 
 -- Table: kylecarlson_tigertrade.images

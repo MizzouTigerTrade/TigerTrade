@@ -143,7 +143,7 @@ class Ad_model extends CI_Model
 	public function get_flagged_ads()
 	{
 		//$query = $this->db->query("SELECT * FROM ads JOIN users ON ads.user_id = users.id WHERE flag_count > 0 ORDER BY flag_count DESC");
-		$query = $this->db->query("SELECT * FROM flags JOIN ads ON flags.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY flags.ad_id ORDER BY COUNT(flags.ad_id) DESC");
+		$query = $this->db->query("SELECT *, COUNT(`flags.ad_id` ) AS flag_count FROM flags JOIN ads ON flags.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY flags.ad_id ORDER BY COUNT(flags.ad_id) DESC");
 		$result = $query->result();
 		return $result;
 	}
@@ -151,6 +151,13 @@ class Ad_model extends CI_Model
 	public function get_flagged_ads_count()
 	{
 		$query = $this->db->query("SELECT * FROM flags GROUP BY ad_id");
+		$result = $query->num_rows();
+		return $result;
+	}
+	
+	public function get_flag_count($ad_id)
+	{
+		$query = $this->db->query("SELECT * FROM flags WHERE ad_id = '$ad_id'");
 		$result = $query->num_rows();
 		return $result;
 	}
