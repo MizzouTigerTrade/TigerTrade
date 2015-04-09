@@ -4,6 +4,8 @@
 			<h1>TigerTrade Development Team</h1>
 		</div>
 	</div>
+	
+	<hr>
 
 	<h2>Kyle Carlson</h2>	
 	<h2>Jason McQuinn</h2>	
