@@ -31,18 +31,14 @@ $(document).ready(function (){
 	}); //end change 
 });
 
-	$('input').tagsinput({
-	  typeahead: {
-	    source: ['Amsterdam', 'Washington', 'Sydney', 'Beijing', 'Cairo']
-	  },
-	  freeInput: true
-	});
+$('input').tagsinput({
+  typeahead: {
+    source: ['Amsterdam', 'Washington', 'Sydney', 'Beijing', 'Cairo']
+  },
+  freeInput: true
 });
-elt.tagsinput('add', { "value": 1 , "text": "Amsterdam"   , "continent": "Europe"    });
-elt.tagsinput('add', { "value": 4 , "text": "Washington"  , "continent": "America"   });
-elt.tagsinput('add', { "value": 7 , "text": "Sydney"      , "continent": "Australia" });
-elt.tagsinput('add', { "value": 10, "text": "Beijing"     , "continent": "Asia"      });
-elt.tagsinput('add', { "value": 13, "text": "Cairo"       , "continent": "Africa"    });
+
+
 
 </script>
 
