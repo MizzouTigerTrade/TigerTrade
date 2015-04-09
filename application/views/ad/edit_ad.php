@@ -40,7 +40,6 @@ $( document ).ready(function() {
 		var tag = "<?php echo $tag->description; ?>";
 		$('#tags').val($('#tags').val() + ', ' + tag );
 <?php }?>*/
-
 });
 
 
@@ -145,7 +144,7 @@ $( document ).ready(function() {
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control description-box" value="test1" name="tags" data-role="tagsinput" id="tags"></input>
+				<input type="text" class="form-control description-box" value="[test1, test2]" name="tags" data-role="tagsinput" id="tags"></input>
 			</div>
 		</div>
 
