@@ -126,7 +126,7 @@ $(document).ready(function(){
 				</div>
 
 				<!-- custom search bar -->
-				<div id="custom-search-input" style="margin-top: 10px">
+				<div id="custom-search-input" class="row" style="margin-top: 10px">
                     <div class="input-group col-xs-12">
                         <input type="text" class="search-query input-sm form-control" id="filter" placeholder="Search" />
                         <span class="input-group-btn">
