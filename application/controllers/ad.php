@@ -91,6 +91,7 @@ class Ad extends CI_Controller
 			$this->ad_model->update_tags($ad_id, $tags);
 			*/
 			echo "ad_id " . $ad_id;
+			echo "title " . $title;
 
 		}
 
