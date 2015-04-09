@@ -86,13 +86,12 @@ class Ad extends CI_Controller
 			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
 			$tags = $this->security->xss_clean($this->input->post('tags'));
 
-			/*
-			$this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory);
-			$this->ad_model->update_tags($ad_id, $tags);
-			*/
+			echo($this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory));
+			
+			/*$this->ad_model->update_tags($ad_id, $tags);*/
+			
 
-			echo nl2br('ad_id ' . $ad_id . '</ br>');
-			echo nl2br('title ' . $title . '\n');
+			
 
 		}
 
