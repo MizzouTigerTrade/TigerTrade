@@ -34,10 +34,10 @@ $(document).ready(function (){
 
 });
 
-$( "#tags" ).load(function() {
+$( document ).ready(function() {
     <?php foreach($tags->result() as $tag) { ?>
 		var tag = "<?php echo $tag->description; ?>";
-	$('#tags').val($('#tags').val() + ', ' + tag );
+		$('#tags').val($('#tags').val() + ', ' + tag );
 <?php }?>
 });
 
