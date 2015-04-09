@@ -31,12 +31,7 @@ $(document).ready(function (){
 	    }
 	}); //end change 
 
-$('input').tagsinput({
-  typeahead: {
-    source: ['Amsterdam', 'Washington', 'Sydney', 'Beijing', 'Cairo']
-  },
-  freeInput: true
-});
+$('input').tagsinput('add', 'some tag');
 
 });
 
