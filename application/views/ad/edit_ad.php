@@ -1,4 +1,6 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap-tagsinput-angular.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap-tagsinput.js') ?>"></script>
 
 <script type="text/javascript">
 $(document).ready(function (){
@@ -124,6 +126,16 @@ $(document).ready(function (){
 			<label for="description" class="col-sm-2 control-label label-20">Description</label>
 			<div class="col-sm-10">
 				<textarea type="text" class="form-control description-box" name="description" id="description" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"><?php echo $ad->description; ?></textarea>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control description-box" name="tags" data-role="tagsinput" id="tags">
+				<?php foreach ($tags as $tag) {
+					echo $tag->description;
+				}?></input>
 			</div>
 		</div>
 

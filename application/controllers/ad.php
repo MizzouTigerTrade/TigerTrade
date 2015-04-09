@@ -44,6 +44,7 @@ class Ad extends CI_Controller
 	{
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['images'] = $this->ad_model->get_ad_images($ad_id);
+		$data['tags'] = $this->ad_model->get_ad_tags($ad_id);
 		$data['title'] = 'Edit Ad';
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
@@ -53,7 +54,32 @@ class Ad extends CI_Controller
 	//update ad by id
 	function update()
 	{
-		
+		$this->form_validation->set_rules('title', 'Title', 'required');
+		$this->form_validation->set_rules('price', 'Price', 'required');
+		$this->form_validation->set_rules('description', 'Description', 'required');
+		$this->form_validation->set_rules('category', 'Category', 'required');
+		$category = $this->security->xss_clean($this->input->post('category'));
+		$sub_category_check = $this->ad_model->check_subCategory($category);
+		if($sub_category_check > 0)
+		{
+			$this->form_validation->set_rules('subCategory', 'Sub-Category', 'required');
+		}
+
+		//if validation fails
+		if ($this->form_validation->run() == false)
+		{
+			$data['error'] = true;
+		}
+		//if validation passes
+		else
+		{
+			
+			$title = $this->security->xss_clean($this->input->post('title'));
+			$description = $this->security->xss_clean($this->input->post('description'));
+			$price = $this->security->xss_clean($this->input->post('price'));
+			$category = $this->security->xss_clean($this->input->post('category'));
+			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
+			$tags = $this->security->xss_clean($this->input->post('tags'));
 	}
 
 	//shows form to create a new ad
