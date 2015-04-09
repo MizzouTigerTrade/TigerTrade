@@ -42,7 +42,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Market <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<?php foreach ($categories->result() as $category) { ?>
-						<li><a href='<?= base_url("/market/index" . $category->id) ?>'><?= $category->name ?></a></li>
+						<li><a href='<?= base_url("/market/index" . $category->id) ?>'><?= ucwords($category->name) ?></a></li>
 						
 						<?php } ?>
 						<li><a href='<?= base_url("/content/team") ?>'>Development Team</a></li>
