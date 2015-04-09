@@ -8,8 +8,11 @@
 	<hr>
 
 	<h2>Kyle Carlson</h2>	
+	
 	<h2>Jason McQuinn</h2>	
+	
 	<h2>Tim Gilman</h2>	
+	
 	<h2>Tim Van Horn</h2>	
 </div>
 				
