@@ -77,7 +77,7 @@ class Ad extends CI_Controller
 		}
 		else
 		{
-			/*
+			
 			$ad_id = $this->security->xss_clean($this->input->post('ad_id'));
 			$title = $this->security->xss_clean($this->input->post('title'));
 			$description = $this->security->xss_clean($this->input->post('description'));
@@ -86,10 +86,11 @@ class Ad extends CI_Controller
 			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
 			$tags = $this->security->xss_clean($this->input->post('tags'));
 
+			/*
 			$this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory);
 			$this->ad_model->update_tags($ad_id, $tags);
 			*/
-			echo "it worked";
+			echo "ad_id " . $ad_id;
 
 		}
 
