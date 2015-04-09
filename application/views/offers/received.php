@@ -9,6 +9,7 @@
 
 	<p>Click on offers to view them (if you have any).</p>
 	
+	<?php /*
 	<h2>Pending</h2>
 	<div class="table-responsive">
 		<table class="table table-hover">
@@ -80,4 +81,5 @@
 			<?php } ?>
 		</table>
 	</div>
+	*/ ?>
 </div>
