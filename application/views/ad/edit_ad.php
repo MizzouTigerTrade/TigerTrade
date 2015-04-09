@@ -39,6 +39,11 @@ $( document ).ready(function() {
 		var tag = "<?php echo $tag->description; ?>";
 		$('#tags').val($('#tags').val() + ', ' + tag );
 <?php }?>
+
+ <?php foreach($tags->result() as $tag) { ?>
+		var tag = "<?php echo $tag->description; ?>";
+		$('#tags').val($('#tags').val() + ', ' + tag );
+<?php }?>
 });
 
 
