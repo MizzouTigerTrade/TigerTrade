@@ -23,6 +23,9 @@ class Ad extends CI_Controller
 	//shows details of a specific ad
 	function details($ad_id)
 	{
+		$user = $this->ion_auth->user()->row();
+		$user_id = $user->user_id;
+		
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
 		
@@ -36,6 +39,7 @@ class Ad extends CI_Controller
 		
 		$data['title'] = 'Ad Detail';
 		$data['message'] = $this->session->flashdata('message');
+		$data['flagged'] = $this->ad_model->check_if_ad_flagged($ad_id, $user_id);
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
@@ -185,9 +189,13 @@ class Ad extends CI_Controller
 		
 	}
 	
+	//flags an ad
 	function flag_ad($ad_id)
 	{
-		$this->ad_model->flag_ad($ad_id);
+		$user = $this->ion_auth->user()->row();
+		$user_id = $user->user_id;
+		
+		$this->ad_model->flag_ad($ad_id, $user_id);
 		$this->session->set_flashdata('message', "Thank you for flagging this Ad. The content of this Ad will be reviewed.");
 		redirect('ad/details/' . $ad_id, 'refresh');
 	}

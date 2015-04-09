@@ -40,6 +40,16 @@ CREATE TABLE kylecarlson_tigertrade.subcategories (
 -- Table: kylecarlson_tigertrade.ads
 -- Columns:
 --	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
+--  user_id			- Id of user who flagged the Ad
+CREATE TABLE flags (
+	ad_id INTEGER REFERENCES ads(ad_id),
+	user_id INTEGER REFERENCES users(id),
+	primary key (ad_id, user_id)
+);
+
+-- Table: kylecarlson_tigertrade.ads
+-- Columns:
+--	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
 --	creation_date	- The creation date of the ad.
 -- 	expiration_date	- The expiration date of the ad, if provided by the user.
 --	price			- The price of the ad sale, could be 0.00.
@@ -54,7 +64,7 @@ CREATE TABLE kylecarlson_tigertrade.ads (
 	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
 	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id),
-	flag_count	INTEGER	DEFAULT "0"
+	flag_count INTEGER DEFAULT '0'
 );
 
 -- Table: kylecarlson_tigertrade.images
