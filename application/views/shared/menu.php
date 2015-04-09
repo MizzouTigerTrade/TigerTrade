@@ -36,7 +36,7 @@
 				</li>
 				
 				<li class="dropdown <?php if ($this->uri->segment(1) == 'content' ) { ?>active<?php } ?>">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href='<?= base_url("/content/team") ?>'>Team</a></li>
 						<li><a href='<?= base_url("/content/terms") ?>'>Terms of Use</a></li>
