@@ -1,7 +1,6 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/js/bootstrap-tagsinput-angular.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap-tagsinput.js') ?>"></script>
-
+<script src="<?php echo base_url('assets/js/bootstrap-tagsinput-angular.js') ?>"></script>
 <script type="text/javascript">
 $(document).ready(function (){
 	$('#categorySelectForm').change(function(){
@@ -32,24 +31,12 @@ $(document).ready(function (){
 	}); //end change 
 });
 
-var elt = $('input.tags');
-elt.tagsinput({
-  tagClass: function(item) {
-    switch (item.continent) {
-      case 'Europe'   : return 'label label-primary';
-      case 'America'  : return 'label label-danger label-important';
-      case 'Australia': return 'label label-success';
-      case 'Africa'   : return 'label label-default';
-      case 'Asia'     : return 'label label-warning';
-    }
-  },
-  itemValue: 'value',
-  itemText: 'text',
-  typeaheadjs: {
-    name: 'cities',
-    displayKey: 'text',
-    source: cities.ttAdapter()
-  }
+	$('input').tagsinput({
+	  typeahead: {
+	    source: ['Amsterdam', 'Washington', 'Sydney', 'Beijing', 'Cairo']
+	  },
+	  freeInput: true
+	});
 });
 elt.tagsinput('add', { "value": 1 , "text": "Amsterdam"   , "continent": "Europe"    });
 elt.tagsinput('add', { "value": 4 , "text": "Washington"  , "continent": "America"   });
