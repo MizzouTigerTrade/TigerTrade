@@ -114,11 +114,16 @@ hr {
 }
 
 .dropdown-menu>li>a:hover {
-	background-color: #EEB328;
+	background-color: #4CBD95;
 	color: rgb(51, 51, 51)
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
 	background-color: #EEB328;
 	color: rgb(51, 51, 51);
+}
+
+.dropdown-menu .divider {
+	background-color: rgba(75, 75, 75, 1);
+	margin: 5px 0;
 }
