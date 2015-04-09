@@ -133,7 +133,7 @@ $(document).ready(function (){
 			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control description-box" name="tags" data-role="tagsinput" id="tags">
-				<?php foreach ($tags as $tag) {
+				<?php foreach ($tags->result() as $tag) {
 					echo $tag->description;
 				}?></input>
 			</div>
