@@ -74,7 +74,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags &nbsp <span class="badge badge-info" style="background-color: #D43F3A;"><?php if($flag_notification>0){echo $flag_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/auth') ?>">Manage Users</a></li>
-							<li><a href="<?php echo base_url('/admin/new_category') ?>">Create Category</a></li>
+							<li><a href="<?php echo base_url('/admin/new_category') ?>">Create Category</a><span class="glyphicon glyphicon-search text-right" aria-hidden="true"></span></li>
 							<li><a href="<?php echo base_url('/admin/new_subcategory') ?>">Create Subcategory</a></li>
 						</ul>
 					</li>
