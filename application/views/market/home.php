@@ -127,7 +127,7 @@ $(document).ready(function(){
 
 				<!-- custom search bar -->
 				<div id="custom-search-input" style="margin-top: 10px">
-                    <div class="input-group col-sm-12 col-md-10 col-md-offset-10">
+                    <div class="input-group col-sm-12 col-md-10 col-md-offset-1">
                         <input type="text" class="search-query input-sm form-control" id="filter" placeholder="Search" />
                         <span class="input-group-btn">
                             <button class="btn btn-warning" type="button">
