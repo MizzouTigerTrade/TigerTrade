@@ -91,7 +91,7 @@ class Ad extends CI_Controller
 			$this->ad_model->update_tags($ad_id, $tags);
 			*/
 
-			echo nl2br('ad_id ' . $ad_id . '\n');
+			echo nl2br('ad_id ' . $ad_id . '</ br>');
 			echo nl2br('title ' . $title . '\n');
 
 		}
