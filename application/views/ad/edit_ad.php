@@ -145,15 +145,31 @@ $(document).ready(function (){
 		<?php 
 		$images = $images->result();
 		if(!empty($images)) { 
+				$inc = 0;
 			  foreach ($images as $img) { ?>
 				
 				<div class="form-group" >
 					<div class="col-sm-10">
-						<div id="filediv"><img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%"></div>
+						<div id="filediv">
+							<div id="abcd <?= $inc ?>" class="abcd">
+								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%">
+								<img id="img" src="x.png" alt=" delete"></img>
+							</div>
+						</div>
 					</div>
 				</div>
+
 				
-		<?php } }
+		<?php $inc++;
+		 }  ?>
+		 <div class="form-group" >
+			<label for="description" class="col-sm-2 control-label label-20">Upload More Images</label>
+			<div class="col-sm-10">
+				<input type="button" id="add_more" class="upload" value="Add More Files"/>
+			</div>
+		</div>
+		<?php 
+			}
 
 		else { ?>
 
