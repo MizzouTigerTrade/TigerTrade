@@ -34,7 +34,7 @@ class Offer_model extends CI_Model
 
 	public function get_offer($offer_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers JOIN ads ON (offers.ad_id = ad.ad_id) WHERE offer_id = '$offer_id'");
+		$result = $this->db->query("SELECT * FROM offers JOIN ads ON (offers.ad_id = ads.ad_id) WHERE offer_id = '$offer_id'");
 		$result = $result->row();
 		return $result;
 	}
