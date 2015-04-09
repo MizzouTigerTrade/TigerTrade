@@ -9,7 +9,7 @@
 
 	<div class="row">
 		<div class="col-xs-12"><h2>Kyle Carlson</h2></div>
-		<div class="col-sm-3">IMAGE</div>
+		<div class="col-sm-3"><img src="http://placehold.it/300x300"></div>
 		<div class="col-sm-9">DESCRIPTION</div>
 	</div>
 	<div class="row">
