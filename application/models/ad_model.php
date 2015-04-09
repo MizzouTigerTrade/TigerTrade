@@ -171,7 +171,7 @@ class Ad_model extends CI_Model
 
 	public function update_tags($ad_id, $tags)
 	{
-		$this->db->query("DELETE FROM ads WHERE ad_id = '$ad_id'");
+		$this->db->query("DELETE FROM tags WHERE ad_id = '$ad_id'");
 		if(!empty($tags))
 		{
 			$tags = explode(',', $tags);

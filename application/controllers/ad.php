@@ -86,16 +86,13 @@ class Ad extends CI_Controller
 			$subCategory = $this->security->xss_clean($this->input->post('subCategory'));
 			$tags = $this->security->xss_clean($this->input->post('tags'));
 
-			echo($this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory));
+			$this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory);
 			
-			/*$this->ad_model->update_tags($ad_id, $tags);*/
-			
-
-			
+			$this->ad_model->update_tags($ad_id, $tags);
 
 		}
 
-		
+		redirect('/ad/edit/'.$ad_id);
 	}
 
 	//shows form to create a new ad
