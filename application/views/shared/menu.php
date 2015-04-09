@@ -44,7 +44,7 @@
 					<ul class="dropdown-menu">
 						<li><a href='<?= base_url("/market") ?>'>All</a></li>
 						<?php foreach ($categories->result() as $category) { ?>
-						<li><a href='<?= base_url("/market/index" . $category->id) ?>'><?= ucwords($category->name) ?></a></li>
+						<li><a href='<?= base_url("/market/index/" . $category->category_id) ?>'><?= ucwords($category->name) ?></a></li>
 						<?php } ?>
 					</ul>
 				</li>
