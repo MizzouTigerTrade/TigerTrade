@@ -143,15 +143,13 @@ class Ad_model extends CI_Model
 	public function get_flagged_ads()
 	{
 		//$query = $this->db->query("SELECT * FROM ads JOIN users ON ads.user_id = users.id WHERE flag_count > 0 ORDER BY flag_count DESC");
-		$query = $this->db->query("SELECT * FROM flags JOIN ads ON flags.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY flags.ad_id");
+		$query = $this->db->query("SELECT * FROM flags JOIN ads ON flags.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY flags.ad_id ORDER BY COUNT(flags.ad_id) DESC");
 		$result = $query->result();
 		return $result;
 	}
 	
 	public function get_flagged_ads_count()
 	{
-		
-		//$query= $this->db->query("SELECT * FROM ads WHERE flag_count > 0");
 		$query = $this->db->query("SELECT * FROM flags");
 		$result = $query->num_rows();
 		return $result;
@@ -160,20 +158,6 @@ class Ad_model extends CI_Model
 	//user_id is the id of user who is flagging an ad
 	public function flag_ad($ad_id, $user_id)
 	{
-		/* Old Way
-		$this->db->set('flag_count', 'flag_count+1', FALSE);
-		$this->db->where('ad_id', $ad_id);
-		
-		if( $this->db->update('ads') != TRUE)
-		{
-			throw new Exception("Cannot Update Flag Count");
-		}
-		else
-		{
-			return $this->db->affected_rows();
-		}
-		*/
-		
 		$data = array(
 		'ad_id' => $ad_id ,
 		'user_id' => $user_id ,
@@ -195,7 +179,6 @@ class Ad_model extends CI_Model
 	//false returned if ad has NOT been flagged by user
 	public function check_if_ad_flagged($ad_id, $user_id)
 	{
-		
 		$query = $this->db->get_where('flags', array('ad_id' => $ad_id, 'user_id' => $user_id));
 		
 		if ($query->num_rows() > 0) {
@@ -203,8 +186,7 @@ class Ad_model extends CI_Model
 		}
 		else {
 			return false;
-		}
-		
+		}	
 	}
 
 	public function check_subCategory($category)
@@ -215,21 +197,7 @@ class Ad_model extends CI_Model
 	}
 	
 	public function dismiss_flag($ad_id)
-	{
-		$this->db->set('flag_count', 0);
-		$this->db->where('ad_id', $ad_id);
-	
-		/*
-		if( $this->db->update('ads') != TRUE)
-		{
-			throw new Exception("Cannot Update Flag Count");
-		}
-		else
-		{
-			return $this->db->affected_rows();
-		}
-		*/
-		
+	{	
 		$this->db->where('ad_id', $ad_id);
 		$this->db->delete('flags'); 
 	}
