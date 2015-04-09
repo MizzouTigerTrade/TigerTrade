@@ -48,6 +48,7 @@
 						<?php } ?>
 						<li role="presentation" class="divider"></li>
 						<li><a href='<?= base_url("/ad/new") ?>'>New Ad</a></li>
+						
 					</ul>
 				</li>
 
