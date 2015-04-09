@@ -40,7 +40,7 @@
 				-->
 
 				<li class="dropdown <?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Market <b class="caret"></b></a>
+					<a href="<?= base_url("/market/index") ?>" class="dropdown-toggle" data-toggle="dropdown">Market <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<?php foreach ($categories->result() as $category) { ?>
 						<li><a href='<?= base_url("/market/index" . $category->id) ?>'><?= ucwords($category->name) ?></a></li>
