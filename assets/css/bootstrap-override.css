@@ -83,11 +83,6 @@ hr {
 	color: rgb(51, 51, 51);
 }
 
-.navbar-default .navbar-nav>.open>a {
-	background-color: #EEB328;
-	color: rgb(51, 51, 51);	
-}
-
 .btn-success {
 	background-color: #4CBD95;
 	border-color: #42a985;	
@@ -113,4 +108,9 @@ hr {
 
 .dropdown-menu>li>a {
 	color: #BCBDC0;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	background-color: #EEB328;
+	color: rgb(51, 51, 51);
 }
