@@ -52,6 +52,7 @@ class Ad extends CI_Controller
 		$data['title'] = 'Edit Ad';
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
+		var_dump($data['tags']);
 		$this->layout->view('ad/edit_ad', $data);
 	}
 
