@@ -31,7 +31,19 @@ class Ad_model extends CI_Model
 		}
 	}
 
-	public function insert_new_tag($ad_id, $tag)
+	public function insert_new_tags($ad_id, $tags)
+	{
+			if(!empty($tags))
+			{
+				$tags = explode(',', $tags);
+				foreach ($tags as $tag) 
+				{
+					$this->ad_model->insert_single_tag($ad_id, $tag);	
+				}
+			}
+	}
+
+	public function insert_single_tag($ad_id, $tag)
 	{
 		$this->db->set('ad_id', $ad_id);
 		$this->db->set('description', $tag);
@@ -134,6 +146,42 @@ class Ad_model extends CI_Model
 
 		return $result;
 	}
+
+	public function update_ad($ad_id, $title, $description, $price, $category, $subCategory)
+	{
+		$data = array(
+			'title' 		=> $title,
+			'description' 	=> $description,
+			'price'			=> $price,
+			'category_id' 	=> $category,
+			'subcategory_id'=> $subCategory
+			);
+
+		$this->db->where('ad_id', $ad_id);
+
+		if( $this->db->update('ads', $data) != TRUE)
+		{
+			throw new Exception("Cannot Update ad");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+
+	public function update_tags($ad_id, $tags)
+	{
+		$this->db->query("DELETE FROM ads WHERE ad_id = '$ad_id'");
+		if(!empty($tags))
+		{
+			$tags = explode(',', $tags);
+			foreach ($tags as $tag) 
+			{
+				$this->ad_model->insert_single_tag($ad_id, $tag);	
+			}
+		}
+	}
+
 
 	public function get_image_of_ads($ads)
 	{

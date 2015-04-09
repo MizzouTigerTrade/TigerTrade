@@ -145,7 +145,7 @@ $(document).ready(function (){
 		<?php 
 		$images = $images->result();
 		if(!empty($images)) { 
-				$inc = 0;
+				$inc = 20;
 			  foreach ($images as $img) { ?>
 				
 				<div class="form-group" >
