@@ -38,7 +38,7 @@
 					</p>
 				</div>
 				<div class="col-xs-4 text-center">
-					<a href="<?php echo base_url('content/terms') ?>">&copy; 2015 TigerTrade Team</a>
+					<a href="<?php echo base_url('content/team') ?>">&copy; 2015 TigerTrade Team</a>
 				</div>
 			</div>
 		</div>
