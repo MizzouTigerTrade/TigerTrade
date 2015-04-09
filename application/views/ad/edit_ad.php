@@ -31,7 +31,7 @@ $(document).ready(function (){
 	    }
 	}); //end change 
 
-$('#tags').append("Tag 1")
+$('#tags').val($('#tags').val() + 'tag 1');
 
 });
 
