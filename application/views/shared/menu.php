@@ -35,8 +35,12 @@
 					<a href='<?= base_url("/market") ?>'>Market</a>
 				</li>
 				
-				<li class="<?php if ($this->uri->segment(1) == 'content' ) { ?>active<?php } ?>">
-					<a href='<?= base_url("/content/terms") ?>'>Terms of Use</a>
+				<li class="dropdown <?php if ($this->uri->segment(1) == 'content' ) { ?>active<?php } ?>">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
+					<ul class="dropdown-menu">
+						<li><a href='<?= base_url("/content/team") ?>'>Team</a></li>
+						<li><a href='<?= base_url("/content/terms") ?>'>Terms of Use</a></li>
+					</ul>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
