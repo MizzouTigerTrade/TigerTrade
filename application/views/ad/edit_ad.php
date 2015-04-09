@@ -133,9 +133,11 @@ $(document).ready(function (){
 		if(!empty($images)) { 
 			  foreach ($images as $img) { ?>
 				
-
+				<div class="form-group" >
+					<div class="col-sm-10">
 						<div id="filediv"><img class="img-thumbnail" src="http://tgilman.thetigertrade.com/assets/Images/c92e5c90d48123bb79b0233852f35d93.jpg" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%"></div>
-
+					</div>
+				</div>
 				
 		<?php } }
 
