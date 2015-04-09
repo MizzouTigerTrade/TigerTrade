@@ -29,7 +29,6 @@ $(document).ready(function (){
 	    	$('#subCategory').empty();
 	    }
 	}); //end change 
-});
 
 $('input').tagsinput({
   typeahead: {
@@ -37,6 +36,10 @@ $('input').tagsinput({
   },
   freeInput: true
 });
+
+});
+
+
 
 
 
