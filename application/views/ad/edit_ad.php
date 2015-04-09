@@ -36,6 +36,7 @@ $(document).ready(function (){
 function deleteImage(img_id)
 {
 	alert(img_id);
+	$(this).parent().parent().remove();
 }
 
 
