@@ -86,7 +86,10 @@ class Ad extends CI_Controller
 
 			$this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory);
 			$this->ad_model->update_tags($ad_id, $tags);
+
 		}
+
+		redirect('/ad/edit/'.$ad_id);
 	}
 
 	//shows form to create a new ad
