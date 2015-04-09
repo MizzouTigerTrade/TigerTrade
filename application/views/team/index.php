@@ -9,22 +9,22 @@
 
 	<div class="row">
 		<div class="col-xs-12"><h2>Kyle Carlson</h2></div>
-		<div class="col-sm-3"><img src="http://placehold.it/300x300"></div>
+		<div class="col-sm-3"><img class="img-thumbnail" src="http://placehold.it/500x500" width="100%" height="100%"></div>
 		<div class="col-sm-9">DESCRIPTION</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12"><h2>Jason McQuinn</h2></div>
-		<div class="col-sm-3">IMAGE</div>
+		<div class="col-sm-3"><img class="img-thumbnail" src="http://placehold.it/500x500" width="100%" height="100%"></div>
 		<div class="col-sm-9">DESCRIPTION</div>	
 	</div>
 	<div class="row">		
 		<div class="col-xs-12"><h2>Tim Gilman</h2></div>
-		<div class="col-sm-3">IMAGE</div>
+		<div class="col-sm-3"><img class="img-thumbnail" src="http://placehold.it/500x500" width="100%" height="100%"></div>
 		<div class="col-sm-9">DESCRIPTION</div>	
 	</div>
 	<div class="row">		
 		<div class="col-xs-12"><h2>Tim Van Horn</h2></div>
-		<div class="col-sm-3">IMAGE</div>
+		<div class="col-sm-3"><img class="img-thumbnail" src="http://placehold.it/500x500" width="100%" height="100%"></div>
 		<div class="col-sm-9">DESCRIPTION</div>
 	</div>
 </div>
