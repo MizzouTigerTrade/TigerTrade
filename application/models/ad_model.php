@@ -53,6 +53,12 @@ class Ad_model extends CI_Model
 		return $result;
 	}
 
+	public function get_ad_images($ad_id)
+	{
+		$result = $this->db->query("SELECT * FROM images where ad_id = '$ad_id'");
+		return $result;
+	}
+
 	public function get_new_ad_id($title, $description, $price, $user_id, $category, $subCategory)
 	{
 		$this->db->select('ad_id, title');		
@@ -89,6 +95,12 @@ class Ad_model extends CI_Model
 		{
 			return $this->db->affected_rows();
 		}
+	}
+
+	public function get_ad_tags($ad_id)
+	{
+		$result = $this->db->query("SELECT * FROM tags WHERE ad_id = '$ad_id'");
+		return $result;
 	}
 
 

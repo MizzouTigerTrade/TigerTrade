@@ -1,4 +1,6 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap-tagsinput-angular.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap-tagsinput.js') ?>"></script>
 
 <script type="text/javascript">
 $(document).ready(function (){
@@ -28,7 +30,18 @@ $(document).ready(function (){
 	    	$('#subCategory').empty();
 	    }
 	}); //end change 
+
+
 });
+
+$( document ).ready(function() {
+    <?php foreach($tags->result() as $tag) { ?>
+		var tag = "<?php echo $tag->description; ?>";
+		$('#tags').val($('#tags').val() + ', ' + tag );
+<?php }?>
+});
+
+
 
 </script>
 
@@ -77,11 +90,13 @@ $(document).ready(function (){
 			<select name="category" id="categorySelectForm"> 
 				<option value="">Select One</option>
 				<?php
+					$sub = 0;
 					foreach($categories->result() as $category)
 					{
 						if($category->category_id == $ad->category_id)
 						{
-							echo '<option value="'.$category->category_id.'">'.$category->name.'</option>';
+							$sub = 1;
+							echo '<option value="'.$category->category_id.'" selected>'.$category->name.'</option>';
 						}
 						else
 						{
@@ -95,17 +110,58 @@ $(document).ready(function (){
 		<div class="form-group" id="subCategoryForm">
 			<label for="sub-category" class="col-sm-2 control-label label-20">Sub-Category</label>
 			<div class="col-sm-10">
-			<select name="subCategory" id="subCategory"> 
-				<option value=""><option>	
+			<select name="subCategory" id="subCategory"> 	
+				<?php
+					foreach($subcategories->result() as $subcategory)
+					{
+						if($subcategory->subcategory_id == $ad->subcategory_id)
+						{
+							$sub = 1;
+							echo '<option value="'.$subcategory->subcategory_id.'" selected>'.$subcategory->name.'</option>';
+						}
+						else
+						{
+							foreach ($categories->result() as $category) {
+								if($category->category_id == $subcategory->category_id && $ad->category_id == $category->category_id)
+								{
+									echo '<option value="'.$subcategory->category_id.'">'.$subcategory->name.'</option>';
+								}
+							}
+						}
+					}
+				?>	
 			</select>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Description</label>
 			<div class="col-sm-10">
-				<textarea type="text" class="form-control description-box" name="description" id="description" value="<?= $ad->description?>" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"></textarea>
+				<textarea type="text" class="form-control description-box" name="description" id="description" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"><?php echo $ad->description; ?></textarea>
 			</div>
 		</div>
+
+		<div class="form-group">
+			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control description-box" value="" name="tags" data-role="tagsinput" id="tags"></input>
+			</div>
+		</div>
+
+
+		<?php 
+		$images = $images->result();
+		if(!empty($images)) { 
+			  foreach ($images as $img) { ?>
+				
+				<div class="form-group" >
+					<div class="col-sm-10">
+						<div id="filediv"><img class="img-thumbnail" src="<?php echo base_url('/assets/Images/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%"></div>
+					</div>
+				</div>
+				
+		<?php } }
+
+		else { ?>
 
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload Image</label>
@@ -120,8 +176,8 @@ $(document).ready(function (){
 				<input type="button" id="add_more" class="upload" value="Add More Files"/>
 			</div>
 		</div>
-		
-		
+		<?php } ?>
+			
 		<hr>
 		
 		<div class="form-group">
