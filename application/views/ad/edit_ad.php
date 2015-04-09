@@ -31,7 +31,7 @@ $(document).ready(function (){
 	    }
 	}); //end change 
 
-
+$('#tags').val("test");
 });
 
 $( document ).ready(function() {
@@ -40,7 +40,7 @@ $( document ).ready(function() {
 		var tag = "<?php echo $tag->description; ?>";
 		$('#tags').val($('#tags').val() + ', ' + tag );
 <?php }?>*/
-$('#tags').val("test");
+
 });
 
 
