@@ -8,7 +8,7 @@
 	</ol>
 	
 	<!-- Wrapper for slides -->
-	<div class="carousel-inner text-center" role="listbox" style="height: 300px;">
+	<div class="carousel-inner text-center" role="listbox" style="min-height: 300px;">
 		<div class="item active">
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
 				<h1 style="font-size: 3.5em; margin-top: 30px;">Welcome to the TigerTrade!</h1>
