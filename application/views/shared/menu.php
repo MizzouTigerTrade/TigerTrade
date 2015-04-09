@@ -12,6 +12,8 @@
 		$received_offer_notification = 0;
 		$total_offer_notification = 0;
 	}
+	
+	$categories = $this->category_model->get_all_categories();
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -34,6 +36,20 @@
 				<li class="<?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
 					<a href='<?= base_url("/market") ?>'>Market</a>
 				</li>
+
+
+				<li class="dropdown <?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Market <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<?php foreach ($categories as $category) { ?>
+						<li><a href='<?= base_url("/market/index/" . $category->id) ?>'><?= $category->name ?></a></li>
+						
+						<?php } ?>
+						<li><a href='<?= base_url("/content/team") ?>'>Development Team</a></li>
+						<li><a href='<?= base_url("/content/terms") ?>'>Terms of Use</a></li>
+					</ul>
+				</li>
+
 				
 				<li class="dropdown <?php if ($this->uri->segment(1) == 'content' ) { ?>active<?php } ?>">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
