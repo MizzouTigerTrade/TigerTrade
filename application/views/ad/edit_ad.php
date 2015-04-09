@@ -31,7 +31,7 @@ $(document).ready(function (){
 	    }
 	}); //end change 
 
-$('input').TagsInput('add', 'some tag');
+$('#tags').append("Tag 1")
 
 });
 
