@@ -84,7 +84,7 @@ $(document).ready(function(){
 						</select>
 					</div>
 					<div class="col-sm-6 col-md-4">
-						<div class="btn-group">
+						<div class="btn-group text-right">
 							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
 							<a class="btn btn-default btn-sm" href="<?php echo base_url('/admin/new_category') ?>">New Category</a>
