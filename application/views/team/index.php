@@ -1,6 +1,6 @@
 <style>
 .team-member-description {
-	padding: 10px;
+	padding: 30px;
 	font-size: 1.2em;
 }
 </style>
