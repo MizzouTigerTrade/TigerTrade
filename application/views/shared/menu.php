@@ -46,6 +46,8 @@
 						<?php foreach ($categories->result() as $category) { ?>
 						<li><a href='<?= base_url("/market/index/" . $category->category_id) ?>'><?= ucwords($category->name) ?></a></li>
 						<?php } ?>
+						<li role="presentation" class="divider"></li>
+						<li><a href='<?= base_url("/ad/new") ?>'>New Ad</a></li>
 					</ul>
 				</li>
 
