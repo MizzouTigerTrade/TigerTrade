@@ -72,10 +72,11 @@ class Ad extends CI_Controller
 		//if validation fails
 		if ($this->form_validation->run() == false)
 		{
-			$data['error'] = true;
+			echo "error";
 		}
 		else
 		{
+			/*
 			$ad_id = $this->security->xss_clean($this->input->post('ad_id'));
 			$title = $this->security->xss_clean($this->input->post('title'));
 			$description = $this->security->xss_clean($this->input->post('description'));
@@ -86,10 +87,12 @@ class Ad extends CI_Controller
 
 			$this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory);
 			$this->ad_model->update_tags($ad_id, $tags);
+			*/
+			echo "it worked";
 
 		}
 
-		redirect('/ad/edit/'.$ad_id);
+		
 	}
 
 	//shows form to create a new ad
