@@ -31,8 +31,10 @@ $(document).ready(function (){
 	    }
 	}); //end change 
 
-$('#tags').val($('#tags').val() + 'tag 1');
-
+<?php foreach($tags->result() as $tag) { ?>
+	var tag = "<?php echo $tag->description; ?>";
+	$('#tags').val($('#tags').val() + tag, ', ');
+<?php }?>
 });
 
 
