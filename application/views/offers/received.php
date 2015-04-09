@@ -14,7 +14,7 @@
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr>
-				<th>Ad ID</th>
+				<th>Ad Name</th>
 				<!--<th>Buyer ID</th>
 				<th>Seller ID</th>-->
 				<th>Buyer Message</th>
@@ -23,7 +23,7 @@
 			</tr>
 			<?php foreach ($pending->result() as $row) { ?>
 			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/review_offer/' . $row->offer_id) ?>'>
-				<td><?php echo $row->ad_id; ?></td>
+				<td><?php echo $row->title; ?></td>
 				<?php /*<td><?php echo $row->buyer_id; ?></td>
 				<td><?php echo $row->seller_id; ?></td> */ ?>
 				<td><?php echo $row->buyer_message; ?></td>
