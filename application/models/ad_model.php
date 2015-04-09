@@ -196,7 +196,8 @@ class Ad_model extends CI_Model
 	{
 		$this->db->set('flag_count', 0);
 		$this->db->where('ad_id', $ad_id);
-		
+	
+		/*
 		if( $this->db->update('ads') != TRUE)
 		{
 			throw new Exception("Cannot Update Flag Count");
@@ -205,6 +206,10 @@ class Ad_model extends CI_Model
 		{
 			return $this->db->affected_rows();
 		}
+		*/
+		
+		$this->db->where('ad_id', $ad_id);
+		$this->db->delete('flags'); 
 	}
 
 	public function get_user_ads($user_id)
