@@ -31,13 +31,15 @@ $(document).ready(function (){
 	    }
 	}); //end change 
 
-<?php foreach($tags->result() as $tag) { ?>
-	var tag = "<?php echo $tag->description; ?>";
+
+});
+
+$( document ).load(function() {
+    <?php foreach($tags->result() as $tag) { ?>
+		var tag = "<?php echo $tag->description; ?>";
 	$('#tags').val($('#tags').val() + tag + ', ');
 <?php }?>
 });
-
-
 
 
 
