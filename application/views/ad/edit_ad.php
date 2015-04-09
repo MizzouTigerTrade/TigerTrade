@@ -34,7 +34,7 @@ $(document).ready(function (){
 
 });
 
-$( document ).ready(function() {
+$( "#tags" ).load(function() {
     <?php foreach($tags->result() as $tag) { ?>
 		var tag = "<?php echo $tag->description; ?>";
 	$('#tags').val($('#tags').val() + ', ' + tag );
