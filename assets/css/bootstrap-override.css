@@ -108,6 +108,8 @@ hr {
 
 .dropdown-menu>li>a {
 	color: #BCBDC0;
+	font-weight: 200;
+	letter-spacing: 1px;
 }
 
 .dropdown-menu>li>a:hover {
