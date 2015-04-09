@@ -1,3 +1,9 @@
+<style>
+.item p {
+	width: 75%;
+}
+</style>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
@@ -9,22 +15,22 @@
 	
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner text-center" role="listbox" style="height: 300px;">
-		<div class="item active" style="z-index: 10000;">
+		<div class="item active">
 			<h1 style="font-size: 3.5em; margin-top: 30px;">Welcome to the TigerTrade!</h1>
 			<p style="font-size: 1.5em;">Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
 			
-		<div class="item" style="z-index: 10000;">
+		<div class="item">
 			<h1 style="font-size: 3.5em; margin-top: 30px;">Your source for all things Mizzou!</h1>
 			<p style="font-size: 1.5em;">Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
 			
-		<div class="item" style="z-index: 10000;">
+		<div class="item">
 			<h1 style="font-size: 3.5em; margin-top: 30px;">Buy!</h1>
 			<p style="font-size: 1.5em;">Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
 			
-		<div class="item" style="z-index: 10000;">
+		<div class="item">
 			<h1 style="font-size: 3.5em; margin-top: 30px;">Sell!</h1>
 			<p style="font-size: 1.5em;">Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem Lorum ipsum dolem.</p>
 		</div>
