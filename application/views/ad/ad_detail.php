@@ -58,6 +58,7 @@
 				<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 				</div>
 			</div>
+			<?php } ?>
 			<div class="col-xs-12" style="padding: 0;">
 				<div class="form-group">
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
