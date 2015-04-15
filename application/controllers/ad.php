@@ -22,12 +22,14 @@ class Ad extends CI_Controller
 
 	//shows details of a specific ad
 	function details($ad_id)
-	{
+	{	
 		$user = $this->ion_auth->user()->row();
 		$user_id = $user->user_id;
 		
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
+		
+		$data['comments'] = $this->ad_model->get_comments($ad_id)
 		
 		if ($data['ad']->subcategory_id == 0) 
 		{
@@ -261,7 +263,7 @@ class Ad extends CI_Controller
 	
 			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
 			$this->session->set_flashdata('message', 'Saving the comment...');
-			redirect('ad/details/' . $ad_id, 'refresh');
+			redirect('/ad/details/' . $ad_id);
 		}
 	}
 }

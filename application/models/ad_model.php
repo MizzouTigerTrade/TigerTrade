@@ -313,7 +313,7 @@ class Ad_model extends CI_Model
 		$result = $this->db->query("SELECT * FROM comments where user_id = '$user_id'");
 	}
 	//edit
-	public function get_ad_comments($ad_id)
+	public function get_comments($ad_id)
 	{
 		$result = $this->db->query("SELECT * FROM comments where ad_id = '$ad_id'");
 	}
@@ -322,7 +322,6 @@ class Ad_model extends CI_Model
 	{
 		$this->db->where('ad_id', $ad_id);
 		$this->db->set('description', $description);
-		$this->db->set('user_id', $user_id);
 		$this->db->set('timestmp', $timestmp);
 		
 		//insert into db, error thrown if not inserted correctly

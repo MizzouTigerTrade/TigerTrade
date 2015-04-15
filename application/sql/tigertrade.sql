@@ -11,7 +11,7 @@ USE kylecarlson_tigertrade;
 CREATE TABLE kylecarlson_tigertrade.comments (
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ad(ad_id),
 	description		VARCHAR(500),
-	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
+	--user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	timestmp 	TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
