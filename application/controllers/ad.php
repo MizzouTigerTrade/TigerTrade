@@ -242,4 +242,26 @@ class Ad extends CI_Controller
 		$this->ad_model->delete_ad($ad_id);
 		redirect ('ad/user_ads');
 	}
+	
+	//adds a comment to the ad
+	function comment($ad_id)
+	{
+		$this->form_validation->set_rules('comment', 'Comment', 'required');
+		if($this->form_validation->run() == false) 
+		{
+				data['error'] = true;
+		}
+		else
+		{
+			$description = $this->security->xss_clean($this->input->post('comment'));
+			$user = $this->ion_auth->user()->row();
+			$user_id = $user->user_id;
+			$date = new DateTime();
+			$timestmp = $date->getTimestamp();
+	
+			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
+			$this->session->set_flashdata('message', 'Saving the comment...');
+			redirect('ad/details/', . $ad_id, 'refresh');
+		}
+	}
 }

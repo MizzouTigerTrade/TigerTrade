@@ -307,6 +307,34 @@ class Ad_model extends CI_Model
 		$this->db->delete('ads'); 
 	}
 
+	//edit
+	public function get_user_comments($user_id)
+	{
+		$result = $this->db->query("SELECT * FROM comments where user_id = '$user_id'");
+	}
+	//edit
+	public function get_ad_comments($ad_id)
+	{
+		$result = $this->db->query("SELECT * FROM comments where ad_id = '$ad_id'");
+	}
+	//edit
+	public function comment_ad($ad_id, $description, $user_id, $timestmp)
+	{
+		$this->db->where('ad_id', $ad_id);
+		$this->db->set('description', $description);
+		$this->db->set('user_id', $user_id);
+		$this->db->set('timestmp', $timestmp);
+		
+		//insert into db, error thrown if not inserted correctly
+		if($this->db->insert('comments') != TRUE)
+		{
+			throw new Exception("cannot insert");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
 }
 
 ?>
