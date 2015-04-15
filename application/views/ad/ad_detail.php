@@ -62,7 +62,7 @@
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
 						<div class="col-xs-3 text-right" style="padding: 10px">
-							<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment_ad/' . $ad->ad_id) ?>">Submit</a>
+							<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id) ?>">Submit</a>
 						</div>
 					</div>
 				</div>
