@@ -244,7 +244,7 @@ class Ad extends CI_Controller
 	}
 	
 	//adds a comment to the ad
-	function comment($ad_id)
+	function comment_ad($ad_id)
 	{
 		$this->form_validation->set_rules('comment', 'Comment', 'required');
 		/*
