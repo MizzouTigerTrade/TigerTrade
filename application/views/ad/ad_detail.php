@@ -20,7 +20,7 @@
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
 			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
-			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
+			<h2 style="margin-top: 10px;">Asking Price: Test <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<a class="btn btn-success" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
 			
 			<?php if ($flagged == false) { ?>
@@ -53,8 +53,9 @@
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
-			<?php foreach($ads->result() as $row) { ?>
+			<?php foreach($ad->result() as $row) { ?>
 			<div class="row comment_display" id="<?= $row->description ?>">
+				<?php echo $row->description; ?>
 			</div>
 			<?php } ?>
 			<div class="col-xs-12" style="padding: 0;">
