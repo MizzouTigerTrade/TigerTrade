@@ -247,9 +247,9 @@ class Ad extends CI_Controller
 	function comment($ad_id)
 	{
 		$this->form_validation->set_rules('comment', 'Comment', 'required');
-		if($this->form_validation->run() == false) 
+		if ($this->form_validation->run() == false)
 		{
-				$data['error'] = true;
+			$data['error'] = true;
 		}
 		else
 		{
