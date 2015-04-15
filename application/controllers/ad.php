@@ -256,8 +256,8 @@ class Ad extends CI_Controller
 		else
 		{
 			$description = $this->security->xss_clean($this->input->post('comment'));
-			$user = $this->ion_auth->user()->row();
-			$user_id = $user->user_id;
+			//$user = $this->ion_auth->user()->row();
+			//$user_id = $user->user_id;
 			$date = new DateTime();
 			$timestmp = $date->getTimestamp();
 	

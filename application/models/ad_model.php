@@ -318,8 +318,8 @@ class Ad_model extends CI_Model
 			$result = $result->result();
 			foreach($result as $comment)
 			{
-				$single_ad['description'] = $comment->description;
-				$comment_array->append($single_ad);
+				$comment['description'] = $comment->description;
+				$comment_array->append($comment);
 			}
 			return $comment_array;
 		}
@@ -330,7 +330,7 @@ class Ad_model extends CI_Model
 	}
 	
 	//edit
-	public function comment_ad($ad_id, $description, $user_id, $timestmp)
+	public function comment_ad($ad_id, $description, $timestmp)
 	{
 		$this->db->where('ad_id', $ad_id);
 		$this->db->set('description', $description);
