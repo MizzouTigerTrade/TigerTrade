@@ -54,9 +54,7 @@
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
 			<?php foreach  ($comments->result() as $row) { ?>
-			<div class="row ad_display" id="<?= $row->ad_id ?>">
-				<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
-				</div>
+			<div class="row comment_display" id="<?= $row->description ?>">
 			</div>
 			<?php } ?>
 			<div class="col-xs-12" style="padding: 0;">

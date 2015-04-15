@@ -308,15 +308,27 @@ class Ad_model extends CI_Model
 	}
 
 	//edit
-	public function get_user_comments($user_id)
-	{
-		$result = $this->db->query("SELECT * FROM comments where user_id = '$user_id'");
-	}
-	//edit
 	public function get_comments($ad_id)
 	{
 		$result = $this->db->query("SELECT * FROM comments where ad_id = '$ad_id'");
+		$comment_array = new ArrayObject();
+		$i = 0;
+		if($result->num_rows() > 0)
+		{
+			$result = $result->result();
+			foreach($result as $comment)
+			{
+				$single_ad['description'] = $comment->description;
+				$comment_array->append($single_ad);
+			}
+			return $comment_array;
+		}
+		else
+		{
+			return 0;
+		}		
 	}
+	
 	//edit
 	public function comment_ad($ad_id, $description, $user_id, $timestmp)
 	{
