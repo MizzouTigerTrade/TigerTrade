@@ -54,11 +54,11 @@
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
 			<div class="col-xs-12" style="padding: 0;">
+			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'ad-form', 'enctype' => 'multipart/form-data'));?>
 				<div class="form-group">
 						<p>Comments: <a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
-					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
 					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
+						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5" placeholder="Insert questions about ad here..." onkeyup="document.getElementById('preview_title').innerHTML = this.value"></textarea>
 						<div class="col-xs-9">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
