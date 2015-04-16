@@ -12,18 +12,14 @@
 	<h2>Pending</h2>
 	<table class="table">
 		<tr>
-			<th>Ad ID</th>
-			<th>Buyer ID</th>
-			<th>Seller ID</th>
-			<th>Buyer Message</th>
+			<th>Ad Title</th>
+			<th>Your Message</th>
 			<th>Price</th>
 			<th>Status</th>
 		</tr>
 		<?php foreach ($pending->result() as $row) { ?>
 		<tr>
-			<td><?php echo $row->ad_id; ?></td>
-			<td><?php echo $row->buyer_id; ?></td>
-			<td><?php echo $row->seller_id; ?></td>
+			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->buyer_message; ?></td>
 			<td><?php echo $row->price; ?></td>
 			<td><?php echo $row->status; ?></td>
@@ -34,19 +30,13 @@
 	<h2>Accepted</h2>
 	<table class="table">
 		<tr>
-			<th>Ad ID</th>
-			<th>Buyer ID</th>
-			<th>Seller ID</th>
-			<th>Buyer Message</th>
+			<th>Ad Title</th>
 			<th>Seller Response</th>
 			<th>Status</th>
 		</tr>
 		<?php foreach ($accepted->result() as $row) { ?>
 		<tr>
-			<td><?php echo $row->ad_id; ?></td>
-			<td><?php echo $row->buyer_id; ?></td>
-			<td><?php echo $row->seller_id; ?></td>
-			<td><?php echo $row->buyer_message; ?></td>
+			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
 			<td><?php echo $row->status; ?></td>
 		</tr>
