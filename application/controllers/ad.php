@@ -266,7 +266,7 @@ class Ad extends CI_Controller
 		echo $description;
 		echo $user_id;
 		echo $timestmp;
-		$this->session->set_flashdata('message', 'Your comment have been saved anonymously. View it below.');
+		$this->session->set_flashdata('message', $description);
 		redirect('/ad/details/' . $ad_id, 'refresh');
 	}
 }

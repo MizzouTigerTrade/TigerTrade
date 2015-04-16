@@ -312,6 +312,7 @@ class Ad_model extends CI_Model
 	{
 		$result = $this->db->query("SELECT * FROM comments where ad_id = '$ad_id'");
 		$comments = new ArrayObject();
+		return $result;
 		$i = 0;
 		if($result->num_rows() > 0)
 		{
