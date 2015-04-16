@@ -255,11 +255,11 @@ class Ad extends CI_Controller
 	function comment($ad_id)
 	{
 		$this->form_validation->set_rules('comment', 'Comment', 'required');
-		//if ($this->form_validation->run() == false)
-		//{
-		//	$data['error'] = true;
-		//}
-		//else
+		if ($this->form_validation->run() == false)
+		{
+			$data['error'] = true;
+		}
+		else
 		{
 			$description = $this->security->xss_clean($this->input->post('comment'));
 			//$user = $this->ion_auth->user()->row();
@@ -268,7 +268,7 @@ class Ad extends CI_Controller
 			$timestmp = $date->getTimestamp();
 	
 			$this->ad_model->comment_ad($ad_id, $description, $timestmp);
-			$this->session->set_flashdata('message', 'Saving the comment...');
+			$this->session->set_flashdata('message', 'Your comment have been saved anonymously. View it below.');
 			redirect('/ad/details/' . $ad_id);
 		}
 	}
