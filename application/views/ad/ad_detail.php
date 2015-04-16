@@ -54,7 +54,8 @@
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
 			<div class="col-xs-12" style="padding: 0;">
-				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>		
+				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
+				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<label for="comments" class="col-sm-2 control-label label-20">Comment</label>
 				<div class="form-group">			
 					<div class="col-sm-10">
