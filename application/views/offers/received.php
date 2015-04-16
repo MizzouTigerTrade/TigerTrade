@@ -28,7 +28,7 @@
 				<td><?php echo $row->seller_id; ?></td> */ ?>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo $row->price; ?></td>
-				<td><button type="button" class="btn btn-primary">Reply</button></td>
+				<td><button type="button" class="btn btn-xs btn-primary">Reply</button></td>
 			</tr>
 			<?php } ?>
 		</table>
