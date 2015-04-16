@@ -41,7 +41,22 @@
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 		<div class="col-sm-5">
-				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
+			<?php 
+				$flag = 0;
+				$image_link = "";
+				foreach ($images->resul() as $images) {
+					if($flag == 0)
+					{
+						$image_link = base_url('/'.$img->image_path);
+						$flag++;
+					}
+				}
+
+			 if(empty($image_link)) { ?> 
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">
+			<?php } else { ?>
+				<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="Error loading image" width="100%" height="100%">
+			<?php } ?>
 		</div>
 	</div>
 	
