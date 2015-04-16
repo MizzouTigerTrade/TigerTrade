@@ -24,7 +24,9 @@ class Ad extends CI_Controller
 	function details($ad_id)
 	{
 		$user = $this->ion_auth->user()->row();
-		$user_id = $user->user_id;
+		if($user) {
+			$user_id = $user->user_id;
+		}
 		
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
