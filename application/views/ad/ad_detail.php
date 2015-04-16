@@ -53,7 +53,7 @@
 			}
 		?>
 		<div class="col-sm-5">
-				<img class="img-thumbnail" src=<?php echo $image_link; ?> alt="http://placehold.it/500x500" width="100%">
+				<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="http://placehold.it/500x500" width="100%">
 		</div>
 	</div>
 	

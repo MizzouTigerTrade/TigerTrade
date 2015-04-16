@@ -153,7 +153,7 @@ $(document).ready(function(){
 										}
 									}
 							?> 
-							<img class="img-thumbnail" src=<?php echo $image_link; ?> alt="http://placehold.it/500x500" width="100%" height="100%">
+							<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="http://placehold.it/500x500" width="100%" height="100%">
 							</a>
 						</div>
 						<div class="media-body col-xs-9 col-md-8 search">
