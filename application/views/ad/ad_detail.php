@@ -53,11 +53,11 @@
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
-			<?php foreach($comments['description'] as $row) { ?>
+			<!-- <?php foreach($comments['description'] as $row) { ?> -->
 			<div class="row comment_display" id="<?php $row['description']; ?>">
 				<p>Comments: <?php echo $row['description']; ?></p>
 			</div>
-			<?php } ?>
+			<!--<?php } ?> -->
 			<div class="col-xs-12" style="padding: 0;">
 				<div class="form-group">
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
