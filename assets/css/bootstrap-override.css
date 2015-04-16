@@ -140,4 +140,5 @@ hr {
 
 .list-group-item:hover {
 	background: rgba(190, 190, 190, 0.9);
+	padding: 0;
 }
