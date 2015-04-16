@@ -266,7 +266,7 @@ class Ad extends CI_Controller
 		echo $description;
 		echo $user_id;
 		echo $timestmp;
-		$this->session->set_flashdata('message', ' Success' . $user_id . ' test' . $date);
+		$this->session->set_flashdata('message', ' user ' . $user_id . ' time ' . $timestmp . ' id ' . $ad_id . ' desc '. $description);
 		redirect('/ad/details/' . $ad_id, 'refresh');
 	}
 }
