@@ -41,7 +41,7 @@
 			<tr>
 				<th>Ad Name</th>
 				<th>Buyer Message</th>
-				<th>Seller Response</th>
+				<th>Your Response</th>
 				<th>Price</th>
 				<th>Status</th>
 			</tr>
