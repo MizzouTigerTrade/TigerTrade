@@ -14,10 +14,11 @@ $(document).ready(function(){
  
             // Show the list item if the phrase matches and increase the count by 1
             } else {
+            	count++;
                 $(this).show();
             }
         });
- 
+ 		console.log(count);
         // Update the count
         var numberItems = count;
         $("#filter-count").text("Number of Comments = "+count);
