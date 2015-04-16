@@ -127,3 +127,9 @@ hr {
 	background-color: rgba(75, 75, 75, 1);
 	margin: 5px 0;
 }
+
+.label-default {
+	background-color: #EEB328;
+	font-weight: 300;
+	letter-spacing: 1px;
+}

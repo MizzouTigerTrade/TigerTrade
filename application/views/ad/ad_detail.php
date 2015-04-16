@@ -19,7 +19,18 @@
 	<!-- Devices >= Small -->
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
-			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
+			<div class="row">
+				<div class="col-xs-12">
+				<?php
+				foreach($tags->result() as $tag) { 
+					if($tag->ad_id == $ad->ad_id)
+					{
+						echo '<span class="label label-default">' . $tag->description . '</span> ';
+					}
+				}
+				?>
+				</div>
+			</div>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<a class="btn btn-success" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
 			
