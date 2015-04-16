@@ -7,7 +7,7 @@
 
 	<hr>
 	
-	<button type="button" class="btn btn-info offers-button active">Pending</button> <button type="button" class="btn btn-info offers-button">Accepted</button> <button type="button" class="btn btn-info offers-button">Declined</button>
+	<button type="button" class="btn btn-warning offers-button active">Pending</button> <button type="button" class="btn btn-warning offers-button">Accepted</button> <button type="button" class="btn btn-warning offers-button">Declined</button>
 	
 	<div id="pending">
 	<h3>Pending</h3>
