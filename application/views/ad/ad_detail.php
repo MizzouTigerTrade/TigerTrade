@@ -53,9 +53,10 @@
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
-			<?php foreach($ad->result() as $row) { ?>
-			<div class="row comment_display" id="<?= $row->description ?>">
-				<?php echo $row->description; ?>
+			<?php foreach($ads->result() as $row) { ?>
+			<div class="row comment_display" id="<?php $row->description; ?>">
+				<p>Ad id: <?php echo $row->ad_id; ?></p>
+				<p>Comments: <?php echo $row->description; ?></p>
 			</div>
 			<?php } ?>
 			<div class="col-xs-12" style="padding: 0;">
