@@ -138,37 +138,40 @@ $(document).ready(function(){
                 </div>
                 
 				<!-- Display Ads: rows of 1 -->
+				
+				<div class="list-group">
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="row ad_display" id="<?= $row->ad_id ?>">
-					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
-						<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
-							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-							<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
-							</a>
-						</div>
-						<div class="media-body col-xs-9 col-md-8 search">
-							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
-							<div class="row">
-								<div class="col-xs-12">
-							<?php
-							foreach($tags->result() as $tag) { 
-								if($tag->ad_id == $row->ad_id)
-								{
-									echo '<span class="label label-default">' . $tag->description . '</span> ';
-								}
-							}
-							?>
-								</div>
+				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>" class="list-group-item">
+					<div class="row ad_display" id="<?= $row->ad_id ?>">
+						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
+							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
+								<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
 							</div>
-							<div class="row">
-								<div class="col-xs-12" style="margin-top: 5px;">
-									<?php echo $row->description; ?>
+							<div class="media-body col-xs-9 col-md-8 search">
+								<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+								<div class="row">
+									<div class="col-xs-12">
+								<?php
+								foreach($tags->result() as $tag) { 
+									if($tag->ad_id == $row->ad_id)
+									{
+										echo '<span class="label label-default">' . $tag->description . '</span> ';
+									}
+								}
+								?>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12" style="margin-top: 5px;">
+										<?php echo $row->description; ?>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</a>
 				<? } ?>
+				</div>
 				
 				<!-- Display Ads: rows of 3 
 				
