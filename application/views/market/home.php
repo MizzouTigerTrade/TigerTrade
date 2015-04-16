@@ -146,7 +146,7 @@ $(document).ready(function(){
 				<!-- Display Ads: rows of 1 -->
 				<br>
 				<div class="list-group">
-				<div id="emptySearch"></div>
+				<div class="row" style="padding-bottom: 15px;" id="emptySearch"></div>
 				<?php foreach ($ads->result() as $row) { ?>
 				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>" class="list-group-item">
 					<div class="row ad_display" style="padding-bottom: 15px;" id="<?= $row->ad_id ?>">
