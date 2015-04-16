@@ -153,7 +153,7 @@ $(document).ready(function(){
 						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 							<?php 	$flag = 0;
-									$image_link = "";
+									$image_link = "nothing";
 									foreach($images->result() as $img) { 
 										if($img->ad_id == $row->ad_id && $flag == 0)
 										{

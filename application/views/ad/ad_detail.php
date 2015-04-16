@@ -43,7 +43,7 @@
 		<div class="col-sm-5">
 			<?php 
 				$flag = 0;
-				$image_link = "";
+				$image_link = "nothing";
 				foreach ($images->result() as $img) {
 					if($flag == 0)
 					{
