@@ -157,7 +157,7 @@ $(document).ready(function(){
 									foreach($images->result() as $img) { 
 										if($img->ad_id == $row->ad_id && $flag == 0)
 										{
-											$image_link = $img->image_path;
+											$image_link = base_url('/'.$img->image_path);
 											$flag++;
 										}
 									}
