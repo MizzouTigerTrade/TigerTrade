@@ -136,9 +136,13 @@ hr {
 
 .list-group-item {
 	background: transparent;
+	padding: 0;
+}
+
+.list-group {
+	border: none;
 }
 
 .list-group-item:hover {
 	background: rgba(190, 190, 190, 0.9);
-	padding: 0;
 }
