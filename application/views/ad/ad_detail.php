@@ -53,7 +53,11 @@
 			}
 		?>
 		<div class="col-sm-5">
-				<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="http://placehold.it/500x500" width="100%">
+				if(empty($image_link)) { ?> 
+					<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">
+				<?php } else { ?>
+					<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="Error loading image" width="100%" height="100%">
+				<?php } ?>
 		</div>
 	</div>
 	
