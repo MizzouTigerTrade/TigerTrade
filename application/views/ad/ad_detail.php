@@ -20,7 +20,7 @@
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
 			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
-			<h2 style="margin-top: 10px;">Asking Price: Test <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
+			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<a class="btn btn-success" href="<?php echo base_url('/ad/make_offer/' . $ad->ad_id) ?>">Make an Offer</a>
 			
 			<?php if ($flagged == false) { ?>
@@ -58,7 +58,7 @@
 				<div class="form-group">
 						<p>   <a style="padding: 10px" class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
 					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5" placeholder="Please keep comments limited to questions about this ad." required></textarea>
+						<textarea type="text" class="form-control" name="comment" id="comment" rows="5" placeholder="Please keep comments limited to questions about this ad."></textarea>
 						<div class="col-xs-9">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
