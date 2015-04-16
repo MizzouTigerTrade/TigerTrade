@@ -6,8 +6,6 @@
 	</div>
 
 	<hr>
-
-	<p>You can see your sent offers here!</p>
 	
 	<h2>Pending</h2>
 	<table class="table">
