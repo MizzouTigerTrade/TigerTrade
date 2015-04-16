@@ -82,7 +82,7 @@ class Offer_model extends CI_Model
 	
 	public function get_seller_accepted_declined_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Accepted' AND status = 'Declined'");
+		$result = $this->db->query("SELECT * FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Accepted' OR status = 'Declined'");
 		return $result;
 	}
 	
