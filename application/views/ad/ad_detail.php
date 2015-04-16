@@ -56,9 +56,9 @@
 			<div class="col-xs-12" style="padding: 0;">
 			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
 				<div class="form-group">
-						<p>   <a style="padding: 10px" class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
+					<a style="padding: 10px" class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a>
+					<label for="comment" class="col-sm-2 control-label label-20">Comment:a</label>
 					<div class="col-xs-12">
-						<label for="comment" class="col-sm-2 control-label label-20">Comment:</label>
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 						<div class="col-xs-9">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
