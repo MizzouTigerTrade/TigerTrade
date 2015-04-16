@@ -28,6 +28,7 @@ class Ad extends CI_Controller
 			$user_id = $user->user_id;
 		}
 		
+		$data['tags'] = $this->ad_model->get_all_tags();
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
 		
@@ -44,7 +45,7 @@ class Ad extends CI_Controller
 		if($user) {
 			$data['flagged'] = $this->ad_model->check_if_ad_flagged($ad_id, $user_id);
 		} else {
-			$data['flagged'] = true;
+			$data['flagged'] = true; // Don't show report ad button to non-users
 		}
 		$this->layout->view('ad/ad_detail', $data);
 	}
