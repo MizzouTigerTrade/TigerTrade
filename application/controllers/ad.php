@@ -262,7 +262,7 @@ class Ad extends CI_Controller
 			$data['error'] = true;
 		}
 		//if validation passes
-		else
+		//else
 		{
 			$description = $this->security->xss_clean($comment);
 			$user = $this->ion_auth->user()->row();
