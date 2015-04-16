@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
     $("#filter").keyup(function(){
- 		
+ 		$("#emptySearch").hide();
         // Retrieve the input field text and reset the count to zero
         var filter = $(this).val(), count = 0;
         // Loop through the comment list
@@ -14,10 +14,16 @@ $(document).ready(function(){
  
             // Show the list item if the phrase matches and increase the count by 1
             } else {
+            	count++;
                 $(this).show();
             }
         });
- 
+
+        if(count == 0)
+        {
+        	$("#emptySearch").html("There are no ads that match your search results");
+        	$("#emptySearch").show();
+        }
         // Update the count
         var numberItems = count;
         $("#filter-count").text("Number of Comments = "+count);
@@ -140,6 +146,7 @@ $(document).ready(function(){
 				<!-- Display Ads: rows of 1 -->
 				<br>
 				<div class="list-group">
+				<div class="row" style="padding-bottom: 15px;" id="emptySearch"></div>
 				<?php foreach ($ads->result() as $row) { ?>
 				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>" class="list-group-item">
 					<div class="row ad_display" style="padding-bottom: 15px;" id="<?= $row->ad_id ?>">
