@@ -10,7 +10,6 @@
 	<button type="button" class="btn btn-default offers-button active">New</button> <button type="button" class="btn btn-default offers-button">Accepted</button> <button type="button" class="btn btn-default offers-button">Declined</button>
 
 	<div id="new">
-	<p>Click on offer to respond</p>
 
 	<h3>New Offers</h3>
 	<div class="table-responsive">
@@ -29,6 +28,7 @@
 				<td><?php echo $row->seller_id; ?></td> */ ?>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo $row->price; ?></td>
+				<td><button type="button" class="btn btn-primary">Reply</button></td>
 			</tr>
 			<?php } ?>
 		</table>
