@@ -330,16 +330,33 @@ class Ad_model extends CI_Model
 	}
 	
 	//edit
-	public function comment_ad($ad_id, $description, $timestmp)
+	public function comment_ad($ad_id, $description, $user_id, $timestmp)
 	{
 		$this->db->where('ad_id', $ad_id);
 		$this->db->set('description', $description);
+		$this->db->set('user_id', $user_id);
 		$this->db->set('timestmp', $timestmp);
 		
 		//insert into db, error thrown if not inserted correctly
 		if($this->db->insert('comments') != TRUE)
 		{
 			throw new Exception("cannot insert");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+		
+		$data2 = array(
+		'ad_id' => $ad_id ,
+		'description' => $description ,
+		'user_id' => $user_id ,
+		'timestmp' => $timestmp ,
+		);
+
+		if( $this->db->insert('comments', $data2) != TRUE)
+		{
+			throw new Exception("Cannot Insert Comments Count");
 		}
 		else
 		{
