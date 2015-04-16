@@ -271,12 +271,9 @@ class Ad extends CI_Controller
 			$timestmp = $date->getTimestamp();
 		
 			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
-			echo $ad_id;
-			echo $description;
-			echo $user_id;
-			echo $timestmp;
+	
 			$this->session->set_flashdata('message', ' user ' . $user_id . ' time ' . $timestmp . ' id ' . $ad_id . ' desc '. $description);
-			redirect('/ad/details/' . $ad_id, 'refresh');
+			redirect('/ad/details/' . $ad_id);
 		}
 	}
 }
