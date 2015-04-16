@@ -156,8 +156,9 @@ $(document).ready(function(){
 								}
 							}
 							?>
-							<br>
-							<?php echo $row->description; ?>
+							<div class="col-xs-12">
+								<?php echo $row->description; ?>
+							</div>
 						</div>
 					</div>
 				</div>
