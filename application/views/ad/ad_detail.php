@@ -40,24 +40,8 @@
 			
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
-
-		<?php 
-			$flag = 0;
-			$image_link = "";
-			foreach ($images->result() as $img) {
-				if($flag == 0)
-				{
-					$image_link = base_url('/'.$img->image_path);
-					$flag++;
-				}
-			}
-		?>
 		<div class="col-sm-5">
-				<?php if(empty($image_link)) { ?> 
-					<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">
-				<?php } else { ?>
-					<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="Error loading image" width="100%" height="100%">
-				<?php } ?>
+				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 		</div>
 	</div>
 	

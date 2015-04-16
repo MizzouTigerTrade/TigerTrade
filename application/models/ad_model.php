@@ -65,12 +65,6 @@ class Ad_model extends CI_Model
 		return $result;
 	}
 
-	public function get_all_images()
-	{
-		$result = $this->db->query("SELECT * FROM images");
-		return $result;
-	}
-
 	public function get_ad_images($ad_id)
 	{
 		$result = $this->db->query("SELECT * FROM images where ad_id = '$ad_id'");
