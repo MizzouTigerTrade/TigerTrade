@@ -7,7 +7,6 @@ class Ad extends CI_Controller
 		parent::__construct();
 		$this->load->library('upload');
         $this->load->library('image_lib');
-		$this->load->library('form_validation');
 		$this->load->model('ad_model');
 		$this->load->model('subcategory_model');
 		$this->load->model('category_model');
@@ -255,9 +254,7 @@ class Ad extends CI_Controller
 	//adds a comment to the ad
 	function comment($ad_id)
 	{
-		$this->form_validation->set_rules('comment', 'Comment', 'required');
-
-			
+		$this->form_validation->set_rules('comment', 'Comment', 'required');	
 
 		//if validation fails
 		if ($this->form_validation->run() == false)
