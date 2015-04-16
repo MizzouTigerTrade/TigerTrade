@@ -46,37 +46,37 @@ class Offer_model extends CI_Model
 
 	public function get_buyer_pending_offers($buyer_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$buyer_id' AND status = 'Pending'");
+		$result = $this->db->query("SELECT * FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE buyer_id = '$buyer_id' AND status = 'Pending'");
 		return $result;
 	}
 
 	public function get_buyer_declined_offers($buyer_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$buyer_id' AND status = 'Declined'");
+		$result = $this->db->query("SELECT * FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE buyer_id = '$buyer_id' AND status = 'Declined'");
 		return $result;
 	}
 	
 	public function get_buyer_accepted_offers($buyer_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$buyer_id' AND status = 'Accepted'");
+		$result = $this->db->query("SELECT * FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE buyer_id = '$buyer_id' AND status = 'Accepted'");
 		return $result;
 	}
 
 	public function get_seller_pending_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Pending'");
+		$result = $this->db->query("SELECT * FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Pending'");
 		return $result;
 	}
 	
 	public function get_seller_declined_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Declined'");
+		$result = $this->db->query("SELECT * FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Declined'");
 		return $result;
 	}
 	
 	public function get_seller_accepted_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Accepted'");
+		$result = $this->db->query("SELECT * FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Accepted'");
 		return $result;
 	}
 	
