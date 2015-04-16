@@ -53,32 +53,17 @@
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
-			<!-- <?php foreach($comments['description'] as $row) { ?> -->
-			<div class="row comment_display" id="<?php $row['description']; ?>">
-				<p>Comments: <a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
-			</div>
-			<!--<?php } ?> -->
 			<div class="col-xs-12" style="padding: 0;">
 				<div class="form-group">
 						<p>Comments: <a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
 					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"><?php $post_comment = $_POST['comment']; ?></textarea>
+						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
 						<div class="col-xs-9">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
 						<div class="col-xs-3 text-right" style="padding: 10px">
-							
-							<!-- <?php if(!isset($post_comment)) {?>
-								<div class="alert alert-danger">
-									<a href="#" class="close" data-dismiss="alert">&times;</a>
-									<strong>Error!</strong> You need to enter a comment before hitting the 'Submit' button.
-								</div>
-							<?php } else { ?>
-								<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id . ', ' . $post_comment) ?>">Submit</a>
-							<?php }?>
-							-->
-							<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id . ', ' . $post_comment) ?>">Submit</a>
+							<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id) ?>">Submit</a>
 						</div>
 					</div>
 				</div>

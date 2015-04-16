@@ -252,10 +252,10 @@ class Ad extends CI_Controller
 		redirect('/ad/details/' . $ad_id);
 	}
 	//adds a comment to the ad
-	function comment($ad_id, $comment)
+	function comment($ad_id)
 	{
 		//$description = $this->security->xss_clean($comment);
-		$description = $comment;
+		$description = nl2br($this->input->post('comment'));
 		$user = $this->ion_auth->user()->row();
 		$user_id = $user->user_id;
 		$date = new DateTime();
