@@ -19,7 +19,6 @@
 	<!-- Devices >= Small -->
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
-			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
 			<div class="row">
 				<div class="col-xs-12">
 				<?php
