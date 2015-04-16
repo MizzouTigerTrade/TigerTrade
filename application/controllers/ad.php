@@ -248,7 +248,7 @@ class Ad extends CI_Controller
 	//gets ad comments
 	function user_comments($ad_id)
 	{
-		$this->ad_model->get_comments($ad_id)
+		$this->ad_model->get_comments($ad_id);
 		redirect('/ad/details/' . $ad_id);
 	}
 	//adds a comment to the ad
