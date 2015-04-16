@@ -7,6 +7,7 @@ class Ad extends CI_Controller
 		parent::__construct();
 		$this->load->library('upload');
         $this->load->library('image_lib');
+		$this->load->library('form_validation');
 		$this->load->model('ad_model');
 		$this->load->model('subcategory_model');
 		$this->load->model('category_model');
@@ -254,9 +255,9 @@ class Ad extends CI_Controller
 	//adds a comment to the ad
 	function comment($ad_id)
 	{
-		$fields['comment'] = "trim|required|min_length[4]|xss_clean";
-		
-		$this->form_validation->set_rules($fields);
+		$this->form_validation->set_rules('comment', 'Comment', 'required');
+
+			
 
 		//if validation fails
 		if ($this->form_validation->run() == false)
@@ -266,11 +267,11 @@ class Ad extends CI_Controller
 		//if validation passes
 		//else
 		{
-			$data['desc'] = $this->validation->comments;
-			$description = $data['desc'];
+			$description = $this->security->xss_clean($this->input->post('comment'));
 			
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
+			
 			$date = new DateTime();
 			$timestmp = $date->getTimestamp();
 		
