@@ -148,21 +148,15 @@ $(document).ready(function(){
 						</div>
 						<div class="media-body col-xs-9 col-md-8 search">
 							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4> 
-							<?php echo $row->description; ?>
 							<?php 
-							$count = 0;
 							foreach($tags->result() as $tag) { 
-									if($tag->ad_id == $row->ad_id)
-									{
-										if($count == 0)
-										{
-											echo nl2br("\nTags: ");
-										}
-										echo '<span class="label label-default">' . $tag->description . '</span> ';
-										$count++;
-									}
+								if($tag->ad_id == $row->ad_id)
+								{
+									echo '<span class="label label-default">' . $tag->description . '</span> ';
 								}
+							}
 							?>
+							<?php echo $row->description; ?>
 						</div>
 					</div>
 				</div>
