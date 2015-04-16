@@ -53,7 +53,7 @@
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
-			<?php foreach($ads->result() as $row) { ?>
+			<?php foreach($ad->ad_id as $row) { ?>
 			<div class="row comment_display" id="<?php $row->description; ?>">
 				<p>Ad id: <?php echo $row->ad_id; ?></p>
 				<p>Comments: <?php echo $row->description; ?></p>
