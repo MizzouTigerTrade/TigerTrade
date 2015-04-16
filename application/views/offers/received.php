@@ -40,8 +40,6 @@
 		<table class="table table-hover">
 			<tr>
 				<th>Ad ID</th>
-				<th>Buyer ID</th>
-				<th>Seller ID</th>
 				<th>Buyer Message</th>
 				<th>Seller Response</th>
 				<th>Status</th>
@@ -52,7 +50,7 @@
 				<?php /*<td><?php echo $row->buyer_id; ?></td>
 				<td><?php echo $row->seller_id; ?></td> */ ?>
 				<td><?php echo $row->buyer_message; ?></td>
-				<td><?php echo $row->price; ?></td>
+				<td><?php echo $row->seller_response; ?></td>
 				<td><?php echo $row->status; ?></td>
 			</tr>
 			<?php } ?>
