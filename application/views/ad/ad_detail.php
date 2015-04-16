@@ -58,7 +58,7 @@
 				<div class="form-group">
 						<p>   <a style="padding: 10px" class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
 					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" name="description" id="description" placeholder="Please keep comments limited to questions about this ad." onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"></textarea>
+						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"></textarea>
 						<div class="col-xs-9">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
