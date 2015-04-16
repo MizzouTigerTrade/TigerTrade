@@ -22,7 +22,7 @@
 		<tr>
 			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->buyer_message; ?></td>
-			<td><?php echo $row->price; ?></td>
+			<td><?php echo "$" . $row->price; ?></td>
 			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
