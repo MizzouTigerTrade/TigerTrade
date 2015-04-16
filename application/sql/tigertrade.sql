@@ -102,7 +102,9 @@ CREATE TABLE kylecarlson_tigertrade.offers (
 	price	INTEGER,
 	buyer_message BLOB,
 	seller_response BLOB,
-	status VARCHAR(10) DEFAULT "Pending"
+	status VARCHAR(10) DEFAULT "Pending",
+	seen_by_buyer BOOLEAN DEFAULT "true",
+	seen_by_seller BOOLEAN DEFAULT "false"
 );
 
 DROP TABLE IF EXISTS `groups`;
