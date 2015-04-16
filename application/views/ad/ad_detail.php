@@ -53,9 +53,8 @@
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
-			<?php foreach($ad->ad_id as $row) { ?>
+			<?php foreach($comments->description as $row) { ?>
 			<div class="row comment_display" id="<?php $row->description; ?>">
-				<p>Ad id: <?php echo $row->ad_id; ?></p>
 				<p>Comments: <?php echo $row->description; ?></p>
 			</div>
 			<?php } ?>
@@ -68,7 +67,7 @@
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
 						<div class="col-xs-3 text-right" style="padding: 10px">
-							<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id) ?>">Submit</a>
+							<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment_ad/' . $ad->ad_id) ?>">Submit</a>
 						</div>
 					</div>
 				</div>
