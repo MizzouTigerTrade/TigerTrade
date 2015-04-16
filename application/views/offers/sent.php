@@ -1,12 +1,15 @@
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>Sent Offers</h1> <button type="button" class="btn btn-info">Pending</button> <button type="button" class="btn btn-info">Accepted</button> <button type="button" class="btn btn-info">Declined</button>
+			<h1>Sent Offers</h1> 
 		</div>
 	</div>
 
 	<hr>
 	
+	<button type="button" class="btn btn-info">Pending</button> <button type="button" class="btn btn-info">Accepted</button> <button type="button" class="btn btn-info">Declined</button>
+	
+	<div id="pending">
 	<h3>Pending</h3>
 	<table class="table">
 		<tr>
@@ -24,7 +27,9 @@
 		</tr>
 		<?php } ?>
 	</table>
-
+	</div>
+	
+	<div id="accepted">
 	<h3>Accepted</h3>
 	<table class="table">
 		<tr>
@@ -40,7 +45,9 @@
 		</tr>
 		<?php } ?>
 	</table>
+	</div>
 	
+	<div id="declined">
 	<h3>Declined</h3>
 	<table class="table">
 		<tr>
@@ -56,4 +63,6 @@
 		</tr>
 		<?php } ?>
 	</table>
+	</div>
+	
 </div>
