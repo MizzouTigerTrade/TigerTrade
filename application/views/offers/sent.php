@@ -7,7 +7,7 @@
 
 	<hr>
 	
-	<h2>Pending</h2>
+	<h3>Pending</h3>
 	<table class="table">
 		<tr>
 			<th>Ad Title</th>
@@ -25,7 +25,7 @@
 		<?php } ?>
 	</table>
 
-	<h2>Accepted</h2>
+	<h3>Accepted</h3>
 	<table class="table">
 		<tr>
 			<th>Ad Title</th>
@@ -41,7 +41,7 @@
 		<?php } ?>
 	</table>
 	
-	<h2>Declined</h2>
+	<h3>Declined</h3>
 	<table class="table">
 		<tr>
 			<th>Ad ID</th>
