@@ -162,7 +162,7 @@ $(document).ready(function(){
 				</div>
 				<? } ?>
 				
-				<!-- Display Ads: rows of 3 -->
+				<!-- Display Ads: rows of 3 
 				
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
@@ -179,7 +179,7 @@ $(document).ready(function(){
 					<?php if ($count == 2 || $count % 3 == 2) { ?></div><hr><?php } $count++; ?>
 				<?php } ?>
 				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
-		
+				-->
 			</div>
 		</div>
 	</div>
