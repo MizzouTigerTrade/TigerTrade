@@ -161,11 +161,8 @@ $(document).ready(function(){
 											$flag++;
 										}
 									}
-									if(empty($image_link)) { ?> 
-									<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">
-								<?php } else { ?>
-									<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" width="100%" height="100%">
-							<?php } ?>
+							?>
+								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" width="100%" height="100%">
 							</div>
 							<div class="media-body col-xs-9 col-md-8 search">
 								<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
