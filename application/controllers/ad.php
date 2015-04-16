@@ -41,7 +41,9 @@ class Ad extends CI_Controller
 		
 		$data['title'] = 'Ad Detail';
 		$data['message'] = $this->session->flashdata('message');
-		$data['flagged'] = $this->ad_model->check_if_ad_flagged($ad_id, $user_id);
+		if($user) {
+			$data['flagged'] = $this->ad_model->check_if_ad_flagged($ad_id, $user_id);
+		}
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
