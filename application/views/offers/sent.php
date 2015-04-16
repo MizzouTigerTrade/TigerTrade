@@ -1,7 +1,7 @@
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>Sent Offers</h1>
+			<h1>Sent Offers</h1> <button type="button" class="btn btn-info">Pending</button> <button type="button" class="btn btn-info">Accepted</button> <button type="button" class="btn btn-info">Declined</button>
 		</div>
 	</div>
 
