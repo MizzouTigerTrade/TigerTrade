@@ -133,3 +133,13 @@ hr {
 	font-weight: 300;
 	letter-spacing: 1px;
 }
+
+.list-group-item {
+	background: transparent;
+	padding: 0;
+	border: hidden;
+}
+
+.list-group-item:hover {
+	background: rgba(190, 190, 190, 0.9);
+}
