@@ -33,11 +33,6 @@ $(document).ready(function (){
 
 });
 
-function deleteImage(img_id)
-{
-	alert(img_id);
-	$(this).parent().parent().remove();
-}
 
 
 
@@ -155,10 +150,10 @@ function deleteImage(img_id)
 				
 				<div class="form-group" >
 					<div class="col-sm-10">
-						<div id="file">
-							<div id="img" class="imgPreview">
-								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="50%" height="50%">
-								<img id="img" src="x.png" alt=" delete" onclick="deleteImage(<?= $img->tag_id ?>);"></img>
+						<div id="filediv">
+							<div id="abcd<?= $inc ?>" class="abcd">
+								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%">
+								<img id="img" src="x.png" alt=" delete" onclick="$(this).parent().parent().remove();"></img>
 							</div>
 						</div>
 					</div>

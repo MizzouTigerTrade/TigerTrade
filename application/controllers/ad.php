@@ -40,7 +40,6 @@ class Ad extends CI_Controller
 			$data['subcategory'] = ' > ' . $sub->name;
 		}
 		
-		$data['images'] = $this->ad_model->get_ad_images($ad_id);
 		$data['title'] = 'Ad Detail';
 		$data['message'] = $this->session->flashdata('message');
 		if($user) {
