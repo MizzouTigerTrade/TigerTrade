@@ -315,7 +315,7 @@ class Ad_model extends CI_Model
 		$i = 0;
 		if($result->num_rows() > 0)
 		{
-			$result = $result2->result();
+			$result = $result->result();
 			foreach($result as $row)
 			{
 				$one_ad['description'] = $row->description;
