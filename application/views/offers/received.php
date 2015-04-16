@@ -7,8 +7,10 @@
 
 	<hr>
 
+	<button type="button" class="btn btn-default offers-button active">Pending</button> <button type="button" class="btn btn-default offers-button">Accepted</button> <button type="button" class="btn btn-default offers-button">Declined</button>
+
+	<div id="new">
 	<p>Click on offer to respond</p>
-	
 
 	<h3>New Offers</h3>
 	<div class="table-responsive">
@@ -33,8 +35,9 @@
 			<?php } ?>
 		</table>
 	</div>
+	</div>
 	
-	
+	<div id="old">
 	<div class="table-responsive">
 		<h3>Accepted/Declined</h3>
 		<table class="table table-hover">
@@ -55,6 +58,7 @@
 			</tr>
 			<?php } ?>
 		</table>
+	</div>
 	</div>
 	
 	<?php /*
