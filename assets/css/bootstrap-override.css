@@ -137,7 +137,7 @@ hr {
 .list-group-item {
 	background: transparent;
 	padding: 0;
-	border: none;
+	border: hidden;
 }
 
 .list-group-item:hover {
