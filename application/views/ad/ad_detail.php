@@ -55,11 +55,16 @@
 		<div class="row" style="margin-top: 20px;">
 			<!-- <?php foreach($comments['description'] as $row) { ?> -->
 			<div class="row comment_display" id="<?php $row['description']; ?>">
-				<p>Comments: <?php echo $row['description']; ?></p>
+				<p>Comments: <a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
 			</div>
 			<!--<?php } ?> -->
 			<div class="col-xs-12" style="padding: 0;">
 				<div class="form-group">
+					<!-- <?php foreach($comments['description'] as $row) { ?> -->
+					<div class="row comment_display" id="<?php $row['description']; ?>">
+						<p>Comments: <a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
+					</div>
+					<!--<?php } ?> -->
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
 					<div class="col-xs-12">
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
