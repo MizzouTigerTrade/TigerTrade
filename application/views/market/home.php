@@ -83,7 +83,7 @@ $(document).ready(function(){
 							<?php } ?>	
 						</select>
 					</div>
-					<div class="col-sm-6 col-md-4">
+					<div class="col-sm-6 col-md-4 text-right">
 						<div class="btn-group">
 							<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">New Ad</a>
 							<?php if ($this->ion_auth->is_admin()) { ?>
@@ -127,7 +127,7 @@ $(document).ready(function(){
 
 				<!-- custom search bar -->
 				<div id="custom-search-input" style="margin-top: 10px">
-                    <div class="input-group col-xs-12 col-sm-10 col-sm-offset-1">
+                    <div class="input-group col-sm-12 col-md-10 col-md-offset-1">
                         <input type="text" class="search-query input-sm form-control" id="filter" placeholder="Search" />
                         <span class="input-group-btn">
                             <button class="btn btn-warning" type="button">
@@ -136,8 +136,8 @@ $(document).ready(function(){
                         </span>
                     </div>
                 </div>
+                
 				<!-- Display Ads: rows of 1 -->
-				
 				<?php foreach ($ads->result() as $row) { ?>
 				<div class="row ad_display" id="<?= $row->ad_id ?>">
 					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">

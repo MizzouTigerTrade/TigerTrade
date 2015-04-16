@@ -1,5 +1,5 @@
 <!-- Buttons on top of page -->
-<div class="row text-center">
+<div class="row text-right">
 	<div class="btn-group hidden-xs">
 		<a class="btn btn-default btn-sm" href="<?php echo base_url('/ad/new_ad') ?>">Place an Ad</a>
 		<?php if ($this->ion_auth->is_admin()) { ?>
