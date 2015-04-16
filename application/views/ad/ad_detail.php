@@ -47,7 +47,7 @@
 				foreach ($images->result() as $img) {
 					if($flag == 0)
 					{
-						$image_link = base_url('/'.$img->image_path);
+						$image_link = $img->image_path;
 						$flag++;
 					}
 				}
