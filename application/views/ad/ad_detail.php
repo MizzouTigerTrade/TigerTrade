@@ -40,8 +40,20 @@
 			
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
+
+		<?php 
+			$flag = 0;
+			$image_link = "";
+			foreach ($images->resul() as $images) {
+				if($flag == 0)
+				{
+					$image_link = base_url('/'.$img->image_path);
+					$flag++;
+				}
+			}
+		?>
 		<div class="col-sm-5">
-				<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
+				<img class="img-thumbnail" src=<?php echo $image_link; ?> alt="http://placehold.it/500x500" width="100%">
 		</div>
 	</div>
 	

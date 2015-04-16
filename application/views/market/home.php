@@ -143,7 +143,17 @@ $(document).ready(function(){
 					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 						<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-							<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
+							<?php 	$flag = 0;
+									$image_link = "";
+									foreach($images->result() as $img) { 
+										if($img->ad_id == $row->ad_id && $flag == 0)
+										{
+											$image_link = base_url('/'.$img->image_path);
+											$flag++;
+										}
+									}
+							?> 
+							<img class="img-thumbnail" src=<?php echo $image_link; ?> alt="http://placehold.it/500x500" width="100%" height="100%">
 							</a>
 						</div>
 						<div class="media-body col-xs-9 col-md-8 search">
