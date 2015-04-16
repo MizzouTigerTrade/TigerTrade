@@ -268,6 +268,10 @@ class Ad extends CI_Controller
 			$timestmp = $date->getTimestamp();
 	
 			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
+			echo $ad_id;
+			echo $description;
+			echo $user_id;
+			echo $timestmp;
 			$this->session->set_flashdata('message', 'Your comment have been saved anonymously. View it below.');
 			redirect('/ad/details/' . $ad_id);
 		}
