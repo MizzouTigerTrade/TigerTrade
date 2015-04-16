@@ -10,7 +10,7 @@
 	<p>Click on offers to view them (if you have any).</p>
 	
 
-	<!--<h2>Pending</h2>-->
+	<h2>New Offers</h2>
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr>
