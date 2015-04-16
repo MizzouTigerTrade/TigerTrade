@@ -315,10 +315,10 @@ class Ad_model extends CI_Model
 		$i = 0;
 		if($result->num_rows() > 0)
 		{
-			$result = $result->result();
-			foreach($result as $ad)
+			$result = $result2->result();
+			foreach($result as $row)
 			{
-				$one_ad['description'] = $ad->description;
+				$one_ad['description'] = $row->description;
 				$comments->append($one_ad);
 			}
 			return $comments;
