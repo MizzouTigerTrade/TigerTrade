@@ -262,12 +262,12 @@ class Ad extends CI_Controller
 		//else
 		{
 			$description = $this->security->xss_clean($this->input->post('comment'));
-			//$user = $this->ion_auth->user()->row();
-			//$user_id = $user->user_id;
+			$user = $this->ion_auth->user()->row();
+			$user_id = $user->user_id;
 			$date = new DateTime();
 			$timestmp = $date->getTimestamp();
 	
-			$this->ad_model->comment_ad($ad_id, $description, $timestmp);
+			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
 			$this->session->set_flashdata('message', 'Your comment have been saved anonymously. View it below.');
 			redirect('/ad/details/' . $ad_id);
 		}
