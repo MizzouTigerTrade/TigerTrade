@@ -157,28 +157,30 @@ $(document).ready(function(){
 							</a>
 						</div>
 						<div class="media-body col-xs-9 col-md-8 search">
-							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4> 
-							<?php echo $row->description; ?>
-							<?php 
-							$count = 0;
+							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+							<div class="row">
+								<div class="col-xs-12">
+							<?php
 							foreach($tags->result() as $tag) { 
-									if($tag->ad_id == $row->ad_id)
-									{
-										if($count == 0)
-										{
-											echo nl2br("\nTags: ");
-										}
-										echo $tag->description . ' ';
-										$count++;
-									}
+								if($tag->ad_id == $row->ad_id)
+								{
+									echo '<span class="label label-default">' . $tag->description . '</span> ';
 								}
+							}
 							?>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12" style="margin-top: 5px;">
+									<?php echo $row->description; ?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<? } ?>
 				
-				<!-- Display Ads: rows of 3 -->
+				<!-- Display Ads: rows of 3 
 				
 				<?php $count = 0; ?>
 				<?php foreach ($ads->result() as $row) { ?>
@@ -195,7 +197,7 @@ $(document).ready(function(){
 					<?php if ($count == 2 || $count % 3 == 2) { ?></div><hr><?php } $count++; ?>
 				<?php } ?>
 				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
-		
+				-->
 			</div>
 		</div>
 	</div>
