@@ -357,7 +357,7 @@ class Ad_model extends CI_Model
 
 		if( $this->db->insert('comments', $data2) != TRUE)
 		{
-			throw new Exception("Cannot Insert Comments Count");
+			throw new Exception("Cannot Insert Comments");
 		}
 		else
 		{

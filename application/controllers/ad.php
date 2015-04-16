@@ -252,28 +252,21 @@ class Ad extends CI_Controller
 		redirect('/ad/details/' . $ad_id);
 	}
 	//adds a comment to the ad
-	function comment($ad_id)
+	function comment($ad_id, $comment)
 	{
-		$this->form_validation->set_rules('comment', 'Comment', 'required');
-		//if ($this->form_validation->run() == false)
-		//{
-		//	$data['error'] = true;
-		//}
-		//else
-		{
-			$description = $this->security->xss_clean($this->input->post('comment'));
-			$user = $this->ion_auth->user()->row();
-			$user_id = $user->user_id;
-			$date = new DateTime();
-			$timestmp = $date->getTimestamp();
+		//$description = $this->security->xss_clean($comment);
+		$description = $comment;
+		$user = $this->ion_auth->user()->row();
+		$user_id = $user->user_id;
+		$date = new DateTime();
+		$timestmp = $date->getTimestamp();
 	
-			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
-			echo $ad_id;
-			echo $description;
-			echo $user_id;
-			echo $timestmp;
-			$this->session->set_flashdata('message', 'Your comment have been saved anonymously. View it below.');
-			redirect('/ad/details/' . $ad_id);
-		}
+		$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
+		echo $ad_id;
+		echo $description;
+		echo $user_id;
+		echo $timestmp;
+		$this->session->set_flashdata('message', 'Your comment have been saved anonymously. View it below.');
+		redirect('/ad/details/' . $ad_id, 'refresh');
 	}
 }

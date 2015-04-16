@@ -68,7 +68,16 @@
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
 						<div class="col-xs-3 text-right" style="padding: 10px">
-							<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id) ?>">Submit</a>
+						    <?php $post_comment = htmlspecialchars($_POST['comment']); ?>
+							<?php if(!isset($post_comment)) {?>
+								<div class="alert alert-danger">
+									<a href="#" class="close" data-dismiss="alert">&times;</a>
+									<strong>Error!</strong> You need to enter a comment before hitting the 'Submit' button.
+								</div>
+							<?php } else { ?>
+								<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id . ', ' . $post_comment) ?>">Submit</a>
+							<?php }?>
+							<!-- <a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id . ', ' . $post_comment) ?>">Submit</a> -->
 						</div>
 					</div>
 				</div>
