@@ -254,7 +254,7 @@ class Ad extends CI_Controller
 	//adds a comment to the ad
 	function comment($ad_id)
 	{
-		$this->form_validation->set_rules('comment', 'comment', 'required');
+		$this->form_validation->set_rules('comment', 'Comment', 'required');
 
 		//if validation fails
 		if ($this->form_validation->run() == false)
@@ -265,6 +265,7 @@ class Ad extends CI_Controller
 		//else
 		{
 			$description = $this->security->xss_clean($this->input->post('comment'));
+			
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
 			$date = new DateTime();
