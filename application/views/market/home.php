@@ -136,58 +136,6 @@ $(document).ready(function(){
                         </span>
                     </div>
                 </div>
-                
-				<!-- Display Ads: rows of 1 -->
-				<br>
-				<div class="list-group">
-				<?php foreach ($ads->result() as $row) { ?>
-				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>" class="list-group-item">
-					<div class="row ad_display" style="padding-bottom: 15px;" id="<?= $row->ad_id ?>">
-						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
-							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
-								<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-							<?php 	$flag = 0;
-									$image_link = "";
-									foreach($images->result() as $img) { 
-										if($img->ad_id == $row->ad_id && $flag == 0)
-										{
-											$image_link = base_url('/'.$img->image_path);
-											$flag++;
-										}
-									}
-							
-							if(empty($image_link)) { ?> 
-								<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">
-								<?php } else { ?>
-							<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="Error loading image" width="100%" height="100%">
-								<?php } ?>
-							</a>
-							</div>
-							<div class="media-body col-xs-9 col-md-8 search">
-								<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
-								<div class="row">
-									<div class="col-xs-12">
-								<?php
-								foreach($tags->result() as $tag) { 
-									if($tag->ad_id == $row->ad_id)
-									{
-										echo '<span class="label label-default">' . $tag->description . '</span> ';
-									}
-								}
-								?>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-xs-12" style="margin-top: 5px;">
-										<?php echo $row->description; ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-				<? } ?>
-				</div>
 
 				<!-- Display Ads: rows of 1 -->
 				<br>
