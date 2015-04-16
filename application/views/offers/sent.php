@@ -9,6 +9,9 @@
 	
 	<button type="button" id="pending_button" class="btn btn-warning offers-button active">Pending</button> <button type="button" id="accepted_button" class="btn btn-warning offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-warning offers-button">Declined</button>
 	<br>
+	<br>
+	<br>
+	
 	
 	<div id="pending">
 	<h3>Pending</h3>
