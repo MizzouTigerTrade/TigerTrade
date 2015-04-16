@@ -63,12 +63,11 @@
 						<p>Comments: <a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a></p>
 					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
 					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
+						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"><?php $post_comment = $_POST['comment']; ?></textarea>
 						<div class="col-xs-9">
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
 						<div class="col-xs-3 text-right" style="padding: 10px">
-						    <?php $post_comment = $_POST['comment']; ?>
 							
 							<!-- <?php if(!isset($post_comment)) {?>
 								<div class="alert alert-danger">
