@@ -264,7 +264,7 @@ class Ad extends CI_Controller
 		//if validation passes
 		//else
 		{
-			$description = $this->security->xss_clean($this->input->post('comment'));
+			$description = $this->input->post('comment');
 			
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
@@ -273,7 +273,7 @@ class Ad extends CI_Controller
 		
 			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
 	
-			$this->session->set_flashdata('message', ' user ' . $user_id . ' time ' . $timestmp . ' id ' . $ad_id . ' desc '. $description);
+			$this->session->set_flashdata('message', ' user ' . $user_id . ' time ' . $timestmp . ' id ' . $ad_id . ' desc ' . $description);
 			redirect('/ad/details/' . $ad_id);
 		}
 	}
