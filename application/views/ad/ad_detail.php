@@ -55,20 +55,19 @@
 		<div class="row" style="margin-top: 20px;">
 			<div class="col-xs-12" style="padding: 0;">
 				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>		
-				<div class="form-group">
-					<label for="title" class="col-sm-2 control-label label-20">Comment</label>
+				<label for="comments" class="col-sm-2 control-label label-20">Comment</label>
+				<div class="form-group">			
 					<div class="col-sm-10">
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
 				</div>
-
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button type="submit" class="btn btn-default">Submit</button>
 					</div>
 				</div>
-				<?php echo form_close();?>
 			</div>
+			<?php echo form_close();?>
 		</div>
 	<?php } ?>
 </div>				
