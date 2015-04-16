@@ -106,6 +106,7 @@ class Offer_model extends CI_Model
 		
 		$buyer_id = $this->get_buyer_id($offer_id);
 		$this->add_sent_offer_notification($buyer_id);
+		
 	}
 	
 	public function get_received_offer_notification($user_id)

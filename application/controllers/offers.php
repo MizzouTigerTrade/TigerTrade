@@ -112,6 +112,8 @@ class Offers extends CI_Controller
 			
 			$data['status'] = $status;
 			$data['seller_response'] = $seller_response;
+			
+				
 
 			$this->offer_model->respond_to_offer($seller_response, $status, $offer_id);
 

@@ -7,10 +7,10 @@
 
 	<hr>
 
-	<p>Click on offers to view them (if you have any).</p>
+	<p>Click on offer to respond</p>
 	
 
-	<h2>New Offers</h2>
+	<h3>New Offers</h3>
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr>
@@ -36,7 +36,7 @@
 	
 	
 	<div class="table-responsive">
-		<h2>Accepted/Declined</h2>
+		<h3>Accepted/Declined</h3>
 		<table class="table table-hover">
 			<tr>
 				<th>Ad Name</th>
