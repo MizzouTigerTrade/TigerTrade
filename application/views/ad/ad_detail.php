@@ -68,7 +68,7 @@
 							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
 						</div>
 						<div class="col-xs-3 text-right" style="padding: 10px">
-						    <?php $post_comment = htmlspecialchars($_POST['comment']); ?>
+						    <?php $post_comment = $_POST['comment']; ?>
 							<?php if(!isset($post_comment)) {?>
 								<div class="alert alert-danger">
 									<a href="#" class="close" data-dismiss="alert">&times;</a>
