@@ -142,7 +142,7 @@ $(document).ready(function(){
 				<div class="list-group">
 				<?php foreach ($ads->result() as $row) { ?>
 				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>" class="list-group-item" style="background: transparent;">
-					<div class="row ad_display" style="padding-bottom: 10px;" id="<?= $row->ad_id ?>">
+					<div class="row ad_display" style="padding-bottom: 15px;" id="<?= $row->ad_id ?>">
 						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
 							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
 								<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
