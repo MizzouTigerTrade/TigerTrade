@@ -7,7 +7,7 @@
 
 	<hr>
 
-	<button type="button" class="btn btn-default offers-button active">Pending</button> <button type="button" class="btn btn-default offers-button">Accepted</button> <button type="button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" class="btn btn-default offers-button active">New</button> <button type="button" class="btn btn-default offers-button">Accepted</button> <button type="button" class="btn btn-default offers-button">Declined</button>
 
 	<div id="new">
 	<p>Click on offer to respond</p>
@@ -21,7 +21,6 @@
 				<th>Seller ID</th>-->
 				<th>Buyer Message</th>
 				<th>Price</th>
-				<th>Status</th>
 			</tr>
 			<?php foreach ($pending->result() as $row) { ?>
 			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/review_offer/' . $row->offer_id) ?>'>
@@ -30,7 +29,6 @@
 				<td><?php echo $row->seller_id; ?></td> */ ?>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo $row->price; ?></td>
-				<td><?php echo $row->status; ?></td>
 			</tr>
 			<?php } ?>
 		</table>
