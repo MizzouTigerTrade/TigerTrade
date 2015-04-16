@@ -158,7 +158,7 @@ $(document).ready(function(){
 										{
 											echo nl2br("\nTags: ");
 										}
-										echo '<span class="label label-default">' . $tag->description . '</span>';
+										echo '<span class="label label-default">' . $tag->description . '</span> ';
 										$count++;
 									}
 								}
