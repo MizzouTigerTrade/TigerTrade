@@ -161,7 +161,7 @@ $(document).ready(function(){
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-12">
+								<div class="col-xs-12" style="margin-top: 5px;">
 									<?php echo $row->description; ?>
 								</div>
 							</div>
