@@ -44,7 +44,7 @@
 
 	<hr>
 	
-	<button type="button" id="pending_button" class="btn btn-default offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" id="pending_button" class="btn btn-default btn-primary offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
 	
 	<div id="pending">
 	<h3>Pending</h3>
