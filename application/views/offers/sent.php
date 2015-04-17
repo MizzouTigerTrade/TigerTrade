@@ -4,7 +4,7 @@
  $(document).ready(function(){
 
         $('#accepted').hide();
-        $('#decline').hide();
+        $('#declined').hide();
 
         $('#accepted_button').click(function() {
         $('#pending').hide();
