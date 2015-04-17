@@ -9,6 +9,10 @@ code {
 	margin-top: 23px;
 }
 
+th{
+	background-color: white;
+}
+
 #ad-form {
 	margin-top: 10px;
 }
