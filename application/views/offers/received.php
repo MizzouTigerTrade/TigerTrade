@@ -1,3 +1,39 @@
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script>
+
+ $(document).ready(function(){
+ 
+        $('#accepted_button').click(function() {
+        $('#new').hide();
+		$('#declined').hide();
+		$('#accepted').show();
+		$('#accepted_button').addClass('btn-info');
+		$('#declined_button').removeClass('btn-info');
+		$('#new_button').removeClass('btn-info');
+        });
+		
+		$('#declined_button').click(function() {
+        $('#new').hide();
+		$('#accepted').hide();
+		$('#declined').show();
+		$('#accepted_button').removeClass('btn-info');
+		$('#declined_button').addClass('btn-info');
+		$('#new_button').removeClass('btn-info');
+		});
+		
+		$('#pending_button').click(function() {
+        $('#accepted').hide();
+		$('#declined').hide();
+		$('#new').show();
+		$('#accepted_button').removeClass('btn-info');
+		$('#declined_button').removeClass('btn-info');
+		$('#new_button').addClass('btn-info');
+        });
+		
+	});
+
+</script>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-12">
@@ -7,7 +43,7 @@
 
 	<hr>
 
-	<button type="button" class="btn btn-default offers-button active">New</button> <button type="button" class="btn btn-default offers-button">Accepted</button> <button type="button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" id="new_button" class="btn btn-default offers-button active">New</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
 
 	<div id="new">
 
@@ -35,9 +71,9 @@
 	</div>
 	</div>
 	
-	<div id="old">
+	<div id="accepted">
 	<div class="table-responsive">
-		<h3>Accepted/Declined</h3>
+		<h3>Accepted</h3>
 		<table class="table table-hover">
 			<tr>
 				<th>Ad Name</th>
@@ -46,7 +82,7 @@
 				<th>Price</th>
 				<th>Status</th>
 			</tr>
-			<?php foreach ($accepted_declined->result() as $row) { ?>
+			<?php foreach ($accepted->result() as $row) { ?>
 			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/detail/' . $row->offer_id) ?>'>
 				<td><?php echo $row->title; ?></td>
 				<td><?php echo $row->buyer_message; ?></td>
@@ -58,6 +94,32 @@
 		</table>
 	</div>
 	</div>
+	
+	<div id="declined">
+	<div class="table-responsive">
+		<h3>Declined</h3>
+		<table class="table table-hover">
+			<tr>
+				<th>Ad Name</th>
+				<th>Buyer Message</th>
+				<th>Your Response</th>
+				<th>Price</th>
+				<th>Status</th>
+			</tr>
+			<?php foreach ($declined->result() as $row) { ?>
+			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/detail/' . $row->offer_id) ?>'>
+				<td><?php echo $row->title; ?></td>
+				<td><?php echo $row->buyer_message; ?></td>
+				<td><?php echo $row->seller_response; ?></td>
+				<td><?php echo "$" . $row->price; ?></td>
+				<td><?php echo $row->status; ?></td>
+			</tr>
+			<?php } ?>
+		</table>
+	</div>
+	</div>
+	
+	
 	
 	<?php /*
 	<div class="table-responsive">
