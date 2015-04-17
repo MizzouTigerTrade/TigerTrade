@@ -42,7 +42,7 @@
 		<tr>
 			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
-			
+			<td><?php echo "$" . $row->price; ?></td>
 			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
@@ -62,6 +62,7 @@
 		<tr>
 			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
+			<td><?php echo "$" . $row->price; ?></td>
 			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
