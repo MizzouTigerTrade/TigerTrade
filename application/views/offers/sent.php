@@ -8,27 +8,27 @@
         $('#pending').hide();
 		$('#declined').hide();
 		$('#accepted').show();
-		$('#accepted_button').addClass('active');
-		$('#declined_button').removeClass('active');
-		$('#pending_button').removeClass('active');
+		$('#accepted_button').addClass('btn-primary');
+		$('#declined_button').removeClass('btn-primary');
+		$('#pending_button').removeClass('btn-primary');
         });
 		
 		$('#declined_button').click(function() {
         $('#pending').hide();
 		$('#accepted').hide();
 		$('#declined').show();
-		$('#accepted_button').removeClass('active');
-		$('#declined_button').addClass('active');
-		$('#pending_button').removeClass('active');
+		$('#accepted_button').removeClass('btn-primary');
+		$('#declined_button').addClass('btn-primary');
+		$('#pending_button').removeClass('btn-primary');
 		});
 		
 		$('#pending_button').click(function() {
         $('#accepted').hide();
 		$('#declined').hide();
 		$('#pending').show();
-		$('#accepted_button').removeClass('active');
-		$('#declined_button').removeClass('active');
-		$('#pending_button').addClass('active');
+		$('#accepted_button').removeClass('btn-primary');
+		$('#declined_button').removeClass('btn-primary');
+		$('#pending_button').addClass('btn-primary');
         });
 		
 	});
@@ -44,7 +44,7 @@
 
 	<hr>
 	
-	<button type="button" id="pending_button" class="btn btn-warning offers-button active">Pending</button> <button type="button" id="accepted_button" class="btn btn-warning offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-warning offers-button">Declined</button>
+	<button type="button" id="pending_button" class="btn btn-default offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
 	
 	<div id="pending">
 	<h3>Pending</h3>
