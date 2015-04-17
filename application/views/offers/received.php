@@ -4,30 +4,30 @@
  $(document).ready(function(){
  
         $('#accepted_button').click(function() {
-        $('#new').hide();
+        $('#pending').hide();
 		$('#declined').hide();
 		$('#accepted').show();
 		$('#accepted_button').addClass('btn-info');
 		$('#declined_button').removeClass('btn-info');
-		$('#new_button').removeClass('btn-info');
+		$('#pending_button').removeClass('btn-info');
         });
 		
 		$('#declined_button').click(function() {
-        $('#new').hide();
+        $('#pending').hide();
 		$('#accepted').hide();
 		$('#declined').show();
 		$('#accepted_button').removeClass('btn-info');
 		$('#declined_button').addClass('btn-info');
-		$('#new_button').removeClass('btn-info');
+		$('#pending_button').removeClass('btn-info');
 		});
 		
-		$('#new_button').click(function() {
+		$('#pending_button').click(function() {
         $('#accepted').hide();
 		$('#declined').hide();
-		$('#new').show();
+		$('#pending').show();
 		$('#accepted_button').removeClass('btn-info');
 		$('#declined_button').removeClass('btn-info');
-		$('#new_button').addClass('btn-info');
+		$('#pending_button').addClass('btn-info');
         });
 		
 	});
@@ -43,10 +43,10 @@
 
 	<hr>
 
-	<button type="button" id="new_button" class="btn btn-default btn-info offers-button">New</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" id="pending_button" class="btn btn-default btn-info offers-button">pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
 
-	<div id="new">
-	<h3>New Offers</h3>
+	<div id="pending">
+	<h3>pending Offers</h3>
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr>
