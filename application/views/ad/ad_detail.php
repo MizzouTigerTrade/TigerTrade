@@ -55,7 +55,6 @@
 		<div class="row" style="margin-top: 20px;">
 			<div class="col-xs-12" style="padding: 0;">
 				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
-				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a>
 				<label for="comments" class="col-sm-2 control-label label-20">Comment</label>
 				<div class="form-group">			

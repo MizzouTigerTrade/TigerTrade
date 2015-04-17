@@ -262,7 +262,7 @@ class Ad extends CI_Controller
 			$data['error'] = true;
 		}
 		//if validation passes
-		//else
+		else
 		{
 			$description = $this->security->xss_clean($this->input->post('comment'));
 			
@@ -274,8 +274,8 @@ class Ad extends CI_Controller
 		
 			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
 	
-			$this->session->set_flashdata('message', ' user ' . $user_id . ' time ' . $timestmp . ' id ' . $ad_id . ' desc ' . $description);
-			redirect('/ad/details/' . $ad_id);
+			$this->session->set_flashdata('message', 'Comment has successfully been uploaded as: ' . $description);
+			redirect('/ad/details/' . $ad_id, refresh);
 		}
 	}
 }
