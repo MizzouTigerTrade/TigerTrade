@@ -43,13 +43,13 @@
 
 	<hr>
 
-	<button type="button" id="pending_button" class="btn btn-default btn-info offers-button">pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" id="pending_button" class="btn btn-default btn-info offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
 
 	<div id="pending">
-	<h3>pending Offers</h3>
+	<h3>Pending</h3>
 	<div class="table-responsive">
 		<table class="table table-hover">
-			<tr>
+			<tr style="background-color: white;">
 				<th>Ad Name</th>
 				<!--<th>Buyer ID</th>
 				<th>Seller ID</th>-->
