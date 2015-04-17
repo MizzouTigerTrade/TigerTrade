@@ -9,7 +9,7 @@ code {
 	margin-top: 23px;
 }
 
-.table_head{
+tr.table_head{
 	background-color: white;
 }
 
