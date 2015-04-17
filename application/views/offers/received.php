@@ -51,7 +51,7 @@
 	<!--<h3>Pending</h3>-->
 	<div class="table-responsive">
 		<table class="table table-hover">
-			<tr style="background-color: white;">
+			<tr class="table_head">
 				<th>Ad Name</th>
 				<th>Buyer Message</th>
 				<th>Price</th>
