@@ -21,7 +21,7 @@
 		$('#new_button').removeClass('btn-info');
 		});
 		
-		$('#pending_button').click(function() {
+		$('#new_button').click(function() {
         $('#accepted').hide();
 		$('#declined').hide();
 		$('#new').show();
