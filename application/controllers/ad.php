@@ -275,7 +275,7 @@ class Ad extends CI_Controller
 			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
 	
 			$this->session->set_flashdata('message', 'Comment has successfully been uploaded as: ' . $description);
-			redirect('/ad/details/' . $ad_id, refresh);
+			redirect('/ad/details/' . $ad_id, 'refresh');
 		}
 	}
 }
