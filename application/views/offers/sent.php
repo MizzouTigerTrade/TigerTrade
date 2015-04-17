@@ -2,15 +2,27 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 <script>
 
- $(document).ready(function(){
+	$('#accepted').hide();
+	$('#declined').hide();
 
-        $('#accepted').hide();
-        $('#declined').hide();
+ $(document).ready(function(){
 
         $('#accepted_button').click(function() {
         $('#pending').hide();
 		$('#declined').hide();
 		$('#accepted').show();
+        });
+		
+		$('#declined_button').click(function() {
+        $('#pending').hide();
+		$('#accepted').hide();
+		$('#declined').show();
+		});
+		
+		$('#pending_button').click(function() {
+        $('#accepted').hide();
+		$('#declined').hide();
+		$('#pending').show();
         });
 		
 	});
