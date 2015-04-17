@@ -1,3 +1,21 @@
+ 
+<script>
+
+ $(document).ready(function(){
+
+        $('#accepted').hide();
+        $('#decline').hide();
+
+        $('#accepted_button').click(function() {
+        $('#pending').hide();
+		$('#declined').hide();
+		$('#accepted').show();
+        });
+		
+	});
+
+</script>
+
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-12">
