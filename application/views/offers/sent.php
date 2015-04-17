@@ -8,18 +8,27 @@
         $('#pending').hide();
 		$('#declined').hide();
 		$('#accepted').show();
+		$('#accepted_button').addClass('active');
+		$('#declined_button').removeClass('active');
+		$('#pending_button').removeClass('active');
         });
 		
 		$('#declined_button').click(function() {
         $('#pending').hide();
 		$('#accepted').hide();
 		$('#declined').show();
+		$('#accepted_button').removeClass('active');
+		$('#declined_button').addClass('active');
+		$('#pending_button').removeClass('active');
 		});
 		
 		$('#pending_button').click(function() {
         $('#accepted').hide();
 		$('#declined').hide();
 		$('#pending').show();
+		$('#accepted_button').removeClass('active');
+		$('#declined_button').removeClass('active');
+		$('#pending_button').addClass('active');
         });
 		
 	});
