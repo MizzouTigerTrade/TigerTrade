@@ -2,11 +2,8 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 <script>
 
-	$('#accepted').hide();
-	$('#declined').hide();
-
  $(document).ready(function(){
-
+ 
         $('#accepted_button').click(function() {
         $('#pending').hide();
 		$('#declined').hide();
@@ -60,7 +57,7 @@
 	</table>
 	</div>
 	
-	<div id="accepted">
+	<div id="accepted" style="display: none;">
 	<h3>Accepted</h3>
 	<table class="table">
 		<tr>
@@ -80,7 +77,7 @@
 	</table>
 	</div>
 	
-	<div id="declined">
+	<div id="declined" style="display: none;">
 	<h3>Declined</h3>
 	<table class="table">
 		<tr>
