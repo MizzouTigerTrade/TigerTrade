@@ -35,12 +35,14 @@
 		<tr>
 			<th>Ad Title</th>
 			<th>Seller Response</th>
+			<th>Price</th>
 			<th>Status</th>
 		</tr>
 		<?php foreach ($accepted->result() as $row) { ?>
 		<tr>
 			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
+			
 			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
@@ -53,6 +55,7 @@
 		<tr>
 			<th>Ad Title</th>
 			<th>Seller Response</th>
+			<th>Price</th>
 			<th>Status</th>
 		</tr>
 		<?php foreach ($declined->result() as $row) { ?>
