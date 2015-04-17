@@ -48,7 +48,6 @@
 	<br>
 	
 	<div id="pending">
-	<!--<h3>Pending</h3>-->
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr style="background-color: white;">
@@ -73,7 +72,6 @@
 	
 	<div id="accepted" style="display: none;">
 	<div class="table-responsive">
-		<!--<h3>Accepted</h3>-->
 		<table class="table table-hover">
 			<tr style="background-color: white;">
 				<th>Ad Name</th>
@@ -97,7 +95,6 @@
 	
 	<div id="declined" style="display: none;">
 	<div class="table-responsive">
-		<h3>Declined</h3>
 		<table class="table table-hover">
 			<tr style="background-color: white;">
 				<th>Ad Name</th>
@@ -119,31 +116,4 @@
 	</div>
 	</div>
 	
-	
-	
-	<?php /*
-	<div class="table-responsive">
-	<h2>Declined</h2>
-		<table class="table table-hover">
-			<tr>
-				<th>Ad ID</th>
-				<th>Buyer ID</th>
-				<th>Seller ID</th>
-				<th>Buyer Message</th>
-				<th>Seller Response</th>
-				<th>Status</th>
-			</tr>
-			<?php foreach ($declined->result() as $row) { ?>
-			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/detail/' . $row->offer_id) ?>'>
-				<td><?php echo $row->ad_id; ?></td>
-				<td><?php echo $row->buyer_id; ?></td>
-				<td><?php echo $row->seller_id; ?></td>
-				<td><?php echo $row->buyer_message; ?></td>
-				<td><?php echo $row->seller_response; ?></td>
-				<td><?php echo $row->status; ?></td>
-			</tr>
-			<?php } ?>
-		</table>
-	</div>
-	*/ ?>
 </div>

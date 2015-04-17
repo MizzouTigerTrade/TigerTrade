@@ -45,9 +45,10 @@
 	<hr>
 	
 	<button type="button" id="pending_button" class="btn btn-default btn-info offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
+	<br>
+	<br>
 	
 	<div id="pending">
-	<h3>Pending</h3>
 	<table class="table">
 		<tr style="background-color: white;">
 			<th>Ad Title</th>
@@ -67,7 +68,6 @@
 	</div>
 	
 	<div id="accepted" style="display: none;">
-	<h3>Accepted</h3>
 	<table class="table">
 		<tr style="background-color: white;">
 			<th>Ad Title</th>
@@ -87,7 +87,6 @@
 	</div>
 	
 	<div id="declined" style="display: none;">
-	<h3>Declined</h3>
 	<table class="table">
 		<tr style="background-color: white;">
 			<th>Ad Title</th>
