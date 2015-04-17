@@ -8,27 +8,27 @@
         $('#pending').hide();
 		$('#declined').hide();
 		$('#accepted').show();
-		$('#accepted_button').addClass('btn-primary');
-		$('#declined_button').removeClass('btn-primary');
-		$('#pending_button').removeClass('btn-primary');
+		$('#accepted_button').addClass('btn-info');
+		$('#declined_button').removeClass('btn-info');
+		$('#pending_button').removeClass('btn-info');
         });
 		
 		$('#declined_button').click(function() {
         $('#pending').hide();
 		$('#accepted').hide();
 		$('#declined').show();
-		$('#accepted_button').removeClass('btn-primary');
-		$('#declined_button').addClass('btn-primary');
-		$('#pending_button').removeClass('btn-primary');
+		$('#accepted_button').removeClass('btn-info');
+		$('#declined_button').addClass('btn-info');
+		$('#pending_button').removeClass('btn-info');
 		});
 		
 		$('#pending_button').click(function() {
         $('#accepted').hide();
 		$('#declined').hide();
 		$('#pending').show();
-		$('#accepted_button').removeClass('btn-primary');
-		$('#declined_button').removeClass('btn-primary');
-		$('#pending_button').addClass('btn-primary');
+		$('#accepted_button').removeClass('btn-info');
+		$('#declined_button').removeClass('btn-info');
+		$('#pending_button').addClass('btn-info');
         });
 		
 	});
@@ -44,7 +44,7 @@
 
 	<hr>
 	
-	<button type="button" id="pending_button" class="btn btn-default btn-primary offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted <span class="badge badge-info" style="background-color: #D43F3A; color: white;">2</span></button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" id="pending_button" class="btn btn-default btn-info offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted <span class="badge badge-info" style="background-color: #D43F3A; color: white;">2</span></button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
 	
 	<div id="pending">
 	<h3>Pending</h3>
