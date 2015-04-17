@@ -44,7 +44,9 @@
 	<hr>
 
 	<button type="button" id="pending_button" class="btn btn-default btn-warning offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
-
+	<br>
+	<br>
+	
 	<div id="pending">
 	<!--<h3>Pending</h3>-->
 	<div class="table-responsive">
