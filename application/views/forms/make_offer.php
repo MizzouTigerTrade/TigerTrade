@@ -1,8 +1,7 @@
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>Make Offer:</h1>
-			<h3><?php echo $ad->title; ?></h3>
+			<h2>Make Offer: <?php echo $ad->title; ?></h2>
 		</div>
 	</div>
 	
