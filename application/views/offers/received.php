@@ -43,7 +43,7 @@
 
 	<hr>
 
-	<button type="button" id="new_button" class="btn btn-default btn-info offers-button active">New</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" id="new_button" class="btn btn-default btn-info offers-button">New</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
 
 	<div id="new">
 	<h3>New Offers</h3>
