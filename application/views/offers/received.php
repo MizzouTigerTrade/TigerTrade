@@ -51,7 +51,7 @@
 	<!--<h3>Pending</h3>-->
 	<div class="table-responsive">
 		<table class="table table-hover">
-			<tr class="table_head">
+			<tr style="background-color: white;">
 				<th>Ad Name</th>
 				<th>Buyer Message</th>
 				<th>Price</th>
@@ -75,7 +75,7 @@
 	<div class="table-responsive">
 		<!--<h3>Accepted</h3>-->
 		<table class="table table-hover">
-			<tr>
+			<tr style="background-color: white;">
 				<th>Ad Name</th>
 				<th>Buyer Message</th>
 				<th>Your Response</th>
@@ -99,7 +99,7 @@
 	<div class="table-responsive">
 		<h3>Declined</h3>
 		<table class="table table-hover">
-			<tr>
+			<tr style="background-color: white;">
 				<th>Ad Name</th>
 				<th>Buyer Message</th>
 				<th>Your Response</th>

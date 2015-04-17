@@ -49,7 +49,7 @@
 	<div id="pending">
 	<h3>Pending</h3>
 	<table class="table">
-		<tr>
+		<tr style="background-color: white;">
 			<th>Ad Title</th>
 			<th>Your Message</th>
 			<th>Price</th>
@@ -69,7 +69,7 @@
 	<div id="accepted" style="display: none;">
 	<h3>Accepted</h3>
 	<table class="table">
-		<tr>
+		<tr style="background-color: white;">
 			<th>Ad Title</th>
 			<th>Seller Response</th>
 			<th>Price</th>
@@ -89,7 +89,7 @@
 	<div id="declined" style="display: none;">
 	<h3>Declined</h3>
 	<table class="table">
-		<tr>
+		<tr style="background-color: white;">
 			<th>Ad Title</th>
 			<th>Seller Response</th>
 			<th>Price</th>
