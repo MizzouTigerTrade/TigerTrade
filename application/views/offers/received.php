@@ -68,8 +68,8 @@
 							</div>
 							<div class="modal-body">
 								<?php echo $row->title; ?><br>
-								Offer Price<?php echo "$" . $row->offer_price; ?><br>
-								Asking Price<?php echo "$" . $row->asking_price; ?><br>
+								Offer Price: <?php echo "$" . $row->offer_price; ?><br>
+								Asking Price: <?php echo "$" . $row->asking_price; ?><br>
 								Buyer Message: <?php echo $row->buyer_message; ?><br>
 							</div>
 							<div class="modal-footer">
