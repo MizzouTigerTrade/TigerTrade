@@ -57,7 +57,7 @@
 				<th></th>
 			</tr>
 			<?php foreach ($pending->result() as $row) { ?>
-			<tr style="cursor: hand;" class='clickable-row' data-toggle="modal" data-target="#replyModal<?php echo $row->offer_id; ?>">
+			<tr style="cursor: hand;" data-toggle="modal" data-target="#replyModal<?php echo $row->offer_id; ?>">
 				<td><?php echo $row->title; ?></td>
 				<?php /*<td><?php echo $row->buyer_id; ?></td>
 				<td><?php echo $row->seller_id; ?></td> */ ?>
