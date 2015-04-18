@@ -67,7 +67,9 @@
 								<h4 class="modal-title" id="myModalLabel">Reply to offer</h4>
 							</div>
 							<div class="modal-body">
-								Are you sure you want to dismiss the flags on Ad?
+								<?php echo $row->title; ?>
+								Buyer Message: <?php echo $row->buyer_message; ?>
+								Offer Price<?php echo "$" . $row->price; ?>
 							</div>
 							<div class="modal-footer">
 								<a class="btn btn-xs btn-primary" href="">Send</a>
