@@ -64,10 +64,9 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Reply to Offer</h4>
+								<h4 class="modal-title" id="myModalLabel">Offer: <?php echo $row->title; ?></h4>
 							</div>
 							<div class="modal-body">
-								<?php echo $row->title; ?><br>
 								Offer Price: <?php echo "$" . $row->offer_price; ?><br>
 								Asking Price: <?php echo "$" . $row->asking_price; ?><br>
 								Buyer Message: <?php echo $row->buyer_message; ?><br>
