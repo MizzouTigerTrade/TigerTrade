@@ -67,9 +67,9 @@
 								<h4 class="modal-title" id="myModalLabel">Offer: <?php echo $row->title; ?></h4>
 							</div>
 							<div class="modal-body">
-								Offer Price: <?php echo "$" . $row->offer_price; ?><br>
-								Asking Price: <?php echo "$" . $row->asking_price; ?><br>
-								Buyer Message: <?php echo $row->buyer_message; ?><br>
+								<b>Offer Price: <?php echo "$" . $row->offer_price; ?></b><br>
+								<b>Asking Price: <?php echo "$" . $row->asking_price; ?></b><br>
+								<b>Buyer Message: <?php echo $row->buyer_message; ?></b><br>
 								
 								<?php echo form_open("offers/response/" . $row->offer_id, array('class' => 'form-horizontal', 'id' => 'offer-response-form', 'enctype' => 'multipart/form-data'));?>
 		
