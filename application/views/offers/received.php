@@ -57,13 +57,37 @@
 				<th></th>
 			</tr>
 			<?php foreach ($pending->result() as $row) { ?>
-			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/review_offer/' . $row->offer_id) ?>'>
+			<tr style="cursor: hand;" class='clickable-row' data-target="#replyModal<?php echo $row->offer_id; ?>">
 				<td><?php echo $row->title; ?></td>
 				<?php /*<td><?php echo $row->buyer_id; ?></td>
 				<td><?php echo $row->seller_id; ?></td> */ ?>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo "$" . $row->price; ?></td>
-				<td><button type="button" class="btn btn-xs btn-primary">Reply</button></td>
+				<td><button type="button" class="btn btn-xs btn-primary">Reply</button>
+				
+				<div class="modal fade" id="replyModal<?php echo $row->offer_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" style="width: 450px;">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete Ad <?php echo $flag->ad_id; ?>?</h4>
+							</div>
+							<div class="modal-body">
+								Message to user<br>
+								<form action="<?php echo base_url('admin/delete_ad') . '/' . $flag->ad_id ;?>"  method="POST">
+								<textarea rows="4" cols="50" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
+							</div>
+							<div class="modal-footer">
+								<input class="btn btn-xs btn-primary" type="submit" value="Yes">
+								</form>
+								<button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				</td>
 			</tr>
 			<?php } ?>
 		</table>
