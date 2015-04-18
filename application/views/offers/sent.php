@@ -53,14 +53,14 @@
 		<tr style="background-color: white;">
 			<th>Ad Title</th>
 			<th>Your Message</th>
-			<th>Price</th>
+			<th>Offer Price</th>
 			<th>Status</th>
 		</tr>
 		<?php foreach ($pending->result() as $row) { ?>
 		<tr>
 			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->buyer_message; ?></td>
-			<td><?php echo "$" . $row->price; ?></td>
+			<td><?php echo "$" . $row->offer_price; ?></td>
 			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
@@ -72,14 +72,14 @@
 		<tr style="background-color: white;">
 			<th>Ad Title</th>
 			<th>Seller Response</th>
-			<th>Price</th>
+			<th>Offer Price</th>
 			<th>Status</th>
 		</tr>
 		<?php foreach ($accepted->result() as $row) { ?>
 		<tr>
 			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
-			<td><?php echo "$" . $row->price; ?></td>
+			<td><?php echo "$" . $row->offer_price; ?></td>
 			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
@@ -91,14 +91,14 @@
 		<tr style="background-color: white;">
 			<th>Ad Title</th>
 			<th>Seller Response</th>
-			<th>Price</th>
+			<th>Offer Price</th>
 			<th>Status</th>
 		</tr>
 		<?php foreach ($declined->result() as $row) { ?>
 		<tr>
 			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
-			<td><?php echo "$" . $row->price; ?></td>
+			<td><?php echo "$" . $row->offer_price; ?></td>
 			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
