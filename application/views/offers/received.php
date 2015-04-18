@@ -59,11 +59,9 @@
 			<?php foreach ($pending->result() as $row) { ?>
 			<tr style="cursor: hand;" data-toggle="modal" data-target="#replyModal<?php echo $row->offer_id; ?>">
 				<td><?php echo $row->title; ?></td>
-				<?php /*<td><?php echo $row->buyer_id; ?></td>
-				<td><?php echo $row->seller_id; ?></td> */ ?>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo "$" . $row->price; ?></td>
-				<td><button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#replyModal<?php echo $row->offer_id; ?>">Reply</button>
+				<td><button type="button" class="btn btn-xs btn-primary">Reply</button>
 				
 				<div class="modal fade" id="replyModal<?php echo $row->offer_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
