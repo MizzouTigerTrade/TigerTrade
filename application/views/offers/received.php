@@ -74,13 +74,12 @@
 								<?php echo form_open("offers/response/" . $row->offer_id, array('class' => 'form-horizontal', 'id' => 'offer-response-form', 'enctype' => 'multipart/form-data'));?>
 		
 								<div class="form-group">
-									<label for="seller_response">Reply</label>
+									<label for="seller_response">Message to Buyer</label>
 									<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5"></textarea>
 									<p class="help-block">Write a message for the buyer, including good times to meet or preferred method of contact.</p>
 								</div>
 
 								<div class="form-group">
-									<label for="status">Offer Decision</label>
 										<div class="radio">
 											<label>
 												<input type="radio" id='accept-offer' name="status" id="status1" value="Accepted" required="true">
