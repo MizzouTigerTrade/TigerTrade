@@ -64,12 +64,12 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Offer: <?php echo $row->title; ?></h4>
+								<h3 class="modal-title" id="myModalLabel">Offer: <?php echo $row->title; ?></h3>
 							</div>
 							<div class="modal-body">
-								<b>Offer Price: <?php echo "$" . $row->offer_price; ?></b><br>
-								<b>Asking Price: <?php echo "$" . $row->asking_price; ?></b><br>
-								<b>Buyer Message: <?php echo $row->buyer_message; ?></b><br>
+								<b>Offer Price: </b><?php echo "$" . $row->offer_price; ?><br>
+								<b>Asking Price: </b><?php echo "$" . $row->asking_price; ?><br>
+								<b>Buyer Message: </b><?php echo $row->buyer_message; ?><br>
 								
 								<?php echo form_open("offers/response/" . $row->offer_id, array('class' => 'form-horizontal', 'id' => 'offer-response-form', 'enctype' => 'multipart/form-data'));?>
 		
