@@ -53,7 +53,7 @@
 			<tr style="background-color: white;">
 				<th>Ad Name</th>
 				<th>Buyer Message</th>
-				<th>Price</th>
+				<th>Offer Price</th>
 				<th></th>
 			</tr>
 			<?php foreach ($pending->result() as $row) { ?>
@@ -64,12 +64,13 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Reply to offer</h4>
+								<h4 class="modal-title" id="myModalLabel">Reply to Offer</h4>
 							</div>
 							<div class="modal-body">
-								<?php echo $row->title; ?>
-								Buyer Message: <?php echo $row->buyer_message; ?>
-								Offer Price<?php echo "$" . $row->price; ?>
+								<?php echo $row->title; ?><br>
+								Offer Price<?php echo "$" . $row->offer_price; ?><br>
+								Asking Price<?php echo "$" . $row->asking_price; ?><br>
+								Buyer Message: <?php echo $row->buyer_message; ?><br>
 							</div>
 							<div class="modal-footer">
 								<a class="btn btn-xs btn-primary" href="">Send</a>
@@ -81,7 +82,7 @@
 				
 				<td><?php echo $row->title; ?></td>
 				<td><?php echo $row->buyer_message; ?></td>
-				<td><?php echo "$" . $row->price; ?></td>
+				<td><?php echo "$" . $row->offer_price; ?></td>
 				<td><button type="button" class="btn btn-xs btn-primary">Reply</button></td>
 			</tr>
 			<?php } ?>
@@ -96,7 +97,7 @@
 				<th>Ad Name</th>
 				<th>Buyer Message</th>
 				<th>Your Response</th>
-				<th>Price</th>
+				<th>Offer Price</th>
 				<th>Status</th>
 			</tr>
 			<?php foreach ($accepted->result() as $row) { ?>
@@ -104,7 +105,7 @@
 				<td><?php echo $row->title; ?></td>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo $row->seller_response; ?></td>
-				<td><?php echo "$" . $row->price; ?></td>
+				<td><?php echo "$" . $row->offer_price; ?></td>
 				<td><?php echo $row->status; ?></td>
 			</tr>
 			<?php } ?>
@@ -119,7 +120,7 @@
 				<th>Ad Name</th>
 				<th>Buyer Message</th>
 				<th>Your Response</th>
-				<th>Price</th>
+				<th>Offer Price</th>
 				<th>Status</th>
 			</tr>
 			<?php foreach ($declined->result() as $row) { ?>
@@ -127,7 +128,7 @@
 				<td><?php echo $row->title; ?></td>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo $row->seller_response; ?></td>
-				<td><?php echo "$" . $row->price; ?></td>
+				<td><?php echo "$" . $row->offer_price; ?></td>
 				<td><?php echo $row->status; ?></td>
 			</tr>
 			<?php } ?>
