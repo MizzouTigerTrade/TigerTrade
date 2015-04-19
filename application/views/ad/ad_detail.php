@@ -37,9 +37,8 @@
 								
 								<?php echo form_open("offers/create", array('class' => 'form-horizontal', 'id' => 'make-offer-form', 'enctype' => 'multipart/form-data')); ?>
 								
-										<label class="sr-only" for="price">Amount (in dollars)</label>
 										<label for="price" class="control-label">Price</label>
-										<div class="input-group col-sm-3" style="padding: 0 15px;">
+										<div class="input-group col-sm-3">
 											<div class="input-group-addon">$</div>
 												<input type="text" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
 											<div class="input-group-addon">.00</div>
