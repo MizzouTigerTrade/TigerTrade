@@ -48,6 +48,7 @@
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
 		  <span class="sr-only">Error:</span>
 		  <?php echo $message;?>
+		  <a href="#" class="close">&times;</a>
 		</div>
 	  </div>
 	<?php }; ?>
