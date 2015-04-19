@@ -43,7 +43,7 @@
 												<input type="text" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
 											<div class="input-group-addon">.00</div>
 										</div>
-										<br><br>
+										<br>
 										
 									<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad->ad_id; ?>">
 
