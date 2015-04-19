@@ -35,7 +35,7 @@
 					
 							<div class="modal-body">
 								
-								<form action="offers/create" method="POST">
+								<?php echo form_open("offers/create");?>
 								
 										<label for="price" class="control-label">Price</label>
 										<div class="input-group col-sm-3">
