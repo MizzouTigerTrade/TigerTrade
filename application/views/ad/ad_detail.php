@@ -22,7 +22,7 @@
 			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			
-			<a class="btn btn-success" data-toggle="modal" data-target="makeOffer">Make an Offer</a>
+			<a class="btn btn-success" data-toggle="modal" data-target="#makeOffer">Make an Offer</a>
 			
 				<div class="modal fade" id="makeOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
@@ -97,7 +97,7 @@
 			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			
-			<a class="btn btn-sm btn-success" data-toggle="modal" data-target="makeOffer">Make an Offer</a>
+			<a class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOffer">Make an Offer</a>
 			
 				<div class="modal fade" id="makeOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
