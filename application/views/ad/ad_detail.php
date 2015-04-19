@@ -34,16 +34,28 @@
 							</div>
 							
 							<div class="modal-body">
-							
-								<b>Offer Price: </b><?php echo "$" . $ad->price; ?><br>
 								
 								<?php echo form_open("offers/create", array('class' => 'form-horizontal', 'id' => 'make-offer-form', 'enctype' => 'multipart/form-data')); ?>
 								
-									<label for="seller_response">Message to Buyer</label>
-									<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5"></textarea>
-									<p class="help-block">Write a message for the buyer, including preferred method of contact.</p>
-							
-								
+									<label class="sr-only" for="price">Amount (in dollars)</label>
+									<label for="price" class="col-sm-2 control-label label-20">Price</label>
+									<div class="input-group" style="padding: 0 15px;">
+										<div class="input-group-addon">$</div>
+											<input type="text" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
+										<div class="input-group-addon">.00</div>
+									</div>
+
+									<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad_id; ?>">
+
+									<label for="buyer_message" class="col-sm-2 control-label label-20">Message</label>
+									<textarea type="text" class="form-control description-box" name="buyer_message" id="buyer_message" rows="5"></textarea>
+									<p class="help-block">Write a message for the seller, including good times to meet.</p>
+									
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" required="true"> <a href="<?php echo base_url('/content/terms') ?>">I Agree to the Terms & Conditions</a> and acknowledge that my contact information with be supplied to the seller in the event that they choose to accept this offer.
+										</label>
+									</div>
 								
 							</div>
 							
