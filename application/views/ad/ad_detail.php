@@ -32,15 +32,15 @@
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 								<h3 class="modal-title" id="myModalLabel">Make Offer: <?php echo $ad->title; ?></h3>
 							</div>
-							
+					
 							<div class="modal-body">
 								
 								<?php echo form_open("offers/create", array('class' => 'form-horizontal', 'id' => 'make-offer-form', 'enctype' => 'multipart/form-data')); ?>
 								
 									<div class="form-group">
 										<label class="sr-only" for="price">Amount (in dollars)</label>
-										<label for="price" class="col-sm-2 control-label label-20">Price</label>
-										<div class="input-group col-sm-3 col-sm-offset-2" style="padding: 0 15px;">
+										<label for="price" class="control-label label-20">Price</label>
+										<div class="input-group" style="padding: 0 15px;">
 											<div class="input-group-addon">$</div>
 												<input type="text" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
 											<div class="input-group-addon">.00</div>
