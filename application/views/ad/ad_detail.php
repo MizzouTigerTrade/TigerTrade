@@ -37,7 +37,13 @@
 							
 								<b>Offer Price: </b><?php echo "$" . $ad->price; ?><br>
 								
-								<?php echo form_open("offers/create", array('class' => 'form-horizontal', 'id' => 'make-offer-form', 'enctype' => 'multipart/form-data'));?>
+								<?php echo form_open("offers/create", array('class' => 'form-horizontal', 'id' => 'make-offer-form', 'enctype' => 'multipart/form-data')); ?>
+								
+								<div class="form-group">
+									<label for="seller_response">Message to Buyer</label>
+									<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5"></textarea>
+									<p class="help-block">Write a message for the buyer, including preferred method of contact.</p>
+								</div>
 							
 								
 								
