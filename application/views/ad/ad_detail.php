@@ -45,7 +45,7 @@
 										<div class="input-group-addon">.00</div>
 									</div>
 
-									<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad_id; ?>">
+									<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad->ad_id; ?>">
 
 									<label for="buyer_message" class="col-sm-2 control-label label-20">Message</label>
 									<textarea type="text" class="form-control description-box" name="buyer_message" id="buyer_message" rows="5"></textarea>
