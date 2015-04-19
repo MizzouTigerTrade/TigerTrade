@@ -36,7 +36,8 @@
 							<div class="modal-body">
 								
 								<?php echo form_open("offers/create");?>
-								
+									
+									<div class="form-group">
 										<label for="price" class="control-label">Price</label>
 										<div class="input-group col-sm-3">
 											<div class="input-group-addon">$</div>
@@ -44,12 +45,13 @@
 											<div class="input-group-addon">.00</div>
 										</div>
 										<br>
+									</div>
 										
 									<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad->ad_id; ?>">
 
 									<label for="buyer_message">Message</label>
 									<textarea type="text" class="form-control description-box" name="buyer_message" id="buyer_message" rows="5"></textarea>
-									<p class="help-block">Write a message for the seller, including good times to meet.</p>
+									<p class="help-block">Write a message for the seller, including preferred method of contact.</p>
 									
 									<div class="checkbox">
 										<label>
