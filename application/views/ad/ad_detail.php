@@ -42,7 +42,7 @@
 										<label for="price" class="control-label">Price</label>
 										<div class="input-group col-sm-3">
 											<div class="input-group-addon">$</div>
-												<input type="text" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
+												<input type="number" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
 											<div class="input-group-addon">.00</div>
 										</div>
 									</div>
@@ -111,7 +111,7 @@
 										<label for="price" class="control-label">Price</label>
 										<div class="input-group col-sm-3">
 											<div class="input-group-addon">$</div>
-												<input type="text" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
+												<input type="number" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
 											<div class="input-group-addon">.00</div>
 										</div>
 									</div>
