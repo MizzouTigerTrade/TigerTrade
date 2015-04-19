@@ -76,14 +76,14 @@
 								<div class="form-group">
 									<label for="seller_response">Message to Buyer</label>
 									<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5"></textarea>
-									<p class="help-block">Write a message for the buyer, including good times to meet or preferred method of contact.</p>
+									<p class="help-block">Write a message for the buyer, including preferred method of contact.</p>
 								</div>
 
 								<div class="form-group">
 										<div class="radio">
 											<label>
 												<input type="radio" id='accept-offer' name="status" id="status1" value="Accepted" required="true">
-												Accept Offer<p class="text-danger" id='offer-warning' style='display: none; padding-left: 10px'> You and the buyer will exchange contact info.</p>
+												Accept Offer
 											</label>
 										</div>
 										<div class="radio">
