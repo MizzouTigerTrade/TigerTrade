@@ -35,7 +35,7 @@
 					
 							<div class="modal-body">
 								
-								<?php echo form_open("offers/create", array('class' => 'form-horizontal', 'id' => 'make-offer-form', 'enctype' => 'multipart/form-data')); ?>
+								<form action="offers/create" method="POST">
 								
 										<label for="price" class="control-label">Price</label>
 										<div class="input-group col-sm-3">
