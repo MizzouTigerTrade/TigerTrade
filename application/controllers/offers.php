@@ -136,7 +136,7 @@ class Offers extends CI_Controller
 		}
 
 		
-		redirect('ad/details/' . $ad_id , 'refresh')
+		redirect('offers/received' , 'refresh');
 		
 		/*
 		$data['title'] = 'New Offer';
