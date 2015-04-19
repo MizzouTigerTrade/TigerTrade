@@ -52,10 +52,18 @@ class Offers extends CI_Controller
 			$this->offer_model->insert_new_offer($buyer_id, $seller_id, $ad_id, $buyer_message, $price);
 
 			$data['created'] = true;
+			
+			$this->session->set_flashdata('message', "Your offer has been sent to the seller");
 		}
 
+		/*
 		$data['title'] = 'New Offer';
 		$this->layout->view('offers/new_offer', $data);
+		*/
+		
+		redirect('ad/details/' . $ad_id , 'refresh');
+		
+		
 	}
 
 	function sent()

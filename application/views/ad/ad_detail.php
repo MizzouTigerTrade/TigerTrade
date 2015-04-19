@@ -24,6 +24,7 @@
 			
 			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#makeOffer">Make an Offer</button>
 			
+				<!--Make Offer Modal-->
 				<div class="modal fade" id="makeOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
@@ -90,9 +91,9 @@
 		<div class="col-xs-12">
 			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
+			<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOfferSM">Make an Offer</button>
 			
-			<a class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOfferSM">Make an Offer</a>
-			
+				<!--Make Offer Modal-->
 				<div class="modal fade" id="makeOfferSM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-sm">
 						<div class="modal-content">
