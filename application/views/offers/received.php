@@ -85,7 +85,7 @@
 								<div class="form-group">
 									<label for="seller_response">Message to Buyer</label>
 									<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5" required></textarea>
-									<p class="help-block">Write a message for the buyer, including preferred method of contact if accepting offer.</p>
+									<p class="help-block">Write a message for the buyer, including preferred method of contact.</p>
 								</div>
 
 								<div class="form-group">
