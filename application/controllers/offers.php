@@ -85,6 +85,7 @@ class Offers extends CI_Controller
 		$data['pending'] = $this->offer_model->get_seller_pending_offers($user->id);
 		$data['accepted'] = $this->offer_model->get_seller_accepted_offers($user->id);
 		$data['declined'] = $this->offer_model->get_seller_declined_offers($user->id);
+		$data['message'] = $this->session->flashdata('message');
 		$this->layout->view('offers/received', $data);
 	}
 
@@ -125,10 +126,22 @@ class Offers extends CI_Controller
 			$this->offer_model->respond_to_offer($seller_response, $status, $offer_id);
 
 			$data['created'] = true;
+			
+			if ($status == "Accepted"){
+				$this->session->set_flashdata('message', "Your have accepted the offer");
+			}
+			else{
+				$this->session->set_flashdata('message', "Your have declined the offer");
+			}
 		}
 
+		
+		redirect('ad/details/' . $ad_id , 'refresh')
+		
+		/*
 		$data['title'] = 'New Offer';
 		$this->layout->view('offers/response', $data);
+		*/
 	}
 	
 	function detail($offer_id) {
