@@ -128,10 +128,10 @@ class Offers extends CI_Controller
 			$data['created'] = true;
 			
 			if ($status == "Accepted"){
-				$this->session->set_flashdata('message', "Your have accepted the offer");
+				$this->session->set_flashdata('message', "You accepted the offer");
 			}
 			else{
-				$this->session->set_flashdata('message', "Your have declined the offer");
+				$this->session->set_flashdata('message', "You declined the offer");
 			}
 		}
 
