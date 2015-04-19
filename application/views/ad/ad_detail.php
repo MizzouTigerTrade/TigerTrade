@@ -37,8 +37,7 @@
 								
 								<?php echo form_open("offers/create", array('class' => 'form-horizontal', 'id' => 'make-offer-form', 'enctype' => 'multipart/form-data')); ?>
 								
-									<label class="sr-only" for="price">Amount (in dollars)</label>
-									<label for="price" class="col-sm-2 control-label label-20">Price</label>
+									<label for="price">Price</label>
 									<div class="input-group" style="padding: 0 15px;">
 										<div class="input-group-addon">$</div>
 											<input type="text" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
@@ -47,7 +46,7 @@
 
 									<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad->ad_id; ?>">
 
-									<label for="buyer_message" class="col-sm-2 control-label label-20">Message</label>
+									<label for="buyer_message">Message</label>
 									<textarea type="text" class="form-control description-box" name="buyer_message" id="buyer_message" rows="5"></textarea>
 									<p class="help-block">Write a message for the seller, including good times to meet.</p>
 									
