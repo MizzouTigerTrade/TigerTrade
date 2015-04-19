@@ -38,12 +38,12 @@
 								<?php echo form_open("offers/create", array('class' => 'form-horizontal', 'id' => 'make-offer-form', 'enctype' => 'multipart/form-data')); ?>
 								
 									<label for="price">Price</label>
-									<div class="input-group" style="padding: 0 15px;">
+									<div name="price">
 										<div class="input-group-addon">$</div>
 											<input type="text" class="form-control" name="price" id="price" value="<?php echo $ad->price; ?>" placeholder="$<?php echo $ad->price; ?>">
 										<div class="input-group-addon">.00</div>
 									</div>
-
+										
 									<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad->ad_id; ?>">
 
 									<label for="buyer_message">Message</label>
