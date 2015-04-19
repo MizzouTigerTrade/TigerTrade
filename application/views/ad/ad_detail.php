@@ -46,26 +46,22 @@
 									</div>
 								</div>
 
-								<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad_id; ?>">
+								<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad->ad_id; ?>">
 
 								<div class="form-group">
 									<label for="buyer_message" class="col-sm-2 control-label label-20">Message</label>
-									<div class="col-sm-10">
 										<textarea type="text" class="form-control description-box" name="buyer_message" id="buyer_message" rows="5"></textarea>
 										<p class="help-block">Write a message for the seller, including good times to meet.</p>
-									</div>
 								</div>
 								
 								<hr>
 								
 								<div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
 										<div class="checkbox">
 											<label>
 												<input type="checkbox" required="true"> <a href="<?php echo base_url('/content/terms') ?>">I Agree to the Terms & Conditions</a> and acknowledge that my contact information with be supplied to the seller in the event that they choose to accept this offer.
 											</label>
 										</div>
-									</div>
 								</div>
 		
 							</div>
@@ -121,26 +117,22 @@
 									</div>
 								</div>
 
-								<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad_id; ?>">
+								<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<?php echo $ad->ad_id; ?>">
 
 								<div class="form-group">
 									<label for="buyer_message" class="col-sm-2 control-label label-20">Message</label>
-									<div class="col-sm-10">
 										<textarea type="text" class="form-control description-box" name="buyer_message" id="buyer_message" rows="5"></textarea>
 										<p class="help-block">Write a message for the seller, including good times to meet.</p>
-									</div>
 								</div>
 								
 								<hr>
 								
 								<div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
 										<div class="checkbox">
 											<label>
 												<input type="checkbox" required="true"> <a href="<?php echo base_url('/content/terms') ?>">I Agree to the Terms & Conditions</a> and acknowledge that my contact information with be supplied to the seller in the event that they choose to accept this offer.
 											</label>
 										</div>
-									</div>
 								</div>
 		
 							</div>
