@@ -45,10 +45,10 @@
 
 	<?php if ($message != "") { ?>
       <div id="infoMessage">
-		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
+		<div class="alert alert-info alert-dismissible" role="alert" style="margin-top: 10px;">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		  <span class="sr-only">Error:</span>
 		  <?php echo $message;?>
-		  <a href="#" class="close">&times;</a>
 		</div>
 	  </div>
 	<?php }; ?>
