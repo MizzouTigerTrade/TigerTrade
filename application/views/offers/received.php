@@ -75,7 +75,7 @@
 		
 								<div class="form-group">
 									<label for="seller_response">Message to Buyer</label>
-									<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5"></textarea>
+									<textarea type="text" name="seller_response" class="form-control description-box" id="seller_response" rows="5" value=""></textarea>
 									<p class="help-block">Write a message for the buyer, including preferred method of contact.</p>
 								</div>
 
@@ -106,7 +106,7 @@
 							<div class="modal-footer">
 								<input class="btn btn-xs btn-primary" type="submit" value="Send">
 								</form>
-								<button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Cancel</button>
+								<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
 					</div>
