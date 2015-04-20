@@ -138,35 +138,6 @@ class Offer_model extends CI_Model
 		return $count;
 	}
 	
-	public function add_received_offer_notification($user_id)
-	{
-		$this->db->set('received_offer_notification', 'received_offer_notification+1', FALSE);
-		$this->db->where('id', $user_id);
-		
-		if( $this->db->update('users') != TRUE)
-		{
-			throw new Exception("Cannot Update Notifications");
-		}
-		else
-		{
-			return $this->db->affected_rows();
-		}
-	}
-	
-	public function add_sent_offer_notification($user_id)
-	{
-		$this->db->set('sent_offer_notification', 'sent_offer_notification+1', FALSE);
-		$this->db->where('id', $user_id);
-		
-		if( $this->db->update('users') != TRUE)
-		{
-			throw new Exception("Cannot Update Notifications");
-		}
-		else
-		{
-			return $this->db->affected_rows();
-		}
-	}
 	
 	public function set_received_offer_notification($user_id)
 	{
@@ -199,6 +170,39 @@ class Offer_model extends CI_Model
 			return $this->db->affected_rows();
 		}
 	}
+	
+	
+	/*
+	public function add_received_offer_notification($user_id)
+	{
+		$this->db->set('received_offer_notification', 'received_offer_notification+1', FALSE);
+		$this->db->where('id', $user_id);
+		
+		if( $this->db->update('users') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
+	public function add_sent_offer_notification($user_id)
+	{
+		$this->db->set('sent_offer_notification', 'sent_offer_notification+1', FALSE);
+		$this->db->where('id', $user_id);
+		
+		if( $this->db->update('users') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	*/
 	
 }
 
