@@ -117,7 +117,7 @@ class Offer_model extends CI_Model
 		return $result->received_offer_notification;
 		*/
 		
-		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$user_id' AND seen_by_seller = 'false'");
+		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$user_id' AND seen_by_seller = false");
 		$count = $result->num_rows();
 		
 	}
@@ -130,7 +130,7 @@ class Offer_model extends CI_Model
 		return $result->sent_offer_notification;
 		*/
 		
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = 'false'");
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false");
 		$count = $result->num_rows();
 	}
 	
