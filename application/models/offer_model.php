@@ -188,6 +188,22 @@ class Offer_model extends CI_Model
 		}
 	}
 	
+	//sets all seen_by_sller to true
+	public function set_all_received_offer_notification($user_id)
+	{
+		$this->db->set('seen_by_seller', 1, FALSE);
+		$this->db->where('seller_id', $user_id);
+		
+		if( $this->db->update('offers') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
 }
 
 ?>

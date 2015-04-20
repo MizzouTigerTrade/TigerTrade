@@ -84,6 +84,7 @@ class Offers extends CI_Controller
 		$data['declined'] = $this->offer_model->get_seller_declined_offers($user->id);
 		$data['message'] = $this->session->flashdata('message');
 		$this->layout->view('offers/received', $data);
+		$this->offer_model->set_all_received_offer_notification($user->id);
 	}
 
 	//shows form to create a new ad
