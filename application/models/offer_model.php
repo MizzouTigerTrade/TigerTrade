@@ -111,27 +111,28 @@ class Offer_model extends CI_Model
 	
 	public function get_received_offer_notification($user_id)
 	{
-		/*
-		$result = $this->db->query("SELECT * FROM users WHERE id = '$user_id'");
-		$result = $result->row();
-		return $result->received_offer_notification;
-		*/
-		
 		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$user_id' AND seen_by_seller = false");
 		$count = $result->num_rows();
 		return $count;
-		
 	}
 	
 	public function get_sent_offer_notification($user_id)
 	{
-		/*
-		$result = $this->db->query("SELECT * FROM users WHERE id = '$user_id'");
-		$result = $result->row();
-		return $result->sent_offer_notification;
-		*/
-		
 		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false");
+		$count = $result->num_rows();
+		return $count;
+	}
+	
+	public function get_accepted_offer_notification($user_id)
+	{
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false AND status = accepted");
+		$count = $result->num_rows();
+		return $count;
+	}
+	
+	public function get_declined_offer_notification($user_id)
+	{
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false AND status = declined");
 		$count = $result->num_rows();
 		return $count;
 	}
@@ -168,19 +169,6 @@ class Offer_model extends CI_Model
 	
 	public function set_received_offer_notification($user_id)
 	{
-		/*
-		$this->db->set('received_offer_notification', $value, FALSE);
-		$this->db->where('id', $user_id);
-		
-		if( $this->db->update('users') != TRUE)
-		{
-			throw new Exception("Cannot Update Notifications");
-		}
-		else
-		{
-			return $this->db->affected_rows();
-		}
-		*/
 		
 		$this->db->set('seen_by_seller', true, FALSE);
 		$this->db->where('seller_id', $user_id);
@@ -193,8 +181,6 @@ class Offer_model extends CI_Model
 		{
 			return $this->db->affected_rows();
 		}
-		
-		
 		
 	}
 	
@@ -213,7 +199,6 @@ class Offer_model extends CI_Model
 		}
 	}
 	
-
 }
 
 ?>

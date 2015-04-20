@@ -44,7 +44,7 @@
 
 	<hr>
 	
-	<button type="button" id="pending_button" class="btn btn-default btn-warning offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" id="pending_button" class="btn btn-default btn-warning offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted <span class="badge"><?php if($accepted_notification>0){echo $accepted_notification ;} ?></span></button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined <span class="badge"><?php if($declined_notification>0){echo $declined_notification ;} ?></span></button>
 	<br>
 	<br>
 	

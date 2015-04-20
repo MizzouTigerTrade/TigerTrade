@@ -68,6 +68,8 @@ class Offers extends CI_Controller
 		$data['pending'] = $this->offer_model->get_buyer_pending_offers($user->id);
 		$data['accepted'] = $this->offer_model->get_buyer_accepted_offers($user->id);
 		$data['declined'] = $this->offer_model->get_buyer_declined_offers($user->id);
+		$data['accepted_notification'] = $this->offer_model->get_accepted_offer_notification($user->id);
+		$data['declined_notification'] = $this->offer_model->get_declined_offer_notification($user->id);
 		$this->layout->view('offers/sent', $data);
 	}
 
