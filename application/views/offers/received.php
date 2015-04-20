@@ -122,7 +122,7 @@
 					</div>
 				</div>
 				
-				<td><span class="badge notification-badge"><?php if($row->seen_by_seller == false){echo "!" ;} ?></span> <?php echo $row->title; ?></td>
+				<td><span class="badge notification-badge"><?php if($row->seen_by_seller == 0){echo "!" ;} ?></span> <?php echo $row->title; ?></td>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo "$" . $row->offer_price; ?></td>
 				<td><button type="button" class="btn btn-xs btn-primary">Reply</button></td>
