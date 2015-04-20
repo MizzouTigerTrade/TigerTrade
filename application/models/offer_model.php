@@ -166,8 +166,9 @@ class Offer_model extends CI_Model
 		}
 	}
 	
-	public function set_received_offer_notification($user_id, $value)
+	public function set_received_offer_notification($user_id)
 	{
+		/*
 		$this->db->set('received_offer_notification', $value, FALSE);
 		$this->db->where('id', $user_id);
 		
@@ -179,14 +180,30 @@ class Offer_model extends CI_Model
 		{
 			return $this->db->affected_rows();
 		}
+		*/
+		
+		$this->db->set('seen_by_seller', true, FALSE);
+		$this->db->where('seller_id', $user_id);
+		
+		if( $this->db->update('offers') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+		
+		
+		
 	}
 	
-	public function set_sent_offer_notification($user_id, $value)
+	public function set_sent_offer_notification($user_id)
 	{
-		$this->db->set('sent_offer_notification', $value, FALSE);
-		$this->db->where('id', $user_id);
+		$this->db->set('seen_by_buyer', true, FALSE);
+		$this->db->where('buyer_id', $user_id);
 		
-		if( $this->db->update('users') != TRUE)
+		if( $this->db->update('offers') != TRUE)
 		{
 			throw new Exception("Cannot Update Notifications");
 		}
