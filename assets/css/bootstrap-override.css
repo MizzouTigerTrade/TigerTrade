@@ -154,6 +154,11 @@ hr {
 	color: white;
 }
 
+.btn-default .badge{
+	background-color: #D43F3A;
+	color: white;
+}
+
 .btn-warning .badge{
 	background-color: #D43F3A;
 	color: white;
