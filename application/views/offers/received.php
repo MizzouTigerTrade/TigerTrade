@@ -61,7 +61,7 @@
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr style="background-color: white;">
-				<th>Ad Name</th>
+				<th>Ad Title</th>
 				<th>Buyer Message</th>
 				<th>Offer Price</th>
 				<th></th>
@@ -136,7 +136,7 @@
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr style="background-color: white;">
-				<th>Ad Name</th>
+				<th>Ad Title</th>
 				<th>Buyer Message</th>
 				<th>Your Response</th>
 				<th>Offer Price</th>
@@ -159,7 +159,7 @@
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr style="background-color: white;">
-				<th>Ad Name</th>
+				<th>Ad Title</th>
 				<th>Buyer Message</th>
 				<th>Your Response</th>
 				<th>Offer Price</th>

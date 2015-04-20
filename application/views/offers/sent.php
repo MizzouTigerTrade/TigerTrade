@@ -54,14 +54,14 @@
 			<th>Ad Title</th>
 			<th>Your Message</th>
 			<th>Offer Price</th>
-			<th>Status</th>
+			<!--<th>Status</th>-->
 		</tr>
 		<?php foreach ($pending->result() as $row) { ?>
 		<tr>
 			<td><?php echo $row->title; ?></td>
 			<td><?php echo $row->buyer_message; ?></td>
 			<td><?php echo "$" . $row->offer_price; ?></td>
-			<td><?php echo $row->status; ?></td>
+			<?php /* <td><?php echo $row->status; ?></td> */ ?>
 		</tr>
 		<?php } ?>
 	</table>
@@ -73,14 +73,12 @@
 			<th>Ad Title</th>
 			<th>Seller Response</th>
 			<th>Offer Price</th>
-			<th>Status</th>
 		</tr>
 		<?php foreach ($accepted->result() as $row) { ?>
 		<tr>
 			<td><span class="badge notification-badge"><?php if($row->seen_by_buyer == false){echo "!" ;} ?></span> <?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
 			<td><?php echo "$" . $row->offer_price; ?></td>
-			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
 	</table>
@@ -92,14 +90,12 @@
 			<th>Ad Title</th>
 			<th>Seller Response</th>
 			<th>Offer Price</th>
-			<th>Status</th>
 		</tr>
 		<?php foreach ($declined->result() as $row) { ?>
 		<tr>
 			<td><span class="badge notification-badge"><?php if($row->seen_by_buyer == false){echo "!" ;} ?></span> <?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
 			<td><?php echo "$" . $row->offer_price; ?></td>
-			<td><?php echo $row->status; ?></td>
 		</tr>
 		<?php } ?>
 	</table>
