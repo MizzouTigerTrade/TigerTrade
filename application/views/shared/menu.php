@@ -1,4 +1,8 @@
+
+<link href="<?php echo base_url('assets/css/custom.css') ?>" rel="stylesheet">
+
 <?php 
+
 	if($user = $this->ion_auth->user()->row()){		
 		$user_id = $this->ion_auth->get_user_id();
 		$flag_notification = $this->ad_model->get_flagged_ads_count();
