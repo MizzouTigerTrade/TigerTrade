@@ -125,14 +125,14 @@ class Offer_model extends CI_Model
 	
 	public function get_accepted_offer_notification($user_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false AND status = accepted");
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false AND status = 'Accepted'");
 		$count = $result->num_rows();
 		return $count;
 	}
 	
 	public function get_declined_offer_notification($user_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false AND status = declined");
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false AND status = 'Declined'");
 		$count = $result->num_rows();
 		return $count;
 	}
