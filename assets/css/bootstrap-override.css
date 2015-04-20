@@ -149,6 +149,7 @@ hr {
 	color: white;
 }
 
-.btn{
-	outline: none;
+.badge{
+	background-color: #D43F3A;
+	color: white;
 }
