@@ -186,7 +186,7 @@ class Offer_model extends CI_Model
 	
 	public function set_sent_offer_notification($user_id)
 	{
-		$this->db->set('seen_by_buyer', false, FALSE);
+		$this->db->set('seen_by_buyer', 2, FALSE);
 		$this->db->where('buyer_id', $user_id);
 		
 		if( $this->db->update('offers') != TRUE)
