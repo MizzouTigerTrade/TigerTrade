@@ -111,17 +111,27 @@ class Offer_model extends CI_Model
 	
 	public function get_received_offer_notification($user_id)
 	{
+		/*
 		$result = $this->db->query("SELECT * FROM users WHERE id = '$user_id'");
 		$result = $result->row();
 		return $result->received_offer_notification;
+		*/
+		
+		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$user_id' AND seen_by_seller = 'false'");
+		$count = $result->num_rows();
 		
 	}
 	
 	public function get_sent_offer_notification($user_id)
 	{
+		/*
 		$result = $this->db->query("SELECT * FROM users WHERE id = '$user_id'");
 		$result = $result->row();
 		return $result->sent_offer_notification;
+		*/
+		
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = 'false'");
+		$count = $result->num_rows()
 	}
 	
 	public function add_received_offer_notification($user_id)
