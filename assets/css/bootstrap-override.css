@@ -149,7 +149,7 @@ hr {
 	color: white;
 }
 
-.badge{
+.btn-warning .badge{
 	background-color: #D43F3A;
 	color: white;
 }
