@@ -149,7 +149,7 @@ class User extends CI_Controller
 			'value' => $this->form_validation->set_value('email', $user->email),
 		);
 
-		$this->layout->view('user/edit_profile', $this->data);
+		$this->layout->view('user/edit_profile/' . $this->ion_auth->get_user_id(), $this->data);
 	}
 	
 	function _get_csrf_nonce()
