@@ -64,6 +64,7 @@
 				<th>Ad Title</th>
 				<th>Buyer Message</th>
 				<th>Offer Price</th>
+				<th>Asking Price</th>
 				<th></th>
 			</tr>
 			<?php foreach ($pending->result() as $row) { ?>
@@ -125,6 +126,7 @@
 				<td><span class="badge notification-badge"><?php if($row->seen_by_seller == 0){echo "!" ;} ?></span> <?php echo $row->title; ?></td>
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo "$" . $row->offer_price; ?></td>
+				<td><?php echo "$" . $row->asking_price; ?></td>
 				<td><button type="button" class="btn btn-xs btn-primary">Reply</button></td>
 			</tr>
 			<?php } ?>
@@ -140,7 +142,7 @@
 				<th>Buyer Message</th>
 				<th>Your Response</th>
 				<th>Offer Price</th>
-				<th>Status</th>
+				<th>Asking Price</th>
 			</tr>
 			<?php foreach ($accepted->result() as $row) { ?>
 			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/detail/' . $row->offer_id) ?>'>
@@ -148,7 +150,7 @@
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo $row->seller_response; ?></td>
 				<td><?php echo "$" . $row->offer_price; ?></td>
-				<td><?php echo $row->status; ?></td>
+				<td><?php echo "$" . $row->asking_price; ?></td>
 			</tr>
 			<?php } ?>
 		</table>
@@ -163,7 +165,7 @@
 				<th>Buyer Message</th>
 				<th>Your Response</th>
 				<th>Offer Price</th>
-				<th>Status</th>
+				<th>Asking Price</th>
 			</tr>
 			<?php foreach ($declined->result() as $row) { ?>
 			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/detail/' . $row->offer_id) ?>'>
@@ -171,7 +173,7 @@
 				<td><?php echo $row->buyer_message; ?></td>
 				<td><?php echo $row->seller_response; ?></td>
 				<td><?php echo "$" . $row->offer_price; ?></td>
-				<td><?php echo $row->status; ?></td>
+				<td><?php echo "$" . $row->asking_price; ?></td>
 			</tr>
 			<?php } ?>
 		</table>
