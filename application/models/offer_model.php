@@ -105,7 +105,8 @@ class Offer_model extends CI_Model
 		$this->db->update('offers', $data); 
 		
 		$buyer_id = $this->get_buyer_id($offer_id);
-		$this->add_sent_offer_notification($buyer_id);
+		//$this->add_sent_offer_notification($buyer_id);
+		$this->set_sent_offer_notification($buyer_id);
 		
 	}
 	
