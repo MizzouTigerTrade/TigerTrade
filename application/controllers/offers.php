@@ -80,14 +80,17 @@ class Offers extends CI_Controller
 		$data['offer_notification'] = $offer_notification;
 		
 		if( $offer_notification > 0){
-		$this->session->set_flashdata('message', "You have " . $offer_notification . " new offers!");
+			$data['message'] = "You have " . $offer_notification . " new offers!";
+		}
+		else{
+			$data['message'] = $this->session->flashdata('message');
 		}
 		
 		$data['title'] = 'Received Offers';
 		$data['pending'] = $this->offer_model->get_seller_pending_offers($user->id);
 		$data['accepted'] = $this->offer_model->get_seller_accepted_offers($user->id);
 		$data['declined'] = $this->offer_model->get_seller_declined_offers($user->id);
-		$data['message'] = $this->session->flashdata('message');
+		
 		$this->layout->view('offers/received', $data);
 		$this->offer_model->set_all_received_offer_notification($user->id);
 	}
