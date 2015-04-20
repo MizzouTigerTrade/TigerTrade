@@ -76,7 +76,13 @@ class Offers extends CI_Controller
 	function received()
 	{
 		$user = $this->ion_auth->user()->row();
-		$data['offer_notification'] = $this->offer_model->get_received_offer_notification($user->id);
+		$offer_notification = $this->offer_model->get_received_offer_notification($user->id);
+		$data['offer_notification'] = $offer_notification;
+		
+		if( $offer_notification > 0){
+		$this->session->set_flashdata('message', "You have " . $offer_notification . " new offers!");
+		}
+		
 		$data['title'] = 'Received Offers';
 		$data['pending'] = $this->offer_model->get_seller_pending_offers($user->id);
 		$data['accepted'] = $this->offer_model->get_seller_accepted_offers($user->id);
