@@ -79,7 +79,10 @@ class Offers extends CI_Controller
 		$offer_notification = $this->offer_model->get_received_offer_notification($user->id);
 		$data['offer_notification'] = $offer_notification;
 		
-		if( $offer_notification > 0){
+		if($offer_notification == 1){
+			$data['message'] = "You have 1 new offer!";
+		}
+		else if ($offer_notification > 1){
 			$data['message'] = "You have " . $offer_notification . " new offers!";
 		}
 		else{
