@@ -73,7 +73,7 @@
 			<div class="modal fade" id="replyModal<?php echo $row->offer_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
-							<div class="modal-header" style="background-color: grey;">
+							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 								<h3 class="modal-title" id="myModalLabel">Offer: <?php echo $row->title; ?></h3>
 							</div>
