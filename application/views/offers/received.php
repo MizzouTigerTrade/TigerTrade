@@ -53,7 +53,7 @@
 	  </div>
 	<?php }; ?>
 	  
-	<button type="button" id="pending_button" class="btn btn-default btn-warning offers-button">Pending <span class="badge notification-badge"><?php if($offer_notification>0){echo $offer_notification ;} ?></span></button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
+	<button type="button" id="pending_button" class="btn btn-default btn-warning offers-button">Pending <span class="badge"><?php if($offer_notification>0){echo $offer_notification ;} ?></span></button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted</button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined</button>
 	<br>
 	<br>
 	
