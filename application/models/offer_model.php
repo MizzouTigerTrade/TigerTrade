@@ -142,7 +142,7 @@ class Offer_model extends CI_Model
 	public function set_received_offer_notification($user_id)
 	{
 		
-		$this->db->set('seen_by_seller', true, FALSE);
+		$this->db->set('seen_by_seller', 1, FALSE);
 		$this->db->where('seller_id', $user_id);
 		
 		if( $this->db->update('offers') != TRUE)
@@ -158,7 +158,7 @@ class Offer_model extends CI_Model
 	
 	public function set_sent_offer_notification($user_id, $offer_id)
 	{
-		$this->db->set('seen_by_buyer', false, FALSE);
+		$this->db->set('seen_by_buyer', 0, FALSE);
 		$this->db->where('buyer_id', $user_id);
 		$this->db->where('offer_id', $offer_id);
 		
