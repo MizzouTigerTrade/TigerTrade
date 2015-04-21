@@ -333,7 +333,7 @@ class Ad_model extends CI_Model
 	//edit
 	public function comment_ad($ad_id, $description, $user_id, $timestmp)
 	{
-		
+	/*	
 		$this->db->where('ad_id', $ad_id);
 		$this->db->set('description', $description);
 		$this->db->set('user_id', $user_id);
@@ -348,7 +348,7 @@ class Ad_model extends CI_Model
 		{
 			return $this->db->affected_rows();
 		}
-		/*
+*/
 		$data2 = array(
 		'ad_id' => $ad_id ,
 		'description' => $description ,
@@ -364,7 +364,6 @@ class Ad_model extends CI_Model
 		{
 			return $this->db->affected_rows();
 		}
-		*/
 	}
 }
 
