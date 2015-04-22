@@ -148,10 +148,12 @@ $(document).ready(function(){
 				
 				<div class="row" style="padding-bottom: 15px;" id="emptySearch"></div>
 				<?php foreach ($ads->result() as $row) { ?>
-				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>" class="">
+				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+					
 					<div class="row ad_display" style="padding-bottom: 15px;" id="<?= $row->ad_id ?>">
-						<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
-							<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
+						<div class="" style="margin-top: 20px; margin-bottom: 20px;">
+							
+							<div class="col-xs-3 col-md-2 col-md-offset-1">
 							<?php 	$flag = 0;
 									$image_link = "";
 									foreach($images->result() as $img) { 
@@ -167,7 +169,8 @@ $(document).ready(function(){
 									<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="Error loading image" width="100%" height="100%">
 							<?php } ?>
 							</div>
-							<div class="media-body col-xs-9 col-md-8 search">
+							
+							<div class="col-xs-9 col-md-8 search">
 								<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
 								<div class="row">
 									<div class="col-xs-12">
@@ -187,8 +190,10 @@ $(document).ready(function(){
 									</div>
 								</div>
 							</div>
+							
 						</div>
 					</div>
+					
 				</a>
 				<? } ?>
 				
