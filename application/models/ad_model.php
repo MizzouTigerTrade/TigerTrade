@@ -311,15 +311,15 @@ class Ad_model extends CI_Model
 	public function get_comments($ad_id)
 	{
 		//$query = $this->db->query("SELECT description FROM comments where ad_id = '$ad_id'");
-		$query = $this->db->query("SELECT description FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
+		$query = $this->db->query("SELECT ad_comment FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
 		$result = $query->result();
 		return $result;
 	}
 	
-	public function comment_ad($ad_id, $description, $user_id, $timestmp)
+	public function comment_ad($ad_id, $ad_comment, $user_id, $timestmp)
 	{
 		$this->db->set('ad_id', $ad_id);
-		$this->db->set('description', $description);
+		$this->db->set('ad_comment', $ad_comment);
 		$this->db->set('user_id', $user_id);
 		$this->db->set('timestmp', $timestmp);
 		

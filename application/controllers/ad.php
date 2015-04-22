@@ -267,7 +267,7 @@ class Ad extends CI_Controller
 		else
 		{
 			$ad_id = $this->security->xss_clean($this->input->post('ad_id'));
-			$description = $this->security->xss_clean($this->input->post('comment'));
+			$ad_comment = $this->security->xss_clean($this->input->post('comment'));
 			
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
@@ -275,9 +275,9 @@ class Ad extends CI_Controller
 			$date = new DateTime();
 			$timestmp = $date->getTimestamp();
 		
-			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
+			$this->ad_model->comment_ad($ad_id, $ad_comment, $user_id, $timestmp);
 	
-			$this->session->set_flashdata('message', 'Your comment: "' . $description . '" has been saved.');
+			$this->session->set_flashdata('message', 'Your comment: "' . $ad_comment . '" has been saved.');
 			redirect('ad/details/' . $ad_id, 'refresh');
 		}
 	}
