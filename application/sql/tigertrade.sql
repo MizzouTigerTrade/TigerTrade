@@ -10,7 +10,7 @@ USE kylecarlson_tigertrade;
 --    timestmp          - A timestamp of when the comment was made.
 CREATE TABLE kylecarlson_tigertrade.comments (
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ad(ad_id),
-	description		VARCHAR(500),
+	ad_comment	VARCHAR(500),
 	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	timestmp 	TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
