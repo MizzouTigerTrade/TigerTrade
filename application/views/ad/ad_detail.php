@@ -58,7 +58,7 @@
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<div class="form-group">			
 					<div class="col-sm-10">
-						<label for="comments" class="col-sm-10">Insert New Comment About Ad</label>
+						<label for="comments" class="col-sm-10">New Comments:</label>
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
 				</div>
