@@ -47,6 +47,9 @@
 			
 			<img style="margin-top: 10px;" class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
+			
+			<a class="btn btn-sm btn-success" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show User Comments</a>
+			
 		</div>
 	</div>
 	<?php foreach($comments as $row) { ?>

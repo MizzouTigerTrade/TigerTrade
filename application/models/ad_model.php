@@ -332,23 +332,6 @@ class Ad_model extends CI_Model
 		{
 			return $this->db->affected_rows();
 		}
-/*
-		$data2 = array(
-		'ad_id' => $ad_id ,
-		'description' => $description ,
-		'user_id' => $user_id ,
-		'timestmp' => $timestmp ,
-		);
-
-		if( $this->db->insert('comments', $data2) != TRUE)
-		{
-			throw new Exception("Cannot Insert Comments");
-		}
-		else
-		{
-			return $this->db->affected_rows();
-		}
-		*/
 	}
 }
 
