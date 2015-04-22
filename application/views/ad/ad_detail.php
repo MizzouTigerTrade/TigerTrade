@@ -49,7 +49,12 @@
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 	</div>
-	
+	<label for="comments" class="col-sm-10">New Comments:</label>
+	<?php foreach ($result as $comment) {}?>
+		<div class="col-xs-12">
+			<p style="font-size: .9em;"><?php echo $comment->description; ?></p>
+		</div>
+	<?php } ?>
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
