@@ -56,10 +56,10 @@
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
-			<?php foreach($ad->comments as $row) { ?>
+			<?php foreach($ad as $row) { ?>
 				<div class="col-xs-12">
 					<label for="comments" class="col-sm-10">View Comments:</label>
-					<p style="font-size: .9em;"><?php echo $row->description; ?></p>
+					<p style="font-size: .9em;"><?php echo $row->comments; ?></p>
 					<p style="font-size: .9em;"><?php echo $row->timestmp; ?></p>
 				</div>
 			<?php } ?>
