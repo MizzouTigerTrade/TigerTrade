@@ -16,7 +16,7 @@
 	  </div>
 	<?php }; ?>
 
-	<?php $images = $images->result();
+	<?php $images = $images->results();
 		echo $images.count();
 	?>
 <!--
