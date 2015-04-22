@@ -252,9 +252,10 @@ class Ad extends CI_Controller
 		redirect('/ad/details/' . $ad_id);
 	}
 	//adds a comment to the ad
-	function comment($ad_id)
+	function comment()
 	{
 		$this->form_validation->set_rules('comment', 'Comment', 'required');	
+		$this->form_validation->set_rules('ad_id', 'Ad id', 'required');
 
 		//if validation fails
 		if ($this->form_validation->run() == false)
@@ -264,6 +265,7 @@ class Ad extends CI_Controller
 		//if validation passes
 		else
 		{
+			$ad_id = $this->security->xss_clean($this->input->post('ad_id'));
 			$description = $this->security->xss_clean($this->input->post('comment'));
 			
 			$user = $this->ion_auth->user()->row();
