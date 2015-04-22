@@ -52,16 +52,17 @@
 			
 		</div>
 	</div>
-	<?php foreach($comments as $row) { ?>
-		<div class="col-xs-12">
-			<label for="comments" class="col-sm-10">View Comments:</label>
-			<p style="font-size: .9em;"><?php echo $row->description; ?></p>
-			<p style="font-size: .9em;"><?php echo $row->timestmp; ?></p>
-		</div>
-	<?php } ?>
+
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
+			<?php foreach($ad->comments as $row) { ?>
+				<div class="col-xs-12">
+					<label for="comments" class="col-sm-10">View Comments:</label>
+					<p style="font-size: .9em;"><?php echo $row->description; ?></p>
+					<p style="font-size: .9em;"><?php echo $row->timestmp; ?></p>
+				</div>
+			<?php } ?>
 			<div class="col-xs-12" style="padding: 0;">
 				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
