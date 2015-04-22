@@ -16,7 +16,7 @@
 	  </div>
 	<?php }; ?>
 
-	<?php echo $images->count();?>
+	<?php echo $images.count();?>
 <!--
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
 
