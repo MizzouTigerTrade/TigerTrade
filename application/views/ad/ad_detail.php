@@ -56,15 +56,14 @@
 			<div class="col-xs-12" style="padding: 0;">
 				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
-				<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show Comments</a>
-				<label for="comments" class="col-sm-2 control-label label-20">Comment</label>
 				<div class="form-group">			
 					<div class="col-sm-10">
+						<label for="comments" class="col-sm-2 control-label label-20">Comment</label>
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
+					<div class="col-sm-10" style="padding: 10px">
 						<button type="submit" class="btn btn-default">Submit</button>
 					</div>
 				</div>
