@@ -277,7 +277,7 @@ class Ad extends CI_Controller
 		
 			$this->ad_model->comment_ad($ad_id, $description, $user_id, $timestmp);
 	
-			$this->session->set_flashdata('message', 'desc ' . $description . ' userid ' . $user_id . ' adid ' . $ad_id . ' time ' . $timestmp);
+			$this->session->set_flashdata('message', 'Your comment: "' . $description . '" has been saved.');
 			redirect('ad/details/' . $ad_id, 'refresh');
 		}
 	}

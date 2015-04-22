@@ -49,7 +49,7 @@
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 	</div>
-	<?php foreach ($comment as $row) { ?>
+	<?php foreach ($comments as $row) { ?>
 		<div class="col-xs-12">
 			<label for="comments" class="col-sm-10">View Comments:</label>
 			<p style="font-size: .9em;"><?php echo $row->description; ?></p>
@@ -64,11 +64,12 @@
 				<div class="form-group">			
 					<div class="col-sm-10">
 						<label for="comments" class="col-sm-10">New Comments:</label>
+						<br>
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-10" style="padding: 10px">
+					<div class="col-sm-10" style="padding: 5px">
 						<button type="submit" class="btn btn-default">Submit</button>
 					</div>
 				</div>
