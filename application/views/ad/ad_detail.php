@@ -49,7 +49,7 @@
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 	</div>
-	<?php foreach ($result as $comment) {}?>
+	<?php foreach ($result as $comment) { ?>
 		<div class="col-xs-12">
 			<label for="comments" class="col-sm-10">View Comments:</label>
 			<p style="font-size: .9em;"><?php echo $comment->description; ?></p>
