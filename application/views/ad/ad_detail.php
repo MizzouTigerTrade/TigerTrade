@@ -144,21 +144,6 @@
 			
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
-		<div class="col-sm-5">
-			<?php 
-				$flag = 0;
-				$image_link = "nothing";
-				foreach ($images->result() as $img) {
-					if($flag == 0)
-					{
-						$image_link = base_url('/'.$img->image_path);
-						$flag++;
-					}
-				}
-
-			 ?> 
-			<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" width="100%" height="100%">
-		</div>
 	</div>
 	
 	<!-- Devices == Extra Small (Mobile) -->
