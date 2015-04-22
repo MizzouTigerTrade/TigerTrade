@@ -27,14 +27,14 @@ class Offer_model extends CI_Model
 		}
 		else
 		{
-			$this->add_received_offer_notification($seller_id);
+			//$this->add_received_offer_notification($seller_id);
 			return $this->db->affected_rows();
 		}
 	}
 
 	public function get_offer($offer_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE offer_id = '$offer_id'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE offer_id = '$offer_id'");
 		$result = $result->row();
 		return $result;
 	}
@@ -46,37 +46,43 @@ class Offer_model extends CI_Model
 
 	public function get_buyer_pending_offers($buyer_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$buyer_id' AND status = 'Pending'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE buyer_id = '$buyer_id' AND status = 'Pending'");
 		return $result;
 	}
 
 	public function get_buyer_declined_offers($buyer_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$buyer_id' AND status = 'Declined'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE buyer_id = '$buyer_id' AND status = 'Declined'");
 		return $result;
 	}
 	
 	public function get_buyer_accepted_offers($buyer_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$buyer_id' AND status = 'Accepted'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE buyer_id = '$buyer_id' AND status = 'Accepted'");
 		return $result;
 	}
 
 	public function get_seller_pending_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Pending'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Pending'");
 		return $result;
 	}
 	
 	public function get_seller_declined_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Declined'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Declined'");
 		return $result;
 	}
 	
 	public function get_seller_accepted_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$seller_id' AND status = 'Accepted'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Accepted'");
+		return $result;
+	}
+	
+	public function get_seller_accepted_declined_offers($seller_id)
+	{
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Accepted' OR status = 'Declined'");
 		return $result;
 	}
 	
@@ -99,30 +105,65 @@ class Offer_model extends CI_Model
 		$this->db->update('offers', $data); 
 		
 		$buyer_id = $this->get_buyer_id($offer_id);
-		$this->add_sent_offer_notification($buyer_id);
+		$this->set_sent_offer_notification($buyer_id, $offer_id);
+		
 	}
 	
 	public function get_received_offer_notification($user_id)
 	{
-		$result = $this->db->query("SELECT * FROM users WHERE id = '$user_id'");
-		$result = $result->row();
-		return $result->received_offer_notification;
-		
+		$result = $this->db->query("SELECT * FROM offers WHERE seller_id = '$user_id' AND seen_by_seller = false");
+		$count = $result->num_rows();
+		return $count;
 	}
 	
 	public function get_sent_offer_notification($user_id)
 	{
-		$result = $this->db->query("SELECT * FROM users WHERE id = '$user_id'");
-		$result = $result->row();
-		return $result->sent_offer_notification;
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false");
+		$count = $result->num_rows();
+		return $count;
 	}
 	
-	public function add_received_offer_notification($user_id)
+	public function get_accepted_offer_notification($user_id)
 	{
-		$this->db->set('received_offer_notification', 'received_offer_notification+1', FALSE);
-		$this->db->where('id', $user_id);
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false AND status = 'Accepted'");
+		$count = $result->num_rows();
+		return $count;
+	}
+	
+	public function get_declined_offer_notification($user_id)
+	{
+		$result = $this->db->query("SELECT * FROM offers WHERE buyer_id = '$user_id' AND seen_by_buyer = false AND status = 'Declined'");
+		$count = $result->num_rows();
+		return $count;
+	}
+	
+	//sets specific received offer seen_by_seller to true
+	public function set_received_offer_notification($user_id, $offer_id)
+	{
 		
-		if( $this->db->update('users') != TRUE)
+		$this->db->set('seen_by_seller', 1, FALSE);
+		$this->db->where('seller_id', $user_id);
+		$this->db->where('offer_id', $offer_id);
+		
+		if( $this->db->update('offers') != TRUE)
+		{
+			throw new Exception("Cannot Update Notifications");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+		
+	}
+	
+	//sets specific offers seen_by_buyer to false
+	public function set_sent_offer_notification($user_id, $offer_id)
+	{
+		$this->db->set('seen_by_buyer', 0, FALSE);
+		$this->db->where('buyer_id', $user_id);
+		$this->db->where('offer_id', $offer_id);
+		
+		if( $this->db->update('offers') != TRUE)
 		{
 			throw new Exception("Cannot Update Notifications");
 		}
@@ -132,12 +173,13 @@ class Offer_model extends CI_Model
 		}
 	}
 	
-	public function add_sent_offer_notification($user_id)
+	//sets all seen_by_buyer to true
+	public function set_all_sent_offer_notification($user_id)
 	{
-		$this->db->set('sent_offer_notification', 'sent_offer_notification+1', FALSE);
-		$this->db->where('id', $user_id);
+		$this->db->set('seen_by_buyer', 1, FALSE);
+		$this->db->where('buyer_id', $user_id);
 		
-		if( $this->db->update('users') != TRUE)
+		if( $this->db->update('offers') != TRUE)
 		{
 			throw new Exception("Cannot Update Notifications");
 		}
@@ -147,12 +189,13 @@ class Offer_model extends CI_Model
 		}
 	}
 	
-	public function set_received_offer_notification($user_id, $value)
+	//sets all seen_by_sller to true
+	public function set_all_received_offer_notification($user_id)
 	{
-		$this->db->set('received_offer_notification', $value, FALSE);
-		$this->db->where('id', $user_id);
+		$this->db->set('seen_by_seller', 1, FALSE);
+		$this->db->where('seller_id', $user_id);
 		
-		if( $this->db->update('users') != TRUE)
+		if( $this->db->update('offers') != TRUE)
 		{
 			throw new Exception("Cannot Update Notifications");
 		}
@@ -162,22 +205,6 @@ class Offer_model extends CI_Model
 		}
 	}
 	
-	public function set_sent_offer_notification($user_id, $value)
-	{
-		$this->db->set('sent_offer_notification', $value, FALSE);
-		$this->db->where('id', $user_id);
-		
-		if( $this->db->update('users') != TRUE)
-		{
-			throw new Exception("Cannot Update Notifications");
-		}
-		else
-		{
-			return $this->db->affected_rows();
-		}
-	}
-	
-
 }
 
 ?>

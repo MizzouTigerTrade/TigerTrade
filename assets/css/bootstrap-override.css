@@ -143,3 +143,23 @@ hr {
 .list-group-item:hover {
 	background: rgba(190, 190, 190, 0.9);
 }
+
+.notification-badge{
+	background-color: #D43F3A;
+	color: white;
+}
+
+.btn .badge{
+	background-color: #D43F3A;
+	color: white;
+}
+
+.btn-default .badge{
+	background-color: #D43F3A;
+	color: white;
+}
+
+.btn-warning .badge{
+	background-color: #D43F3A;
+	color: white;
+}

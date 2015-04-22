@@ -103,12 +103,12 @@
 				
 			<?php 
 			echo form_hidden('id', $user->id);
-			echo form_hidden($csrf); 
+			//echo form_hidden($csrf); 
 			?>
 			
             <div class="form-group">
                   <div class="col-sm-offset-4 col-sm-4">
-                        <button type="submit" class="btn btn-default">Save</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                   </div>
             </div>
 			

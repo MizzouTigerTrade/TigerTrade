@@ -63,8 +63,7 @@ CREATE TABLE kylecarlson_tigertrade.ads (
 	price	INTEGER,
 	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
-	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id),
-	flag_count INTEGER DEFAULT '0'
+	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id)
 );
 
 -- Table: kylecarlson_tigertrade.images
@@ -102,7 +101,9 @@ CREATE TABLE kylecarlson_tigertrade.offers (
 	price	INTEGER,
 	buyer_message BLOB,
 	seller_response BLOB,
-	status VARCHAR(10) DEFAULT "Pending"
+	status VARCHAR(10) DEFAULT "Pending",
+	seen_by_buyer BOOLEAN DEFAULT 1,
+	seen_by_seller BOOLEAN DEFAULT 0
 );
 
 DROP TABLE IF EXISTS `groups`;
