@@ -48,8 +48,6 @@
 			<img style="margin-top: 10px;" class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 			
-			<a class="btn btn-sm btn-success" href="<?php echo base_url('/ad/user_comments/' . $ad->ad_id) ?>">Show User Comments</a>
-			
 		</div>
 	</div>
 
@@ -57,9 +55,9 @@
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
 			<label for="comments" class="col-sm-10">View Comments:</label>
-			<?php foreach($ad as $row) { ?>
+			<?php foreach($ad->comments as $row) { ?>
 				<div class="col-xs-12">
-					<p style="font-size: .9em;"><?php echo $row->comments; ?></p>
+					<p style="font-size: .9em;"><?php echo $row; ?></p>
 				</div>
 			<?php } ?>
 			<div class="col-xs-12" style="padding: 0;">
