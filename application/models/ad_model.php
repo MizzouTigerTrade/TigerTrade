@@ -333,8 +333,7 @@ class Ad_model extends CI_Model
 	//edit
 	public function comment_ad($ad_id, $description, $user_id, $timestmp)
 	{
-		
-		$this->db->where('ad_id', $ad_id);
+		$this->db->set('ad_id', $ad_id);
 		$this->db->set('description', $description);
 		$this->db->set('user_id', $user_id);
 		$this->db->set('timestmp', $timestmp);
