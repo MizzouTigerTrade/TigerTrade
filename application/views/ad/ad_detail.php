@@ -57,7 +57,7 @@
 			<label for="comments" class="col-sm-10">View Comments:</label>
 			<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
-					<p style="font-size: .9em;"><?php echo $row; ?></p>
+					<p style="font-size: .9em;"><?php echo $row->ad_comment; ?></p>
 				</div>
 			<?php } ?>
 			<div class="col-xs-12" style="padding: 0;">
