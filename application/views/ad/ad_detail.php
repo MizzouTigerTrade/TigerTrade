@@ -14,11 +14,11 @@
 		  <?php echo $message;?>
 		</div>
 	  </div>
-	<?php }; ?>
+	<?php } ?>
 
 	
-
-	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
+<!--
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
 
 	<ol class="carousel-indicators">
 		<?php 
@@ -46,14 +46,14 @@
 					<img class="img-thumbnail" src="<?php echo $img->image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" width="100%" height="100%">
 				</div>
 			</div>
-			<?php } 
-			else {?>
+<?php 		} 
+			else { ?>
 			<div class="item">
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 45px;">
 					<img class="img-thumbnail" src="<?php echo $img->image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" width="100%" height="100%">
 				</div>
 			</div>
-		<?php  }
+<?php  		}
 		} ?>
 
 	</div>
@@ -67,7 +67,7 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div>
-
+-->
 	<!-- Devices >= Small -->
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
