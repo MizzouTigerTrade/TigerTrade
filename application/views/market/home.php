@@ -31,7 +31,7 @@ $(document).ready(function(){
 
 	$(function(){
       // bind change event to select
-      $('.categorySelectForm').bind('change', function () {
+      $('#categorySelectForm').bind('change', function () {
           var url = $(this).val(); // get selected value
           if (url) { // require a URL
               window.location = url; // redirect
@@ -42,7 +42,7 @@ $(document).ready(function(){
 
     $(function(){
       // bind change event to select
-      $('.subCategory').bind('change', function () {
+      $('#subCategory').bind('change', function () {
           var url = $(this).val(); // get selected value
           if (url) { // require a URL
               window.location = url; // redirect
@@ -72,7 +72,7 @@ $(document).ready(function(){
 				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
-						<select class="form-control input-sm" class="categorySelectForm" name="category"> 
+						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
@@ -81,7 +81,7 @@ $(document).ready(function(){
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control input-sm" class="subCategory" name="subCategory">
+						<select class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
@@ -105,7 +105,7 @@ $(document).ready(function(){
 				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
 					<div class="col-xs-12">
-						<select class="form-control input-sm" class="categorySelectForm" name="category"> 
+						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
@@ -114,7 +114,7 @@ $(document).ready(function(){
 						</select>
 					</div>
 					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
-						<select class="form-control input-sm" class="subCategory" name="subCategory">
+						<select class="form-control input-sm" id="subCategory" name="subCategory">
 							<option value="">Select Subcategory</option>
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
