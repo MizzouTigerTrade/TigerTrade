@@ -1,6 +1,6 @@
 <?php
 class MY_Controller extends CI_Controller {
-{
+
     protected $calledClass ;
     protected $calledMethod;
     protected $isAuthException;
