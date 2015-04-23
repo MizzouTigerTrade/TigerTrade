@@ -1,5 +1,23 @@
+<div class="container padding-top-20">
+<div class="container-border">
+
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<h1>Market: <?php echo $market_name; ?></h1>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<div class="row">
+		
+	</div>
+
+</div>
+
+<!-- Carousel
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
-	<!-- Indicators -->
+
 	<ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1"></li>
@@ -7,7 +25,6 @@
 		<li data-target="#myCarousel" data-slide-to="3"></li>
 	</ol>
 	
-	<!-- Wrapper for slides -->
 	<div class="carousel-inner text-center" role="listbox" style="min-height: 300px;">
 		<div class="item active">
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 45px;">
@@ -38,7 +55,6 @@
 		</div>
 	</div>
 	
-	<!-- Left and right controls -->
 	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 		<span class="sr-only">Previous</span>
@@ -48,6 +64,6 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div>
-
+-->
 
 
