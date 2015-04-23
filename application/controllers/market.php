@@ -9,7 +9,6 @@ class Market extends CI_Controller
 		$this->load->model('ad_model');
 		$this->load->model('category_model');
 		$this->load->model('subcategory_model');
-		$this->load->library('pagination');
 		$data['menu'] = $this->load->view('shared/menu');
 	}
 
@@ -44,16 +43,9 @@ class Market extends CI_Controller
 		$data['subcategory_id'] = $sub;
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
-		$data['title'] = 'Market';
-		
-		$config['base_url'] = 'http://jmcquinn.thetigertrade.com/market';
-		$config['total_rows'] = $this->ad_model->get_ad_count();
-		$config['per_page'] = 10; 
-
-		$this->pagination->initialize($config); 
+		$data['title'] = 'Market'; 
 		
 		$this->layout->view('market/home', $data);
-		echo $this->pagination->create_links();
 	}
 
 	function new_category()

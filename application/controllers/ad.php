@@ -245,13 +245,6 @@ class Ad extends CI_Controller
 		redirect ('ad/user_ads');
 	}
 	
-	//gets ad comments
-	function user_comments($ad_id)
-	{
-		//$data['comments'] = $this->ad_model->get_comments($ad_id);
-		//redirect('/ad/details/' . $ad_id);
-	}
-	
 	//adds a comment to the ad
 	function comment()
 	{
