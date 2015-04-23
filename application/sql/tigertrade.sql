@@ -6,7 +6,7 @@ USE kylecarlson_tigertrade;
 -- Table: kylecarlson_tigertrade.comments
 -- Columns:
 --    ad_id			    - A unique code given to an ad.
---    description		- A user provided comment.
+--    ad_comment		- A user provided comment.
 --    timestmp          - A timestamp of when the comment was made.
 CREATE TABLE kylecarlson_tigertrade.comments (
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ad(ad_id),

@@ -132,6 +132,12 @@ class Ad_model extends CI_Model
 		$result = $this->db->query("SELECT * FROM ads");
 		return $result;
 	}
+	//edit
+	public function get_ad_count()
+	{
+		$result = $this->db->query("SELECT COUNT(ads.ad_id) FROM ads");
+		return $result;
+	}
 
 	public function get_ads_category($category_id)
 	{
@@ -313,26 +319,32 @@ class Ad_model extends CI_Model
 		$this->db->delete('ads'); 
 	}
 
-	//edit
-	public function get_user_comments($user_id)
+	public function get_comments($ad_id)
 	{
-		$result = $this->db->query("SELECT * FROM comments where user_id = '$user_id'");
-	}
-	//edit
-	public function get_ad_comments($ad_id)
-	{
-		$result = $this->db->query("SELECT * FROM comments where ad_id = '$ad_id'");
-	}
-	//edit
-	public function comment_ad($ad_id, $description, $user_id, $timestmp)
-	{
+		$this->db->select('ad_comment');
+		$this->db->select('timestmp AS comment_time');
+		$this->db->from('comments');
 		$this->db->where('ad_id', $ad_id);
-		$this->db->set('description', $description);
-		$this->db->set('user_id', $user_id);
-		$this->db->set('timestmp', $timestmp);
 		
-		//insert into db, error thrown if not inserted correctly
-		if($this->db->insert('comments') != TRUE)
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			$results = $query->result();
+			return $results;
+		}
+	}
+	
+	public function comment_ad($ad_id, $ad_comment, $user_id)
+	{
+		$data = array(
+		'ad_id' => $ad_id ,
+		'ad_comment' => $ad_comment,
+		'user_id' => $user_id ,
+		);
+		
+		$this->db->set('timestmp', 'NOW()', FALSE);
+		
+		if($this->db->insert('comments', $data) != TRUE)
 		{
 			throw new Exception("cannot insert");
 		}
