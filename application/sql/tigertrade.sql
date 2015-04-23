@@ -135,7 +135,7 @@ DROP TABLE IF EXISTS `users`;
 # Table structure for table 'users'
 #
 CREATE TABLE `users` (
-`id` int NOT NULL AUTO_INCREMENT,
+	id int NOT NULL AUTO_INCREMENT,
 `ip_address` varchar(15) NOT NULL,
 `username` varchar(100) NOT NULL,
 `password` varchar(255) NOT NULL,
