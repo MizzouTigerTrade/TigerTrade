@@ -371,7 +371,7 @@ class Ad_model extends CI_Model
 		//'timestmp' => $timestmp
 		);
 		
-		$this->db->set('timestmp', 'NOW()', FALSE));
+		$this->db->set('timestmp', 'NOW()', FALSE);
 		
 		//insert into db, error thrown if not inserted correctly
 		if($this->db->insert('comments', $data) != TRUE)
