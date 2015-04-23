@@ -39,6 +39,13 @@
 <div class="container-border">
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
+			<h1>Sent Offers</h1> 
+		</div>
+	</div>
+
+	<hr>
+	
+	<div style="padding: 0 15px;">
 	<button type="button" id="pending_button" class="btn btn-default btn-warning offers-button">Pending</button> <button type="button" id="accepted_button" class="btn btn-default offers-button">Accepted <span class="badge"><?php if($accepted_notification>0){echo $accepted_notification ;} ?></span></button> <button type="button" id="declined_button" class="btn btn-default offers-button">Declined <span class="badge"><?php if($declined_notification>0){echo $declined_notification ;} ?></span></button>
 	<br>
 	<br>
@@ -101,7 +108,7 @@
 		<?php } ?>
 	</table>
 	</div>
-		</div>
-	</div></div>
-	
+	</div>
+</div>
+</div>
 </div>
