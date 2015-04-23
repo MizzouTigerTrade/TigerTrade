@@ -521,7 +521,7 @@ class Auth extends CI_Controller {
 		if (isset($_POST) && !empty($_POST))
 		{
 			// do we have a valid request?
-			if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
+			if (/*$this->_valid_csrf_nonce() === FALSE || */$id != $this->input->post('id'))
 			{
 				show_error($this->lang->line('error_csrf'));
 			}
@@ -600,7 +600,7 @@ class Auth extends CI_Controller {
 		}
 
 		//display the edit user form
-		$this->data['csrf'] = $this->_get_csrf_nonce();
+		//$this->data['csrf'] = $this->_get_csrf_nonce();
 
 		//set the flash data error message if there is one
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
@@ -756,7 +756,7 @@ class Auth extends CI_Controller {
 		$this->layout->view('auth/edit_group', $this->data);
 	}
 
-
+	/*
 	function _get_csrf_nonce()
 	{
 		$this->load->helper('string');
@@ -780,6 +780,7 @@ class Auth extends CI_Controller {
 			return FALSE;
 		}
 	}
+	*/
 
 	function _render_page($view, $data=null, $render=false)
 	{
