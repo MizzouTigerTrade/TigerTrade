@@ -146,7 +146,6 @@ $(document).ready(function(){
                 </div>
                 
                 
-                <hr>
 				<!-- Display Ads: rows of 1 -->
 				<br>
 				
@@ -200,26 +199,6 @@ $(document).ready(function(){
 					
 				</a>
 				<? } ?>
-				
-				
-				<!-- Display Ads: rows of 3 
-				
-				<?php $count = 0; ?>
-				<?php foreach ($ads->result() as $row) { ?>
-					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
-					<div class="col-sm-4" style="margin-bottom: 10px;">
-						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-						<h3><?php echo $row->title; ?></h3>
-							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-							<img src="http://placehold.it/300x200" class="img-thumbnail" alt="Responsive image" width="100%">
-						</a><br><br>
-						<p>Description: <?php echo $row->description; ?></p>
-						<p>Ad ID: <?php echo $row->ad_id; ?></p>
-					</div>
-					<?php if ($count == 2 || $count % 3 == 2) { ?></div><hr><?php } $count++; ?>
-				<?php } ?>
-				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
-				-->
 			</div>
 		</div>
 	</div>
