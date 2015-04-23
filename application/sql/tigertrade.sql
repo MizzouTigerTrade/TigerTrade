@@ -46,7 +46,7 @@ CREATE TABLE subcategories (
 	category_id INTEGER,
 	name VARCHAR(128) NOT NULL,
 	description VARCHAR (512),
-	PRIMARY KEY (subcategory_id)
+	PRIMARY KEY (subcategory_id),
 	FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
