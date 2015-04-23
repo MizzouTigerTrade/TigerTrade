@@ -59,7 +59,7 @@ CREATE TABLE kylecarlson_tigertrade.flags (
 --	price			- The price of the ad sale, could be 0.00.
 --	flag_count		- The count of flags on the ad.
 CREATE TABLE kylecarlson_tigertrade.ads (
-	ad_id INTEGER AUTO_INCREMENT,
+	ad_id INTEGER NOT NULL AUTO_INCREMENT,
 	title VARCHAR (128),
 	description	VARCHAR (1024),
 	creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
