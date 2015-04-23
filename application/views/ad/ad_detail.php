@@ -100,56 +100,56 @@
 
 		<div class="col-sm-5">
 			<?php if(count($images->result()) != 0) { ?> 
-	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
 
-		<ol class="carousel-indicators">
-	<?php 	$inc = 0;
-			foreach ($images->result() as $img) { 
-				if($inc == 0)
-				{ ?>
-					<li data-target="#myCarousel" data-slide-to="<?php echo $inc; ?>" class="active"></li>
-	<?php 		} 
-				else 
-				{ ?>
-					<li data-target="#myCarousel" data-slide-to="<?php echo $inc; ?>"></li>
-	<?php 		}
-				$inc++;
-			} ?>
-		</ol>
-		<div class="carousel-inner text-center" role="listbox" style="min-height: 150px;">
-	<?php 	$inc = 0;
-			foreach ($images->result() as $img) { 
-				$image_link = base_url('/'.$img->image_path);
-				if($inc == 0)
-				{ ?>
-				<div class="item active">
-					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 45px;">
-						<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
-					</div>
+				<ol class="carousel-indicators">
+			<?php 	$inc = 0;
+					foreach ($images->result() as $img) { 
+						if($inc == 0)
+						{ ?>
+							<li data-target="#myCarousel" data-slide-to="<?php echo $inc; ?>" class="active"></li>
+			<?php 		} 
+						else 
+						{ ?>
+							<li data-target="#myCarousel" data-slide-to="<?php echo $inc; ?>"></li>
+			<?php 		}
+						$inc++;
+					} ?>
+				</ol>
+				<div class="carousel-inner text-center" role="listbox" style="min-height: 150px; min-width: 100%;">
+			<?php 	$inc = 0;
+					foreach ($images->result() as $img) { 
+						$image_link = base_url('/'.$img->image_path);
+						if($inc == 0)
+						{ ?>
+						<div class="item active">
+							<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 45px;">
+								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
+							</div>
+						</div>
+			<?php 		} 
+						else { ?>
+						<div class="item">
+							<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 45px;">
+								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
+							</div>
+						</div>
+			<?php  		}
+						$inc++;
+					} ?>
+
 				</div>
-	<?php 		} 
-				else { ?>
-				<div class="item">
-					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-bottom: 45px;">
-						<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
-					</div>
-				</div>
-	<?php  		}
-				$inc++;
-			} ?>
 
-		</div>
-
-		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
-<?php } ?>	
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		<?php } ?>	
 		</div>
 	</div>
 	
