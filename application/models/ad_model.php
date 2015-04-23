@@ -320,10 +320,6 @@ class Ad_model extends CI_Model
 			$results = $query->result();
 			return $results;
 		}
-		else {
-			$results[0] = "There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.";
-			return $results;
-		}
 	}
 	
 	public function comment_ad($ad_id, $ad_comment, $user_id)
