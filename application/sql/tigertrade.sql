@@ -49,7 +49,7 @@ CREATE TABLE flags (
 	PRIMARY KEY(ad_id, user_id),
 	FOREIGN KEY(ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE,
 	FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.ads
 -- Columns:
