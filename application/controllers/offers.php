@@ -137,6 +137,7 @@ class Offers extends CI_Controller
 			$data['created'] = true;
 			
 			if ($status == "Accepted"){
+				$this->ad_model->set_expiration($ad_id, TRUE);
 				$this->session->set_flashdata('message', "You accepted the offer");
 			}
 			else{

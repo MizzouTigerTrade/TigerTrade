@@ -62,7 +62,7 @@ CREATE TABLE ads (
 	title VARCHAR (128),
 	description	VARCHAR (1024),
 	creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	expiration_date TIMESTAMP,
+	expired BOOLEAN DEFAULT FALSE,
 	price INTEGER,
 	user_id INTEGER,
 	category_id INTEGER,

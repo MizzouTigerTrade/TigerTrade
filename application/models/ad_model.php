@@ -129,7 +129,7 @@ class Ad_model extends CI_Model
 
 	public function get_all_ads()
 	{
-		$result = $this->db->query("SELECT * FROM ads");
+		$result = $this->db->query("SELECT * FROM ads WHERE expired = FALSE");
 		return $result;
 	}
 	//edit
@@ -347,6 +347,20 @@ class Ad_model extends CI_Model
 		if($this->db->insert('comments', $data) != TRUE)
 		{
 			throw new Exception("cannot insert");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
+	public function set_expiration($id, $boolean) {
+		$this->db->where('ad_id', $id);
+		$this->db->set('expired', $boolean);
+		
+		if($this->db->update('ad') != TRUE)
+		{
+			throw new Exception("Cannot update expired field.");
 		}
 		else
 		{
