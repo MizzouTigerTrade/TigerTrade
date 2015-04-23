@@ -51,10 +51,9 @@ class Market extends CI_Controller
 		$config['per_page'] = 10; 
 
 		$this->pagination->initialize($config); 
-
-		echo $this->pagination->create_links();
 		
-		$this->layout->view('market/home', $data);		
+		$this->layout->view('market/home', $data);
+		echo $this->pagination->create_links();
 	}
 
 	function new_category()
