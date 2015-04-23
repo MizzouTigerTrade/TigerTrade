@@ -44,11 +44,9 @@ CREATE TABLE kylecarlson_tigertrade.subcategories (
 --	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
 --  user_id			- Id of user who flagged the Ad
 CREATE TABLE flags (
-	ad_id INTEGER NOT NULL,
-	user_id INTEGER NOT NULL,
+	ad_id INTEGER NOT NULL REFERENCES ads(ad_id),
+	user_id INTEGER NOT NULL REFERENCES users(id),
 	PRIMARY KEY(ad_id, user_id),
-	FOREIGN KEY(ad_id) REFERENCES ads(ad_id),
-	FOREIGN KEY(user_id) REFERENCES users(id)
 ) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.ads
