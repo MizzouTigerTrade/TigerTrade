@@ -57,15 +57,16 @@
 			<label for="comments" class="col-sm-10 control-label label-20">View Comments:</label>
 			<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
-					<p style="font-size: 1.9em;"><?php echo $row->ad_comment; ?></p>
+					<p style="font-size: 1.0em;"><?php echo $row->ad_comment; ?></p>
 				</div>
 			<?php } ?>
 			<div class="col-xs-12" style="padding: 0;">
 				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
-				<div class="form-group">			
+				<label for="comments" class="col-sm-10 control-label label-20">New Comments:</label>
+				<div class="form-group">
+					<label for="comments" class="col-sm-10 control-label label-20">New Comments:</label>				
 					<div class="col-sm-10">
-						<label for="comments" class="col-sm-10 control-label label-20">New Comments:</label>
 						<br>
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
