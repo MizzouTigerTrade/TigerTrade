@@ -35,14 +35,16 @@
 </script>
 
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
-			<h1>Received Offers</h1>
+		<div class="col-xs-10 col-xs-offset-1">
+			<h1>Received Offers</h1> 
 		</div>
 	</div>
 
 	<hr>
-
+	
+	<div style="padding: 0 15px;">
 	<?php if ($message != "") { ?>
       <div id="infoMessage">
 		<div class="alert alert-info alert-dismissible" role="alert" style="margin-top: 10px;">
@@ -179,5 +181,6 @@
 		</table>
 	</div>
 	</div>
-	
+	</div>
+</div>
 </div>

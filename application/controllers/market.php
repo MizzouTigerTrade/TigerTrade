@@ -16,7 +16,8 @@ class Market extends CI_Controller
 	{
 		$cat = $this->uri->segment(3);
         $sub  = $this->uri->segment(4);
-
+		
+		
 		if($cat == null)
 		{
 			$data['market_name'] = 'All';
@@ -43,8 +44,9 @@ class Market extends CI_Controller
 		$data['subcategory_id'] = $sub;
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
-		$data['title'] = 'Market';
-		$this->layout->view('market/home', $data);		
+		$data['title'] = 'Market'; 
+		
+		$this->layout->view('market/home', $data);
 	}
 
 	function new_category()

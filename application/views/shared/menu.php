@@ -40,15 +40,13 @@
 				-->
 
 				<li class="dropdown <?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
-					<a href="<?= base_url("/market/index") ?>" class="dropdown-toggle" data-toggle="dropdown">Market <b class="caret"></b></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Market <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href='<?= base_url("/market") ?>'>All</a></li>
+						<li role="presentation" class="divider"></li>
 						<?php foreach ($categories->result() as $category) { ?>
 						<li><a href='<?= base_url("/market/index/" . $category->category_id) ?>'><?= ucwords($category->name) ?></a></li>
 						<?php } ?>
-						<li role="presentation" class="divider"></li>
-						<li><a href='<?= base_url("/ad/new_ad") ?>'>New Ad</a></li>
-						
 					</ul>
 				</li>
 

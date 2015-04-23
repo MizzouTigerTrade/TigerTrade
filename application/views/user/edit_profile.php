@@ -1,11 +1,14 @@
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1>Edit Profile</h1>
 		</div>
 	</div>
 	
-      <hr>
+	<hr>
+	
+	<div style="padding: 0 15px;">
       <?php if ($message != "") { ?>
       <div id="infoMessage">
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
@@ -113,5 +116,6 @@
             </div>
 			
       <?php echo form_close();?>
-      
+	</div>
+</div>
 </div>

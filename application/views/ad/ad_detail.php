@@ -1,11 +1,15 @@
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1><?php echo $ad->title; ?></h1>
 		</div>
 	</div>	
 	
 	<hr>
+	
+	<div class="row">
+	<div class="col-xs-10 col-xs-offset-1" style="padding-bottom: 30px;">
 	
 	<?php if ($message != "") { ?>
       <div id="infoMessage">
@@ -93,12 +97,43 @@
 			
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
+
+		<div class="col-sm-5">
+			<?php 
+				$flag = 0;
+				$image_link = "";
+				foreach ($images->result() as $img) {
+					if($flag == 0)
+					{
+						$image_link = base_url('/'.$img->image_path);
+						$flag++;
+					}
+				}
+
+			 if(empty($image_link)) { ?> 
+				<!--<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">-->
+				<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+			<?php } else { ?>
+				<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="Error loading image" width="100%" height="100%">
+			<?php } ?>
+		</div>
 	</div>
 	
 	<!-- Devices == Extra Small (Mobile) -->
 	<div class="row visible-xs">
 		<div class="col-xs-12">
-			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
+			<div class="row">
+				<div class="col-xs-12">
+				<?php
+				foreach($tags->result() as $tag) { 
+					if($tag->ad_id == $ad->ad_id)
+					{
+						echo '<span class="label label-default">' . $tag->description . '</span> ';
+					}
+				}
+				?>
+				</div>
+			</div>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOfferSM">Make an Offer</button>
 			
@@ -159,9 +194,10 @@
 			
 			<img style="margin-top: 10px;" class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
+			
 		</div>
 	</div>
-
+	
 <?php if(count($images->result()) != 0) { ?> 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
 
@@ -216,20 +252,37 @@
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
+			<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 40px">View Comments:</label>
+	<?php if(!empty($comments)) { ?>
+			<?php foreach($comments as $row) { ?>
+				<div class="col-xs-12">
+					<p style="font-size: 1.1em; line-height: 30px;"><?php echo $row->ad_comment; ?>. Comment made on: <?php echo $row->comment_time; ?></p>
+				</div>
+			<?php } ?>
+	<?php } else { ?>
+				<div class="col-xs-12">
+					<p style="font-size: 1.1em; line-height: 30px;">There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.</p>
+				</div>
+			<?php } ?>
+			<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 30px">New Comments:</label>
 			<div class="col-xs-12" style="padding: 0;">
+				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
+				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
+				<div class="form-group">				
+					<div class="col-sm-10">
+						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
+					</div>
+				</div>
 				<div class="form-group">
-					<label for="buyer_message" class="col-xs-12 control-label label-20">Comment:</label>
-					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" rows="5"></textarea>
-						<div class="col-xs-9">
-							<p class="help-block">Post a comment anonymously. Please be respectful.</p>
-						</div>
-						<div class="col-xs-3 text-right">
-							<a class="btn btn-xs btn-default" href="<?php echo base_url('/ad/comment/' . $ad->ad_id) ?>">Submit</a>
-						</div>
+					<div class="col-sm-10" style="padding: 5px">
+						<button type="submit" class="btn btn-default">Submit</button>
 					</div>
 				</div>
 			</div>
+			<?php echo form_close();?>
 		</div>
 	<?php } ?>
+	</div>
+	</div>
+</div>
 </div>
