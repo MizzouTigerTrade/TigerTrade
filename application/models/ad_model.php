@@ -332,6 +332,7 @@ class Ad_model extends CI_Model
 				$single_comment['user_id'] = $ad->user_id;
 				$single_comment['timestmp'] = $ad->timestmp;
 				$comment_array->append($single_comment);
+				echo $single_comment['ad_comment'];
 			}
 			return $comment_array;
 		}
