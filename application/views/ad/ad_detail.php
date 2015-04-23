@@ -230,5 +230,8 @@
 				</div>
 			</div>
 		</div>
-	<?php } echo $inc;?>
+	<?php } 
+	foreach($images->result() as $img)
+		echo $img->image_path . '   ';
+	?>
 </div>
