@@ -10,12 +10,12 @@
 	<hr>
 	
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-sm-5 col-sm-offset-1">
 			Login
 			<?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
             <div class="form-group">
-                  <label for="identity" class="col-sm-4 control-label label-20">Email</label>
-                  <div class="col-sm-4">
+                  <label for="identity" class="col-xs-12 control-label label-20">Email</label>
+                  <div class="col-xs-12">
                         <?php
 	                         $data = array(
 					          'name'        => 'identity',
