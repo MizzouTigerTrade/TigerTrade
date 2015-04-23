@@ -9,7 +9,7 @@
 	<hr>
 	
 	<div class="row">
-	<div class="col-xs-10 col-xs-offset-1" style="padding-bottom: 10px;">
+	<div class="col-xs-10 col-xs-offset-1" style="padding-bottom: 30px;">
 	
 	<?php if ($message != "") { ?>
       <div id="infoMessage">
