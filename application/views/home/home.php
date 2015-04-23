@@ -1,7 +1,7 @@
 <div class="container padding-top-20">
 <div class="container-border">
 
-	<div class="row" style="margin-top: 30px;">
+	<div class="row" style="margin-top: 20px;">
 		<div class="col-xs-10 col-xs-offset-1">
 			<div class="alert alert-info" role="alert" style="margin-top: 10px;">
 				<p>Welcome to TigerTrade! Pease login or create an account.</p>
