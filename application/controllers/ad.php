@@ -61,7 +61,7 @@ class Ad extends CI_Controller
 	//edit ad by id
 	function edit($ad_id)
 	{
-		$user = $this->ion_auth->user($id)->row();
+		$user = $this->ion_auth->user()->row();
 		$ad = $this->ad_model->get_ad($ad_id);
 		if($ad->user_id != $user->user_id)
 		{
