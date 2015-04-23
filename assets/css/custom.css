@@ -83,6 +83,10 @@ button a, button a:visited, button a:hover, button a:active {
 	margin-bottom: 5px;
 }
 
+.ad_display:hover {
+	background-color: rgba(183, 183, 183, 0.9)
+}
+
 @media (max-width: 599px) {
 
 }
