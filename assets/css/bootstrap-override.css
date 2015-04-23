@@ -20,7 +20,6 @@ body {
 }
 
 body > .container {
-	padding-top: 10px;
 	padding-bottom: 10px;
   
 }
@@ -126,4 +125,40 @@ hr {
 .dropdown-menu .divider {
 	background-color: rgba(75, 75, 75, 1);
 	margin: 5px 0;
+}
+
+.label-default {
+	background-color: #EEB328;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+.list-group-item {
+	background: transparent;
+	padding: 0;
+	border: hidden;
+}
+
+.list-group-item:hover {
+	background: rgba(190, 190, 190, 0.9);
+}
+
+.notification-badge{
+	background-color: #D43F3A;
+	color: white;
+}
+
+.btn .badge{
+	background-color: #D43F3A;
+	color: white;
+}
+
+.btn-default .badge{
+	background-color: #D43F3A;
+	color: white;
+}
+
+.btn-warning .badge{
+	background-color: #D43F3A;
+	color: white;
 }

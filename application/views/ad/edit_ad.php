@@ -40,14 +40,16 @@ $(document).ready(function (){
 </script>
 
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1>Edit Ad Form</h1>
 		</div>
 	</div>
-
+	
 	<hr>
-
+	
+	<div style="padding: 0 15px;">
 	<?php if(isset($created)) {?>
 	    <div class="alert alert-success">
 	        <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -152,7 +154,7 @@ $(document).ready(function (){
 					<div class="col-sm-10">
 						<div id="filediv">
 							<div id="abcd<?= $inc ?>" class="abcd">
-								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%">
+								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" max-width="100%" max-height="100%">
 								<img id="img" src="x.png" alt=" delete" onclick="$(this).parent().parent().remove();"></img>
 							</div>
 						</div>
@@ -205,5 +207,7 @@ $(document).ready(function (){
 			</div>
 		</div>
 	<?php echo form_close();?>
+	</div>
+</div>
 	
 </div>

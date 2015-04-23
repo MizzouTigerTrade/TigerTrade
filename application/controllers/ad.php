@@ -24,8 +24,11 @@ class Ad extends CI_Controller
 	function details($ad_id)
 	{	
 		$user = $this->ion_auth->user()->row();
-		$user_id = $user->user_id;
+		if($user) {
+			$user_id = $user->user_id;
+		}
 		
+		$data['tags'] = $this->ad_model->get_all_tags();
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
 		
@@ -39,9 +42,14 @@ class Ad extends CI_Controller
 			$data['subcategory'] = ' > ' . $sub->name;
 		}
 		
+		$data['images'] = $this->ad_model->get_ad_images($ad_id);
 		$data['title'] = 'Ad Detail';
 		$data['message'] = $this->session->flashdata('message');
-		$data['flagged'] = $this->ad_model->check_if_ad_flagged($ad_id, $user_id);
+		if($user) {
+			$data['flagged'] = $this->ad_model->check_if_ad_flagged($ad_id, $user_id);
+		} else {
+			$data['flagged'] = true; // Don't show report ad button to non-users
+		}
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
@@ -91,9 +99,43 @@ class Ad extends CI_Controller
 			$this->ad_model->update_ad($ad_id, $title, $description, $price, $category, $subCategory);
 			
 			$this->ad_model->update_tags($ad_id, $tags);
-		}
 
-		redirect('/ad/edit/'.$ad_id);
+			$j = 0;     // Variable for indexing uploaded image.
+			if(count($_FILES['userfile']['name']) > 0)
+			{
+				for ($i = 0; isset($_FILES['userfile']['name'][$i]); $i++) {
+					$target_path = "assets/Images/";     // Declaring Path for uploaded images.
+					// Loop to get individual element from the array
+					$validextensions = array("jpeg", "jpg", "png");      // Extensions which are allowed.
+					$ext = explode('.', basename($_FILES['userfile']['name'][$i]));   // Explode file name from dot(.)
+					$file_extension = end($ext); // Store extensions in the variable.
+					$target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext) - 1];     // Set the target path with a new name of image.
+					$j = $j + 1;      // Increment the number of uploaded images according to the files in array.
+					if (($_FILES["userfile"]["size"][$i] < 100000)  && in_array($file_extension, $validextensions)) {
+						if (move_uploaded_file($_FILES['userfile']['tmp_name'][$i], $target_path)) {
+
+						// If file moved to uploads folder.
+							echo '<div class="alert alert-success">
+			        			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			       				 <strong>Success!</strong> '.$j .' Image Uploaded.</div>';
+
+			       				 //echo count($_FILES['userfile']['name'])
+			       				$this->ad_model->insert_img_ad($ad_id, $target_path);
+						} 
+						else {     //  If File Was Not Moved.
+							echo '<div class="alert alert-error">
+			        			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			       				 <strong>Success!</strong> '.$j .' Image Not Uploaded.
+			    			</div>';
+						}
+					}
+					
+				}
+				
+			}
+		}
+		$data['error'] = 'shit';
+		$this->layout->view('auth/index', $data);
 	}
 
 	//shows form to create a new ad
@@ -158,10 +200,10 @@ class Ad extends CI_Controller
 			$this->ad_model->insert_new_tags($ad_id, $tags);
 			
 			$j = 0;     // Variable for indexing uploaded image.
-			$target_path = "assets/Images/";     // Declaring Path for uploaded images.
 			if(count($_FILES['userfile']['name']) > 0)
 			{
 				for ($i = 0; isset($_FILES['userfile']['name'][$i]); $i++) {
+					$target_path = "assets/Images/";     // Declaring Path for uploaded images.
 					// Loop to get individual element from the array
 					$validextensions = array("jpeg", "jpg", "png");      // Extensions which are allowed.
 					$ext = explode('.', basename($_FILES['userfile']['name'][$i]));   // Explode file name from dot(.)
@@ -244,7 +286,7 @@ class Ad extends CI_Controller
 		$this->ad_model->delete_ad($ad_id);
 		redirect ('ad/user_ads');
 	}
-	
+
 	//adds a comment to the ad
 	function comment()
 	{

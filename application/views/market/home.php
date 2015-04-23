@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
     $("#filter").keyup(function(){
- 		
+ 		$("#emptySearch").hide();
         // Retrieve the input field text and reset the count to zero
         var filter = $(this).val(), count = 0;
         // Loop through the comment list
@@ -14,10 +14,16 @@ $(document).ready(function(){
  
             // Show the list item if the phrase matches and increase the count by 1
             } else {
+            	count++;
                 $(this).show();
             }
         });
- 
+
+        if(count == 0)
+        {
+        	$("#emptySearch").html("There are no ads that match your search results");
+        	$("#emptySearch").show();
+        }
         // Update the count
         var numberItems = count;
         $("#filter-count").text("Number of Comments = "+count);
@@ -48,6 +54,8 @@ $(document).ready(function(){
 </script>
 
 <div class="container padding-top-20">
+<div class="container-border">
+	
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
 			<h1>Market: <?php echo $market_name; ?></h1>
@@ -137,56 +145,64 @@ $(document).ready(function(){
                     </div>
                 </div>
                 
+                
 				<!-- Display Ads: rows of 1 -->
+				<br>
+				
+				<div class="row" style="padding-bottom: 15px;" id="emptySearch"></div>
 				<?php foreach ($ads->result() as $row) { ?>
-				<div class="row ad_display" id="<?= $row->ad_id ?>">
-					<div class="media" style="margin-top: 20px; margin-bottom: 20px;">
-						<div class="media-left col-xs-3 col-md-2 col-md-offset-1">
-							<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-							<img class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%" height="100%">
-							</a>
-						</div>
-						<div class="media-body col-xs-9 col-md-8 search">
-							<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4> 
-							<?php echo $row->description; ?>
-							<?php 
-							$count = 0;
-							foreach($tags->result() as $tag) { 
+				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+					
+					<div class="row ad_display" style="padding-bottom: 15px;" id="<?= $row->ad_id ?>">
+						<div class="" style="margin-top: 20px; margin-bottom: 20px;">
+							
+							<div class="col-xs-3 col-md-2 col-md-offset-1">
+							<?php 	$flag = 0;
+									//$image_link = "nothing";
+									foreach($images->result() as $img) { 
+										if($img->ad_id == $row->ad_id && $flag == 0)
+										{
+											$image_link = base_url('/'.$img->image_path);
+											$flag++;
+										}
+									}
+									
+									if(empty($image_link)) { ?> 
+									<!--<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">-->
+									<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+								<?php } else { ?>
+									<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="Error loading image" width="100%" height="100%">
+							<?php } ?>
+							</div>
+							
+							<div class="col-xs-9 col-md-8 search">
+								<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+								<div class="row">
+									<div class="col-xs-12">
+								<?php
+								foreach($tags->result() as $tag) { 
 									if($tag->ad_id == $row->ad_id)
 									{
-										if($count == 0)
-										{
-											echo nl2br("\nTags: ");
-										}
-										echo $tag->description . ' ';
-										$count++;
+										echo '<span class="label label-default">' . $tag->description . '</span> ';
 									}
 								}
-							?>
+								?>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12" style="margin-top: 5px;">
+										<?php echo $row->description; ?>
+									</div>
+								</div>
+							</div>
+							
 						</div>
 					</div>
-				</div>
+					
+				</a>
 				<? } ?>
-				
-				<!-- Display Ads: rows of 3 -->
-				
-				<?php $count = 0; ?>
-				<?php foreach ($ads->result() as $row) { ?>
-					<?php if ($count == 0 || $count % 3 == 0) { ?><div class="row"><?php } ?>
-					<div class="col-sm-4" style="margin-bottom: 10px;">
-						<a class="market-link" href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
-						<h3><?php echo $row->title; ?></h3>
-							<p style="color: black;">Price: $<?php echo $row->price; ?></p>
-							<img src="http://placehold.it/300x200" class="img-thumbnail" alt="Responsive image" width="100%">
-						</a><br><br>
-						<p>Description: <?php echo $row->description; ?></p>
-						<p>Ad ID: <?php echo $row->ad_id; ?></p>
-					</div>
-					<?php if ($count == 2 || $count % 3 == 2) { ?></div><hr><?php } $count++; ?>
-				<?php } ?>
-				<?php if ($count % 3 != 0) { ?></div><?php } $count++; ?>
-		
 			</div>
 		</div>
 	</div>
+</div>
 </div>

@@ -1,8 +1,7 @@
 <div class="container padding-top-20">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>Woohoo! You have an offer for:</h1>
-			<h3><?php echo $ad->title; ?></h3>
+			<h2>Offer: <?php echo $ad->title; ?></h2>
 		</div>
 	</div>
 	
@@ -69,7 +68,7 @@
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
 		</div>
 	<?php echo form_close();?>
