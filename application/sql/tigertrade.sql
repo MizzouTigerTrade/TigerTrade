@@ -47,8 +47,8 @@ CREATE TABLE flags (
 	ad_id INTEGER NOT NULL,
 	user_id INTEGER NOT NULL,
 	PRIMARY KEY(ad_id, user_id),
-	FOREIGN KEY (ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE,
-	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+	FOREIGN KEY (ad_id) REFERENCES ads(ad_id),
+	FOREIGN KEY (user_id) REFERENCES users(id)
 ) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.ads
