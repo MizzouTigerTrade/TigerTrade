@@ -122,8 +122,8 @@
 	                  </div>
 	            </div>
 	            <div class="form-group">
-	                  <div class="col-xs-12">
-	                        <button type="submit" class="btn btn-default text-right">Create User</button>
+	                  <div class="col-xs-12 text-right">
+	                        <button type="submit" class="btn btn-default">Create User</button>
 	                  </div>
 	            </div>
       		</form>
