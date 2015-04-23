@@ -321,7 +321,7 @@ class Ad_model extends CI_Model
 			return $results;
 		}
 		else {
-			$results = "There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.";
+			$results[0] = "There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.";
 			return $results;
 		}
 	}
