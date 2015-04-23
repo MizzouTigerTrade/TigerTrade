@@ -1,6 +1,6 @@
 <?php
 class MY_Controller extends CI_Controller {
-
+{
     protected $calledClass ;
     protected $calledMethod;
     protected $isAuthException;
@@ -30,7 +30,7 @@ class MY_Controller extends CI_Controller {
 
         $this->isAuthException = array_key_exists($this->calledClass,$authExceptions) && in_array($this->calledMethod, $authExceptions[$this->calledClass]);
 
-        if(!$this->isAuthException)
+        if(!$this->isAuthException && !isset($this->session->userdata('admin_id')))
         {
             redirect('auth/login.php');
         }
