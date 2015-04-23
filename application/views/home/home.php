@@ -11,7 +11,7 @@
 	
 	<div class="row">
 		<div class="col-sm-5 col-sm-offset-1" style="padding: 0 30px;">
-			Login
+			<h2>Login</h2>
 			<?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
             <div class="form-group">
                   <label for="identity" class="col-xs-12 text-left">Email</label>
@@ -62,7 +62,7 @@
 			<?php echo form_close();?>			
 		</div>
 		<div class="col-sm-5" style="padding: 0 30px;">
-			Register
+			<h2>Register</h2>
 		</div>
 	</div>
 
