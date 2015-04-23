@@ -133,7 +133,7 @@ class Ad extends CI_Controller
 			}
 		}
 		$data['error'] = 'shit';
-		$this->layout->view('auth', $data);
+		$this->layout->view('auth/index', $data);
 	}
 
 	//shows form to create a new ad
