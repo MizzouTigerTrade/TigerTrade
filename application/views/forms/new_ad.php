@@ -41,14 +41,16 @@ $(document).ready(function (){
 </script>
 
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1>New Ad Form</h1>
 		</div>
 	</div>
 
 	<hr>
-
+	
+	<div style="padding: 0 15px;" class="visible-xs">
 	<?php if(isset($created)) {?>
 	    <div class="alert alert-success">
 	        <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -157,5 +159,7 @@ $(document).ready(function (){
 			<img id="pic1" src="#" alt="your image" />
 		</div>
 	</div>
+	</div>
+</div>
 	
 </div>
