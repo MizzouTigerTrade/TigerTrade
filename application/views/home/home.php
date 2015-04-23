@@ -27,8 +27,8 @@
                   </div>
             </div>
             <div class="form-group" style="margin-bottom: 0px;">
-                  <label for="password" class="col-sm-4 control-label">Password</label>
-                  <div class="col-sm-4">
+                  <label for="password" class="col-xs-12 control-label">Password</label>
+                  <div class="col-xs-12">
 	                    <?php
 	                         $data = array(
 					          'name'        => 'password',
