@@ -358,7 +358,7 @@ class Ad_model extends CI_Model
 		$this->db->where('ad_id', $id);
 		$this->db->set('expired', $boolean);
 		
-		if($this->db->update('ad') != TRUE)
+		if($this->db->update('ads') != TRUE)
 		{
 			throw new Exception("Cannot update expired field.");
 		}
