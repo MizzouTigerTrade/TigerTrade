@@ -5,8 +5,9 @@
 </script>
 
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1>New User</h1>
 		</div>
 	</div>
@@ -86,5 +87,5 @@
                   </div>
             </div>
       </form>
-      
+</div>
 </div>
