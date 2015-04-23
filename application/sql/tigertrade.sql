@@ -153,7 +153,7 @@ CREATE TABLE users (
 	last_name varchar(50) DEFAULT NULL,
 	phone varchar(20) DEFAULT NULL,
 	PRIMARY KEY (id)
-) ENGINE=INNODB;
+) ENGINE=InnoDB;
 #
 # Dumping data for table 'users'
 #
