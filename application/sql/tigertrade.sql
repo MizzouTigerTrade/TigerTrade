@@ -46,7 +46,7 @@ CREATE TABLE kylecarlson_tigertrade.subcategories (
 CREATE TABLE flags (
 	ad_id INTEGER NOT NULL REFERENCES ads(ad_id),
 	user_id INTEGER NOT NULL REFERENCES users(id),
-	PRIMARY KEY(ad_id, user_id),
+	PRIMARY KEY(ad_id, user_id)
 ) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.ads
