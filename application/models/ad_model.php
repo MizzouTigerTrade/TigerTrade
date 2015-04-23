@@ -356,7 +356,7 @@ class Ad_model extends CI_Model
 		*/
 	}
 	
-	public function comment_ad($ad_id, $ad_comment, $user_id, $timestmp)
+	public function comment_ad($ad_id, $ad_comment, $user_id)
 	{
 		/*
 		$this->db->set('ad_id', $ad_id);
@@ -368,8 +368,10 @@ class Ad_model extends CI_Model
 		'ad_id' => $ad_id ,
 		'ad_comment' => $ad_comment,
 		'user_id' => $user_id ,
-		'timestmp' => $timestmp
+		//'timestmp' => $timestmp
 		);
+		
+		$this->db->set('timestmp', 'NOW()', FALSE));
 		
 		//insert into db, error thrown if not inserted correctly
 		if($this->db->insert('comments', $data) != TRUE)

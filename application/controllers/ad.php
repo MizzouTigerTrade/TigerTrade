@@ -272,10 +272,10 @@ class Ad extends CI_Controller
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
 			
-			$date = new DateTime();
-			$timestmp = $date->getTimestamp();
+			//$date = new DateTime();
+			//$timestmp = $date->getTimestamp();
 		
-			$this->ad_model->comment_ad($ad_id, $ad_comment, $user_id, $timestmp);
+			$this->ad_model->comment_ad($ad_id, $ad_comment, $user_id);
 	
 			$this->session->set_flashdata('message', 'Your comment: "' . $ad_comment . '" has been saved.');
 			redirect('ad/details/' . $ad_id, 'refresh');
