@@ -182,6 +182,7 @@
 		</div>
 	</div>
 
+<?php if(count($images->result()) != 0) { ?> 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
 
 		<ol class="carousel-indicators">
@@ -231,7 +232,7 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-	
+<?php } ?>	
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
