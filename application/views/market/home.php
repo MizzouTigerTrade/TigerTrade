@@ -50,6 +50,28 @@ $(document).ready(function(){
           return false;
       });
     });
+	
+	$(function(){
+      // bind change event to select
+      $('#categorySelectFormSmall').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+
+    $(function(){
+      // bind change event to select
+      $('#subCategorySmall').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
 });
 </script>
 
@@ -105,7 +127,7 @@ $(document).ready(function(){
 				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
 					<div class="col-xs-12">
-						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select class="form-control input-sm" id="categorySelectFormSmall" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
@@ -114,7 +136,7 @@ $(document).ready(function(){
 						</select>
 					</div>
 					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
-						<select class="form-control input-sm" id="subCategory" name="subCategory">
+						<select class="form-control input-sm" id="subCategorySmall" name="subCategory">
 							<option value="">Select Subcategory</option>
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
