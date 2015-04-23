@@ -123,14 +123,14 @@
 						if($inc == 0)
 						{ ?>
 						<div class="item active">
-							<div class="col-xs-12" style="padding-bottom: 45px;">
+							<div class="col-xs-12">
 								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
 							</div>
 						</div>
 			<?php 		} 
 						else { ?>
 						<div class="item">
-							<div class="col-xs-12" style="padding-bottom: 45px;">
+							<div class="col-xs-12">
 								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
 							</div>
 						</div>
