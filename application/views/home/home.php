@@ -3,13 +3,16 @@
 
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
-			<h1>TigerTrade</h1>
+			<div class="alert alert-info" role="alert" style="margin-top: 10px;">
+				<p>Welcome to TigerTrade! Pease login or create an account.</p>
+			</div>
 		</div>
 	</div>
 	
 	<hr>
 	
 	<div class="row">
+		
 		<div class="col-sm-5 col-sm-offset-1" style="padding: 0 30px;">
 			<h2>Login</h2>
 			<?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
