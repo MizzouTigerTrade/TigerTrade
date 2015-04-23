@@ -3,68 +3,90 @@ CREATE SCHEMA kylecarlson_tigertrade;
 
 USE kylecarlson_tigertrade;
 
--- Table: kylecarlson_tigertrade.comments
+-- Table: Users
+-- Columns:
+CREATE TABLE users (
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	ip_address varchar(15) NOT NULL,
+	username varchar(100) NOT NULL,
+	password varchar(255) NOT NULL,
+	salt varchar(255) DEFAULT NULL,
+	email varchar(100) NOT NULL,
+	activation_code varchar(40) DEFAULT NULL,
+	forgotten_password_code varchar(40) DEFAULT NULL,
+	forgotten_password_time int DEFAULT NULL,
+	remember_code varchar(40) DEFAULT NULL,
+	created_on int NOT NULL,
+	last_login int DEFAULT NULL,
+	active int DEFAULT NULL,
+	first_name varchar(50) DEFAULT NULL,
+	last_name varchar(50) DEFAULT NULL,
+	phone varchar(20) DEFAULT NULL,
+	PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+
+-- Table: comments
 -- Columns:
 --    ad_id			    - A unique code given to an ad.
 --    description		- A user provided comment.
 --    timestmp          - A timestamp of when the comment was made.
-CREATE TABLE kylecarlson_tigertrade.comments (
-	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ad(ad_id),
+CREATE TABLE comments (
+	ad_id INTEGER REFERENCES ad(ad_id),
 	ad_comment VARCHAR(500),
-	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
+	user_id INTEGER REFERENCES users(id),
 	timestmp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- Table: kylecarlson_tigertrade.categories
+-- Table: categories
 -- Columns:
 --    category_id      - An unique ID to identify the category.
 --    description	   - A description for the category, provided by admins.
-CREATE TABLE kylecarlson_tigertrade.categories (
+CREATE TABLE categories (
 	category_id INTEGER AUTO_INCREMENT,
 	name VARCHAR(128) NOT NULL,
 	description VARCHAR(512),
 	PRIMARY KEY (category_id)
 );
 
--- Table: kylecarlson_tigertrade.subcategories
+-- Table: subcategories
 -- Columns:
 --	subcategory_id		- An ID within the category_id for easier classification.
 --	category_id			- References the category_id in the categorie table, provides link.
 -- 	description			- A description of the subcategory provided by admins.
-CREATE TABLE kylecarlson_tigertrade.subcategories (
+CREATE TABLE subcategories (
 	subcategory_id INTEGER AUTO_INCREMENT NOT NULL,
-	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
+	category_id INTEGER REFERENCES categories(category_id),
 	name VARCHAR(128) NOT NULL,
 	description VARCHAR (512),
 	PRIMARY KEY (subcategory_id)
 );
 
-
--- Table: kylecarlson_tigertrade.ads
+-- Table: ads
 -- Columns:
 --	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
 --	creation_date	- The creation date of the ad.
 -- 	expiration_date	- The expiration date of the ad, if provided by the user.
 --	price			- The price of the ad sale, could be 0.00.
 --	flag_count		- The count of flags on the ad.
-CREATE TABLE kylecarlson_tigertrade.ads (
+CREATE TABLE ads (
 	ad_id INTEGER NOT NULL AUTO_INCREMENT,
 	title VARCHAR (128),
 	description	VARCHAR (1024),
 	creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	expiration_date TIMESTAMP,
 	price INTEGER,
-	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
-	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
-	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id),
+	user_id INTEGER REFERENCES users(id),
+	category_id INTEGER REFERENCES categories(category_id),
+	subcategory_id INTEGER REFERENCES subcategories(subcategory_id),
 	PRIMARY KEY (ad_id)
 ) ENGINE=InnoDB;
 
--- Table: kylecarlson_tigertrade.images
+-- Table: images
 -- Columns:
 --	ad_id			- A Unique ad ID for each ad, to easily identify the ad in the system.
 --  image_path		- The file path to the image.
-CREATE TABLE kylecarlson_tigertrade.images (
+CREATE TABLE images (
 	ad_id INTEGER,
 	image_path	VARCHAR (100) NOT NULL,
 	tag_id INTEGER AUTO_INCREMENT,
@@ -72,29 +94,29 @@ CREATE TABLE kylecarlson_tigertrade.images (
 	FOREIGN KEY(ad_id) REFERENCES ads(ad_id)
 ) ENGINE=InnoDB;
 
--- Table: kylecarlson_tigertrade.tags
+-- Table: tags
 -- Columns:
 --	ad_id			- References to the ad, to organize the tags to the ad.
 --	description		- A description of the tag.
-CREATE TABLE kylecarlson_tigertrade.tags (
+CREATE TABLE tags (
 	tag_id INTEGER AUTO_INCREMENT,
-	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
+	ad_id INTEGER REFERENCES ads(ad_id),
 	description VARCHAR (100),
 	PRIMARY KEY (tag_id)
 );
 
--- Table: kylecarlson_tigertrade.offers
+-- Table: offers
 -- Column:
 --	buyer_id		- ID of the buyer that ties into users table, to pull all necessary information
 --	seller_id		- ID of the seller that ties into users table, to pull all necessary information
 --	buy_message		- Message offer of the buyer for the ad
 -- 	seller_response	- Message offer of the seller or response from ad
 --	status			- Status of the offer of buyer or seller, could be pending, accepted, declined
-CREATE TABLE kylecarlson_tigertrade.offers (
+CREATE TABLE offers (
 	offer_id INTEGER AUTO_INCREMENT,
-	buyer_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
-	seller_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
-	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
+	buyer_id INTEGER REFERENCES users(id),
+	seller_id INTEGER REFERENCES users(id),
+	ad_id INTEGER REFERENCES ads(ad_id),
 	price	INTEGER,
 	buyer_message BLOB,
 	seller_response BLOB,
@@ -120,41 +142,30 @@ CREATE TABLE groups (
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 (1,'admin','Administrator'),
 (2,'members','General User');
-DROP TABLE IF EXISTS `users`;
-#
-# Table structure for table 'users'
-#
-CREATE TABLE users (
-	id INTEGER NOT NULL AUTO_INCREMENT,
-	ip_address varchar(15) NOT NULL,
-	username varchar(100) NOT NULL,
-	password varchar(255) NOT NULL,
-	salt varchar(255) DEFAULT NULL,
-	email varchar(100) NOT NULL,
-	activation_code varchar(40) DEFAULT NULL,
-	forgotten_password_code varchar(40) DEFAULT NULL,
-	forgotten_password_time int DEFAULT NULL,
-	remember_code varchar(40) DEFAULT NULL,
-	created_on int NOT NULL,
-	last_login int DEFAULT NULL,
-	active int DEFAULT NULL,
-	first_name varchar(50) DEFAULT NULL,
-	last_name varchar(50) DEFAULT NULL,
-	phone varchar(20) DEFAULT NULL,
-	PRIMARY KEY (id)
-) ENGINE=InnoDB;
 
--- Table: kylecarlson_tigertrade.ads
+-- Table: flags
 -- Columns:
---	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
+--	ad_id			- ID of ad
 --  user_id			- Id of user who flagged the Ad
-CREATE TABLE kylecarlson_tigertrade.flags (
+CREATE TABLE flags (
 	ad_id INTEGER NOT NULL,
 	user_id INTEGER NOT NULL,
 	PRIMARY KEY(ad_id, user_id),
-	FOREIGN KEY (ad_id) REFERENCES kylecarlson_tigertrade.ads(ad_id) ON DELETE CASCADE,
-	FOREIGN KEY (user_id) REFERENCES kylecarlson_tigertrade.users(id) ON DELETE CASCADE
+	FOREIGN KEY (ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE,
+	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
+-- Table: comments
+-- Columns:
+--    ad_id			    - A unique code given to an ad.
+--    description		- A user provided comment.
+--    timestmp          - A timestamp of when the comment was made.
+CREATE TABLE comments (
+	ad_id INTEGER REFERENCES ads(ad_id),
+	ad_comment VARCHAR(500),
+	user_id INTEGER REFERENCES users(id),
+	timestmp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 
 #
 # Dumping data for table 'users'
