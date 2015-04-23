@@ -145,6 +145,8 @@ $(document).ready(function(){
                     </div>
                 </div>
                 
+                
+                <hr>
 				<!-- Display Ads: rows of 1 -->
 				<br>
 				
