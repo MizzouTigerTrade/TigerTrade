@@ -8,6 +8,9 @@
 	
 	<hr>
 	
+	<div class="row">
+	<div class="col-xs-10 col-xs-offset-1" style="padding-bottom: 10px;">
+	
 	<?php if ($message != "") { ?>
       <div id="infoMessage">
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
@@ -253,5 +256,7 @@
 			</div>
 		</div>
 	<?php } ?>
+	</div>
+	</div>
 </div>
 </div>
