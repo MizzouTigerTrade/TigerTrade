@@ -10,6 +10,11 @@ class Market extends CI_Controller
 		$this->load->model('category_model');
 		$this->load->model('subcategory_model');
 		$data['menu'] = $this->load->view('shared/menu');
+		if( $this->ion_auth->user()->row() == null)
+        {
+            // Not logged in - so force them away
+            redirect ('/home/index');
+       	}
 	}
 
 	function index()

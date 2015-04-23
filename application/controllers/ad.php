@@ -11,6 +11,11 @@ class Ad extends CI_Controller
 		$this->load->model('subcategory_model');
 		$this->load->model('category_model');
 		$data['menu'] = $this->load->view('shared/menu');
+		if( $this->ion_auth->user()->row() == null)
+        {
+            // Not logged in - so force them away
+            redirect ('/home/index');
+       	}
 	}
 
 	function index()
@@ -135,7 +140,7 @@ class Ad extends CI_Controller
 			}
 		}
 		$data['error'] = 'shit';
-		$this->layout->view('auth/index', $data);
+		redirect('ad/edit/'.$ad_id);
 	}
 
 	//shows form to create a new ad
