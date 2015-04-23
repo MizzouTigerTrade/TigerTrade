@@ -8,6 +8,7 @@
 	
       <hr>
       
+    <div style="padding: 0 15px;" class="visible-xs">
       <?php if ($message != "") { ?>
       <div id="infoMessage">
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
@@ -64,7 +65,7 @@
                 
             </div>
         </div>
-
   <?php echo form_close();?>
+    </div>
 </div>
 </div>
