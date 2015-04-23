@@ -1,11 +1,12 @@
 <div class="container padding-top-20">
 <div class="container-border">	
+
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1>TigerTrade Web Site Terms and Conditions of Use</h1>
 		</div>
 	</div>
-
+	
 	<hr>
 
 	<h2>1. Terms</h2>
