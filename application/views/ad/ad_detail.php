@@ -58,7 +58,7 @@
 	<?php if(!empty($comments)) { ?>
 			<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
-					<p style="font-size: 1.1em; line-height: 10px;"><?php echo $row->ad_comment; ?>. Comment made on: <?php echo $row->comment_time; ?></p>
+					<p style="font-size: 1.1em; line-height: 30px;"><?php echo $row->ad_comment; ?>. Comment made on: <?php echo $row->comment_time; ?></p>
 				</div>
 	<?php } } ?>
 			<label for="comments" class="col-sm-10 control-label label-20">New Comments:</label>
