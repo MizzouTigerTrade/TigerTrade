@@ -41,7 +41,7 @@
                   </div> 
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-4">
+                <div class="col-xs-12">
 	                <div class="checkbox">
 					    <label style="padding-top: 7px;">
                         <?php
