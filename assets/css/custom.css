@@ -87,10 +87,6 @@ button a, button a:visited, button a:hover, button a:active {
 	background-color: rgba(183, 183, 183, 0.2)
 }
 
-.container {
-	padding: 10px 0;
-}
-
 @media (max-width: 599px) {
 
 }
