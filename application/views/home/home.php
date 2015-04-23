@@ -9,8 +9,6 @@
 		</div>
 	</div>
 	
-	<hr>
-	
 	<div class="row">
 		
 		<div class="col-sm-5 col-sm-offset-1" style="padding: 0 30px;">
