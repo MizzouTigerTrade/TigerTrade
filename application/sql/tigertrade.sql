@@ -78,7 +78,7 @@ CREATE TABLE images (
 	image_path	VARCHAR (100) NOT NULL,
 	tag_id INTEGER AUTO_INCREMENT,
 	PRIMARY KEY (tag_id),
-	FOREIGN KEY(ad_id) REFERENCES ads(ad_id)
+	FOREIGN KEY(ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 -- Table: tags
