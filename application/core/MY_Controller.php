@@ -30,7 +30,7 @@ class MY_Controller extends CI_Controller {
 
         $this->isAuthException = array_key_exists($this->calledClass,$authExceptions) && in_array($this->calledMethod, $authExceptions[$this->calledClass]);
 
-        if(!isset($this->ion_auth->is_admin()))
+        if(!$this->isAuthException)
         {
             redirect('auth/login.php');
         }
