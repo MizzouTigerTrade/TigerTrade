@@ -47,7 +47,7 @@ CREATE TABLE flags (
 	ad_id INTEGER NOT NULL REFERENCES ads(ad_id) ON DELETE CASCADE,
 	user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
 	PRIMARY KEY(ad_id, user_id)
-) ENGINE=InnoDB;
+);
 
 -- Table: kylecarlson_tigertrade.ads
 -- Columns:
@@ -67,7 +67,7 @@ CREATE TABLE kylecarlson_tigertrade.ads (
 	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
 	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id),
 	PRIMARY KEY (ad_id)
-) ENGINE=INNODB;
+);
 
 -- Table: kylecarlson_tigertrade.images
 -- Columns:
@@ -79,7 +79,7 @@ CREATE TABLE kylecarlson_tigertrade.images (
 	tag_id INTEGER AUTO_INCREMENT,
 	PRIMARY KEY (tag_id),
 	FOREIGN KEY(ad_id) REFERENCES ads(ad_id)
-) ENGINE=InnoDB;
+);
 
 -- Table: kylecarlson_tigertrade.tags
 -- Columns:
