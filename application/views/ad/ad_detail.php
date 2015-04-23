@@ -230,8 +230,5 @@
 				</div>
 			</div>
 		</div>
-	<?php } 
-	foreach($images->result() as $img)
-		echo $img->image_path . '   ';
-	?>
+	<?php } ?>
 </div>
