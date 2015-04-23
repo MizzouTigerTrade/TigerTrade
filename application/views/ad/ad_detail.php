@@ -116,7 +116,7 @@
 				$inc++;
 			} ?>
 		</ol>
-		<div class="carousel-inner text-center" role="listbox" style="min-height: 300px;">
+		<div class="carousel-inner text-center" role="listbox" style="min-height: 100%;">
 	<?php 	$inc = 0;
 			foreach ($images->result() as $img) { 
 				$image_link = base_url('/'.$img->image_path);
