@@ -25,19 +25,6 @@ CREATE TABLE users (
 	PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-
--- Table: comments
--- Columns:
---    ad_id			    - A unique code given to an ad.
---    description		- A user provided comment.
---    timestmp          - A timestamp of when the comment was made.
-CREATE TABLE comments (
-	ad_id INTEGER REFERENCES ad(ad_id),
-	ad_comment VARCHAR(500),
-	user_id INTEGER REFERENCES users(id),
-	timestmp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-
 -- Table: categories
 -- Columns:
 --    category_id      - An unique ID to identify the category.
