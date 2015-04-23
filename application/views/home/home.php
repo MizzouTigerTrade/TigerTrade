@@ -1,5 +1,5 @@
 <div class="container padding-top-20">
-<div class="container-border" style="padding: 0 10px;">
+<div class="container-border">
 
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
@@ -10,7 +10,7 @@
 	<hr>
 	
 	<div class="row">
-		<div class="col-sm-5 col-sm-offset-1">
+		<div class="col-sm-5 col-sm-offset-1" style="padding: 0 10px;">
 			Login
 			<?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
             <div class="form-group">
@@ -61,7 +61,7 @@
 
 			<?php echo form_close();?>			
 		</div>
-		<div class="col-sm-5">
+		<div class="col-sm-5" style="padding: 0 10px;">
 			Register
 		</div>
 	</div>
