@@ -38,10 +38,11 @@
 					<a href='<?= base_url("/market") ?>'>Market</a>
 				</li>
 				-->
-
+				<li class="<?php if ($this->uri->segment(1) == '' ) { ?>active<?php } ?>">
+					<a href='<?= base_url("market/index") ?>'>Market </a>
+				</li>
 				<li class="dropdown <?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
-					<a href="<?= base_url("/market/index") ?>" class="dropdown-toggle" data-toggle="">Market</b></a>
-					<a href="<?= base_url("/market/index") ?>" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href='<?= base_url("/market") ?>'>All</a></li>
 						<?php foreach ($categories->result() as $category) { ?>
