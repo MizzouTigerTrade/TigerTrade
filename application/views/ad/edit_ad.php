@@ -152,7 +152,7 @@ $(document).ready(function (){
 					<div class="col-sm-10">
 						<div id="filediv">
 							<div id="abcd<?= $inc ?>" class="abcd">
-								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" width="100%" height="100%">
+								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" max-width="100%" max-height="100%">
 								<img id="img" src="x.png" alt=" delete" onclick="$(this).parent().parent().remove();"></img>
 							</div>
 						</div>
