@@ -11,7 +11,7 @@ class Ad extends CI_Controller
 		$this->load->model('subcategory_model');
 		$this->load->model('category_model');
 		$data['menu'] = $this->load->view('shared/menu');
-		if( $this->ion_auth->user()->count() == 0)
+		if( $this->ion_auth->user()->row() == null)
         {
             // Not logged in - so force them away
             redirect ('/home/index');
