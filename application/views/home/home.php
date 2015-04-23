@@ -10,7 +10,7 @@
 	<hr>
 	
 	<div class="row">
-		<div class="col-sm-5 col-sm-offset-1" style="padding: 0 10px;">
+		<div class="col-sm-5 col-sm-offset-1" style="padding: 0 30px;">
 			Login
 			<?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
             <div class="form-group">
@@ -61,7 +61,7 @@
 
 			<?php echo form_close();?>			
 		</div>
-		<div class="col-sm-5" style="padding: 0 10px;">
+		<div class="col-sm-5" style="padding: 0 30px;">
 			Register
 		</div>
 	</div>
