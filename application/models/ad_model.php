@@ -317,7 +317,7 @@ class Ad_model extends CI_Model
 	//}
 	public function get_comments($ad_id)
 	{
-		$result = $this->db->query("SELECT ad_comment FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
+		$result = $this->db->query("SELECT * FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
 		$comment_array = new ArrayObject();
 		//$i = 0;
 		if($result->num_rows() > 0)
@@ -325,8 +325,11 @@ class Ad_model extends CI_Model
 			$result = $result->result();
 			foreach($result as $ad)
 			{
-				$single_ad['ad_comment'] = $ad->ad_comment;
-				$comment_array->append($single_ad);
+				$single_comment['ad_id'] = $ad->ad_id;
+				$single_comment['ad_comment'] = $ad->ad_comment;
+				$single_comment['user_id'] = $ad->user_id;
+				$single_comment['timestmp'] = $ad->timestmp;
+				$comment_array->append($single_comment);
 			}
 			return $comment_array;
 		}
