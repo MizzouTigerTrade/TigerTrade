@@ -14,6 +14,7 @@
 	</div>
 
 </div>
+</div>
 
 <!-- Carousel
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
