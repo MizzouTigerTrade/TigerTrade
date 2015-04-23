@@ -321,7 +321,8 @@ class Ad_model extends CI_Model
 	{
 		//$result = $this->db->query("SELECT * FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
 		//$result = $this->db->query("SELECT * FROM comments WHERE ad_id = '$ad_id'");
-		$this->db->select('ad_comment, timestmp');
+		$this->db->select('ad_comment');
+		$this->db->select('timestmp AS comment_time');
 		$this->db->from('comments');
 		$this->db->where('ad_id', $ad_id);
 		

@@ -61,7 +61,8 @@
 					<p style="font-size: 1.1em;"><?php echo $row->ad_comment; ?>. Comment made on: <?php echo $row->timestmp; ?></p>
 				</div>
 	<?php } } ?>
-			<br><br>
+			<p></p>
+			<p></p>
 			<label for="comments" class="col-sm-10 control-label label-20">New Comments:</label>
 			<div class="col-xs-12" style="padding: 0;">
 				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
