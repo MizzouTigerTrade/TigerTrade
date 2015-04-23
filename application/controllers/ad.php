@@ -248,8 +248,8 @@ class Ad extends CI_Controller
 	//gets ad comments
 	function user_comments($ad_id)
 	{
-		$data['comments'] = $this->ad_model->get_comments($ad_id);
-		redirect('/ad/details/' . $ad_id);
+		//$data['comments'] = $this->ad_model->get_comments($ad_id);
+		//redirect('/ad/details/' . $ad_id);
 	}
 	
 	//adds a comment to the ad
@@ -271,9 +271,6 @@ class Ad extends CI_Controller
 			
 			$user = $this->ion_auth->user()->row();
 			$user_id = $user->user_id;
-			
-			//$date = new DateTime();
-			//$timestmp = $date->getTimestamp();
 		
 			$this->ad_model->comment_ad($ad_id, $ad_comment, $user_id);
 	

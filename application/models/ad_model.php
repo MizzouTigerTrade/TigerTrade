@@ -307,20 +307,8 @@ class Ad_model extends CI_Model
 		$this->db->delete('ads'); 
 	}
 
-	//edit
-	/*
 	public function get_comments($ad_id)
 	{
-		//$query = $this->db->query("SELECT description FROM comments where ad_id = '$ad_id'");
-		$result = $this->db->query("SELECT ad_comment FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
-		$result = $result->result();
-		return $result;
-	}
-	*/
-	public function get_comments($ad_id)
-	{
-		//$result = $this->db->query("SELECT * FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
-		//$result = $this->db->query("SELECT * FROM comments WHERE ad_id = '$ad_id'");
 		$this->db->select('ad_comment');
 		$this->db->select('timestmp AS comment_time');
 		$this->db->from('comments');
@@ -332,48 +320,23 @@ class Ad_model extends CI_Model
 			$results = $query->result();
 			return $results;
 		}
-		/*
-		$comment_array = new ArrayObject();
-		if($result->num_rows() > 0)
-		{
-			$result = $result->result();
-			foreach($result as $ad)
-			{
-				$single_comment['ad_id'] = $ad->ad_id;
-				$single_comment['ad_comment'] = $ad->ad_comment;
-				$single_comment['user_id'] = $ad->user_id;
-				$single_comment['timestmp'] = $ad->timestmp;
-				$comment_array->append($single_comment);
-				echo $single_comment['ad_comment'];
-			}
-			return $comment_array;
-		}
 		else
 		{
 			$comment_array = "There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.";
 			return $comment_array;
 		}
-		*/
 	}
 	
 	public function comment_ad($ad_id, $ad_comment, $user_id)
 	{
-		/*
-		$this->db->set('ad_id', $ad_id);
-		$this->db->set('ad_comment', $ad_comment);
-		$this->db->set('user_id', $user_id);
-		$this->db->set('timestmp', $timestmp);
-		*/
 		$data = array(
 		'ad_id' => $ad_id ,
 		'ad_comment' => $ad_comment,
 		'user_id' => $user_id ,
-		//'timestmp' => $timestmp
 		);
 		
 		$this->db->set('timestmp', 'NOW()', FALSE);
 		
-		//insert into db, error thrown if not inserted correctly
 		if($this->db->insert('comments', $data) != TRUE)
 		{
 			throw new Exception("cannot insert");
