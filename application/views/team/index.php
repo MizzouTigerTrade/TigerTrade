@@ -7,6 +7,7 @@
 </style>
 
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
 			<h1>TigerTrade Development Team</h1>
@@ -36,4 +37,4 @@
 		<div class="col-sm-7 team-member-description">DESCRIPTION</div>	
 	</div>
 </div>
-				
+</div>		
