@@ -132,8 +132,8 @@ class Ad extends CI_Controller
 				
 			}
 		}
-
-		redirect('/ad/edit/'.$ad_id);
+		$data['error'] = 'shit';
+		$this->layout->view('auth/index', $data);
 	}
 
 	//shows form to create a new ad

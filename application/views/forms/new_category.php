@@ -1,13 +1,14 @@
-
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1>New Category</h1>
 		</div>
 	</div>
 	
 	<hr>
 	
+	<div style="padding: 0 15px;">
 	<?php if(isset($created)) {?>
 	    <div class="alert alert-success">
 	        <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -58,6 +59,6 @@
 			</div>
 		</div>
 	<?php echo form_close();?>
-	
-	
+	</div>
+</div>	
 </div>

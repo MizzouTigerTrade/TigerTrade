@@ -1,11 +1,15 @@
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1><?php echo $ad->title; ?></h1>
 		</div>
 	</div>	
 	
 	<hr>
+	
+	<div class="row">
+	<div class="col-xs-10 col-xs-offset-1" style="padding-bottom: 30px;">
 	
 	<?php if ($message != "") { ?>
       <div id="infoMessage">
@@ -118,7 +122,18 @@
 	<!-- Devices == Extra Small (Mobile) -->
 	<div class="row visible-xs">
 		<div class="col-xs-12">
-			<p style="font-size: .9em;"><?php echo $category->name; ?><?php echo $subcategory; ?></p>
+			<div class="row">
+				<div class="col-xs-12">
+				<?php
+				foreach($tags->result() as $tag) { 
+					if($tag->ad_id == $ad->ad_id)
+					{
+						echo '<span class="label label-default">' . $tag->description . '</span> ';
+					}
+				}
+				?>
+				</div>
+			</div>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOfferSM">Make an Offer</button>
 			
@@ -252,4 +267,7 @@
 			</div>
 		</div>
 	<?php } ?>
+	</div>
+	</div>
+</div>
 </div>
