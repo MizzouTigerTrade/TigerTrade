@@ -320,7 +320,18 @@ class Ad_model extends CI_Model
 	public function get_comments($ad_id)
 	{
 		//$result = $this->db->query("SELECT * FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
-		$result = $this->db->query("SELECT * FROM comments WHERE ad_id = '$ad_id'");
+		//$result = $this->db->query("SELECT * FROM comments WHERE ad_id = '$ad_id'");
+		$this->db->select('ad_comment, timestmp');
+		$this->db->from('comments');
+		$this->db->where('ad_id', $ad_id);
+		
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			$results = $query->result();
+		}
+		return $results;
+		/*
 		$comment_array = new ArrayObject();
 		if($result->num_rows() > 0)
 		{
@@ -341,6 +352,7 @@ class Ad_model extends CI_Model
 			$comment_array = "There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.";
 			return $comment_array;
 		}
+		*/
 	}
 	
 	public function comment_ad($ad_id, $ad_comment, $user_id, $timestmp)
