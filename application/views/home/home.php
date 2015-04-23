@@ -10,7 +10,12 @@
 	<hr>
 	
 	<div class="row">
-		
+		<div class="row-sm-5 row-sm-offset-1">
+			Login
+		</div>
+		<div class="row-sm-5">
+			Register
+		</div>
 	</div>
 
 </div>
