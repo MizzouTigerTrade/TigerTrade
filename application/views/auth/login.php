@@ -1,4 +1,5 @@
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
 		<div class="col-xs-12">
 			<h1>Login</h1>
@@ -64,4 +65,5 @@
             </div>
 
       <?php echo form_close();?>
+</div>
 </div>
