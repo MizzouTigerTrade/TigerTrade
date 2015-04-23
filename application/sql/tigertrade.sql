@@ -69,7 +69,7 @@ CREATE TABLE kylecarlson_tigertrade.ads (
 	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
 	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id),
 	PRIMARY KEY (ad_id)
-);
+) ENGINE=INNODB;
 
 -- Table: kylecarlson_tigertrade.images
 -- Columns:
@@ -134,25 +134,25 @@ DROP TABLE IF EXISTS `users`;
 #
 # Table structure for table 'users'
 #
-CREATE TABLE `users` (
+CREATE TABLE users (
 	id int NOT NULL AUTO_INCREMENT,
-`ip_address` varchar(15) NOT NULL,
-`username` varchar(100) NOT NULL,
-`password` varchar(255) NOT NULL,
-`salt` varchar(255) DEFAULT NULL,
-`email` varchar(100) NOT NULL,
-`activation_code` varchar(40) DEFAULT NULL,
-`forgotten_password_code` varchar(40) DEFAULT NULL,
-`forgotten_password_time` int DEFAULT NULL,
-`remember_code` varchar(40) DEFAULT NULL,
-`created_on` int NOT NULL,
-`last_login` int DEFAULT NULL,
-`active` int DEFAULT NULL,
-`first_name` varchar(50) DEFAULT NULL,
-`last_name` varchar(50) DEFAULT NULL,
-`phone` varchar(20) DEFAULT NULL,
-PRIMARY KEY (`id`)
-);
+	ip_address varchar(15) NOT NULL,
+	username varchar(100) NOT NULL,
+	password varchar(255) NOT NULL,
+	salt varchar(255) DEFAULT NULL,
+	email varchar(100) NOT NULL,
+	activation_code varchar(40) DEFAULT NULL,
+	forgotten_password_code varchar(40) DEFAULT NULL,
+	forgotten_password_time int DEFAULT NULL,
+	remember_code varchar(40) DEFAULT NULL,
+	created_on int NOT NULL,
+	last_login int DEFAULT NULL,
+	active int DEFAULT NULL,
+	first_name varchar(50) DEFAULT NULL,
+	last_name varchar(50) DEFAULT NULL,
+	phone varchar(20) DEFAULT NULL,
+	PRIMARY KEY (id)
+) ENGINE=INNODB;
 #
 # Dumping data for table 'users'
 #
