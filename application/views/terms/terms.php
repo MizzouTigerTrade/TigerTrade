@@ -1,4 +1,5 @@
 <div class="container padding-top-20">
+<div class="container-border">	
 	<div class="row">
 		<div class="col-xs-12">
 			<h1>TigerTrade Web Site Terms and Conditions of Use</h1>
@@ -116,4 +117,4 @@
 		We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained. 
 	</p>		
 </div>
-				
+</div>			
