@@ -10,9 +10,9 @@ USE kylecarlson_tigertrade;
 --    timestmp          - A timestamp of when the comment was made.
 CREATE TABLE kylecarlson_tigertrade.comments (
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ad(ad_id),
-	ad_comment	VARCHAR(500),
+	ad_comment VARCHAR(500),
 	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
-	timestmp 	TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+	timestmp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Table: kylecarlson_tigertrade.categories
@@ -20,9 +20,10 @@ CREATE TABLE kylecarlson_tigertrade.comments (
 --    category_id      - An unique ID to identify the category.
 --    description	   - A description for the category, provided by admins.
 CREATE TABLE kylecarlson_tigertrade.categories (
-	category_id  	INTEGER PRIMARY KEY AUTO_INCREMENT,
+	category_id INTEGER AUTO_INCREMENT,
 	name VARCHAR(128) NOT NULL,
-	description VARCHAR(512)
+	description VARCHAR(512),
+	PRIMARY KEY (category_id)
 );
 
 -- Table: kylecarlson_tigertrade.subcategories
@@ -31,10 +32,11 @@ CREATE TABLE kylecarlson_tigertrade.categories (
 --	category_id			- References the category_id in the categorie table, provides link.
 -- 	description			- A description of the subcategory provided by admins.
 CREATE TABLE kylecarlson_tigertrade.subcategories (
-	subcategory_id	  INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	subcategory_id INTEGER AUTO_INCREMENT NOT NULL,
 	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
 	name VARCHAR(128) NOT NULL,
-	description VARCHAR (512)
+	description VARCHAR (512),
+	PRIMARY KEY (subcategory_id)
 );
 
 -- Table: kylecarlson_tigertrade.ads
@@ -42,9 +44,11 @@ CREATE TABLE kylecarlson_tigertrade.subcategories (
 --	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
 --  user_id			- Id of user who flagged the Ad
 CREATE TABLE flags (
-	ad_id INTEGER REFERENCES ads(ad_id),
-	user_id INTEGER REFERENCES users(id),
-	primary key (ad_id, user_id)
+	ad_id INTEGER,
+	user_id INTEGER,
+	PRIMARY KEY(ad_id, user_id),
+	FOREIGN KEY(ad_id) REFERENCES ads(ad_id),
+	FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
 -- Table: kylecarlson_tigertrade.ads
@@ -55,15 +59,16 @@ CREATE TABLE flags (
 --	price			- The price of the ad sale, could be 0.00.
 --	flag_count		- The count of flags on the ad.
 CREATE TABLE kylecarlson_tigertrade.ads (
-	ad_id  	 INTEGER PRIMARY KEY AUTO_INCREMENT,
-	title	VARCHAR (128),
+	ad_id INTEGER AUTO_INCREMENT,
+	title VARCHAR (128),
 	description	VARCHAR (1024),
-	creation_date 	TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	expiration_date 	TIMESTAMP,
-	price	INTEGER,
+	creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	expiration_date TIMESTAMP,
+	price INTEGER,
 	user_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	category_id INTEGER REFERENCES kylecarlson_tigertrade.categories(category_id),
-	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id)
+	subcategory_id INTEGER REFERENCES kylecarlson_tigertrade.subcategories(subcategory_id),
+	PRIMARY KEY (ad_id)
 );
 
 -- Table: kylecarlson_tigertrade.images
@@ -73,7 +78,8 @@ CREATE TABLE kylecarlson_tigertrade.ads (
 CREATE TABLE kylecarlson_tigertrade.images (
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
 	image_path	VARCHAR (100) NOT NULL,
-	tag_id INTEGER PRIMARY KEY AUTO_INCREMENT
+	tag_id INTEGER AUTO_INCREMENT,
+	PRIMARY KEY (tag_id)
 );
 
 -- Table: kylecarlson_tigertrade.tags
@@ -81,9 +87,10 @@ CREATE TABLE kylecarlson_tigertrade.images (
 --	ad_id			- References to the ad, to organize the tags to the ad.
 --	description		- A description of the tag.
 CREATE TABLE kylecarlson_tigertrade.tags (
-	tag_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	tag_id INTEGER AUTO_INCREMENT,
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
-	description VARCHAR (100)
+	description VARCHAR (100),
+	PRIMARY KEY (tag_id)
 );
 
 -- Table: kylecarlson_tigertrade.offers
@@ -94,7 +101,7 @@ CREATE TABLE kylecarlson_tigertrade.tags (
 -- 	seller_response	- Message offer of the seller or response from ad
 --	status			- Status of the offer of buyer or seller, could be pending, accepted, declined
 CREATE TABLE kylecarlson_tigertrade.offers (
-	offer_id  	 INTEGER PRIMARY KEY AUTO_INCREMENT,
+	offer_id INTEGER AUTO_INCREMENT,
 	buyer_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	seller_id INTEGER REFERENCES kylecarlson_tigertrade.users(id),
 	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
@@ -103,7 +110,8 @@ CREATE TABLE kylecarlson_tigertrade.offers (
 	seller_response BLOB,
 	status VARCHAR(10) DEFAULT "Pending",
 	seen_by_buyer BOOLEAN DEFAULT 1,
-	seen_by_seller BOOLEAN DEFAULT 0
+	seen_by_seller BOOLEAN DEFAULT 0,
+	PRIMARY KEY (offer_id)
 );
 
 DROP TABLE IF EXISTS `groups`;
@@ -143,8 +151,6 @@ CREATE TABLE `users` (
 `first_name` varchar(50) DEFAULT NULL,
 `last_name` varchar(50) DEFAULT NULL,
 `phone` varchar(20) DEFAULT NULL,
-sent_offer_notification INTEGER DEFAULT "0",
-received_offer_notification INTEGER DEFAULT "0",
 PRIMARY KEY (`id`)
 );
 #
