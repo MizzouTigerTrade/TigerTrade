@@ -9,7 +9,7 @@
 	
 	<hr>
 	<div class="row">
-	<div class="col-xs-10 col-xs-offset-1">
+	<div class="col-xs-10 col-xs-offset-1" style="padding-bottom: 10px;">
 	<h2>1. Terms</h2>
 	
 	<p>
