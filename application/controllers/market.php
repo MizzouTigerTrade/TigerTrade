@@ -47,7 +47,7 @@ class Market extends CI_Controller
 		$data['title'] = 'Market';
 		
 		$config['base_url'] = 'http://jmcquinn.thetigertrade.com/market';
-		$config['total_rows'] = 200;
+		$config['total_rows'] = $this->ad_model->get_ad_count();
 		$config['per_page'] = 10; 
 
 		$this->pagination->initialize($config); 

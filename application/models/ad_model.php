@@ -126,6 +126,12 @@ class Ad_model extends CI_Model
 		$result = $this->db->query("SELECT * FROM ads");
 		return $result;
 	}
+	//edit
+	public function get_ad_count()
+	{
+		$result = $this->db->query("SELECT COUNT(ads.ad_id) FROM ads");
+		return $result;
+	}
 
 	public function get_ads_category($category_id)
 	{
