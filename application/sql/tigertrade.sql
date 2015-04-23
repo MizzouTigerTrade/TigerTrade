@@ -39,17 +39,6 @@ CREATE TABLE kylecarlson_tigertrade.subcategories (
 	PRIMARY KEY (subcategory_id)
 );
 
--- Table: kylecarlson_tigertrade.ads
--- Columns:
---	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
---  user_id			- Id of user who flagged the Ad
-CREATE TABLE kylecarlson_tigertrade.flags (
-	ad_id INTEGER NOT NULL,
-	user_id INTEGER NOT NULL,
-	PRIMARY KEY(ad_id, user_id),
-	FOREIGN KEY (ad_id) REFERENCES kylecarlson_tigertrade.ads(ad_id),
-	FOREIGN KEY (user_id) REFERENCES kylecarlson_tigertrade.users(id)
-) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.ads
 -- Columns:
@@ -154,6 +143,19 @@ CREATE TABLE users (
 	phone varchar(20) DEFAULT NULL,
 	PRIMARY KEY (id)
 ) ENGINE=InnoDB;
+
+-- Table: kylecarlson_tigertrade.ads
+-- Columns:
+--	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
+--  user_id			- Id of user who flagged the Ad
+CREATE TABLE kylecarlson_tigertrade.flags (
+	ad_id INTEGER NOT NULL,
+	user_id INTEGER NOT NULL,
+	PRIMARY KEY(ad_id, user_id),
+	FOREIGN KEY (ad_id) REFERENCES kylecarlson_tigertrade.ads(ad_id),
+	FOREIGN KEY (user_id) REFERENCES kylecarlson_tigertrade.users(id)
+) ENGINE=InnoDB;
+
 #
 # Dumping data for table 'users'
 #
