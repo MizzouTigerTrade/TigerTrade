@@ -1,11 +1,14 @@
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
-		<div class="col-xs-12">
-			<h1>Forgot Password</h1>
+		<div class="col-xs-10 col-xs-offset-1">
+			<h1>Forgot Password</h1> 
 		</div>
 	</div>
+
+	<hr>
 	
-      <hr>
+	<div style="padding: 0 15px;">
       <div class="row">
 			<div class="col-sm-offset-4 col-sm-8">
 			    <p>Enter your the email address you used to sign up.</p>
@@ -56,4 +59,6 @@
             </div>
 
       <?php echo form_close();?>
+	</div>
+</div>
 </div>
