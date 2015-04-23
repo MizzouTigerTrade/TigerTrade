@@ -7,6 +7,9 @@
 	</div>
 	
       <hr>
+      
+    <div class="row">
+	<div class="col-xs-10 col-xs-offset-1">
       <?php if ($message != "") { ?>
       <div id="infoMessage">
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
@@ -65,5 +68,7 @@
             </div>
 
       <?php echo form_close();?>
+	</div>
+    </div>
 </div>
 </div>
