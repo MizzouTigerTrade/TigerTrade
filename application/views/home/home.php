@@ -114,7 +114,7 @@
 	      					<span class="help-block">Minimum of 8 characters</span>
 	                  </div>
 	            </div>
-	            <div class="form-group" style="margin-bottom: 10px;">
+	            <div class="form-group" style="margin-bottom: 8px;">
 	                  <label for="password_confirm" class="col-xs-12 text-left">Confirm Password</label>
 	                  <div class="col-xs-12">
 	                        <input type="password" name="password_confirm" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
@@ -123,7 +123,7 @@
 	            </div>
 	            <div class="form-group">
 	                  <div class="col-xs-12">
-	                        <button type="submit" class="btn btn-default">Create User</button>
+	                        <button type="submit" class="btn btn-default text-right">Create User</button>
 	                  </div>
 	            </div>
       		</form>
