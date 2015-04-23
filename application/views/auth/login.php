@@ -8,7 +8,7 @@
 	
       <hr>
       
-    <div style="padding: 0 15px;" class="visible-xs">
+    <div style="padding: 0 15px;">
       <?php if ($message != "") { ?>
       <div id="infoMessage">
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">

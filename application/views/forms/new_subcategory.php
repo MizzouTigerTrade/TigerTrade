@@ -60,7 +60,7 @@ $(document).ready(function (){
 	
 	<hr>
 	
-	<div style="padding: 0 15px;" class="visible-xs">
+	<div style="padding: 0 15px;">
 	<?php if(isset($created)) {?>
 	    <div class="alert alert-success">
 	        <a href="#" class="close" data-dismiss="alert">&times;</a>
