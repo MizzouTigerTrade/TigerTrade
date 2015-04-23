@@ -329,8 +329,8 @@ class Ad_model extends CI_Model
 		
 		if($query->num_rows() > 0) {
 			$results = $query->result();
+			return $results;
 		}
-		return $results;
 		/*
 		$comment_array = new ArrayObject();
 		if($result->num_rows() > 0)
