@@ -8,7 +8,8 @@
 	</div>
 	
 	<hr>
-
+	<div class="row">
+	<div class="col-xs-10 col-xs-offset-1">
 	<h2>1. Terms</h2>
 	
 	<p>
@@ -117,5 +118,7 @@
 	<p>
 		We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained. 
 	</p>		
+	</div>
+	</div>
 </div>
 </div>			
