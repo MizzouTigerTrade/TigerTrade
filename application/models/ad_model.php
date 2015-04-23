@@ -333,7 +333,6 @@ class Ad_model extends CI_Model
 				$single_comment['timestmp'] = $ad->timestmp;
 				$comment_array->append($single_comment);
 			}
-			$comment_array = $comment_array->result();
 			return $comment_array;
 		}
 		else
@@ -342,6 +341,7 @@ class Ad_model extends CI_Model
 			return $comment_array;
 		}
 	}
+	
 	public function comment_ad($ad_id, $ad_comment, $user_id, $timestmp)
 	{
 		$this->db->set('ad_id', $ad_id);
