@@ -62,7 +62,7 @@
 
 			<?php echo form_close();?>			
 		</div>
-		<div class="col-sm-5" style="padding: 0 30px; border-left: 1px solid black;">
+		<div class="col-sm-5" style="padding: 0 30px;">
 			<h2>Register</h2>
 			<form action="<?php echo base_url('auth/create_user') ?>" method="POST" class="form-horizontal" id="ad-form" data-toggle="validator" role="form">
 
