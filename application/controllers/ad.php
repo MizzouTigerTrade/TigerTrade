@@ -61,6 +61,12 @@ class Ad extends CI_Controller
 	//edit ad by id
 	function edit($ad_id)
 	{
+		$user = $this->ion_auth->user($id)->row();
+		$ad = $this->ad_model->get_ad($ad_id);
+		if($ad->user_id != $user->user_id)
+		{
+			redirect('/market/index');
+		}
 		$data['ad'] = $this->ad_model->get_ad($ad_id);
 		$data['images'] = $this->ad_model->get_ad_images($ad_id);
 		$data['tags'] = $this->ad_model->get_ad_tags($ad_id);
