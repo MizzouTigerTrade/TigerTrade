@@ -47,8 +47,8 @@ CREATE TABLE kylecarlson_tigertrade.flags (
 	ad_id INTEGER NOT NULL,
 	user_id INTEGER NOT NULL,
 	PRIMARY KEY(ad_id, user_id),
-	FOREIGN KEY (ad_id) REFERENCES ads(ad_id),
-	FOREIGN KEY (user_id) REFERENCES users(id)
+	FOREIGN KEY (ad_id) REFERENCES kylecarlson_tigertrade.ads(ad_id),
+	FOREIGN KEY (user_id) REFERENCES kylecarlson_tigertrade.users(id)
 ) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.ads
