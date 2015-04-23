@@ -308,6 +308,7 @@ class Ad_model extends CI_Model
 	}
 
 	//edit
+	/*
 	public function get_comments($ad_id)
 	{
 		//$query = $this->db->query("SELECT description FROM comments where ad_id = '$ad_id'");
@@ -315,7 +316,7 @@ class Ad_model extends CI_Model
 		$result = $result->result();
 		return $result;
 	}
-	/*
+	*/
 	public function get_comments($ad_id)
 	{
 		$result = $this->db->query("SELECT * FROM comments JOIN ads ON comments.ad_id = ads.ad_id JOIN users ON ads.user_id = users.id GROUP BY comments.timestmp ORDER BY COUNT(comments.timestmp) DESC");
@@ -332,6 +333,7 @@ class Ad_model extends CI_Model
 				$single_comment['timestmp'] = $ad->timestmp;
 				$comment_array->append($single_comment);
 			}
+			$comment_array = $comment_array->result();
 			return $comment_array;
 		}
 		else
@@ -340,7 +342,6 @@ class Ad_model extends CI_Model
 			return $comment_array;
 		}
 	}
-	*/
 	public function comment_ad($ad_id, $ad_comment, $user_id, $timestmp)
 	{
 		$this->db->set('ad_id', $ad_id);
