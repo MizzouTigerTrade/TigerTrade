@@ -54,6 +54,8 @@ $(document).ready(function(){
 </script>
 
 <div class="container padding-top-20">
+<div class="container-border">
+	
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
 			<h1>Market: <?php echo $market_name; ?></h1>
@@ -219,4 +221,5 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
+</div>
 </div>
