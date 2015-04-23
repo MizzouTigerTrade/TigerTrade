@@ -47,8 +47,8 @@ CREATE TABLE flags (
 	ad_id INTEGER NOT NULL,
 	user_id INTEGER NOT NULL,
 	PRIMARY KEY(ad_id, user_id),
-	FOREIGN KEY(ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE,
-	FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+	FOREIGN KEY(ad_id) REFERENCES ads(ad_id),
+	FOREIGN KEY(user_id) REFERENCES users(id)
 ) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.ads
@@ -76,10 +76,11 @@ CREATE TABLE kylecarlson_tigertrade.ads (
 --	ad_id			- A Unique ad ID for each ad, to easily identify the ad in the system.
 --  image_path		- The file path to the image.
 CREATE TABLE kylecarlson_tigertrade.images (
-	ad_id INTEGER REFERENCES kylecarlson_tigertrade.ads(ad_id),
+	ad_id INTEGER,
 	image_path	VARCHAR (100) NOT NULL,
 	tag_id INTEGER AUTO_INCREMENT,
-	PRIMARY KEY (tag_id)
+	PRIMARY KEY (tag_id),
+	FOREIGN KEY(ad_id) REFERENCES ads(ad_id)
 );
 
 -- Table: kylecarlson_tigertrade.tags
@@ -118,11 +119,11 @@ DROP TABLE IF EXISTS `groups`;
 #
 # Table structure for table 'groups'
 #
-CREATE TABLE `groups` (
-`id` int NOT NULL AUTO_INCREMENT,
-`name` varchar(20) NOT NULL,
-`description` varchar(100) NOT NULL,
-PRIMARY KEY (`id`)
+CREATE TABLE groups (
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(20) NOT NULL,
+	description varchar(100) NOT NULL,
+	PRIMARY KEY (`id`)
 );
 #
 # Dumping data for table 'groups'
