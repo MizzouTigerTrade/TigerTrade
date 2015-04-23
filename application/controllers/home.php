@@ -30,6 +30,11 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		if( $this->ion_auth->user()->row() != null)
+        {
+            // Not logged in - so force them away
+            redirect ('/market/index');
+       	}
 		$data['categories'] = $this->category_model->get_all_categories();
 		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
 		$data['title'] = 'Home';
