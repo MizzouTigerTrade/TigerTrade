@@ -38,7 +38,7 @@
 					<a href='<?= base_url("/market") ?>'>Market</a>
 				</li>
 				-->
-
+				<?php if (!$this->ion_auth->logged_in()) { ?>
 				<li class="dropdown <?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Market <b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -49,7 +49,7 @@
 						<?php } ?>
 					</ul>
 				</li>
-
+				<?php } ?>
 				
 				<li class="dropdown <?php if ($this->uri->segment(1) == 'content' ) { ?>active<?php } ?>">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
