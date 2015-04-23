@@ -55,9 +55,9 @@
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
 			<label for="comments" class="col-sm-10 control-label label-20">View Comments:</label>
-			<?php foreach($comments->result() as $row) { ?>
+			<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
-					<p style="font-size: 1.1em;"><?php echo $row->ad_comment; ?></p>
+					<p style="font-size: 1.1em;"><?php echo $row->ad_comment; ?>. Comment made on <?php echo $row->timestmp; ?></p>
 				</div>
 			<?php } ?>
 			<label for="comments" class="col-sm-10 control-label label-20">New Comments:</label>
