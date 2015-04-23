@@ -44,10 +44,12 @@ CREATE TABLE kylecarlson_tigertrade.subcategories (
 --	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
 --  user_id			- Id of user who flagged the Ad
 CREATE TABLE flags (
-	ad_id INTEGER NOT NULL REFERENCES ads(ad_id) ON DELETE CASCADE,
-	user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-	PRIMARY KEY(ad_id, user_id)
-);
+	ad_id INTEGER NOT NULL,
+	user_id INTEGER NOT NULL,
+	PRIMARY KEY(ad_id, user_id),
+	FOREIGN KEY (ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE,
+	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.ads
 -- Columns:
