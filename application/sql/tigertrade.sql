@@ -43,7 +43,7 @@ CREATE TABLE kylecarlson_tigertrade.subcategories (
 -- Columns:
 --	ad_id			- A unique ad ID that increases with each new ad created to give a unique id.
 --  user_id			- Id of user who flagged the Ad
-CREATE TABLE flags (
+CREATE TABLE kylecarlson_tigertrade.flags (
 	ad_id INTEGER NOT NULL,
 	user_id INTEGER NOT NULL,
 	PRIMARY KEY(ad_id, user_id),
@@ -136,7 +136,7 @@ DROP TABLE IF EXISTS `users`;
 # Table structure for table 'users'
 #
 CREATE TABLE users (
-	id int NOT NULL AUTO_INCREMENT,
+	id INTEGER NOT NULL AUTO_INCREMENT,
 	ip_address varchar(15) NOT NULL,
 	username varchar(100) NOT NULL,
 	password varchar(255) NOT NULL,
