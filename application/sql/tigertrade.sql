@@ -81,7 +81,7 @@ CREATE TABLE kylecarlson_tigertrade.images (
 	tag_id INTEGER AUTO_INCREMENT,
 	PRIMARY KEY (tag_id),
 	FOREIGN KEY(ad_id) REFERENCES ads(ad_id)
-);
+) ENGINE=InnoDB;
 
 -- Table: kylecarlson_tigertrade.tags
 -- Columns:
