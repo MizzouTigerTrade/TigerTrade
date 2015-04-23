@@ -63,6 +63,71 @@
 		</div>
 		<div class="col-sm-5" style="padding: 0 30px;">
 			<h2>Register</h2>
+			<form action="<?php echo base_url('auth/create_user') ?>" method="POST" class="form-horizontal" id="ad-form" data-toggle="validator" role="form">
+
+	            <div class="form-group">
+	                  <label for="first_name" class="col-xs-12 text-left">First Name</label>
+	                  <div class="col-xs-12">
+	                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Joe" required>
+	                  </div>
+	                  <div class="help-block with-errors"></div>
+	            </div>
+	            <div class="form-group">
+	                  <label for="last_name" class="col-xs-12 text-left">Last Name</label>
+	                  <div class="col-xs-12">
+		                    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Smith" required>
+	                  </div>
+	                  <div class="help-block with-errors"></div>
+	            </div>
+	            <div class="form-group">
+	                  <label for="email" class="col-xs-12 text-left">Email</label>
+	                  <div class="col-xs-12">
+	                  	<div class="input-group">
+					      	<input type="text" pattern="^([_A-z0-9]){3,}$" name="email" minlength="6" maxlength="20" class="form-control" id="inputTwitter" placeholder="pawprint" required>
+					    	<span class="input-group-addon">
+					    		<select name="email_option">
+								  <option value="@mail.missouri.edu">@mail.missouri.edu</option>
+								  <option value="@missouri.edu">@missouri.edu</option>
+								</select>
+							</span>
+					    </div>
+						    <div class="help-block with-errors"></div>
+	                  </div>
+	            </div>
+	            <div class="form-group">
+	                  <label for="phone" class="col-xs-12 text-left">Phone</label>
+	                  <div class="col-xs-12">
+	                        <?php
+		                         $data = array(
+						          'name'        => 'phone',
+						          'id'          => 'phone',
+						          'class'       => 'form-control'
+						        );
+		                        echo form_input($data);
+		                    ?>
+	                  </div>
+	            </div>
+	            <div class="form-group">
+	                  <label for="password" class="col-xs-12 text-left">Password</label>
+	                  <div class="col-xs-12">
+	                        <input type="password" data-minlength="8" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
+	      					<span class="help-block">Minimum of 8 characters</span>
+	                  </div>
+	            </div>
+	            <div class="form-group">
+	                  <label for="password_confirm" class="col-xs-12 text-left">Confirm Password</label>
+	                  <div class="col-xs-12">
+	                        <input type="password" name="password_confirm" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+	      					<div class="help-block with-errors"></div>
+	                  </div>
+	            </div>
+	            <div class="form-group">
+	                  <div class="col-xs-12">
+	                        <button type="submit" class="btn btn-default">Create User</button>
+	                  </div>
+	            </div>
+      		</form>
+
 		</div>
 	</div>
 
