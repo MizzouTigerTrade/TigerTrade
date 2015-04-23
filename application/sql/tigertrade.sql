@@ -4,7 +4,6 @@ CREATE SCHEMA kylecarlson_tigertrade;
 USE kylecarlson_tigertrade;
 
 -- Table: Users
--- Columns:
 CREATE TABLE users (
 	id INTEGER NOT NULL AUTO_INCREMENT,
 	ip_address varchar(15) NOT NULL,
@@ -28,6 +27,7 @@ CREATE TABLE users (
 -- Table: categories
 -- Columns:
 --    category_id      - An unique ID to identify the category.
+--	  Name			   - Name of category
 --    description	   - A description for the category, provided by admins.
 CREATE TABLE categories (
 	category_id INTEGER AUTO_INCREMENT,
@@ -43,11 +43,12 @@ CREATE TABLE categories (
 -- 	description			- A description of the subcategory provided by admins.
 CREATE TABLE subcategories (
 	subcategory_id INTEGER AUTO_INCREMENT NOT NULL,
-	category_id INTEGER REFERENCES categories(category_id),
+	category_id INTEGER,
 	name VARCHAR(128) NOT NULL,
 	description VARCHAR (512),
 	PRIMARY KEY (subcategory_id)
-);
+	FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Table: ads
 -- Columns:
@@ -63,10 +64,14 @@ CREATE TABLE ads (
 	creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	expiration_date TIMESTAMP,
 	price INTEGER,
-	user_id INTEGER REFERENCES users(id),
-	category_id INTEGER REFERENCES categories(category_id),
-	subcategory_id INTEGER REFERENCES subcategories(subcategory_id),
+	user_id INTEGER,
+	category_id INTEGER,
+	subcategory_id INTEGER,
 	PRIMARY KEY (ad_id)
+	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+	FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE,
+	FOREIGN KEY (subcategory_id) REFERENCES subcategories(subcategory_id) ON DELETE CASCADE
+	
 ) ENGINE=InnoDB;
 
 -- Table: images
@@ -87,10 +92,11 @@ CREATE TABLE images (
 --	description		- A description of the tag.
 CREATE TABLE tags (
 	tag_id INTEGER AUTO_INCREMENT,
-	ad_id INTEGER REFERENCES ads(ad_id),
+	ad_id INTEGER,
 	description VARCHAR (100),
-	PRIMARY KEY (tag_id)
-);
+	PRIMARY KEY (tag_id),
+	FOREIGN KEY (ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Table: offers
 -- Column:
@@ -101,17 +107,20 @@ CREATE TABLE tags (
 --	status			- Status of the offer of buyer or seller, could be pending, accepted, declined
 CREATE TABLE offers (
 	offer_id INTEGER AUTO_INCREMENT,
-	buyer_id INTEGER REFERENCES users(id),
-	seller_id INTEGER REFERENCES users(id),
-	ad_id INTEGER REFERENCES ads(ad_id),
+	buyer_id INTEGER,
+	seller_id INTEGER,
+	ad_id INTEGER,
 	price	INTEGER,
 	buyer_message BLOB,
 	seller_response BLOB,
 	status VARCHAR(10) DEFAULT "Pending",
 	seen_by_buyer BOOLEAN DEFAULT 1,
 	seen_by_seller BOOLEAN DEFAULT 0,
-	PRIMARY KEY (offer_id)
-);
+	PRIMARY KEY (offer_id),
+	FOREIGN KEY (buyer_id) REFERENCES users(id) ON DELETE CASCADE,
+	FOREIGN KEY (seller_id) REFERENCES users(id) ON DELETE CASCADE,
+	FOREIGN KEY (ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS `groups`;
 #
@@ -148,11 +157,13 @@ CREATE TABLE flags (
 --    description		- A user provided comment.
 --    timestmp          - A timestamp of when the comment was made.
 CREATE TABLE comments (
-	ad_id INTEGER REFERENCES ads(ad_id),
+	ad_id INTEGER,
 	ad_comment VARCHAR(500),
-	user_id INTEGER REFERENCES users(id),
-	timestmp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
+	user_id INTEGER,
+	timestmp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (ad_id) REFERENCES ads(ad_id) ON DELETE CASCADE,
+	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 #
 # Dumping data for table 'users'
