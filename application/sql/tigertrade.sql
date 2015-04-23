@@ -34,7 +34,7 @@ CREATE TABLE categories (
 	name VARCHAR(128) NOT NULL,
 	description VARCHAR(512),
 	PRIMARY KEY (category_id)
-);
+) ENGINE=InnoDB;
 
 -- Table: subcategories
 -- Columns:
