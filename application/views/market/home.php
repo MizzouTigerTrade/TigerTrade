@@ -179,7 +179,8 @@ $(document).ready(function(){
 						<div class="" style="margin-top: 20px; margin-bottom: 20px;">
 							
 							<div class="col-xs-3 col-md-2 col-md-offset-1">
-							<?php 	$flag = 0;
+							<?php 	
+									$flag = 0;
 									//$image_link = "nothing";
 									foreach($images->result() as $img) { 
 										if($img->ad_id == $row->ad_id && $flag == 0)
@@ -189,7 +190,7 @@ $(document).ready(function(){
 										}
 									}
 									
-									if(empty($image_link)) { ?> 
+									if($flag == 0) { ?> 
 									<!--<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">-->
 									<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
 								<?php } else { ?>
