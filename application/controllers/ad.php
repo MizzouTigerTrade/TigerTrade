@@ -67,7 +67,7 @@ class Ad extends CI_Controller
 		{
 			redirect('/market/index');
 		}
-		$data['ad'] = $this->ad_model->get_ad($ad_id);
+		$data['ad'] = $ad;
 		$data['images'] = $this->ad_model->get_ad_images($ad_id);
 		$data['tags'] = $this->ad_model->get_ad_tags($ad_id);
 		$data['title'] = 'Edit Ad';
@@ -100,6 +100,12 @@ class Ad extends CI_Controller
 		{
 			
 			$ad_id = $this->security->xss_clean($this->input->post('ad_id'));
+			$user = $this->ion_auth->user($id)->row();
+			$ad = $this->ad_model->get_ad($ad_id);
+			if($ad->user_id != $user->user_id)
+			{
+				redirect('/market/index');
+			}
 			$title = $this->security->xss_clean($this->input->post('title'));
 			$description = $this->security->xss_clean($this->input->post('description'));
 			$price = $this->security->xss_clean($this->input->post('price'));
