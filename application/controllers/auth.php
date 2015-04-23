@@ -426,7 +426,7 @@ class Auth extends CI_Controller {
 		//validate form input
 		$this->form_validation->set_rules('first_name', $this->lang->line('create_user_validation_fname_label'), 'required');
 		$this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'required');
-		$this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email|is_unique['.$tables['users'].'.email]');
+		$this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|is_unique['.$tables['users'].'.email]');
 		$this->form_validation->set_rules('phone', $this->lang->line('create_user_validation_phone_label'), 'required');
 		$this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
 		$this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
@@ -435,6 +435,8 @@ class Auth extends CI_Controller {
 		{
 			$username = strtolower($this->input->post('first_name')) . ' ' . strtolower($this->input->post('last_name'));
 			$email    = strtolower($this->input->post('email'));
+			$email_option = $this->input->post('email_option');
+			$email = $email.$email_option;
 			$password = $this->input->post('password');
 
 			$additional_data = array(
@@ -519,7 +521,7 @@ class Auth extends CI_Controller {
 		if (isset($_POST) && !empty($_POST))
 		{
 			// do we have a valid request?
-			if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
+			if (/*$this->_valid_csrf_nonce() === FALSE || */$id != $this->input->post('id'))
 			{
 				show_error($this->lang->line('error_csrf'));
 			}
@@ -598,7 +600,7 @@ class Auth extends CI_Controller {
 		}
 
 		//display the edit user form
-		$this->data['csrf'] = $this->_get_csrf_nonce();
+		//$this->data['csrf'] = $this->_get_csrf_nonce();
 
 		//set the flash data error message if there is one
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
@@ -754,7 +756,7 @@ class Auth extends CI_Controller {
 		$this->layout->view('auth/edit_group', $this->data);
 	}
 
-
+	/*
 	function _get_csrf_nonce()
 	{
 		$this->load->helper('string');
@@ -778,6 +780,7 @@ class Auth extends CI_Controller {
 			return FALSE;
 		}
 	}
+	*/
 
 	function _render_page($view, $data=null, $render=false)
 	{

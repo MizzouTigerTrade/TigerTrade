@@ -1,22 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	 
 	function __construct()
 	{
@@ -25,7 +9,14 @@ class Admin extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('category_model');
 		$this->load->model('subcategory_model');
+		$this->load->model('ad_model');
 		$data['menu'] = $this->load->view('shared/menu');
+		$this->lang->load('auth');
+		if( $this->ion_auth->user()->row() == null)
+        {
+            // Not logged in - so force them away
+            redirect ('/home/index');
+       	}
 	}
 
 	public function index()
@@ -38,15 +29,18 @@ class Admin extends CI_Controller {
 		//$this->layout->view('welcome_message', $data);
 	}
 	
-	/*
+	
 	function manage_flags()
 	{
+		$data['title'] = 'Flags';
 		
-	
+		$data['message'] = $this->session->flashdata('message');
+		
+		$data['flags'] = $this->ad_model->get_flagged_ads();
 
-	
+		$this->layout->view('admin/manage_flags', $data);
 	}
-	*/
+
 	
 	function new_category()
 	{
@@ -107,5 +101,46 @@ class Admin extends CI_Controller {
 		
 		$data['categories'] = $this->category_model->get_all_categories();
 		$this->layout->view('forms/new_subcategory', $data);
+	}
+	
+	function dismiss_flag($ad_id)
+	{	
+		$this->ad_model->dismiss_flag($ad_id);
+		
+		$this->session->set_flashdata('message', "Removed flag from Ad " . $ad_id);
+		redirect('admin/manage_flags', 'refresh');
+		
+	}
+	
+	function delete_ad($ad_id)
+	{
+		$ad = $this->ad_model->get_ad($ad_id);
+
+		$message_to_user = $this->input->post('message_to_user');
+		
+		$user = $this->ion_auth->user()->row();
+		$to = $user->email;
+	
+		$subject = "Tiger Trade Ad Removed";
+		
+		$message = "
+		<html>
+		<body>
+		<h1 style='border-bottom: 2px solid black;'>TigerTrade</h1>
+		<p> Ad <strong style='color: red;'>" . $ad->title . "</strong> was deleted from Tiger Trade.</p>
+		<p>" . $message_to_user . "</p>
+		</body>
+		</html>
+		";
+		
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		$headers .= 'From: <admin@thetigertrade.com>' . "\r\n";
+		
+		mail($to,$subject,$message,$headers);
+		
+		$this->ad_model->delete_ad($ad_id);
+		$this->session->set_flashdata('message', "Removed Ad");
+		redirect('admin/manage_flags', 'refresh');
 	}
 }
