@@ -14,7 +14,7 @@
 			Login
 			<?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
             <div class="form-group">
-                  <label for="identity" class="col-xs-12 control-label">Email</label>
+                  <label for="identity" class="col-xs-12 control-labe text-leftl">Email</label>
                   <div class="col-xs-12">
                         <?php
 	                         $data = array(
@@ -27,7 +27,7 @@
                   </div>
             </div>
             <div class="form-group" style="margin-bottom: 0px;">
-                  <label for="password" class="col-xs-12 control-label">Password</label>
+                  <label for="password" class="col-xs-12 control-label text-left">Password</label>
                   <div class="col-xs-12">
 	                    <?php
 	                         $data = array(
