@@ -162,7 +162,7 @@
 		</div>
 	</div>
 
-<?php if(count($images->result()) != 0) { ?> 
+<?php if(count($images->result()) != 0) { echo count($images->result());?> 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
 
 		<ol class="carousel-indicators">
