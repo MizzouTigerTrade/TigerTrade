@@ -39,7 +39,7 @@
 				</li>
 				-->
 				<li class="<?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>>">
-					<a href='<?= base_url("market/index") ?>'>Market </a>
+					<a href='<?= base_url("/market") ?>'>Market </a>
 				</li>
 				<li class="dropdown <?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;<b class="caret"></b></a>
