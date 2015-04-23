@@ -230,5 +230,5 @@
 				</div>
 			</div>
 		</div>
-	<?php } ?>
+	<?php } echo $inc;?>
 </div>
