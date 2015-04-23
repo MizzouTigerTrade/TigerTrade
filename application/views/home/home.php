@@ -3,7 +3,7 @@
 
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
-			<h1>Market: <?php echo $market_name; ?></h1>
+			<h1>TigerTrade</h1>
 		</div>
 	</div>
 	
