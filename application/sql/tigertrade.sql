@@ -67,7 +67,7 @@ CREATE TABLE ads (
 	user_id INTEGER,
 	category_id INTEGER,
 	subcategory_id INTEGER,
-	PRIMARY KEY (ad_id)
+	PRIMARY KEY (ad_id),
 	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
 	FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE,
 	FOREIGN KEY (subcategory_id) REFERENCES subcategories(subcategory_id) ON DELETE CASCADE
