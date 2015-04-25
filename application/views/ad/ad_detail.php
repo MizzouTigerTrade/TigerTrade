@@ -284,7 +284,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-10" style="padding: 5px">
-						<button type="submit" class="btn btn-default">Submit</button>
+						<button type="submit" class="btn btn-warning">Submit</button>
 					</div>
 				</div>
 			</div>
