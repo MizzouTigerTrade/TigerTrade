@@ -143,7 +143,7 @@ class Admin extends CI_Controller {
 		$this->session->set_flashdata('message', "Removed Ad");
 		
 		if ($this->input->post('source')){
-			redirect('ad/details/' . $ad_id , 'refresh');
+			redirect('market', 'refresh');
 		}
 		
 		redirect('admin/manage_flags', 'refresh');
