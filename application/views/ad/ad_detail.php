@@ -95,6 +95,31 @@
 			<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
 			<?php }; ?> 
 			
+			<?php if ($admin == true) { ?>
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+	
+					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog" style="width: 450px;">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this Ad?</h4>
+								</div>
+								<div class="modal-body">
+									Message to user<br>
+									<form action="<?php echo base_url('admin/delete_ad') . '/' . $ad->ad_id ;?>"  method="POST">
+									<textarea rows="4" cols="50" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
+								</div>
+								<div class="modal-footer">
+									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
+									</form>
+									<button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Cancel</button>
+								</div>
+							</div>
+						</div>
+					</div>
+			<?php }; ?>
+			
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 

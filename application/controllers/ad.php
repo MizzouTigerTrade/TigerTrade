@@ -55,6 +55,14 @@ class Ad extends CI_Controller
 		} else {
 			$data['flagged'] = true; // Don't show report ad button to non-users
 		}
+		
+		if($this->ion_auth->is_admin()){
+			$data['admin'] = true;
+		}
+		else{
+			$data['admin'] = false;
+		}
+		
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
