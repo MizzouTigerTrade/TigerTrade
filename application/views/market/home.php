@@ -86,6 +86,15 @@ $(document).ready(function(){
 	
 	<hr>
 	
+	<?php if ($message != "") { ?>
+      <div id="infoMessage">
+		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
+		  <span class="sr-only">Error:</span>
+		  <?php echo $message;?>
+		</div>
+	  </div>
+	<?php } ?>
+	
 	<div class="row">
 		<div class="col-xs-12" id="market_background">
 			

@@ -112,6 +112,7 @@
 								</div>
 								<div class="modal-footer">
 									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
+									<input type="hidden" name="source" value="market">
 									</form>
 									<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
 								</div>
