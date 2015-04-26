@@ -96,7 +96,7 @@
 			<?php }; ?> 
 			
 			<?php if ($admin == true) { ?>
-				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Ad</button>
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Ad</button>
 	
 					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog" style="width: 450px;">
@@ -119,9 +119,14 @@
 							</div>
 						</div>
 					</div>
-						
-				<a class="btn btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
+					
+					
+			<a class="btn btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
+			
 			<?php }; ?>
+			
+		
+			
 			
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
@@ -282,63 +287,9 @@
 				<a class="btn btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
 			<?php }; ?>
 			
-			<?php /*
 			<img style="margin-top: 10px;" class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
-			*/ ?>
 			
-			<?php if(count($images->result()) != 0) { ?> 
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
-
-				<ol class="carousel-indicators">
-			<?php 	$inc = 0;
-					foreach ($images->result() as $img) { 
-						if($inc == 0)
-						{ ?>
-							<li data-target="#myCarousel" data-slide-to="<?php echo $inc; ?>" class="active"></li>
-			<?php 		} 
-						else 
-						{ ?>
-							<li data-target="#myCarousel" data-slide-to="<?php echo $inc; ?>"></li>
-			<?php 		}
-						$inc++;
-					} ?>
-				</ol>
-				<div class="carousel-inner" role="listbox">
-			<?php 	$inc = 0;
-					foreach ($images->result() as $img) { 
-						$image_link = base_url('/'.$img->image_path);
-						if($inc == 0)
-						{ ?>
-						<div class="item active">
-							<div class="row text-center">
-								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
-							</div>
-						</div>
-			<?php 		} 
-						else { ?>
-						<div class="item">
-							<div class="row text-center">
-								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
-							</div>
-						</div>
-			<?php  		}
-						$inc++;
-					} ?>
-
-				</div>
-
-				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-			
-			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 	</div>
 	
