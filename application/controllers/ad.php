@@ -167,7 +167,7 @@ class Ad extends CI_Controller
 		}
 		else{
 			$this->session->set_flashdata('message', "Updated Ad");
-			redirect('ads/user_ads');
+			redirect('ad/user_ads');
 		}
 		
 	}
