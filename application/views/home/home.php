@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	
-	<img  src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" height="5%" width="100%">
+	<img  src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" height="20%" width="90%">
 	
 	
 	<div class="row">
