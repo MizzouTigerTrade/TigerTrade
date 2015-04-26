@@ -12,7 +12,7 @@
 	*/ ?>
 	
 	<div class="col-centered">
-	<img  src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" height="20%" width="90%">
+	<img  src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" height="15%" width="60%">
 	</div>
 	
 	<div class="row">
