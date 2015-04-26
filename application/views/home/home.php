@@ -9,6 +9,9 @@
 		</div>
 	</div>
 	
+	<img  src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" width="100%" height="100%">
+	
+	
 	<div class="row">
 		
 		<div class="col-sm-5 col-sm-offset-1" style="padding: 0 30px;">
