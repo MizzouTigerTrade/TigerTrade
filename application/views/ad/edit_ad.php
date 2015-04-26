@@ -43,7 +43,7 @@ $(document).ready(function (){
 <div class="container-border">
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
-			<h1>Edit Ad Form</h1>
+			<h1>Edit Ad</h1>
 		</div>
 	</div>
 	
