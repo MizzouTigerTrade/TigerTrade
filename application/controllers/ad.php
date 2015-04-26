@@ -71,7 +71,7 @@ class Ad extends CI_Controller
 	{
 		$user = $this->ion_auth->user()->row();
 		$ad = $this->ad_model->get_ad($ad_id);
-		if($ad->user_id != $user->user_id)
+		if($ad->user_id != $user->user_id && !$this->ion_auth->is_admin())
 		{
 			redirect('/market/index');
 		}
