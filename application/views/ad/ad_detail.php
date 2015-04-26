@@ -125,9 +125,6 @@
 			
 			<?php }; ?>
 			
-		
-			
-			
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 
@@ -260,7 +257,7 @@
 			<?php }; ?> 
 			
 			<?php if ($admin == true) { ?>
-				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Ad</button>
+				<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Ad</button>
 	
 					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog" style="width: 450px;">
@@ -284,10 +281,8 @@
 						</div>
 					</div>
 						
-				<a class="btn btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
+				<a class="btn btn-sm btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
 			<?php }; ?>
-			
-			<!--<img style="margin-top: 10px;" class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">-->
 			
 			<div class="col-sm-5">
 			<?php if(count($images->result()) != 0) { ?> 
@@ -343,12 +338,11 @@
 		<?php } ?>	
 		</div>
 			
-			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
+		<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 			
 		</div>
 	</div>
 	
-
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row" style="margin-top: 20px;">
