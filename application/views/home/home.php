@@ -11,8 +11,8 @@
 	</div>
 	*/ ?>
 	
-	<div class="col-centered">
-	<img  src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" height="15%" width="60%">
+	<div class="row text-center">
+	<img  src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" height="15%" width="65%">
 	</div>
 	
 	<div class="row">
