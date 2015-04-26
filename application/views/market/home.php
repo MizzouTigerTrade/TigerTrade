@@ -200,7 +200,6 @@ $(document).ready(function(){
 									}
 									
 									if($flag == 0) { ?> 
-									<!--<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">-->
 									<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
 								<?php } else { ?>
 									<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://thetigertrade.com/assets/Images/defaultImage.jpg'" width="100%" height="100%">
