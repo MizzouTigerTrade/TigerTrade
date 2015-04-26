@@ -8,6 +8,15 @@
 	
 	<hr>
 	
+	 <?php if ($message != "") { ?>
+      <div id="infoMessage">
+		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
+		  <span class="sr-only">Error:</span>
+		  <?php echo $message;?>
+		</div>
+	  </div>
+	  <?php }; ?>
+	
 	<div style="padding: 0 15px;">
 	<table class="table table-hover">
 		<thead>

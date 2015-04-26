@@ -166,7 +166,8 @@ class Ad extends CI_Controller
 			redirect('market', 'refresh');
 		}
 		else{
-		redirect('ad/edit/'.$ad_id);
+			$this->session->set_flashdata('message', "Updated Ad");
+			redirect('ads/user_ads');
 		}
 		
 	}
@@ -309,6 +310,7 @@ class Ad extends CI_Controller
 		$user_id = $user->user_id;
 
 		$data['ads'] = $this->ad_model->get_user_ads($user_id);
+		$data['message'] = $this->session->flashdata('message');
 
 		$this->layout->view('forms/user_ads', $data);
 	}
