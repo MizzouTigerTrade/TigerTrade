@@ -110,7 +110,7 @@ class Ad extends CI_Controller
 			$ad_id = $this->security->xss_clean($this->input->post('ad_id'));
 			$user = $this->ion_auth->user($id)->row();
 			$ad = $this->ad_model->get_ad($ad_id);
-			if($ad->user_id != $user->user_id)
+			if($ad->user_id != $user->user_id && !$this->ion_auth->is_admin())
 			{
 				redirect('/market/index');
 			}
@@ -160,7 +160,15 @@ class Ad extends CI_Controller
 			}
 		}
 		$data['error'] = 'shit';
+		
+		if ( $ad->user_id != $user->user_id && $this->ion_auth->is_admin() ){
+			$this->session->set_flashdata('message', "Updated Ad");
+			redirect('market', 'refresh');
+		}
+		else{
 		redirect('ad/edit/'.$ad_id);
+		}
+		
 	}
 
 	//shows form to create a new ad
