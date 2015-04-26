@@ -85,7 +85,7 @@
             </div>
             <div class="form-group">
                   <div class="col-sm-offset-4 col-sm-4">
-                        <button type="submit" class="btn btn-default">Create User</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
             </div>
       </form>
