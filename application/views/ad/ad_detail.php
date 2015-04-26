@@ -257,10 +257,10 @@
 			<?php }; ?> 
 			
 			<?php if ($admin == true) { ?>
-				<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Ad</button>
+				<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModalSmall">Delete</button>
 	
-					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog" style="width: 450px;">
+					<div class="modal fade" id="deleteModalSmall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-sm">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -281,7 +281,7 @@
 						</div>
 					</div>
 						
-				<a class="btn btn-sm btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
+				<a class="btn btn-sm btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit</a>	
 			<?php }; ?>
 			
 			<div class="col-sm-5">
