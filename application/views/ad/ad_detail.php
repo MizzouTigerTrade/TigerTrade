@@ -38,7 +38,7 @@
 			</div>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			
-			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#makeOffer">Make an Offer</button>
+			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#makeOffer">Make Offer</button>
 			
 				<!--Make Offer Modal-->
 				<div class="modal fade" id="makeOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -199,7 +199,7 @@
 				</div>
 			</div>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
-			<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOfferSM">Make an Offer</button>
+			<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOfferSM">Make Offer</button>
 			
 				<!--Make Offer Modal-->
 				<div class="modal fade" id="makeOfferSM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -253,7 +253,7 @@
 				</div>
 			
 			<?php if ($flagged == false) { ?>
-			<a class="btn btn-sm btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
+			<a class="btn btn-sm btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report</a>
 			<?php }; ?> 
 			
 			<?php if ($admin == true) { ?>
