@@ -1,6 +1,7 @@
 <div class="container padding-top-20">
 <div class="container-border">
 
+	<?php /*
 	<div class="row" style="margin-top: 20px;">
 		<div class="col-xs-10 col-xs-offset-1">
 			<div class="alert alert-info" role="alert" style="margin-top: 10px;">
@@ -8,9 +9,11 @@
 			</div>
 		</div>
 	</div>
+	*/ ?>
 	
+	<div class="col-centered">
 	<img  src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" height="20%" width="90%">
-	
+	</div>
 	
 	<div class="row">
 		
