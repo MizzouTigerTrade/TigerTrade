@@ -108,7 +108,7 @@
 								<div class="modal-body">
 									Message to user<br>
 									<form action="<?php echo base_url('admin/delete_ad') . '/' . $ad->ad_id ;?>"  method="POST">
-									<textarea rows="4" cols="50" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
+									<textarea type="text" rows="3" class="form-control description-box" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
 								</div>
 								<div class="modal-footer">
 									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
@@ -269,7 +269,7 @@
 								<div class="modal-body">
 									Message to user<br>
 									<form action="<?php echo base_url('admin/delete_ad') . '/' . $ad->ad_id ;?>"  method="POST">
-									<textarea type="text" class="form-control description-box" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
+									<textarea type="text" rows="3" class="form-control description-box" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
 								</div>
 								<div class="modal-footer">
 									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
