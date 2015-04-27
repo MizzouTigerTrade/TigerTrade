@@ -69,6 +69,12 @@
 				<th>Asking Price</th>
 				<th></th>
 			</tr>
+			<?php if(!$pending) { ?>
+			<tr>
+				<td colspan="5" class="text-center">No Pending Offers</td>
+			</tr>
+			<?php } ?>
+
 			<?php foreach ($pending->result() as $row) { ?>
 			<tr style="cursor: hand;" data-toggle="modal" data-target="#replyModal<?php echo $row->offer_id; ?>">
 			
