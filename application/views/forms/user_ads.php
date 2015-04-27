@@ -26,6 +26,7 @@
 			<th>Price</th>
 			<th>Category</th>
 			<th>Sub-Category</th>
+			<th>Status</th>
 			<th></th>
 		</thead>
 		<tbody>
@@ -37,6 +38,11 @@
 			echo '<td>'.$ad['price'].'</td>';
 			echo '<td>'.$ad['category'].'</td>';
 			echo '<td>'.$ad['subCategory'].'</td>'; ?>
+			
+			<td> 
+				<select>
+				<option value="<?php echo $ad['expired'] ?>"></option>
+				</select>
 			
 			<td><a href="<?php echo base_url('ad/edit/' . $ad['ad_id'] ) ?>">Edit</a> | <a href="" data-toggle="modal" data-target="#deleteModal<?php echo $ad['ad_id']; ?>">Delete</a>
 	
