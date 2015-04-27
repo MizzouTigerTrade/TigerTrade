@@ -48,14 +48,14 @@ $( document ).ready(){
 			echo '<td>'.$ad['subCategory'].'</td>'; ?>
 			
 			<td> 
-				<select onchange="redirect(<?php echo base_url(ad/set_expiration/$ad['ad_id']) ?>)" id="status">
+				<select onchange=" id="status">
 				<?php if ($ad['expired'] == true){ ?>
-				<option value="true">Inactive</option>
-				<option value="false">Active</option>
+				<option value="<?php echo base_url(ad/set_expiration/$ad['ad_id']/true) ?>">Inactive</option>
+				<option value="<?php echo base_url(ad/set_expiration/$ad['ad_id']/false) ?>">Active</option>
 				<?php } 
 					else{ ?>
-						<option value="false">Active</option>
-						<option value="true">Inactive</option>
+						<option value="<?php echo base_url(ad/set_expiration/$ad['ad_id']/false) ?>">Active</option>
+						<option value="<?php echo base_url(ad/set_expiration/$ad['ad_id']/true) ?>">Inactive</option>
 					<?php } ?>
 				
 				</select>
