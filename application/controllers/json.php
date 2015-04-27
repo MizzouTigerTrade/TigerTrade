@@ -35,9 +35,11 @@ class Json extends CI_Controller {
 
 	public function getJson()
 	{
-		$data['ads'] = $this->ad_model->get_all_ads();
+		$ads = $this->ad_model->get_all_ads();
 
-		$this->load->view('home/getJson', $data);
+		$this->output->set_header('Content-Type: application/json; charset=utf-8');
+  		echo json_encode($ads);
+		//$this->load->view('home/getJson', $data);
 	}
 
 }
