@@ -355,14 +355,15 @@
 		<!-- Comment section -->
 		<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1"
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
-				<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-default<?php } else { ?>panel-info<?php } ?>">
+				<div class="col-xs-12">
+					<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-default<?php } else { ?>panel-info<?php } ?>">
 					<div class="panel-heading"><?php echo $row->comment_time; ?></div>
 					<div class="panel-body">
 						<?php echo $row->ad_comment; ?>
 					</div>
+				</div>
 				</div>
 				<?php } ?>
 			<?php } else { ?>
@@ -371,7 +372,8 @@
 				</div>
 			<?php } ?>
 			
-			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
+			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
+			<div class="col-xs-12">
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<div class="form-group">				
 					<div class="col-sm-10">
@@ -383,8 +385,8 @@
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 				</div>
-			<?php echo form_close();?>
 			</div>
+			<?php echo form_close();?>
 		</div>
 		<?php } ?>
 		</div>
