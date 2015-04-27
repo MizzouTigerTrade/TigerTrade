@@ -388,7 +388,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
-								<?php if ($this->ion_auth->user()->row()->id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer'; } ?>
+								<?php if ($ad->user_id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer'; } ?>
 							</div>
 							<div class="col-xs-6 text-right">
 								<?php echo $row->comment_time; ?>
