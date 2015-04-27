@@ -69,7 +69,7 @@
 				<th>Asking Price</th>
 				<th></th>
 			</tr>
-			<?php if($pending) { ?>
+			<?php if($pending->num_rows() == 0) { ?>
 			<tr>
 				<td colspan="5" class="text-center">No Pending Offers</td>
 			</tr>
