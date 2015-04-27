@@ -145,7 +145,7 @@ hr {
 }
 
 .list-group-item:hover {
-	background: black;
+	background: rgba(191, 191, 191, 0.9);
 }
 
 .notification-badge{
