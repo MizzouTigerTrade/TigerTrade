@@ -69,6 +69,7 @@
 				<th>Asking Price</th>
 				<th></th>
 			</tr>
+			
 			<?php if($pending->num_rows() == 0) { ?>
 			<tr>
 				<td colspan="5" class="text-center">No Pending Offers</td>
@@ -152,6 +153,13 @@
 				<th>Offer Price</th>
 				<th>Asking Price</th>
 			</tr>
+			
+			<?php if($accepted->num_rows() == 0) { ?>
+			<tr>
+				<td colspan="5" class="text-center">No Accepted Offers</td>
+			</tr>
+			<?php } ?>
+			
 			<?php foreach ($accepted->result() as $row) { ?>
 			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/detail/' . $row->offer_id) ?>'>
 				<td><?php echo $row->title; ?></td>
@@ -175,6 +183,13 @@
 				<th>Offer Price</th>
 				<th>Asking Price</th>
 			</tr>
+			
+			<?php if($declined->num_rows() == 0) { ?>
+			<tr>
+				<td colspan="5" class="text-center">No Declined Offers</td>
+			</tr>
+			<?php } ?>
+		
 			<?php foreach ($declined->result() as $row) { ?>
 			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/detail/' . $row->offer_id) ?>'>
 				<td><?php echo $row->title; ?></td>
