@@ -119,6 +119,9 @@
 							</div>
 						</div>
 					</div>
+					
+					
+				<a class="btn btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
 			
 			<?php }; ?>
 			
@@ -381,7 +384,7 @@
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
-					<div class="panel <?php if ($ad->user_id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
+					<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
