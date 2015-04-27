@@ -7,12 +7,12 @@
 }
 
 @font-face {
-    font-family: chancery;
+    font-family: blackchancery;
     src: url('../fonts/BLKCHCRY.ttf');
 }
 
 h1, h2, h3{
-	font-family: chancery;
+	font-family: blackchancery;
 }
 
 code {
