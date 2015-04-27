@@ -48,7 +48,7 @@ $( document ).ready(){
 			echo '<td>'.$ad['subCategory'].'</td>'; ?>
 			
 			<td> 
-				<select onchange="window.location = "<?php echo base_url(ad/set_expiration/ . $ad['ad_id'] . "/" . ?> this.options[this.selectedIndex].value <?php ) ?>" id="status">
+				<select onchange="window.location = <?php echo base_url(ad/set_expiration/ . $ad['ad_id'] . '/' . ?> this.options[this.selectedIndex].value <?php ) ?>" id="status">
 				<?php if ($ad['expired'] == true){ ?>
 				<option value="true">Inactive</option>
 				<option value="false">Active</option>
