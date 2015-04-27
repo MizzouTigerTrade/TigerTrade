@@ -141,13 +141,13 @@ class Ad_model extends CI_Model
 
 	public function get_ads_category($category_id)
 	{
-		$result = $this->db->query("SELECT * FROM ads WHERE category_id = '$category_id'");
+		$result = $this->db->query("SELECT * FROM ads WHERE category_id = '$category_id' and expired = 0");
 		return $result;
 	}
 
 	public function get_ads_subcategory($subcategory_id)
 	{
-		$result = $this->db->query("SELECT * FROM ads WHERE subcategory_id = '$subcategory_id'");
+		$result = $this->db->query("SELECT * FROM ads WHERE subcategory_id = '$subcategory_id' and expired = 0");
 
 		return $result;
 	}
