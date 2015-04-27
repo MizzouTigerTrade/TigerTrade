@@ -167,7 +167,7 @@ $(document).ready(function (){
 		 <div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload More Images</label>
 			<div class="col-sm-10">
-				<input type="button" id="add_more" class="upload" value="Add More Files"/>
+				<input type="button" id="add_more" class="upload" class="btn btn-default" value="Add More Files"/>
 			</div>
 		</div>
 		<?php 
