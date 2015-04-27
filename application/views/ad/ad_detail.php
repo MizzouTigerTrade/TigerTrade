@@ -388,7 +388,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
-								User <?php echo $row->user_id; ?>
+								User <?php echo substr($this->ion_auth->user()->row()->password, 5, 10) ?>
 							</div>
 							<div class="col-xs-6 text-right">
 								<?php echo $row->comment_time; ?>
