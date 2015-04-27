@@ -12,6 +12,11 @@ class Admin extends CI_Controller {
 		$this->load->model('ad_model');
 		$data['menu'] = $this->load->view('shared/menu');
 		$this->lang->load('auth');
+		if( $this->ion_auth->user()->row() == null)
+        {
+            // Not logged in - so force them away
+            redirect ('/home/index');
+       	}
 	}
 
 	public function index()
@@ -136,6 +141,11 @@ class Admin extends CI_Controller {
 		
 		$this->ad_model->delete_ad($ad_id);
 		$this->session->set_flashdata('message', "Removed Ad");
+		
+		if ($this->input->post('source')){
+			redirect('market', 'refresh');
+		}
+		
 		redirect('admin/manage_flags', 'refresh');
 	}
 }

@@ -44,7 +44,7 @@ $(document).ready(function (){
 <div class="container-border">
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
-			<h1>New Ad Form</h1>
+			<h1>New Ad</h1>
 		</div>
 	</div>
 
@@ -68,7 +68,7 @@ $(document).ready(function (){
 		<div class="form-group">
 			<label for="title" class="col-sm-2 control-label label-20">Title</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" name="title" id="title" placeholder="..." onkeyup="document.getElementById('preview_title').innerHTML = this.value">
+				<input type="text" class="form-control" name="title" id="title" placeholder="..." onkeyup="document.getElementById('preview_title').innerHTML = this.value" required>
 			</div>
 		</div>
 		<div class="form-group">
@@ -76,14 +76,14 @@ $(document).ready(function (){
 			<label for="price" class="col-sm-2 control-label label-20">Price</label>
 			<div class="input-group col-sm-3 col-sm-offset-2" style="padding: 0 15px;">
 				<div class="input-group-addon">$</div>
-					<input type="text" class="form-control" name="price" id="price" placeholder="Amount">
+					<input type="text" class="form-control" name="price" id="price" placeholder="Amount" required>
 				<div class="input-group-addon">.00</div>
 			</div>
 		</div>
 		<div class="form-group" id="categoryForm">
 			<label for="category" class="col-sm-2 control-label label-20">Category</label>
 			<div class="col-sm-10">
-			<select name="category" class="form-control" id="categorySelectForm"> 
+			<select name="category" class="form-control" id="categorySelectForm" required> 
 				<option value="">Select One</option>
 				<?php
 					foreach($categories->result() as $category)
@@ -95,9 +95,9 @@ $(document).ready(function (){
 			</div>
 		</div>
 		<div class="form-group" id="subCategoryForm">
-			<label for="sub-category" class="col-sm-2 control-label label-20">Sub-Category</label>
+			<label for="sub-category" class="col-sm-2 control-label label-20">Subcategory</label>
 			<div class="col-sm-10">
-			<select name="subCategory" class="form-control" id="subCategory"> 
+			<select name="subCategory" class="form-control" id="subCategory" required> 
 				<option value=""><option>	
 			</select>
 			</div>
@@ -105,7 +105,7 @@ $(document).ready(function (){
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Description</label>
 			<div class="col-sm-10">
-				<textarea type="text" class="form-control description-box" name="description" id="description" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"></textarea>
+				<textarea type="text" class="form-control description-box" name="description" id="description" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5" required></textarea>
 			</div>
 		</div>
 
@@ -113,20 +113,21 @@ $(document).ready(function (){
 			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control description-box" name="tags" data-role="tagsinput" id="tags"></input>
+				<p class="help-block">Type a comma or press enter between different tags.</p>
 			</div>
 		</div>
 
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload Image</label>
 			<div class="col-sm-10">
-				<div id="filediv"><input name="userfile[]" type="file" id="file"/></div>
+				<div id="filediv"><input name="userfile[]" class="btn btn-default"  type="file" id="file"/></div>
 			</div>
 		</div>
 
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload More Images</label>
 			<div class="col-sm-10">
-				<input type="button" id="add_more" class="upload" value="Add More Files"/>
+				<input type="button" id="add_more" class="upload btn btn-default" value="Add More Files"/>
 			</div>
 		</div>
 		
@@ -144,21 +145,11 @@ $(document).ready(function (){
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
 		</div>
 	<?php echo form_close();?>
-	<hr>
 	
-	<div class="row">
-		<label class="col-sm-2 control-label label-20">Preview</label>
-		<div class="col-sm-10">
-			<h2 id="preview_title">Title</h2>
-			<h3 style="display: inline;">$</h3><h3 id="preview_price" style="display: inline;">Price</h3>
-			<p style="padding-top: 10px;" id="preview_message">Message</p>
-			<img id="pic1" src="#" alt="your image" />
-		</div>
-	</div>
 	</div>
 </div>
 	

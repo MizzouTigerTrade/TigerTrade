@@ -129,7 +129,7 @@ class Ad_model extends CI_Model
 
 	public function get_all_ads()
 	{
-		$result = $this->db->query("SELECT * FROM ads");
+		$result = $this->db->query("SELECT * FROM ads WHERE expired = 0");
 		return $result;
 	}
 	//edit
@@ -141,13 +141,13 @@ class Ad_model extends CI_Model
 
 	public function get_ads_category($category_id)
 	{
-		$result = $this->db->query("SELECT * FROM ads WHERE category_id = '$category_id'");
+		$result = $this->db->query("SELECT * FROM ads WHERE category_id = '$category_id' and expired = 0");
 		return $result;
 	}
 
 	public function get_ads_subcategory($subcategory_id)
 	{
-		$result = $this->db->query("SELECT * FROM ads WHERE subcategory_id = '$subcategory_id'");
+		$result = $this->db->query("SELECT * FROM ads WHERE subcategory_id = '$subcategory_id' and expired = 0");
 
 		return $result;
 	}
@@ -291,6 +291,7 @@ class Ad_model extends CI_Model
 			{
 				$single_ad['ad_id'] = $ad->ad_id;
 				$single_ad['title'] = $ad->title;
+				$single_ad['expired'] = $ad->expired;
 				$single_ad['price'] = '$'.$ad->price;
 				$category = $this->category_model->get_category($ad->category_id);
 				$single_ad['category'] = ucwords($category->name);
@@ -321,6 +322,7 @@ class Ad_model extends CI_Model
 
 	public function get_comments($ad_id)
 	{
+		$this->db->select('user_id');
 		$this->db->select('ad_comment');
 		$this->db->select('timestmp AS comment_time');
 		$this->db->from('comments');
@@ -347,6 +349,20 @@ class Ad_model extends CI_Model
 		if($this->db->insert('comments', $data) != TRUE)
 		{
 			throw new Exception("cannot insert");
+		}
+		else
+		{
+			return $this->db->affected_rows();
+		}
+	}
+	
+	public function set_expiration($id, $boolean) {
+		$this->db->where('ad_id', $id);
+		$this->db->set('expired', $boolean);
+		
+		if($this->db->update('ads') != TRUE)
+		{
+			throw new Exception("Cannot update expired field.");
 		}
 		else
 		{

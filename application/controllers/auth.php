@@ -387,7 +387,7 @@ class Auth extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			// insert csrf check
-			$this->data['csrf'] = $this->_get_csrf_nonce();
+			//$this->data['csrf'] = $this->_get_csrf_nonce();
 			$this->data['user'] = $this->ion_auth->user($id)->row();
 
 			$this->layout->view('auth/deactivate_user', $this->data);
@@ -398,7 +398,7 @@ class Auth extends CI_Controller {
 			if ($this->input->post('confirm') == 'yes')
 			{
 				// do we have a valid request?
-				if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
+				if (/*$this->_valid_csrf_nonce() === FALSE || */$id != $this->input->post('id'))
 				{
 					show_error($this->lang->line('error_csrf'));
 				}

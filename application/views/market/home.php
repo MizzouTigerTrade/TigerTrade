@@ -50,6 +50,28 @@ $(document).ready(function(){
           return false;
       });
     });
+	
+	$(function(){
+      // bind change event to select
+      $('#categorySelectFormSmall').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+
+    $(function(){
+      // bind change event to select
+      $('#subCategorySmall').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
 });
 </script>
 
@@ -63,6 +85,17 @@ $(document).ready(function(){
 	</div>
 	
 	<hr>
+	
+	<div style="padding: 0 15px;">
+	<?php if ($message != "") { ?>
+      <div id="infoMessage">
+		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
+		  <span class="sr-only">Error:</span>
+		  <?php echo $message;?>
+		</div>
+	  </div>
+	<?php } ?>
+	</div>
 	
 	<div class="row">
 		<div class="col-xs-12" id="market_background">
@@ -105,7 +138,7 @@ $(document).ready(function(){
 				<!-- EXTRA SMALL Screen Menu -->
 				<div class="row visible-xs">
 					<div class="col-xs-12">
-						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
+						<select class="form-control input-sm" id="categorySelectFormSmall" name="category"> 
 							<option value="">Select Category</option>
 							<?php
 								foreach($categories->result() as $cat) { ?>
@@ -114,7 +147,7 @@ $(document).ready(function(){
 						</select>
 					</div>
 					<div class="col-xs-12" style="margin: 5px 0 20px 0;">
-						<select class="form-control input-sm" id="subCategory" name="subCategory">
+						<select class="form-control input-sm" id="subCategorySmall" name="subCategory">
 							<option value="">Select Subcategory</option>
 							<?php
 								foreach($subcategories->result() as $subcat) { ?>
@@ -150,6 +183,10 @@ $(document).ready(function(){
 				<br>
 				
 				<div class="row" style="padding-bottom: 15px;" id="emptySearch"></div>
+				<?php if(count($ads->result()) == 0)
+					{ ?>
+						<div class="row">No ads available.</div>
+				<?php } ?>
 				<?php foreach ($ads->result() as $row) { ?>
 				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 					
@@ -157,8 +194,8 @@ $(document).ready(function(){
 						<div class="" style="margin-top: 20px; margin-bottom: 20px;">
 							
 							<div class="col-xs-3 col-md-2 col-md-offset-1">
-							<?php 	$flag = 0;
-									//$image_link = "nothing";
+							<?php 	
+									$flag = 0;
 									foreach($images->result() as $img) { 
 										if($img->ad_id == $row->ad_id && $flag == 0)
 										{
@@ -167,11 +204,10 @@ $(document).ready(function(){
 										}
 									}
 									
-									if(empty($image_link)) { ?> 
-									<!--<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">-->
+									if($flag == 0) { ?> 
 									<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
 								<?php } else { ?>
-									<img class="img-thumbnail" src="<?php echo $image_link; ?>" alt="Error loading image" width="100%" height="100%">
+									<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://thetigertrade.com/assets/Images/defaultImage.jpg'" width="100%" height="100%">
 							<?php } ?>
 							</div>
 							

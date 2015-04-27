@@ -30,15 +30,15 @@
 		<!-- MENU OPTIONS -->
 		<nav class="collapse navbar-collapse bs-navbar-collapse" id="navbar">
 			<ul class="nav navbar-nav">
-				<li class="<?php if ($this->uri->segment(1) == '' ) { ?>active<?php } ?>">
+				<!--<li class="<?php if ($this->uri->segment(1) == '' ) { ?>active<?php } ?>">
 					<a href='<?= base_url() ?>'>Home</a>
-				</li>
+				</li>-->
 				<!--
 				<li class="<?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
 					<a href='<?= base_url("/market") ?>'>Market</a>
 				</li>
 				-->
-
+				<?php if ($this->ion_auth->logged_in()) { ?>
 				<li class="dropdown <?php if (in_array($this->uri->segment(1), array('market', 'ad'))) { ?>active<?php } ?>">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Market <b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -49,7 +49,7 @@
 						<?php } ?>
 					</ul>
 				</li>
-
+				<?php } ?>
 				
 				<li class="dropdown <?php if ($this->uri->segment(1) == 'content' ) { ?>active<?php } ?>">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
@@ -83,6 +83,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->first_name; ?> <span class="badge notification-badge"><?php if($total_offer_notification>0){echo $total_offer_notification ;} ?></span> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/ad/user_ads') ?>">My Ads</a></li>
+							<li><a href="<?php echo base_url('/ad/new_ad') ?>">Create Ad</a></li>
 							<li><a href="<?php echo base_url('/offers/sent') ?>">Sent Offers <span class="badge notification-badge"><?php if($sent_offer_notification>0){echo $sent_offer_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/offers/received') ?>">Received Offers <span class="badge notification-badge"><?php if($received_offer_notification>0){echo $received_offer_notification ;} ?></span></a></li>
 							<li><a href="<?php echo base_url('/user/edit_profile/' . $this->ion_auth->get_user_id() ) ?>">Edit Profile</a></li>
