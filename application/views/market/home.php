@@ -98,7 +98,7 @@ $(document).ready(function(){
 	</div>
 	
 	<div class="row">
-		<div class="col-xs-12" id="market_background">
+
 			
 			
 				
@@ -238,7 +238,7 @@ $(document).ready(function(){
 				</a>
 				<? } ?>
 			
-		</div>
+
 	</div>
 </div>
 </div>
