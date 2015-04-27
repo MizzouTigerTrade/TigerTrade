@@ -358,7 +358,7 @@
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
-					<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-default<?php } else { ?>panel-info<?php } ?>">
+					<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
 					<div class="panel-heading"><?php echo $row->comment_time; ?></div>
 					<div class="panel-body">
 						<?php echo $row->ad_comment; ?>
@@ -377,7 +377,7 @@
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<div class="form-group">				
 					<div class="col-sm-10">
-						<textarea type="text" class="form-control" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
+						<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
