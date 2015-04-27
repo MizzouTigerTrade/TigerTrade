@@ -388,10 +388,10 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
-								<?php echo $row->comment_time; ?>
+								User <?php echo $row->user_id; ?>
 							</div>
 							<div class="col-xs-6 text-right">
-								<button type="submit" class="btn btn-primary">Comment</button>
+								<?php echo $row->comment_time; ?>
 							</div>
 						</div>
 					</div>
