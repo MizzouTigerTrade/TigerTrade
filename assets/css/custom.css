@@ -12,12 +12,12 @@
 }
 
 @font-face {
-    font-family: print;
+    font-family: AnkePrint;
     src: url('../fonts/AnkePrint.ttf');
 }
 
 h1{
-	font-family: print;
+	font-family: AnkePrint;
 }
 
 code {
