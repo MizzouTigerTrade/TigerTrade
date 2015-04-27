@@ -1,3 +1,9 @@
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/validator.js') ?>"></script>
+<script type="text/javascript">
+  $('#ad-form').validator()
+</script>
+
 <div class="container padding-top-20">
 <div class="container-border">
 	<div class="row">
