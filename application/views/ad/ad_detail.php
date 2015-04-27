@@ -358,7 +358,7 @@
 		<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 40px">View Comments:</label>
 		<?php if(!empty($comments)) { ?>
 			<?php foreach($comments as $row) { ?>
-			<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-default<?php } else { ?>panel-warning<?php } ?>">
+			<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-default<?php } else { ?>panel-info<?php } ?>">
 				<div class="panel-heading"><?php echo $row->comment_time; ?></div>
 				<div class="panel-body">
 				<?php echo $row->ad_comment; ?>
