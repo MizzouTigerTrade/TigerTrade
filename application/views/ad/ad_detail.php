@@ -166,15 +166,8 @@
 						</div>
 			<?php  		}
 						$inc++;
-					} 
-					
-					echo $inc;
-					
-					if($inc == 0){ ?>
-						<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
-					<?php } ?>
-			
-
+					} ?>
+	
 				</div>
 
 				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -186,7 +179,12 @@
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
-		<?php } ?>	
+		<?php }
+				else{ ?>
+					<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+				<?php }
+
+		?>	
 		</div>
 	</div>
 	
