@@ -10,6 +10,10 @@ body {
   background-image: url('../Images/market/newspaper.png');
 }
 
+h1{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
