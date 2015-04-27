@@ -11,7 +11,16 @@
     src: url('../fonts/BLKCHCRY.ttf');
 }
 
-h1, h2, h3{
+@font-face {
+    font-family: lunch;
+    src: url('../fonts/BrownBagLunch.ttf');
+}
+
+h1{
+	font-family: lunch;
+}
+
+h2, h3{
 	font-family: blackchancery;
 }
 
