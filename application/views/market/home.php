@@ -86,6 +86,7 @@ $(document).ready(function(){
 	
 	<hr>
 	
+	<div style="padding: 0 15px;">
 	<?php if ($message != "") { ?>
       <div id="infoMessage">
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
@@ -94,6 +95,7 @@ $(document).ready(function(){
 		</div>
 	  </div>
 	<?php } ?>
+	</div>
 	
 	<div class="row">
 		<div class="col-xs-12" id="market_background">

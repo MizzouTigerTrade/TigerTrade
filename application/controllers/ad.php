@@ -289,16 +289,7 @@ class Ad extends CI_Controller
 		if ($data['created'] == true){
 		$this->session->set_flashdata('message', 'Your Ad was created and placed on the market. To edit your ad visit "My Ads" under your name in the navigation bar.');
 		redirect('market', 'refresh');
-		}
-		
-		/*
-		$data['title'] = 'New Ad';
-		$data['categories'] = $this->category_model->get_all_categories();
-		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
-		$this->layout->view('forms/new_ad', $data);
-		*/
-		
-		
+		}	
 	}
 	
 	//flags an ad
