@@ -1,8 +1,13 @@
 /* Custom page CSS
 -------------------------------------------------- */
 
+@font-face {
+    font-family: apple;
+    src: url('../fonts/HomemadeApple.ttf');
+}
+
 h1{
-	color: blue;
+	font-family: apple;
 }
 
 code {
