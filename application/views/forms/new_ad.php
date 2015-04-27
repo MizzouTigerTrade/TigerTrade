@@ -44,7 +44,7 @@ $(document).ready(function (){
 <div class="container-border">
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
-			<h1>New Ad Form</h1>
+			<h1>New Ad</h1>
 		</div>
 	</div>
 
@@ -150,15 +150,6 @@ $(document).ready(function (){
 	<?php echo form_close();?>
 	<hr>
 	
-	<div class="row">
-		<label class="col-sm-2 control-label label-20">Preview</label>
-		<div class="col-sm-10">
-			<h2 id="preview_title">Title</h2>
-			<h3 style="display: inline;">$</h3><h3 id="preview_price" style="display: inline;">Price</h3>
-			<p style="padding-top: 10px;" id="preview_message">Message</p>
-			<img id="pic1" src="#" alt="your image" />
-		</div>
-	</div>
 	</div>
 </div>
 	
