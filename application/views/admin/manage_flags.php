@@ -31,6 +31,13 @@
 		</tr>
 		</thead>
 		<tbody>
+		
+		<?php if($flags->num_rows() == 0) { ?>
+			<tr>
+				<td colspan="7" class="text-center">No Flagged Ads</td>
+			</tr>
+		<?php } ?>
+		
 		<?php foreach ($flags as $flag):?>
 			<tr>
 	            <td><?php echo "<a href='" . base_url() . "ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
