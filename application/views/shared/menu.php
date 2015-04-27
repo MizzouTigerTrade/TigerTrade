@@ -67,7 +67,7 @@
 				
 				<?php if($this->ion_auth->is_admin()){?>
 				
-					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('auth', 'admin'))) { ?>active<?php }; if (in_array($this->uri->segment(2), array('user_ads'))) { ?>active<?php }?>">
+					<li class="dropdown <?php if (in_array($this->uri->segment(1), array('auth', 'admin'))) { ?>active<?php } ?>">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <span class="badge notification-badge"><?php if($flag_notification>0){echo $flag_notification ;} ?></span><b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url('/admin/manage_flags') ?>">Manage Flags &nbsp <span class="badge notification-badge"><?php if($flag_notification>0){echo $flag_notification ;} ?></span></a></li>
