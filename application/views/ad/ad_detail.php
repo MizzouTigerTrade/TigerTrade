@@ -387,7 +387,7 @@
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
-					<div class="panel <?php if ($ad->seller_id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
+					<div class="panel <?php if ($ad->user_id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
