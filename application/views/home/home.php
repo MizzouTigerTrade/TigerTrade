@@ -7,7 +7,7 @@
 <div class="container padding-top-20">
 <div class="container-border">
 
-	<img src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" width="80%" height="10%">
+	<img src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" width="75%" height="13%">
 
 	<div class="row" style="margin-top: 20px;">
 		<div class="col-xs-10 col-xs-offset-1">
