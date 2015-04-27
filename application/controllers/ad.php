@@ -286,10 +286,15 @@ class Ad extends CI_Controller
 
 		}
 
+		if ($data['created'] == null){
+		$this->session->set_flashdata('message', 'Error creating your ad');
+		redirect('market', 'refresh')
+		
 		if ($data['created'] == true){
 		$this->session->set_flashdata('message', 'Your Ad was created and placed on the market. To edit your ad visit "My Ads" under your name in the navigation bar.');
 		redirect('market', 'refresh');
 		}	
+		
 	}
 	
 	//flags an ad
@@ -318,6 +323,19 @@ class Ad extends CI_Controller
 	function delete($ad_id)
 	{
 		$this->ad_model->delete_ad($ad_id);
+		$this->session->set_flashdata('message', "Your Ad has been deleted");
+		redirect ('ad/user_ads');
+	}
+	
+	function set_expiration($ad_id, $boolean)
+	{
+		$this->ad_model->set_expiration($ad_id, $boolean);
+		if($boolean == true){
+			$this->session->set_flashdata('message', "Your ad has been deactivated");
+		}
+		else{
+			$this->session->set_flashdata('message', "Your ad has been activated");
+		}
 		redirect ('ad/user_ads');
 	}
 
