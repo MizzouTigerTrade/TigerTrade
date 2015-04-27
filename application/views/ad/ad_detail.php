@@ -370,7 +370,7 @@
 					<div class="col-xs-12">
 						<div class="row">
 							<div class="col-xs-6">
-								<h3 style="margin: 0; padding-top: 10px">Comments:</h3>
+								<h3 style="margin: 0; padding-top: 15px">Comments:</h3>
 							</div>
 							<div class="col-xs-6 text-right">
 								<button type="submit" class="btn btn-primary">Comment</button>
