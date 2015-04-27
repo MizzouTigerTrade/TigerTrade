@@ -7,7 +7,7 @@
 <div class="container padding-top-20">
 
 <div style="background-color: #333;">&nbsp;</div>
-<div style="background-color: #4c4c4c;">&nbsp;</div>
+<div style="background-color: #454545;">&nbsp;</div>
 
 <div class="container-border">
 
