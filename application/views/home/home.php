@@ -71,5 +71,5 @@
         </div>
 </div>
 
-  <a href="<?php echo base_url('auth/create_user') ?>">Register</a>
+  <a href="<?php echo base_url('auth/create_user') ?>" class="btn btn-primary">Register</a>
 </div>
