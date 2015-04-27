@@ -69,7 +69,6 @@
 
       <?php echo form_close();?>
         </div>
+        <a href="<?php echo base_url('auth/create_user') ?>" class="btn btn-primary">Register</a>
 </div>
-
-  <a href="<?php echo base_url('auth/create_user') ?>" class="btn btn-primary">Register</a>
 </div>
