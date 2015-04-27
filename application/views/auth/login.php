@@ -36,7 +36,7 @@
       <div class="form-group">
             <label for="first_name" class="col-sm-4 control-label label-20">Password</label>
             <div class="col-sm-4">
-                  <input type="text" name="password" class="form-control" id="password" placeholder="password" required>
+                  <input type="password" name="password" class="form-control" id="password" placeholder="password" required>
             </div>
             <div class="help-block with-errors"></div>
       </div>
