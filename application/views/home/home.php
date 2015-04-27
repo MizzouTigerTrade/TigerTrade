@@ -22,7 +22,7 @@
 	-->
 	
 	<div style="padding: 0 15px;">
-      <?php if ($message != "") { ?>
+      <?php if ($message != null) { ?>
       <div id="infoMessage">
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
 		  <span class="sr-only">Error:</span>
