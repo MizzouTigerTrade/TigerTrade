@@ -95,7 +95,7 @@ $(document).ready(function (){
 			</div>
 		</div>
 		<div class="form-group" id="subCategoryForm">
-			<label for="sub-category" class="col-sm-2 control-label label-20">Sub-Category</label>
+			<label for="sub-category" class="col-sm-2 control-label label-20">Subcategory</label>
 			<div class="col-sm-10">
 			<select name="subCategory" class="form-control" id="subCategory" required> 
 				<option value=""><option>	
@@ -119,14 +119,14 @@ $(document).ready(function (){
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload Image</label>
 			<div class="col-sm-10">
-				<div id="filediv"><input name="userfile[]" type="file" id="file"/></div>
+				<div id="filediv"><input name="userfile[]" class="btn btn-default"  type="file" id="file"/></div>
 			</div>
 		</div>
 
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload More Images</label>
 			<div class="col-sm-10">
-				<input type="button" id="add_more" class="upload" value="Add More Files"/>
+				<input type="button" id="add_more" class="upload btn btn-default" value="Add More Files"/>
 			</div>
 		</div>
 		

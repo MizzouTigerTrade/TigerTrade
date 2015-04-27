@@ -322,6 +322,7 @@ class Ad_model extends CI_Model
 
 	public function get_comments($ad_id)
 	{
+		$this->db->select('user_id');
 		$this->db->select('ad_comment');
 		$this->db->select('timestmp AS comment_time');
 		$this->db->from('comments');
