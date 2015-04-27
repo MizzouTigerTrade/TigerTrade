@@ -14,16 +14,15 @@
 }
 </script>
 <table data-toggle="table"
-       data-url="https://api.github.com/users/wenzhixin/repos"
+       data-url="<?php echo base_url('json/getJson');?>"
        data-query-params="queryParams"
        data-pagination="true"
        data-search="true"
        data-height="300">
     <thead>
     <tr>
-        <th data-field="name">Name</th>
-        <th data-field="stargazers_count">Stars</th>
-        <th data-field="forks_count">Forks</th>
+        <th data-field="ad_id">Ad id</th>
+        <th data-field="title">title</th>
         <th data-field="description">Description</th>
     </tr>
     </thead>
