@@ -60,7 +60,7 @@
 	                        echo form_checkbox($data);
 	                    ?>Remember me
 					    </label>
-					    <button type="submit" style="float: right;" class="btn btn-default">Login</button>
+					    <button type="submit" style="float: right;" class="btn btn-primary">Login</button>
 	                </div>
 	                
                 </div>
@@ -130,7 +130,7 @@
 	            </div>
 	            <div class="form-group">
 	                  <div class="col-xs-12 text-right">
-	                        <button type="submit" class="btn btn-default">Create User</button>
+	                        <button type="submit" class="btn btn-primary">Register</button>
 	                  </div>
 	            </div>
       		</form>
