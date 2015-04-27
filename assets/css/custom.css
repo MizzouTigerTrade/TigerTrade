@@ -11,9 +11,13 @@
     src: url('../fonts/BLKCHCRY.ttf');
 }
 
+@font-face {
+    font-family: print;
+    src: url('../fonts/AnkePrint.ttf');
+}
 
 h1{
-	font-family: chancery;
+	font-family: print;
 }
 
 code {
