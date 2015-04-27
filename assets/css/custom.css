@@ -13,12 +13,13 @@
 
 @font-face {
     font-family: lunch;
-	font-size: large;
+	
     src: url('../fonts/BrownBagLunch.ttf');
 }
 
 h1{
 	font-family: lunch;
+	font-size: large;
 }
 
 h2, h3{
