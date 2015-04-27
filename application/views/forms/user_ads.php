@@ -46,7 +46,7 @@
 									<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this Ad?</h4>
 								</div>
 								<div class="modal-body">
-									Ad: <?php echo $ad['title']; ?>
+									Title: <?php echo $ad['title']; ?>
 								</div>
 								<div class="modal-footer">
 									<a class="btn btn-sm btn-primary" href="<?php echo base_url('ad/delete') . '/' . $ad['ad_id'] ;?>">Yes</a>
