@@ -6,8 +6,14 @@
     src: url('../fonts/HomemadeApple.ttf');
 }
 
+@font-face {
+    font-family: chancery;
+    src: url('../fonts/BLKCHCRY.ttf');
+}
+
+
 h1{
-	font-family: apple;
+	font-family: chancery;
 }
 
 code {
