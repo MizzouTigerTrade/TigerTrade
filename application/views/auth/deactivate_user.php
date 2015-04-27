@@ -21,10 +21,10 @@
 		<input type="radio" name="confirm" value="no" />
 	</p>
 
-	<?php echo form_hidden($csrf); ?>
+	<?php /* echo form_hidden($csrf); */ ?>
 	<?php echo form_hidden(array('id'=>$user->id)); ?>
 
-	<p><button type="submit" class="btn btn-default">Submit</button></p>
+	<p><button type="submit" class="btn btn-primary">Submit</button></p>
 
 	<?php echo form_close();?>
 	</div>

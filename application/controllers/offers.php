@@ -130,13 +130,14 @@ class Offers extends CI_Controller
 			$data['status'] = $status;
 			$data['seller_response'] = $seller_response;
 			
-				
+			$offer = $this->offer_model->get_offer($offer_id);				
 
 			$this->offer_model->respond_to_offer($seller_response, $status, $offer_id);
 
 			$data['created'] = true;
 			
 			if ($status == "Accepted"){
+				$this->ad_model->set_expiration($offer->ad_id, TRUE);
 				$this->session->set_flashdata('message', "You accepted the offer");
 			}
 			else{

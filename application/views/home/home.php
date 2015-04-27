@@ -1,6 +1,17 @@
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/validator.js') ?>"></script>
+<script type="text/javascript">
+	$('#ad-form').validator()
+</script>
+
 <div class="container padding-top-20">
 <div class="container-border">
 
+	<div class="row text-center">
+	<img src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" width="70%">
+	</div><br>
+	
+	<!--
 	<div class="row" style="margin-top: 20px;">
 		<div class="col-xs-10 col-xs-offset-1">
 			<div class="alert alert-info" role="alert" style="margin-top: 10px;">
@@ -8,6 +19,7 @@
 			</div>
 		</div>
 	</div>
+	-->
 	
 	<div class="row">
 		
@@ -54,7 +66,7 @@
 	                        echo form_checkbox($data);
 	                    ?>Remember me
 					    </label>
-					    <button type="submit" style="float: right;" class="btn btn-default">Login</button>
+					    <button type="submit" style="float: right;" class="btn btn-primary">Login</button>
 	                </div>
 	                
                 </div>
@@ -124,7 +136,7 @@
 	            </div>
 	            <div class="form-group">
 	                  <div class="col-xs-12 text-right">
-	                        <button type="submit" class="btn btn-default">Create User</button>
+	                        <button type="submit" class="btn btn-primary">Register</button>
 	                  </div>
 	            </div>
       		</form>

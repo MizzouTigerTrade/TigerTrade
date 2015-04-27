@@ -8,7 +8,7 @@
 <div class="container-border">
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
-			<h1>New User</h1>
+			<h1>Register</h1>
 		</div>
 	</div>
 	
@@ -85,7 +85,7 @@
             </div>
             <div class="form-group">
                   <div class="col-sm-offset-4 col-sm-4">
-                        <button type="submit" class="btn btn-default">Create User</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
             </div>
       </form>

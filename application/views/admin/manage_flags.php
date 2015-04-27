@@ -20,7 +20,7 @@
 
 	<table class="table table-hover table-condensed">
 		<thead>
-		<tr>
+		<tr style="background-color: white;">
 			<th>Ad</th>
 			<th>Flag Count</th>
 			<th>Name</th>
@@ -31,6 +31,13 @@
 		</tr>
 		</thead>
 		<tbody>
+		
+		<?php if($flags == null) { ?>
+			<tr>
+				<td colspan="7" class="text-center">No Flagged Ads</td>
+			</tr>
+		<?php } ?>
+		
 		<?php foreach ($flags as $flag):?>
 			<tr>
 	            <td><?php echo "<a href='" . base_url() . "ad/details/" . $flag->ad_id  . "'>" . $flag->ad_id . "</a>" ;?></td>
@@ -77,7 +84,7 @@
 								<div class="modal-footer">
 									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
 									</form>
-									<button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
 						</div>
