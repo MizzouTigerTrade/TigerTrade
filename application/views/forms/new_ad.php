@@ -95,7 +95,7 @@ $(document).ready(function (){
 			</div>
 		</div>
 		<div class="form-group" id="subCategoryForm">
-			<label for="sub-category" class="col-sm-2 control-label label-20">Sub-Category</label>
+			<label for="sub-category" class="col-sm-2 control-label label-20">Subcategory</label>
 			<div class="col-sm-10">
 			<select name="subCategory" class="form-control" id="subCategory" required> 
 				<option value=""><option>	
