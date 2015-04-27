@@ -7,12 +7,12 @@
 }
 
 @font-face {
-    font-family: baglunch;
-    src: url('../fonts/brownbaglunch.ttf');
+    font-family: conform;
+    src: url('../fonts/conform.ttf');
 }
 
 h1{
-	font-family: baglunch;
+	font-family: conform;
 }
 
 code {
