@@ -6,6 +6,15 @@
     src: url('../fonts/HomemadeApple.ttf');
 }
 
+@font-face {
+    font-family: lunch;
+    src: url('../fonts/brownbaglunch.ttf');
+}
+
+h1{
+	font-family: lunch;
+}
+
 code {
 	font-size: 80%;
 }
