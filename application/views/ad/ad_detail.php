@@ -385,7 +385,16 @@
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
 					<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
-					<div class="panel-heading"><?php echo $row->comment_time; ?></div>
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<?php echo $row->comment_time; ?>
+							</div>
+							<div class="col-xs-6 text-right">
+								<button type="submit" class="btn btn-primary">Comment</button>
+							</div>
+						</div>
+					</div>
 					<div class="panel-body">
 						<?php echo $row->ad_comment; ?>
 					</div>
