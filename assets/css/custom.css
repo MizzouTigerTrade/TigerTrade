@@ -6,11 +6,6 @@
     src: url('../fonts/HomemadeApple.ttf');
 }
 
-@font-face {
-    font-family: gemelli;
-    src: url('../fonts/gemelli.ttf');
-}
-
 h1{
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
