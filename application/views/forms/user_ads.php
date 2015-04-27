@@ -39,7 +39,7 @@
 			<td><a href="<?php echo base_url('ad/edit/' . $ad['ad_id'] ) ?>">Edit</a> | <a href="" data-toggle="modal" data-target="#deleteModal<?php echo $ad['ad_id']; ?>">Delete</a>
 	
 					<div class="modal fade" id="deleteModal<?php echo $ad['ad_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog" style="width: 350px;">
+						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
