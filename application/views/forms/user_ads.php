@@ -1,3 +1,11 @@
+<script>
+
+$( document ).ready(){
+
+
+});
+
+</script>
 <div class="container padding-top-20">
 <div class="container-border">
 	<div class="row">
@@ -40,7 +48,7 @@
 			echo '<td>'.$ad['subCategory'].'</td>'; ?>
 			
 			<td> 
-				<select>
+				<select onchange="window.location = <?php echo base_url(ad/set_expiration/) . $ad['ad_id'] . "/" . ?> this.options[this.selectedIndex].value" id="status">
 				<?php if ($ad['expired'] == true){ ?>
 				<option value="true">Inactive</option>
 				<option value="false">Active</option>
