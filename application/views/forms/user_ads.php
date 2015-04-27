@@ -41,7 +41,7 @@
 			echo '<td>'.$ad['subCategory'].'</td>'; ?>
 			
 			<td> 
-				<select class="btn btn-mini" onchange="location=options[selectedIndex].value;" id="status">
+				<select class="btn btn-sm" onchange="location=options[selectedIndex].value;" id="status">
 				<?php if ( $ad['expired'] == TRUE ){ ?>
 				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/1" ) ?>">Inactive</option>
 				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/0" ) ?>">Active</option>
