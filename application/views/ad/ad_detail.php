@@ -381,8 +381,8 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-xs-12">
-						<button type="submit" class="btn btn-primary text-right">Comment</button>
+					<div class="col-xs-12 text-right">
+						<button type="submit" class="btn btn-primary">Comment</button>
 					</div>
 				</div>
 			</div>
