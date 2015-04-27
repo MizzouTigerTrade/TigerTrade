@@ -355,7 +355,7 @@
 		<!-- Comment section -->
 		<?php if ($this->ion_auth->logged_in()) { ?>
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#comment">Comment</button>
-		<div class="modal fade row" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="col-xs-12">
 				<h3>Leave a Comment/Question:</h3>
 			</div>
@@ -381,7 +381,8 @@
 				</div>
 			</div>
 			<?php echo form_close();?>
-			
+		</div>
+			<div class="row">
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
