@@ -21,7 +21,7 @@
 	
 	<div style="padding: 0 15px;">
 	<table class="table table-hover">
-		<thead>
+		<thead style="background-color: white;">
 			<th>Ad Name</th>
 			<th>Price</th>
 			<th>Category</th>
