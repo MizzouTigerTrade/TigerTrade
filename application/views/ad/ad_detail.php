@@ -355,6 +355,22 @@
 		<!-- Comment section -->
 		<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row">
+			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
+			<div class="col-xs-12">
+				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
+				<div class="form-group">				
+					<div class="col-xs-12">
+						<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12 text-right">
+						<button type="submit" class="btn btn-primary">Comment</button>
+					</div>
+				</div>
+			</div>
+			<?php echo form_close();?>
+			
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
@@ -371,22 +387,6 @@
 					<p>No Comments</p>
 				</div>
 			<?php } ?>
-			
-			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
-			<div class="col-xs-12">
-				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
-				<div class="form-group">				
-					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-12 text-right">
-						<button type="submit" class="btn btn-primary">Comment</button>
-					</div>
-				</div>
-			</div>
-			<?php echo form_close();?>
 		</div>
 		<?php } ?>
 		</div>
