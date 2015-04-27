@@ -11,12 +11,9 @@
     src: url('../fonts/BLKCHCRY.ttf');
 }
 
-@font-face {
-    font-family: AnkePrint;
-    src: url('../fonts/AnkePrint.ttf');
-}
 
-h1{
+
+h1, h2, h3{
 	font-family: apple;
 }
 
