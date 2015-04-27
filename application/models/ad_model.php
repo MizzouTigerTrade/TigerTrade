@@ -291,6 +291,7 @@ class Ad_model extends CI_Model
 			{
 				$single_ad['ad_id'] = $ad->ad_id;
 				$single_ad['title'] = $ad->title;
+				$single_ad['expired'] = $ad->expired;
 				$single_ad['price'] = '$'.$ad->price;
 				$category = $this->category_model->get_category($ad->category_id);
 				$single_ad['category'] = ucwords($category->name);
