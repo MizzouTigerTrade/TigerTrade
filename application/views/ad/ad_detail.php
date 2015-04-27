@@ -391,7 +391,7 @@
 								<?php if ($ad->user_id == $row->user_id) { echo 'Seller'; } else { echo 'Anonymous - ' . strtoupper(substr(sha1($row->user_id),0,8)); } ?>
 							</div>
 							<div class="col-xs-6 text-right">
-								<?php echo date('M j Y g:i A', strtotime($row->comment_time)); ?>
+								<?php echo date('M j, Y g:i A', strtotime($row->comment_time)); ?>
 							</div>
 						</div>
 					</div>
