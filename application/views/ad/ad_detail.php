@@ -376,12 +376,12 @@
 			<div class="col-xs-12">
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<div class="form-group">				
-					<div class="col-sm-10">
+					<div class="col-xs-12">
 						<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="" style="padding: 5px">
+					<div class="col-xs-12" style="padding: 5px">
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 				</div>
