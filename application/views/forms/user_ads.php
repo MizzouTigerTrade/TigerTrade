@@ -1,4 +1,8 @@
-
+<style>
+	tr:hover {
+		color: #373737;
+	}
+</style>
 <div class="container padding-top-20">
 <div class="container-border">
 	<div class="row">
