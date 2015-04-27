@@ -8,7 +8,7 @@
 <div class="container-border">
 
 	<div class="row text-center">
-	<img src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" width="75%">
+	<img src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" width="70%">
 	</div><br>
 	
 	<!--
