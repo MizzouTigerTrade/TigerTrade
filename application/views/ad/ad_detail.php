@@ -119,12 +119,6 @@
 							</div>
 						</div>
 					</div>
-					
-					
-			<?php if($user_ad == true)
-			{ ?>
-				<a class="btn btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
-			<?php } ?>
 			
 			<?php }; ?>
 			
