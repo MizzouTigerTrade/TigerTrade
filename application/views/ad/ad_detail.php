@@ -382,6 +382,7 @@
 			</div>
 			<?php echo form_close();?>
 		</div>
+		<br />
 			<div class="row">
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
