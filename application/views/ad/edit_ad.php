@@ -140,6 +140,7 @@ $(document).ready(function (){
 			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control description-box" value="<?php echo $tags; ?>" name="tags" data-role="tagsinput" id="tags"></input>
+				<p class="help-block">Type a comma or press enter between different tags.</p>
 			</div>
 		</div>
 
