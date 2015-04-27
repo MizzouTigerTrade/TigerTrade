@@ -377,7 +377,7 @@
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<div class="form-group">				
 					<div class="col-sm-10">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
+						<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
