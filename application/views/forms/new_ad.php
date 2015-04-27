@@ -68,7 +68,7 @@ $(document).ready(function (){
 		<div class="form-group">
 			<label for="title" class="col-sm-2 control-label label-20">Title</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" name="title" id="title" placeholder="..." onkeyup="document.getElementById('preview_title').innerHTML = this.value">
+				<input type="text" class="form-control" name="title" id="title" placeholder="..." onkeyup="document.getElementById('preview_title').innerHTML = this.value" required>
 			</div>
 		</div>
 		<div class="form-group">
@@ -76,14 +76,14 @@ $(document).ready(function (){
 			<label for="price" class="col-sm-2 control-label label-20">Price</label>
 			<div class="input-group col-sm-3 col-sm-offset-2" style="padding: 0 15px;">
 				<div class="input-group-addon">$</div>
-					<input type="text" class="form-control" name="price" id="price" placeholder="Amount">
+					<input type="text" class="form-control" name="price" id="price" placeholder="Amount" required>
 				<div class="input-group-addon">.00</div>
 			</div>
 		</div>
 		<div class="form-group" id="categoryForm">
 			<label for="category" class="col-sm-2 control-label label-20">Category</label>
 			<div class="col-sm-10">
-			<select name="category" class="form-control" id="categorySelectForm"> 
+			<select name="category" class="form-control" id="categorySelectForm" required> 
 				<option value="">Select One</option>
 				<?php
 					foreach($categories->result() as $category)
@@ -97,7 +97,7 @@ $(document).ready(function (){
 		<div class="form-group" id="subCategoryForm">
 			<label for="sub-category" class="col-sm-2 control-label label-20">Sub-Category</label>
 			<div class="col-sm-10">
-			<select name="subCategory" class="form-control" id="subCategory"> 
+			<select name="subCategory" class="form-control" id="subCategory" required> 
 				<option value=""><option>	
 			</select>
 			</div>
@@ -105,7 +105,7 @@ $(document).ready(function (){
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label label-20">Description</label>
 			<div class="col-sm-10">
-				<textarea type="text" class="form-control description-box" name="description" id="description" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5"></textarea>
+				<textarea type="text" class="form-control description-box" name="description" id="description" onkeyup="document.getElementById('preview_message').innerHTML = this.value" rows="5" required></textarea>
 			</div>
 		</div>
 
