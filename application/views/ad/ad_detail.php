@@ -354,38 +354,38 @@
 	
 	<!-- Comment section -->
 	<?php if ($this->ion_auth->logged_in()) { ?>
-		<div class="row" style="margin-top: 20px;">
-			<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 40px">View Comments:</label>
-	<?php if(!empty($comments)) { ?>
+	<div class="row" style="margin-top: 20px;">
+		<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 40px">View Comments:</label>
+		<?php if(!empty($comments)) { ?>
 			<?php foreach($comments as $row) { ?>
-				<div class="col-xs-12">
-					<p style="font-size: 1.1em; line-height: 30px;"><?php echo $row->ad_comment; ?>. Comment made on: <?php echo $row->comment_time; ?></p>
-				</div>
+			<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) ?>panel-default<?php } else { ?>panel-warning<?php } ?>">
+				<p style="font-size: 1.1em; line-height: 30px;"><?php echo $row->ad_comment; ?>. Comment made on: <?php echo $row->comment_time; ?></p>
+			</div>
 			<?php } ?>
-	<?php } else { ?>
-				<div class="col-xs-12">
-					<p style="font-size: 1.1em; line-height: 30px;">There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.</p>
-				</div>
-			<?php } ?>
-			<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 30px">New Comments:</label>
-			<div class="col-xs-12" style="padding: 0;">
-				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
-				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
+		<?php } else { ?>
+			<div class="col-xs-12">
+				<p style="font-size: 1.1em; line-height: 30px;">There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.</p>
+			</div>
+		<?php } ?>
+		<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 30px">New Comments:</label>
+		<div class="col-xs-12" style="padding: 0;">
+		<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
+			<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<div class="form-group">				
 					<div class="col-sm-10">
 						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-10" style="padding: 5px">
-						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10" style="padding: 5px">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
 					</div>
 				</div>
+				<?php echo form_close();?>
 			</div>
-			<?php echo form_close();?>
+		<?php } ?>
 		</div>
-	<?php } ?>
-	</div>
 	</div>
 </div>
 </div>
