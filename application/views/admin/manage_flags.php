@@ -20,7 +20,7 @@
 
 	<table class="table table-hover table-condensed">
 		<thead>
-		<tr>
+		<tr style="background-color: white;">
 			<th>Ad</th>
 			<th>Flag Count</th>
 			<th>Name</th>
