@@ -340,7 +340,11 @@
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
-		<?php } ?>	
+		<?php } 
+			else{ ?>
+				<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+			<?php }
+		?>	
 		</div>
 			
 		<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
