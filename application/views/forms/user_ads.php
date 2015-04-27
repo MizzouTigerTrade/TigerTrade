@@ -41,7 +41,9 @@
 			
 			<td> 
 				<select>
-				<option value="<?php echo $ad['expired']; ?>"></option>
+				<?php if ($ad['expired'] == true){ ?>
+				<option value="true">Inactive</option>
+				<?php } ?>
 				</select>
 			
 			<td><a href="<?php echo base_url('ad/edit/' . $ad['ad_id'] ) ?>">Edit</a> | <a href="" data-toggle="modal" data-target="#deleteModal<?php echo $ad['ad_id']; ?>">Delete</a>
