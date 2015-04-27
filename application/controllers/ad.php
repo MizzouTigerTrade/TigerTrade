@@ -288,7 +288,8 @@ class Ad extends CI_Controller
 
 		if ($data['created'] == null){
 		$this->session->set_flashdata('message', 'Error creating your ad');
-		redirect('market', 'refresh')
+		redirect('market', 'refresh');
+		}
 		
 		if ($data['created'] == true){
 		$this->session->set_flashdata('message', 'Your Ad was created and placed on the market. To edit your ad visit "My Ads" under your name in the navigation bar.');
