@@ -48,7 +48,7 @@ $( document ).ready(){
 			echo '<td>'.$ad['subCategory'].'</td>'; ?>
 			
 			<td> 
-				<select onchange=" id="status">
+				<select onchange="" id="status">
 				<?php if ($ad['expired'] == true){ ?>
 				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/true" ) ?>">Inactive</option>
 				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/false" ) ?>">Active</option>
