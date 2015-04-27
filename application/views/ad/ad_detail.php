@@ -370,9 +370,6 @@
 				<div class="form-group">
 					<div class="col-xs-12">
 						<div class="row">
-							<div class="col-xs-6">
-								<h3 style="margin: 0; padding-top: 10px">Comments:</h3>
-							</div>
 							<div class="col-xs-6 text-right">
 								<button type="submit" class="btn btn-primary">Post Comment</button>
 							</div>
@@ -384,6 +381,9 @@
 		</div>
 		<hr>
 			<div class="row">
+			<div class="col-xs-6">
+				<h3 style="margin: 0; padding-top: 10px">Comments:</h3>
+			</div>
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
