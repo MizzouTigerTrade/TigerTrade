@@ -46,10 +46,10 @@
 				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/1" ) ?>">Inactive</option>
 				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/0" ) ?>">Active</option>
 				<?php } 
-					else{ ?>
-						<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/0" ) ?>">Active</option>
-						<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/1" ) ?>">Inactive</option>
-					<?php } ?>
+				else{ ?>
+					<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/0" ) ?>">Active</option>
+					<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/1" ) ?>">Inactive</option>
+				<?php } ?>
 				
 				</select>
 			
