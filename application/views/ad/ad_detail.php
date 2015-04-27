@@ -388,7 +388,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
-								<?php if ($ad->user_id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer'; } ?>
+								<?php if ($ad->user_id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer - ' . $row->user_id; } ?>
 							</div>
 							<div class="col-xs-6 text-right">
 								<?php echo $row->comment_time; ?>
