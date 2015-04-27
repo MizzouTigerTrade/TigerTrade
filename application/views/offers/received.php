@@ -69,7 +69,7 @@
 				<th>Asking Price</th>
 				<th></th>
 			</tr>
-			<?php if(!$pending) { ?>
+			<?php if($pending) { ?>
 			<tr>
 				<td colspan="5" class="text-center">No Pending Offers</td>
 			</tr>
