@@ -86,6 +86,17 @@ $(document).ready(function(){
 	
 	<hr>
 	
+	<div style="padding: 0 15px;">
+	<?php if ($message != "") { ?>
+      <div id="infoMessage">
+		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
+		  <span class="sr-only">Error:</span>
+		  <?php echo $message;?>
+		</div>
+	  </div>
+	<?php } ?>
+	</div>
+	
 	<div class="row">
 		<div class="col-xs-12" id="market_background">
 			
@@ -181,7 +192,6 @@ $(document).ready(function(){
 							<div class="col-xs-3 col-md-2 col-md-offset-1">
 							<?php 	
 									$flag = 0;
-									//$image_link = "nothing";
 									foreach($images->result() as $img) { 
 										if($img->ad_id == $row->ad_id && $flag == 0)
 										{
@@ -191,7 +201,6 @@ $(document).ready(function(){
 									}
 									
 									if($flag == 0) { ?> 
-									<!--<img class="img-thumbnail" src="http://placehold.it/500x500" alt="" width="100%" height="100%">-->
 									<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
 								<?php } else { ?>
 									<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://thetigertrade.com/assets/Images/defaultImage.jpg'" width="100%" height="100%">

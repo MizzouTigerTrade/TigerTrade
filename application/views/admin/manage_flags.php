@@ -77,7 +77,7 @@
 								<div class="modal-footer">
 									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
 									</form>
-									<button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
 						</div>

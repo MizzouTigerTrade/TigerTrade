@@ -43,7 +43,7 @@ $(document).ready(function (){
 <div class="container-border">
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1">
-			<h1>Edit Ad Form</h1>
+			<h1>Edit Ad</h1>
 		</div>
 	</div>
 	
@@ -203,7 +203,7 @@ $(document).ready(function (){
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Edit</button>
+				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
 		</div>
 	<?php echo form_close();?>

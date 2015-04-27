@@ -55,6 +55,14 @@ class Ad extends CI_Controller
 		} else {
 			$data['flagged'] = true; // Don't show report ad button to non-users
 		}
+		
+		if($this->ion_auth->is_admin()){
+			$data['admin'] = true;
+		}
+		else{
+			$data['admin'] = false;
+		}
+		
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
@@ -63,7 +71,7 @@ class Ad extends CI_Controller
 	{
 		$user = $this->ion_auth->user()->row();
 		$ad = $this->ad_model->get_ad($ad_id);
-		if($ad->user_id != $user->user_id)
+		if($ad->user_id != $user->user_id && !$this->ion_auth->is_admin())
 		{
 			redirect('/market/index');
 		}
@@ -102,7 +110,7 @@ class Ad extends CI_Controller
 			$ad_id = $this->security->xss_clean($this->input->post('ad_id'));
 			$user = $this->ion_auth->user($id)->row();
 			$ad = $this->ad_model->get_ad($ad_id);
-			if($ad->user_id != $user->user_id)
+			if($ad->user_id != $user->user_id && !$this->ion_auth->is_admin())
 			{
 				redirect('/market/index');
 			}
@@ -152,7 +160,16 @@ class Ad extends CI_Controller
 			}
 		}
 		$data['error'] = 'shit';
-		redirect('ad/edit/'.$ad_id);
+		
+		if ( $ad->user_id != $user->user_id && $this->ion_auth->is_admin() ){
+			$this->session->set_flashdata('message', "Updated Ad");
+			redirect('market', 'refresh');
+		}
+		else{
+			$this->session->set_flashdata('message', "Updated Ad");
+			redirect('ad/user_ads');
+		}
+		
 	}
 
 	//shows form to create a new ad
@@ -269,10 +286,15 @@ class Ad extends CI_Controller
 
 		}
 
-		$data['title'] = 'New Ad';
-		$data['categories'] = $this->category_model->get_all_categories();
-		$data['subcategories'] = $this->subcategory_model->get_all_subcategories();
-		$this->layout->view('forms/new_ad', $data);
+		if ($data['created'] == null){
+		$this->session->set_flashdata('message', 'Error creating your ad');
+		redirect('market', 'refresh');
+		}
+		
+		if ($data['created'] == true){
+		$this->session->set_flashdata('message', 'Your Ad was created and placed on the market. To edit your ad visit "My Ads" under your name in the navigation bar.');
+		redirect('market', 'refresh');
+		}	
 		
 	}
 	
@@ -293,6 +315,7 @@ class Ad extends CI_Controller
 		$user_id = $user->user_id;
 
 		$data['ads'] = $this->ad_model->get_user_ads($user_id);
+		$data['message'] = $this->session->flashdata('message');
 
 		$this->layout->view('forms/user_ads', $data);
 	}
@@ -301,6 +324,19 @@ class Ad extends CI_Controller
 	function delete($ad_id)
 	{
 		$this->ad_model->delete_ad($ad_id);
+		$this->session->set_flashdata('message', "Your Ad has been deleted");
+		redirect ('ad/user_ads');
+	}
+	
+	function set_expiration($ad_id, $boolean)
+	{
+		$this->ad_model->set_expiration($ad_id, $boolean);
+		if($boolean == true){
+			$this->session->set_flashdata('message', "Your ad has been deactivated");
+		}
+		else{
+			$this->session->set_flashdata('message', "Your ad has been activated");
+		}
 		redirect ('ad/user_ads');
 	}
 

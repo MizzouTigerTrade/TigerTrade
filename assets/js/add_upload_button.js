@@ -8,7 +8,8 @@ $(document).ready(function() {
 			}).fadeIn('slow').append($("<input/>", {
 			name: 'userfile[]',
 			type: 'file',
-			id: 'file'
+			id: 'file',
+			class: 'btn btn-default'
 			}), $("<br/><br/>")));
 		});
 	// Following function will executes on change event of file input to select different file.

@@ -38,7 +38,7 @@
 			</div>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
 			
-			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#makeOffer">Make an Offer</button>
+			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#makeOffer">Make Offer</button>
 			
 				<!--Make Offer Modal-->
 				<div class="modal fade" id="makeOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -95,6 +95,36 @@
 			<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
 			<?php }; ?> 
 			
+			<?php if ($admin == true) { ?>
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Ad</button>
+	
+					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog" style="width: 450px;">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this Ad?</h4>
+								</div>
+								<div class="modal-body">
+									Message to user<br>
+									<form action="<?php echo base_url('admin/delete_ad') . '/' . $ad->ad_id ;?>"  method="POST">
+									<textarea type="text" rows="3" class="form-control description-box" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
+								</div>
+								<div class="modal-footer">
+									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
+									<input type="hidden" name="source" value="market">
+									</form>
+									<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+			<a class="btn btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
+			
+			<?php }; ?>
+			
 			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 		</div>
 
@@ -137,7 +167,7 @@
 			<?php  		}
 						$inc++;
 					} ?>
-
+	
 				</div>
 
 				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -149,7 +179,12 @@
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
-		<?php } ?>	
+		<?php }
+				else{ ?>
+					<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+				<?php }
+
+		?>	
 		</div>
 	</div>
 	
@@ -169,7 +204,7 @@
 				</div>
 			</div>
 			<h2 style="margin-top: 10px;">Asking Price: <span style="color: green;">$<?php echo $ad->price; ?></span></h2>
-			<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOfferSM">Make an Offer</button>
+			<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#makeOfferSM">Make Offer</button>
 			
 				<!--Make Offer Modal-->
 				<div class="modal fade" id="makeOfferSM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -223,50 +258,157 @@
 				</div>
 			
 			<?php if ($flagged == false) { ?>
-			<a class="btn btn-sm btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
+			<a class="btn btn-sm btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report</a>
 			<?php }; ?> 
 			
-			<img style="margin-top: 10px;" class="img-thumbnail" src="http://placehold.it/500x500" alt="ad_image" width="100%">
-			<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
+			<?php if ($admin == true) { ?>
+				<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModalSmall">Delete</button>
+	
+					<div class="modal fade" id="deleteModalSmall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-sm">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this Ad?</h4>
+								</div>
+								<div class="modal-body">
+									Message to user<br>
+									<form action="<?php echo base_url('admin/delete_ad') . '/' . $ad->ad_id ;?>"  method="POST">
+									<textarea type="text" rows="3" class="form-control description-box" name="message_to_user" placeholder="reason for deleting ad" required></textarea>
+								</div>
+								<div class="modal-footer">
+									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
+									<input type="hidden" name="source" value="market">
+									</form>
+									<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
+								</div>
+							</div>
+						</div>
+					</div>
+						
+				<a class="btn btn-sm btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit</a>	
+			<?php }; ?>
+			
+			<div class="col-sm-5">
+			<?php if(count($images->result()) != 0) { ?> 
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.17);">
+
+				<ol class="carousel-indicators">
+			<?php 	$inc = 0;
+					foreach ($images->result() as $img) { 
+						if($inc == 0)
+						{ ?>
+							<li data-target="#myCarousel" data-slide-to="<?php echo $inc; ?>" class="active"></li>
+			<?php 		} 
+						else 
+						{ ?>
+							<li data-target="#myCarousel" data-slide-to="<?php echo $inc; ?>"></li>
+			<?php 		}
+						$inc++;
+					} ?>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+			<?php 	$inc = 0;
+					foreach ($images->result() as $img) { 
+						$image_link = base_url('/'.$img->image_path);
+						if($inc == 0)
+						{ ?>
+						<div class="item active">
+							<div class="row text-center">
+								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
+							</div>
+						</div>
+			<?php 		} 
+						else { ?>
+						<div class="item">
+							<div class="row text-center">
+								<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://placehold.it/500x500'" alt="Error loading image" max-width="100%" max-height="100%">
+							</div>
+						</div>
+			<?php  		}
+						$inc++;
+					} ?>
+
+				</div>
+
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		<?php } 
+			else{ ?>
+				<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+			<?php }
+		?>	
+		</div>
+			
+		<p class="text-justify" style="font-size: 1.1em; margin-top: 10px;">Details: <?php echo $ad->description; ?></p>
 			
 		</div>
 	</div>
 	
-
-	<!-- Comment section -->
-	<?php if ($this->ion_auth->logged_in()) { ?>
-		<div class="row" style="margin-top: 20px;">
-			<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 40px">View Comments:</label>
-	<?php if(!empty($comments)) { ?>
-			<?php foreach($comments as $row) { ?>
-				<div class="col-xs-12">
-					<p style="font-size: 1.1em; line-height: 30px;"><?php echo $row->ad_comment; ?>. Comment made on: <?php echo $row->comment_time; ?></p>
-				</div>
-			<?php } ?>
-	<?php } else { ?>
-				<div class="col-xs-12">
-					<p style="font-size: 1.1em; line-height: 30px;">There are no available comments for this ad. If you have questions about the details of this ad, please make an appropriate comment below.</p>
-				</div>
-			<?php } ?>
-			<label for="comments" class="col-sm-10 control-label label-20" style="line-height: 30px">New Comments:</label>
-			<div class="col-xs-12" style="padding: 0;">
-				<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>	
+		<!-- Comment section -->
+		<?php if ($this->ion_auth->logged_in()) { ?>
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>Leave a Comment/Question:</h3>
+			</div>
+			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
+			<div class="col-xs-12">
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 				<div class="form-group">				
-					<div class="col-sm-10">
-						<textarea type="text" class="form-control description-box" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
+					<div class="col-xs-12">
+						<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-10" style="padding: 5px">
-						<button type="submit" class="btn btn-default">Submit</button>
+					<div class="col-xs-12">
+						<div class="row">
+							<div class="col-xs-6">
+								<h3 style="margin: 0; padding-top: 10px">Comments:</h3>
+							</div>
+							<div class="col-xs-6 text-right">
+								<button type="submit" class="btn btn-primary">Comment</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<?php echo form_close();?>
+			
+			<?php if(!empty($comments)) { ?>
+				<?php foreach($comments as $row) { ?>
+				<div class="col-xs-12">
+					<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<?php if ($this->ion_auth->user()->row()->id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer'; } ?>
+							</div>
+							<div class="col-xs-6 text-right">
+								<?php echo $row->comment_time; ?>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<?php echo $row->ad_comment; ?>
+					</div>
+				</div>
+				</div>
+				<?php } ?>
+			<?php } else { ?>
+				<div class="col-xs-12">
+					<p>No Comments</p>
+				</div>
+			<?php } ?>
 		</div>
-	<?php } ?>
-	</div>
+		<?php } ?>
+		</div>
 	</div>
 </div>
 </div>
