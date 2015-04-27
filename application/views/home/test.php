@@ -17,8 +17,7 @@
        data-url="<?php echo base_url('json/getJson');?>"
        data-query-params="queryParams"
        data-pagination="true"
-       data-search="true"
-       data-height="300">
+       data-search="true">
     <thead>
     <tr>
         <th data-field="ad_id">Ad id</th>
