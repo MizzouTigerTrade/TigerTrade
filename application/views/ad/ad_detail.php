@@ -168,9 +168,9 @@
 						$inc++;
 					} 
 					
-					if($inc == 0){ ?>
+					if(empty($images)){ ?>
 						<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
-					<?php }
+					<?php } ?>
 			
 			
 			?>
