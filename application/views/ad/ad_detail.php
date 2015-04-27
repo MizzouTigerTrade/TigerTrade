@@ -391,7 +391,7 @@
 								<?php if ($this->ion_auth->user()->row()->id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer'; } ?>
 							</div>
 							<div class="col-xs-6 text-right">
-								<?php echo strftime('y', date($row->comment_time)); ?>
+								<?php echo strftime('y', strtotime($row->comment_time)); ?>
 							</div>
 						</div>
 					</div>
