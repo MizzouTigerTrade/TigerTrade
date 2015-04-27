@@ -355,6 +355,7 @@
 		<!-- Comment section -->
 		<?php if ($this->ion_auth->logged_in()) { ?>
 		<div class="row">
+			<h3>Leave a Comment/Question:</h3>
 			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
 			<div class="col-xs-12">
 				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
