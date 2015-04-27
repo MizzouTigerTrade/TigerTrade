@@ -7,12 +7,12 @@
 }
 
 @font-face {
-    font-family: conform;
-    src: url('../fonts/conform.ttf');
+    font-family: manners;
+    src: url('../fonts/domestic-manners.ttf');
 }
 
 h1{
-	font-family: conform;
+	font-family: manners;
 }
 
 code {
