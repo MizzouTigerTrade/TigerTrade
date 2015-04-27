@@ -70,7 +70,9 @@
       <?php echo form_close();?>
         </div>
         <div class="form-group">
-          <a href="<?php echo base_url('auth/create_user') ?>" class="btn btn-primary">Register</a>
+          <div class="col-sm-offset-4 col-sm-4">
+            <a href="<?php echo base_url('auth/create_user') ?>" class="btn btn-primary">Register</a>
+          </div>
         </div>
 </div>
 </div>
