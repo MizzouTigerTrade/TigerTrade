@@ -34,7 +34,8 @@ class Ad extends CI_Controller
 		}
 		
 		$data['tags'] = $this->ad_model->get_all_tags();
-		$data['ad'] = $this->ad_model->get_ad($ad_id);
+		$ad = $this->ad_model->get_ad($ad_id);
+		$data['ad'] = $ad;
 		$data['category'] = $this->category_model->get_category($data['ad']->category_id);
 		
 		$data['comments'] = $this->ad_model->get_comments($ad_id);
@@ -63,11 +64,11 @@ class Ad extends CI_Controller
 			$data['admin'] = false;
 		}
 		
-		if($user_id == $data['ad']->ad_id)
+		if($user_id == $ad->user_id)
 			$data['user_ad'] = true;
 		else
 			$data['user_ad'] = false;
-		
+
 		$this->layout->view('ad/ad_detail', $data);
 	}
 
