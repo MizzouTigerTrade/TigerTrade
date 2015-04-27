@@ -83,7 +83,7 @@ $(document).ready(function (){
 		<div class="form-group" id="categoryForm">
 			<label for="category" class="col-sm-2 control-label label-20">Category</label>
 			<div class="col-sm-10">
-			<select name="category" id="categorySelectForm"> 
+			<select name="category" class="form-control" id="categorySelectForm"> 
 				<option value="">Select One</option>
 				<?php
 					$sub = 0;
@@ -106,7 +106,7 @@ $(document).ready(function (){
 		<div class="form-group" id="subCategoryForm">
 			<label for="sub-category" class="col-sm-2 control-label label-20">Subcategory</label>
 			<div class="col-sm-10">
-			<select name="subCategory" class="btn btn-default" id="subCategory"> 	
+			<select name="subCategory" class="form-control" id="subCategory"> 	
 				<?php
 					foreach($subcategories->result() as $subcategory)
 					{
