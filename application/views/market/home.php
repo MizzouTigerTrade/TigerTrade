@@ -98,9 +98,9 @@ $(document).ready(function(){
 	</div>
 	
 	<div class="row">
-
+		<div class="col-xs-12" id="market_background">
 			
-			
+			<div class="col-xs-12">
 				
 				<!-- SMALL+ Screen Menu -->
 				<div class="row hidden-xs text-center">
@@ -237,8 +237,8 @@ $(document).ready(function(){
 					
 				</a>
 				<? } ?>
-			
-
+			</div>
+		</div>
 	</div>
 </div>
 </div>
