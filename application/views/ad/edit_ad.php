@@ -178,7 +178,7 @@ $(document).ready(function (){
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload Image</label>
 			<div class="col-sm-10">
-				<div id="filediv"><input name="userfile[]" class="input-sm" type="file" id="file"/></div>
+				<div id="filediv"><input name="userfile[]" class="btn btn-default" type="file" id="file"/></div>
 			</div>
 		</div>
 
