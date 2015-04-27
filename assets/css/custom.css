@@ -7,12 +7,12 @@
 }
 
 @font-face {
-    font-family: dadhand;
-    src: url('../fonts/dadhand.ttf');
+    font-family: gemelli;
+    src: url('../fonts/gemelli.ttf');
 }
 
 h1{
-	font-family: dadhand;
+	font-family: gemelli;
 }
 
 code {
