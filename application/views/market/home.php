@@ -184,10 +184,9 @@ $(document).ready(function(){
 				
 				<div class="row" style="padding-bottom: 15px;" id="emptySearch"></div>
 				<?php if(count($ads->result()) == 0)
-					{?>
+					{ ?>
 						<div class="row">No ads available.</div>
-					<?php}
-				?>
+				<?php } ?>
 				<?php foreach ($ads->result() as $row) { ?>
 				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
 					
