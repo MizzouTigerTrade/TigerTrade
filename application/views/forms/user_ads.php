@@ -43,12 +43,12 @@
 			<td> 
 				<select onchange="location=options[selectedIndex].value;" id="status">
 				<?php if ( $ad['expired'] == TRUE ){ ?>
-				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/true" ) ?>">Inactive</option>
-				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/false" ) ?>">Active</option>
+				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/1" ) ?>">Inactive</option>
+				<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/0" ) ?>">Active</option>
 				<?php } 
 					else{ ?>
-						<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/false" ) ?>">Active</option>
-						<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/true" ) ?>">Inactive</option>
+						<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/0" ) ?>">Active</option>
+						<option value="<?php echo base_url('ad/set_expiration/' . $ad['ad_id'] . "/1" ) ?>">Inactive</option>
 					<?php } ?>
 				
 				</select>
