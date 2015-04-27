@@ -381,7 +381,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-xs-12" style="padding: 5px">
+					<div class="col-xs-12">
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 				</div>
