@@ -11,10 +11,13 @@
     src: url('../fonts/BLKCHCRY.ttf');
 }
 
-
+@font-face {
+    font-family: hand;
+    src: url('../fonts/AlanisHand.ttf');
+}
 
 h1, h2, h3{
-	font-family: apple;
+	font-family: hand;
 }
 
 code {
