@@ -382,7 +382,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-xs-12">
-						<button type="submit" class="btn btn-primary">Comment</button>
+						<button type="submit" class="btn btn-primary text-right">Comment</button>
 					</div>
 				</div>
 			</div>
