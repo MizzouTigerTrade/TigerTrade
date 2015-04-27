@@ -6,28 +6,6 @@
     src: url('../fonts/HomemadeApple.ttf');
 }
 
-@font-face {
-    font-family: blackchancery;
-    src: url('../fonts/BLKCHCRY.ttf');
-}
-
-@font-face {
-    font-family: lunch;
-	
-    src: url('../fonts/BrownBagLunch.ttf');
-}
-
-h1{
-	font-family: lunch;
-	font-size: 65px;
-	margin-top: 0px;
-	margin-bottom: 4px;
-}
-
-h2, h3{
-	font-family: blackchancery;
-}
-
 code {
 	font-size: 80%;
 }
