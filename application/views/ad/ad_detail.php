@@ -380,9 +380,10 @@
 		</div>
 		<hr>
 			<div class="row">
-							<div class="col-xs-6">
-								<h3 style="margin: 0; padding-top: 10px">Comments:</h3>
-							</div>
+			<div class="row">
+					<div class="col-xs-6">
+						<h3 style="margin: 0; padding-top: 10px">Comments:</h3>
+					</div>
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
