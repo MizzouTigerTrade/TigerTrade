@@ -61,6 +61,11 @@ class Home extends CI_Controller {
 
 
 	}
+
+	public function test()
+	{
+		$this->layout->view('home/test');
+	}
 }
 
 /* End of file welcome.php */
