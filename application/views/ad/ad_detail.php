@@ -372,7 +372,7 @@
 							<div class="col-xs-6">
 								<h3>Comments:</h3>
 							</div>
-							<div class="col-xs-12">
+							<div class="col-xs-6 text-right">
 								<button type="submit" class="btn btn-primary">Comment</button>
 							</div>
 						</div>
