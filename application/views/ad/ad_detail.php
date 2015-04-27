@@ -388,7 +388,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
-								<?php if ($ad->user_id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer - ' . $this->encrypt->encode($row->user_id); } ?>
+								<?php if ($ad->user_id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer - ' . md5(uniqid($row->user_id, true)); } ?>
 							</div>
 							<div class="col-xs-6 text-right">
 								<?php echo $row->comment_time; ?>
