@@ -379,8 +379,7 @@
 			<?php echo form_close();?>
 		</div>
 		<hr>
-			<div class="row">
-			<div class="row">
+			<div class="row form-group">
 					<div class="col-xs-6">
 						<h3 style="margin: 0; padding-top: 10px">Comments:</h3>
 					</div>
