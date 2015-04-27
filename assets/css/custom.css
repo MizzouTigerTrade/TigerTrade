@@ -7,12 +7,12 @@
 }
 
 @font-face {
-    font-family: manners;
-    src: url('../fonts/domestic-manners.ttf');
+    font-family: dadhand;
+    src: url('../fonts/dadhand.ttf');
 }
 
 h1{
-	font-family: manners;
+	font-family: dadhand;
 }
 
 code {
