@@ -41,8 +41,14 @@
 					<div class="modal fade" id="deleteModal<?php echo $ad['ad_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog" style="width: 350px;">
 							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this Ad?</h4>
+								</div>
 								<div class="modal-body">
-									<b>Are you sure you want to delete this Ad?</b><br><br>
+									Ad: <?php echo $ad['title']; ?>
+								</div>
+								<div class="modal-footer">
 									<a class="btn btn-sm btn-primary" href="<?php echo base_url('ad/delete') . '/' . $ad['ad_id'] ;?>">Yes</a>
 									<button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancel</button>
 								</div>
