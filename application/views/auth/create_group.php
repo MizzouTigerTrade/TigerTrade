@@ -47,7 +47,7 @@
             </div>
 			<div class="form-group">
                   <div class="col-sm-offset-3 col-sm-6">
-                        <button type="submit" class="btn btn-default">Create Group</button>
+                        <button type="submit" class="btn btn-primary">Create Group</button>
                   </div>
             </div>
       <?php echo form_close();?>
