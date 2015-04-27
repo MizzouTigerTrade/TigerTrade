@@ -36,19 +36,16 @@
 			echo '<td>'.$ad['category'].'</td>';
 			echo '<td>'.$ad['subCategory'].'</td>'; ?>
 			
-			<td><a href="'.base_url('ad/edit/'.$ad['ad_id']).'">Edit</a> | <a href="'.base_url('ad/delete/'.$ad['ad_id']).'" data-toggle="modal" data-target="#deleteModal">Delete</a>
+			<td><a href="'.base_url('ad/edit/'.$ad['ad_id']).'">Edit</a> | <a data-toggle="modal" data-target="#deleteModal">Delete</a>
 	
 					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog" style="width: 450px;">
 							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									<h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this Ad?</h4>
+								<div class="modal-body">
+									Are you sure you want to delete this Ad?
 								</div>
 								<div class="modal-footer">
-									<input class="btn btn-xs btn-primary" type="submit" value="Yes">
-									<input type="hidden" name="source" value="market">
-									</form>
+									<a class="btn btn-xs btn-primary" href="<?php echo base_url('ad/delete') . '/' . $ad->ad_id ;?>">Yes</a>
 									<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
