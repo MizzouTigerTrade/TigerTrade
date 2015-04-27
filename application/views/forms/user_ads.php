@@ -42,9 +42,9 @@
 						<div class="modal-dialog" style="width: 350px;">
 							<div class="modal-content">
 								<div class="modal-body">
-									<b>Are you sure you want to delete this Ad?</b><br><br>
-									<a class="btn btn-xs btn-primary" href="<?php echo base_url('ad/delete') . '/' . $ad['ad_id'] ;?>">Yes</a>
-									<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
+									<b>Are you sure you want to delete this Ad?</b><br>
+									<a class="btn btn-sm btn-primary" href="<?php echo base_url('ad/delete') . '/' . $ad['ad_id'] ;?>">Yes</a>
+									<button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
 						</div>
