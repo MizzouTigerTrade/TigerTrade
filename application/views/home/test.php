@@ -13,7 +13,6 @@
         page: 1
     };
   }*/
-$(document).ready(function{
   alert("ready");
   
   function imageFormatter(value) {
@@ -23,7 +22,6 @@ $(document).ready(function{
    function starsFormatter(value) {
     return '<i class="glyphicon glyphicon-star"></i> ' + value;
   }
-});
 	 
 
 
