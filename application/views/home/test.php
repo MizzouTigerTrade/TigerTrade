@@ -3,7 +3,7 @@
 <script src="<?php echo base_url('assets/js/bootstrap-table.min.js') ?>"></script>
 
 <script type="text/javascript">
-	
+
 	function queryParams() {
     return {
         type: 'owner',
@@ -13,11 +13,14 @@
         page: 1
     };
 
+$(document).ready({
     function imageFormatter(value) {
     	var url = "<?php echo base_url(); ?>" + value;
     	console.log(url);
     	return '<a href="' + url + '">' + value + '</a>';
 	}
+});
+
 }
 </script>
 <table data-toggle="table"
