@@ -22,6 +22,7 @@
     <thead>
     <tr>
         <th data-field="ad_id">Ad id</th>
+        <th data-field="image_link">Image link</th>
         <th data-field="title">title</th>
         <th data-field="description">Description</th>
     </tr>
