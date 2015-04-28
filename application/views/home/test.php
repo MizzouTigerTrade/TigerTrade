@@ -13,14 +13,18 @@
         page: 1
     };
   }*/
-
-	 function imageFormatter(value) {
-		return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
-	 }
+$(document).ready(function{
+  alert("ready");
+  
+  function imageFormatter(value) {
+    return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+   }
 
    function starsFormatter(value) {
     return '<i class="glyphicon glyphicon-star"></i> ' + value;
-}
+  }
+});
+	 
 
 
    
