@@ -369,6 +369,34 @@ class Ad_model extends CI_Model
 			return $this->db->affected_rows();
 		}
 	}
+
+	public function get_image($ad_id)
+	{
+		$result = $this->db->query("SELECT * FROM images Where ad_id = '$ad_id'");
+		$result = $result->row();
+		return $result->image_path;
+	}
+
+	public function get_all_ads_json()
+	{
+		$ads = new ArrayObject();
+		$all_ads = $this->get_all_ads();
+		foreach($ad as $all_ads)
+		{
+			$data['image_link'] = $this->get_image($ad->ad_id);
+			$data['ad_id'] = $ad->ad_id;
+			$data['title'] = $ad->title;
+			$data['description'] = $ad->description;
+			$data['price'] = $ad->price;
+			$data['user_id'] = $ad->user_id;
+			$data['category_id'] = $ad->category_id;
+			$data['subcategory_id'] = $ad->subcategory_id;
+
+			$ads->append($data);
+		}
+
+		return $ads;
+	}
 }
 
 ?>
