@@ -12,8 +12,6 @@
 			<img src="<?= base_url('assets/Images/market/logo.png') ?>" alt="">
 		</div>
 	</div>
-	
-    <hr>
       
     <div style="padding: 0 15px;">
       <?php if ($message != "") { ?>
