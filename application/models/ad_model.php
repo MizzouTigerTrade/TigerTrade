@@ -386,15 +386,16 @@ class Ad_model extends CI_Model
 
 	public function get_all_ads_json()
 	{
-		$ads = new ArrayObject();
+		$ads = array();
+		$j=0;
 		$all_ads = $this->get_all_ads();
 		$all_ads = $all_ads->result();
 		foreach($all_ads as $ad)
 		{
-			$data = array('image_link' => $this->get_image($ad->ad_id), 'ad_id' => $ad->ad_id, 'title' => $ad->title, 'description' => $ad->description, 
+			$ads[$j] = array('image_link' => $this->get_image($ad->ad_id), 'ad_id' => $ad->ad_id, 'title' => $ad->title, 'description' => $ad->description, 
 						'price' => $ad->price, 'user_id' => $ad->user_id, 'category_id' => $ad->category_id, 'subcategory_id' => $ad->subcategory_id);
 
-			$ads->append($data);
+			$j++;
 		}
 
 		return $ads;
