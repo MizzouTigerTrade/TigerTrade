@@ -7,14 +7,11 @@
 	</div>
 
 	<hr>
-<!-- <h1><?php echo lang('reset_password_heading');?></h1>
-<div id="infoMessage"><?php echo $message;?></div> -->
 
 	<div style="padding: 0 15px;">
       <div class="row">
 			<div class="col-sm-offset-4 col-sm-8">
-			    <p>Enter the email address you used to sign up.</p>
-                <p>TigerTrade will send you an email about resetting your password.</p>
+			    <p>Please enter a new password.</p>
 			</div>
       </div>
       <?php if ($message != "") { ?>

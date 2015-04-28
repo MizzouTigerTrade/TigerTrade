@@ -217,6 +217,7 @@ class Auth extends CI_Controller {
 		}
 		else
 		{
+			$sent = $this->security->xss_clean($this->input->post('email'));
 			// get identity from username or email
 			if ( $this->config->item('identity', 'ion_auth') == 'username' ){
 				$identity = $this->ion_auth->where('username', strtolower($this->input->post('email')))->users()->row();
@@ -246,7 +247,7 @@ class Auth extends CI_Controller {
 			if ($forgotten)
 			{
 				//if there were no errors
-				$this->session->set_flashdata('message', 'An email has been sent to ' . $this->data['email'] . ' with a new password and further instructions.');
+				$this->session->set_flashdata('message', 'An email has been sent from TigerTrade to ' . $sent . ' with a link to click to reset your password.');
 				redirect("auth/login", 'refresh'); //we should display a confirmation page here instead of the login page
 			}
 			else
@@ -300,7 +301,6 @@ class Auth extends CI_Controller {
 					'type'  => 'hidden',
 					'value' => $user->id,
 				);
-				//$this->data['csrf'] = $this->_get_csrf_nonce();
 				$this->data['code'] = $code;
 
 				//render
@@ -309,7 +309,7 @@ class Auth extends CI_Controller {
 			else
 			{
 				// do we have a valid request?
-				if (/*$this->_valid_csrf_nonce() === FALSE || */$user->id != $this->input->post('user_id'))
+				if ($user->id != $this->input->post('user_id'))
 				{
 
 					//something fishy might be up
