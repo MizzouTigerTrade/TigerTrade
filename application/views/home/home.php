@@ -9,7 +9,7 @@
 
 	<div class="row text-center">
 		<div class="col-xs-6 col-xs-offset-3">
-			<img src="<?= base_url('assets/Images/market/logo_fancy.png') ?>" alt="">
+			<img src="<?= base_url('assets/Images/market/logo.png') ?>" alt="">
 		</div>
 	</div><br>
 	
