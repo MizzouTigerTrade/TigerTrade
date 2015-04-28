@@ -38,9 +38,14 @@
 	</div>
 
 	<?php echo form_input($user_id);?>
-	
+	<div class="form-group">
+		<div class="col-sm-4 col-sm-offset-4">
+			<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary"><?php echo form_submit('submit', lang('reset_password_submit_btn'));?></button>
+			<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Reset Password</button>
+		</div>
+	  </div>
 
-	<p><?php echo form_submit('submit', lang('reset_password_submit_btn'));?></p>
+	<!--<p><?php echo form_submit('submit', lang('reset_password_submit_btn'));?></p>-->
 
 <?php echo form_close();?>
 </div>

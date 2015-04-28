@@ -39,22 +39,6 @@
 		</div>
 	  </div>
 
-      <!-- <?php echo form_open("auth/forgot_password", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
-            <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-4">
-					<div class="input">
-                        <?php
-	                         $data = array(
-					          'name'        => 'identity',
-					          'id'          => 'identity',
-					          'class'       => 'form-control'
-					        );
-	                    ?>
-						<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Send Email</button>
-                  </div>
-            </div>
-		</div> -->
-
       <?php echo form_close();?>
 	</div>
 </div>
