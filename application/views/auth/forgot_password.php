@@ -37,26 +37,10 @@
 					        );
 	                        echo form_input($data);
 	                    ?>
+						<button type="submit" style="float: right;" class="btn btn-default">Send Email</button>
                   </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-4">
-	                <div class="checkbox">
-					    <label style="padding-top: 7px;">
-                        <?php
-	                         $data = array(
-					          'name'        => 'remember',
-					          'id'          => 'remember',
-					          'class'       => ''
-					        );
-	                        echo form_checkbox($data);
-	                    ?>Remember me
-					    </label>
-					    <button type="submit" style="float: right;" class="btn btn-default">Login</button>
-	                </div>
-	                
-                </div>
-            </div>
+
 
       <?php echo form_close();?>
 	</div>
