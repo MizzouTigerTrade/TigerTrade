@@ -28,7 +28,7 @@
     <thead>
     <tr>
         <th data-field="ad_id">Ad id</th>
-        <th data-field="image_link" data-formatter="imageFormatter"><a href="Image link"</th>
+        <th data-field="image_link" data-formatter="imageFormatter">Image</th>
         <th data-field="title">title</th>
         <th data-field="description">Description</th>
     </tr>
