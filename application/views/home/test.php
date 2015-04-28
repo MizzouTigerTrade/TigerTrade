@@ -28,7 +28,12 @@
    }
 
    function tagFormatter(value) {
-    return '<span class="label label-default">' + value + '</span>';
+    var string = "";
+    var array = value.split(",");
+    for (index = 0; index < array.length; ++index) {
+      string = string + '<span class="label label-default">' + a[index] + '</span> ';
+    }
+    return string;
    }
 
 	 

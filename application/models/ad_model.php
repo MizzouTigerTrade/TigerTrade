@@ -121,7 +121,7 @@ class Ad_model extends CI_Model
 		$result = $this->db->query("SELECT * FROM tags WHERE ad_id = '$ad_id'");
 		foreach($result->result() as $tag)
 		{
-			$ad_tags = $ad_tags . $tag->description . ", ";
+			$ad_tags = $ad_tags . $tag->description . ",";
 		}
 		return $ad_tags;
 	}
