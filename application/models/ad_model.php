@@ -382,7 +382,7 @@ class Ad_model extends CI_Model
 		$ads = new ArrayObject();
 		$all_ads = $this->get_all_ads();
 		$all_ads = $all_ads->result();
-		foreach($ad as $all_ads)
+		foreach($all_ads as $ad)
 		{
 			$data['image_link'] = $this->get_image($ad->ad_id);
 			$data['ad_id'] = $ad->ad_id;
