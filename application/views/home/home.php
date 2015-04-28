@@ -53,8 +53,8 @@
                             echo form_checkbox($data);
                         ?>Remember me
                 </label>
-				<p style="padding: 5px;"><a href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a></p>
-                <button type="submit" style="float: right;" class="btn btn-primary">Login</button>
+				<p style="text-indent: 20px; padding: 5px;"><a href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a></p>
+				<button type="submit" style="float: right;" class="btn btn-primary">Login</button>
               </div>
               
           </div>
