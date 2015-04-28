@@ -11,6 +11,7 @@
     <link href="<?php echo base_url('assets/css/bootstrap-override.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/jquery.tagsinput.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/bootstrap-tagsinput.css') ?>" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url('assets/css/bootstrap-table.min.css') ?>" rel="stylesheet">
 
 </head>

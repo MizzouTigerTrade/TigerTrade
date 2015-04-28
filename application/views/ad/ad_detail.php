@@ -121,10 +121,7 @@
 					</div>
 					
 					
-			<?php if($user_ad == true)
-			{ ?>
 				<a class="btn btn-info" href="<?php echo base_url('/ad/edit/' . $ad->ad_id) ?>">Edit Ad</a>	
-			<?php } ?>
 			
 			<?php }; ?>
 			
@@ -184,7 +181,7 @@
 			</div>
 		<?php }
 				else{ ?>
-					<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+					<img class="img-thumbnail" src="<?php echo base_url('/assets/Images/defaultImage.jpg')?>" alt="" width="100%" height="100%">
 				<?php }
 
 		?>	
@@ -345,7 +342,7 @@
 			</div>
 		<?php } 
 			else{ ?>
-				<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+				<img class="img-thumbnail" src="<?php echo base_url('/assets/Images/defaultImage.jpg')?>" alt="" width="100%" height="100%">
 			<?php }
 		?>	
 		</div>
@@ -357,7 +354,59 @@
 	
 		<!-- Comment section -->
 		<?php if ($this->ion_auth->logged_in()) { ?>
-		<div class="row">
+		
+
+<!--Make Offer Modal-->
+				<div class="modal fade" id="makeOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+						
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h3 class="modal-title" id="myModalLabel">Make Offer: <?php echo $ad->title; ?></h3>
+							</div>
+					
+							<div class="modal-body">
+								
+								<div class="col-xs-12">
+									<h3>Leave a Comment/Question:</h3>
+								</div>
+								<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
+								<div class="col-xs-12">
+									<?php echo form_hidden('ad_id', $ad->ad_id); ?>
+									<div class="form-group">				
+										<div class="col-xs-12">
+											<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="col-xs-6 text-right">
+													<button type="submit" class="btn btn-primary">Post Comment</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<?php echo form_close();?>
+
+									
+							</div>
+							
+							<div class="modal-footer">
+								<input class="btn btn-xs btn-primary" type="submit" value="Send">
+								</form>
+								<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+		
+		
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#comment">Comment</button>
+		<div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="col-xs-12">
 				<h3>Leave a Comment/Question:</h3>
 			</div>
@@ -372,29 +421,31 @@
 				<div class="form-group">
 					<div class="col-xs-12">
 						<div class="row">
-							<div class="col-xs-6">
-								<h3 style="margin: 0; padding-top: 10px">Comments:</h3>
-							</div>
 							<div class="col-xs-6 text-right">
-								<button type="submit" class="btn btn-primary">Comment</button>
+								<button type="submit" class="btn btn-primary">Post Comment</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<?php echo form_close();?>
-			
+		</div>
+		<hr>
+			<div class="row">
+			<div class="col-xs-6">
+				<h3 style="margin: 0; padding-top: 10px; padding-bottom: 10px;">Comments:</h3>
+			</div>
 			<?php if(!empty($comments)) { ?>
 				<?php foreach($comments as $row) { ?>
 				<div class="col-xs-12">
-					<div class="panel <?php if ($this->ion_auth->user()->row()->id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
+					<div class="panel <?php if ($ad->user_id == $row->user_id) { ?>panel-primary<?php } else { ?>panel-info<?php } ?>">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
-								<?php if ($this->ion_auth->user()->row()->id == $row->user_id) { echo 'Seller'; } else { echo 'Buyer'; } ?>
+								<?php if ($ad->user_id == $row->user_id) { echo 'Seller'; } else { echo 'Anonymous - ' . strtoupper(substr(sha1($row->user_id),0,8)); } ?>
 							</div>
 							<div class="col-xs-6 text-right">
-								<?php echo $row->comment_time; ?>
+								<?php echo date('M j, Y g:i A', strtotime($row->comment_time)); ?>
 							</div>
 						</div>
 					</div>

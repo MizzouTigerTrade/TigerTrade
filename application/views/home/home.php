@@ -6,22 +6,14 @@
 
 <div class="container padding-top-20">
 <div class="container-border">
-
-	<div class="row text-center">
-	<img src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" width="70%">
-	</div><br>
 	
-	<!--
-	<div class="row" style="margin-top: 20px;">
-		<div class="col-xs-10 col-xs-offset-1">
-			<div class="alert alert-info" role="alert" style="margin-top: 10px;">
-				<p>Welcome to TigerTrade! Pease login or create an account.</p>
-			</div>
+	<div class="row text-center">
+		<div class="col-sm-6 col-sm-offset-3">
+			<img src="<?= base_url('assets/Images/market/white_logo.png') ?>" alt="">
 		</div>
 	</div>
-	-->
-	
-	<div style="padding: 0 15px;">
+      
+    <div style="padding: 0 15px;">
       <?php if ($message != "") { ?>
       <div id="infoMessage">
 		<div class="alert alert-info" role="alert" style="margin-top: 10px;">
@@ -66,13 +58,14 @@
               
           </div>
         </div>
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-6">
+				<p style="padding: 5px;">New to TigerTrade? <a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a></p>
+			</div>
+		</div>
 
       <?php echo form_close();?>
         </div>
-        <div class="form-group">
-          <div class="col-sm-offset-4 col-sm-4">
-            <a href="<?php echo base_url('auth/create_user') ?>" class="btn btn-primary">Register</a>
-          </div>
-        </div>
+
 </div>
 </div>

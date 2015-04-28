@@ -7,11 +7,13 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 10px;
   padding-top: 50px;
-  background-image: url('../Images/market/newspaper.png');
+  background-image: url('../Images/market/angle-background.png');
+  background-attachment: fixed;
 }
 
-h1{
-	font-family: "Comic Sans MS", cursive, sans-serif;
+h1 {
+	font-family: "Sigmar One", cursive;
+	font-size: 2em;
 }
 
 .footer {
@@ -53,7 +55,7 @@ body > .container {
 }
 
 hr {
-	border-top: 1px solid #d1d1d1;
+	border-top: 1px solid #333;
 }
 
 .navbar-default {
@@ -144,7 +146,7 @@ hr {
 }
 
 .list-group-item:hover {
-	background: rgba(190, 190, 190, 0.9);
+	background: rgba(191, 191, 191, 0.9);
 }
 
 .notification-badge{

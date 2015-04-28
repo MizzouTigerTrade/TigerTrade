@@ -83,7 +83,7 @@ $(document).ready(function (){
 		<div class="form-group" id="categoryForm">
 			<label for="category" class="col-sm-2 control-label label-20">Category</label>
 			<div class="col-sm-10">
-			<select name="category" id="categorySelectForm"> 
+			<select name="category" class="form-control" id="categorySelectForm"> 
 				<option value="">Select One</option>
 				<?php
 					$sub = 0;
@@ -104,9 +104,9 @@ $(document).ready(function (){
 			</div>
 		</div>
 		<div class="form-group" id="subCategoryForm">
-			<label for="sub-category" class="col-sm-2 control-label label-20">Sub-Category</label>
+			<label for="sub-category" class="col-sm-2 control-label label-20">Subcategory</label>
 			<div class="col-sm-10">
-			<select name="subCategory" id="subCategory"> 	
+			<select name="subCategory" class="form-control" id="subCategory"> 	
 				<?php
 					foreach($subcategories->result() as $subcategory)
 					{
@@ -140,6 +140,7 @@ $(document).ready(function (){
 			<label for="description" class="col-sm-2 control-label label-20">Tags</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control description-box" value="<?php echo $tags; ?>" name="tags" data-role="tagsinput" id="tags"></input>
+				<p class="help-block">Type a comma or press enter between different tags.</p>
 			</div>
 		</div>
 
@@ -167,7 +168,7 @@ $(document).ready(function (){
 		 <div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload More Images</label>
 			<div class="col-sm-10">
-				<input type="button" id="add_more" class="upload" value="Add More Files"/>
+				<input type="button" id="add_more" class="upload btn btn-default" value="Add More Files"/>
 			</div>
 		</div>
 		<?php 
@@ -178,14 +179,14 @@ $(document).ready(function (){
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload Image</label>
 			<div class="col-sm-10">
-				<div id="filediv"><input name="userfile[]" type="file" id="file"/></div>
+				<div id="filediv"><input name="userfile[]" class="btn btn-default" type="file" id="file"/></div>
 			</div>
 		</div>
 
 		<div class="form-group" >
 			<label for="description" class="col-sm-2 control-label label-20">Upload More Images</label>
 			<div class="col-sm-10">
-				<input type="button" id="add_more" class="upload" value="Add More Files"/>
+				<input type="button" id="add_more" class="upload btn btn-default" value="Add More Files"/>
 			</div>
 		</div>
 		<?php } ?>

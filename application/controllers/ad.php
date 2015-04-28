@@ -63,11 +63,6 @@ class Ad extends CI_Controller
 		else{
 			$data['admin'] = false;
 		}
-		
-		if($user_id == $ad->user_id)
-			$data['user_ad'] = true;
-		else
-			$data['user_ad'] = false;
 
 		$this->layout->view('ad/ad_detail', $data);
 	}
