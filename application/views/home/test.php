@@ -4,10 +4,18 @@
 
 <script type="text/javascript">
 
-
+	function queryParams() {
+    return {
+        type: 'owner',
+        sort: 'updated',
+        direction: 'desc',
+        per_page: 100,
+        page: 1
+    };
 
 	 function imageFormatter(value) {
-		return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+		//return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+		return '<p>'.Test.'</p>';
 	};
 
    
@@ -17,6 +25,7 @@
 </script>
 <table data-toggle="table"
        data-url="<?php echo base_url('json/getJson');?>"
+       data-query-params="queryParams"
        data-pagination="true"
        data-search="true"
        data-height="700">
