@@ -1,6 +1,7 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap-table.min.js') ?>"></script>
+
 <script type="text/javascript">
 	
 	function queryParams() {
@@ -11,6 +12,11 @@
         per_page: 100,
         page: 1
     };
+
+    function imageFormatter(value) {
+    	var url = "<?php echo base_url(); ?>" + value;
+    	return '<a href="' + url + '">' + value + '</a>';
+	}
 }
 </script>
 <table data-toggle="table"
@@ -22,7 +28,7 @@
     <thead>
     <tr>
         <th data-field="ad_id">Ad id</th>
-        <th data-field="image_link">Image link</th>
+        <th data-field="image_link" data-formatter="imageFormatter"><a href="Image link"</th>
         <th data-field="title">title</th>
         <th data-field="description">Description</th>
     </tr>
