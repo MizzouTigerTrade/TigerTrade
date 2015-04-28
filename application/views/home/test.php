@@ -4,27 +4,27 @@
 
 <script type="text/javascript">
 
-	function nameFormatter(value) {
-    return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">'
-}
 
-function starsFormatter(value) {
-    return '<i class="glyphicon glyphicon-star"></i> ' + value;
-}
 
-function forksFormatter(value) {
-    return '<i class="glyphicon glyphicon-cutlery"></i> ' + value;
-}
- 
+	 function imageFormatter(value) {
+		return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+	};
+
+   
+
+
 }
 </script>
 <table data-toggle="table"
-       data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/">
+       data-url="<?php echo base_url('json/getJson');?>"
+       data-pagination="true"
+       data-search="true"
+       data-height="700">
     <thead>
     <tr>
-        <th data-field="name" data-formatter="nameFormatter">Name</th>
-        <th data-field="stargazers_count" data-formatter="starsFormatter">Stars</th>
-        <th data-field="forks_count" data-formatter="forksFormatter">Forks</th>
+        <th data-field="ad_id">Ad id</th>
+        <th data-field="image" data-formatter="imageFormatter">Image</th>
+        <th data-field="title">title</th>
         <th data-field="description">Description</th>
     </tr>
     </thead>
