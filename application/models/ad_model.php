@@ -374,7 +374,10 @@ class Ad_model extends CI_Model
 	{
 		$result = $this->db->query("SELECT * FROM images Where ad_id = '$ad_id'");
 		$result = $result->row();
-		return $result->image_path;
+		if($result->image_path == null)
+			return null
+		else
+			return $result->image_path;
 	}
 
 	public function get_all_ads_json()
