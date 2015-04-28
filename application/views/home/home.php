@@ -52,7 +52,8 @@
                              $data = array(
                       'name'        => 'remember',
                       'id'          => 'remember',
-                      'class'       => ''
+                      'class'       => '',
+                      'style'		=> 'padding-left: 5px;'
                     );
                             echo form_checkbox($data);
                         ?>Remember me
