@@ -365,7 +365,6 @@
 									<h4 class="modal-title" id="myModalLabel">Leave a comment/Question:</h4>
 								</div>
 								<div class="modal-body">
-									Message to user<br>
 									<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
 									<?php echo form_hidden('ad_id', $ad->ad_id); ?>
 									<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
