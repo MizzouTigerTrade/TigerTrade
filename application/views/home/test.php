@@ -4,7 +4,7 @@
 
 <script type="text/javascript">
 
-	function queryParams() {
+	/*function queryParams() {
     return {
         type: 'owner',
         sort: 'updated',
@@ -12,11 +12,11 @@
         per_page: 100,
         page: 1
     };
-  }
+  }*/
 
 	 function imageFormatter(value) {
 		return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
-	}
+	 }
 
 
 
