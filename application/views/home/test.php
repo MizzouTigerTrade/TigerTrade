@@ -23,7 +23,7 @@
     {
       var link = "<?php echo base_url(); ?>" + value;
       var defaultLink = "http://thetigertrade.com/assets/Images/defaultImage.jpg";
-      return '<img class="img-thumbnail" src="'+value+'" onerror="this.src='+defaultLink+'" alt="" width="100%" height="100%">';;
+      return '<img class="img-thumbnail" src="'+value+'" onerror="this.src='+defaultLink+'" alt="" width="100%" height="100%">';
     }
    }
 
