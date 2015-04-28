@@ -93,7 +93,7 @@ button a, button a:visited, button a:hover, button a:active {
 }
 
 .ad_display:hover {
-	background-color: rgba(238, 179, 40, 0.5);
+	background-color: rgba(238, 179, 40, 0.75);
 }
 
 .container-border {
