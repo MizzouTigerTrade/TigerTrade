@@ -29,24 +29,28 @@
 			<label for="new_password"><?php echo sprintf(lang('reset_password_new_password_label'), $min_password_length);?></label> <br />
 			<?php echo form_input($new_password);?>
 		</div>
+		<div class="help-block with-errors"></div>
+	</div>
 
 	<div class="form-group">
 		<div class="col-sm-4 col-sm-offset-4">
 			<?php echo lang('reset_password_new_password_confirm_label', 'new_password_confirm');?> <br />
 			<?php echo form_input($new_password_confirm);?>
 		</div>
+		<div class="help-block with-errors"></div>
 	</div>
 
 	<?php echo form_input($user_id);?>
 	<div class="form-group">
 		<div class="col-sm-4 col-sm-offset-4">
-			<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary"><?php echo form_submit('submit', lang('reset_password_submit_btn'));?></button>
 			<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Reset Password</button>
 		</div>
+		<div class="help-block with-errors"></div>
 	  </div>
 
 	<!--<p><?php echo form_submit('submit', lang('reset_password_submit_btn'));?></p>-->
 
 <?php echo form_close();?>
+</div>
 </div>
 </div>
