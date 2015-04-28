@@ -54,7 +54,7 @@
                         ?>Remember me
                 </label>
 				<button type="submit" style="float: right;" class="btn btn-primary">Login</button>
-				<div class="col-sm-offset-2 col-sm-6">
+				<div class="col-sm-6">
 					<p style="padding: 5px;"><a href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a></p>
 				</div>
 			 </div>
