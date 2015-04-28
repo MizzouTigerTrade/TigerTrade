@@ -39,8 +39,8 @@
             </div>
             <div class="help-block with-errors"></div>
       </div>
-	  <div class="col-sm-offset-4 col-sm-4">
-				<a href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
+	  <div class="col-sm-offset-4 col-sm-6">
+			<p style="padding: 5px;">New to TigerTrade? <a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a></p>
 	  </div>
 
       <div class="form-group">
@@ -62,11 +62,6 @@
               
           </div>
         </div>
-		<div class="form-group">
-			<div class="col-sm-offset-4 col-sm-6">
-				<p style="padding: 5px;">New to TigerTrade? <a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a></p>
-			</div>
-		</div>
 
       <?php echo form_close();?>
         </div>
