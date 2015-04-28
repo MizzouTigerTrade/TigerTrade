@@ -8,8 +8,9 @@
 <div class="container-border">
 
 	<div class="row text-center">
-
-	<img src="<?= base_url('assets/Images/market/logo.png') ?>" alt="" width="70%">
+		<div class="col-xs-6 col-xs-offset-3">
+			<img src="<?= base_url('assets/Images/market/logo.png') ?>" alt="" width="70%">
+		</div>
 	</div><br>
 	
 	<!--
