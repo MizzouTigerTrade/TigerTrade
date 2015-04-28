@@ -373,7 +373,7 @@ class Ad_model extends CI_Model
 	public function get_image($ad_id)
 	{
 		$result = $this->db->query("SELECT * FROM images Where ad_id = '$ad_id'");
-		if($result->count() > 0)
+		if($result->num_rows() > 0)
 		{
 			$result = $result->row();
 			return $result->image_path;
