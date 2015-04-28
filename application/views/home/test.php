@@ -17,7 +17,7 @@
     	var url = "<?php echo base_url(); ?>" + value;
     	console.log(url);
     	//return '<a href="' + url + '">' + value + '</a>';
-	return "http://thetigertrade.com/assets/Images/defaultImage.jpg";
+	return '<a href="http://thetigertrade.com/assets/Images/defaultImage.jpg">Test</a>';
 	}
 
 
