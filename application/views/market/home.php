@@ -4,33 +4,6 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-    $("#filter").keyup(function(){
- 		$("#emptySearch").hide();
-        // Retrieve the input field text and reset the count to zero
-        var filter = $(this).val(), count = 0;
-        // Loop through the comment list
-        $(".ad_display").each(function(){
-            // If the list item does not contain the text phrase fade it out
-            if ($(this).find('.search').text().search(new RegExp(filter, "i")) < 0) {
-                $(this).fadeOut();
- 
-            // Show the list item if the phrase matches and increase the count by 1
-            } else {
-            	count++;
-                $(this).show();
-            }
-        });
-
-        if(count == 0)
-        {
-        	$("#emptySearch").html("NO RESULTS FOUND");
-        	$("#emptySearch").show();
-        }
-        // Update the count
-        var numberItems = count;
-        $("#filter-count").text("Number of Comments = "+count);
-    });
-
 	$(function(){
       // bind change event to select
       $('#categorySelectForm').bind('change', function () {
@@ -199,23 +172,10 @@ function queryParams() {
 						<?php } ?>
 					</div>
 				</div>
-
-				<!-- custom search bar -->
-				<div id="custom-search-input" style="margin-top: 10px">
-                    <div class="input-group col-sm-12 col-md-10 col-md-offset-1">
-                        <input type="text" class="search-query input-sm form-control" id="filter" placeholder="Search" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-warning" type="button" style="background-color: rgb(238, 179, 40);">
-                                <span class=" glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
                 
-                
-
+               s
                 <table data-toggle="table"
-			       data-url="<?php echo base_url('json/getJson2');?>"
+			       data-url="<?php echo $link;?>"
 			       data-query-params="queryParams"
 			       data-pagination="true"
 			       data-search="true"
