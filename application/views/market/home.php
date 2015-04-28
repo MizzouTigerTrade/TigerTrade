@@ -221,7 +221,7 @@ $(document).ready(function(){
                 </div>
                 
                 
-				<!-- Display Ads: rows of 1 
+				<!-- Display Ads: rows of 1 -->
 				<br>
 				
 				<div class="row text-center" style="padding-bottom: 15px;" id="emptySearch"></div>
@@ -279,7 +279,7 @@ $(document).ready(function(){
 					
 				</a>
 				<? } ?>
-				-->
+				
 			</div>
 		</div>
 	</div>
