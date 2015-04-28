@@ -56,10 +56,11 @@
                             echo form_checkbox($data);
                         ?>Remember me
                 </label>
+                <br>
 				<a style="padding: 10px;" href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
-				<button type="submit" style="float: right;" class="btn btn-primary">Login</button>
+				
 			 </div>
-              
+              <button type="submit" style="float: right;" class="btn btn-primary">Login</button>
           </div>
         </div>
 
