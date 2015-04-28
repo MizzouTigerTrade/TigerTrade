@@ -31,18 +31,17 @@
 				<?php echo form_input($new_password);?>
 			</div>
 			<div class="help-block with-errors"></div>
-		</div>
+		
 
-		<div class="form-group">
+		
 			<div class="col-sm-4 col-sm-offset-4">
 				<?php echo lang('reset_password_new_password_confirm_label', 'new_password_confirm');?> <br />
 				<?php echo form_input($new_password_confirm);?>
 			</div>
 			<div class="help-block with-errors"></div>
-		</div>
 
 		<?php echo form_input($user_id);?>
-		<div class="form-group">
+		
 			<div class="col-sm-4 col-sm-offset-4">
 				<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Reset Password</button>
 			</div>
