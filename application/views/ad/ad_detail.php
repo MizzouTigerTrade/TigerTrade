@@ -358,6 +358,29 @@
 		
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#comment">Comment</button>
 		<div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel">Leave a comment/Question:</h4>
+								</div>
+								<div class="modal-body">
+									Message to user<br>
+									<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
+									<?php echo form_hidden('ad_id', $ad->ad_id); ?>
+									<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
+								</div>
+								<div class="modal-footer">
+									<input class="btn btn-primary" type="submit" value="Post Comment">
+									<input type="hidden" name="source" value="market">
+									</form>
+									<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+								</div>
+							</div>
+			</div>
+		
+		
+			<?php /*
 			<div class="col-xs-12">
 				<h3>Leave a Comment/Question:</h3>
 			</div>
@@ -380,7 +403,7 @@
 				</div>
 			</div>
 			<?php echo form_close();?>
-		</div>
+		</div> */ ?>
 		
 		<hr>
 			<div class="row">
