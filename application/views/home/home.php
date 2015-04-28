@@ -59,9 +59,8 @@
           </div>
         </div>
 		<div class="form-group">
-			<div class="col-sm-offset col-sm-4">
-				<p>New to TigerTrade? </p>
-				<a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a>
+			<div class="col-sm-offset-3 col-sm-4">
+				<p>New to TigerTrade? <a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a></p>
 			</div>
 		</div>
 
