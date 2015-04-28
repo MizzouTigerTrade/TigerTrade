@@ -22,7 +22,7 @@
     else
     {
       var link = "<?php echo base_url(); ?>" + value;
-      return link;
+      return '<img class="img-thumbnail" src="'+value+'" alt="" width="100%" height="100%">';;
     }
    }
 
