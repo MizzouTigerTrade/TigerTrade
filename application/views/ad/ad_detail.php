@@ -355,81 +355,30 @@
 		<!-- Comment section -->
 		<?php if ($this->ion_auth->logged_in()) { ?>
 		
-
-<!--Make Offer Modal-->
-				<div class="modal fade" id="makeOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content">
-						
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h3 class="modal-title" id="myModalLabel">Make Offer: <?php echo $ad->title; ?></h3>
-							</div>
-					
-							<div class="modal-body">
-								
-								<div class="col-xs-12">
-									<h3>Leave a Comment/Question:</h3>
-								</div>
-								<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
-								<div class="col-xs-12">
-									<?php echo form_hidden('ad_id', $ad->ad_id); ?>
-									<div class="form-group">				
-										<div class="col-xs-12">
-											<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-xs-12">
-											<div class="row">
-												<div class="col-xs-6 text-right">
-													<button type="submit" class="btn btn-primary">Post Comment</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<?php echo form_close();?>
-
-									
-							</div>
-							
-							<div class="modal-footer">
-								<input class="btn btn-xs btn-primary" type="submit" value="Send">
-								</form>
-								<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-		
 		
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#comment">Comment</button>
 		<div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="col-xs-12">
-				<h3>Leave a Comment/Question:</h3>
-			</div>
-			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
-			<div class="col-xs-12">
-				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
-				<div class="form-group">				
-					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-12">
-						<div class="row">
-							<div class="col-xs-6 text-right">
-								<button type="submit" class="btn btn-primary">Post Comment</button>
+			<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel">Leave a comment/Question:</h4>
+								</div>
+								<div class="modal-body">
+									<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
+									<?php echo form_hidden('ad_id', $ad->ad_id); ?>
+									<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
+								</div>
+								<div class="modal-footer">
+									<input class="btn btn-sm btn-primary" type="submit" value="Post Comment">
+									<input type="hidden" name="source" value="market">
+									</form>
+									<button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancel</button>
+								</div>
 							</div>
-						</div>
-					</div>
-				</div>
 			</div>
-			<?php echo form_close();?>
 		</div>
+		
 		<hr>
 			<div class="row">
 			<div class="col-xs-6">

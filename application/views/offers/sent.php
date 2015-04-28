@@ -83,6 +83,7 @@
 		<tr style="background-color: white;">
 			<th>Ad Title</th>
 			<th>Seller Response</th>
+			<th>Seller Email</th>
 			<th>Offer Price</th>
 			<th>Asking Price</th>
 		</tr>
@@ -97,6 +98,7 @@
 		<tr>
 			<td><span class="badge notification-badge"><?php if($row->seen_by_buyer == false){echo "!" ;} ?></span> <?php echo $row->title; ?></td>
 			<td><?php echo $row->seller_response; ?></td>
+			<td><?php echo $row->email; ?></td>
 			<td><?php echo "$" . $row->offer_price; ?></td>
 			<td><?php echo "$" . $row->asking_price; ?></td>
 		</tr>
