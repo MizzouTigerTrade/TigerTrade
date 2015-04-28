@@ -75,6 +75,7 @@ $(document).ready(function(){
 });
 </script>
 
+<?php echo $link; ?>
 <div class="container padding-top-20">
 <div class="container-border">
 	
