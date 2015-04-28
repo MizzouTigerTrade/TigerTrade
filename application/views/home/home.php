@@ -57,7 +57,7 @@
                             echo form_checkbox($data);
                         ?>Remember me
                 </label>
-                <br class="visible-md visible-sm visible-xs">
+                <br class="visible-md visible-sm">
 				<a style="padding: 10px;" href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
 				
 			 </div>
