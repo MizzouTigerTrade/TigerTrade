@@ -37,7 +37,9 @@
             <div class="col-sm-4">
                   <input type="password" name="password" class="form-control" id="password" placeholder="password" required>
             </div>
-			<a href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
+			<div class="col-sm-4">
+				<a href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
+			</div>
             <div class="help-block with-errors"></div>
       </div>
 
@@ -54,7 +56,7 @@
                             echo form_checkbox($data);
                         ?>Remember me
                 </label>
-				<a style="padding: 5px;" href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
+				<a style="padding: 10px;" href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
 				<button type="submit" style="float: right;" class="btn btn-primary">Login</button>
 			 </div>
               
