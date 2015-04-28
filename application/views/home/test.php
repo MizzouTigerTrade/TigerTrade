@@ -13,13 +13,13 @@
         page: 1
     };
 
-$(document).ready({
     function imageFormatter(value) {
     	var url = "<?php echo base_url(); ?>" + value;
     	console.log(url);
-    	return '<a href="' + url + '">' + value + '</a>';
+    	//return '<a href="' + url + '">' + value + '</a>';
+	return "http://thetigertrade.com/assets/Images/defaultImage.jpg";
 	}
-});
+
 
 }
 </script>
