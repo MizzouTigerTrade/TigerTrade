@@ -21,7 +21,7 @@ $(document).ready(function(){
 
         if(count == 0)
         {
-        	$("#emptySearch").html("NO RESULTS");
+        	$("#emptySearch").html("NO RESULTS FOUND");
         	$("#emptySearch").show();
         }
         // Update the count
