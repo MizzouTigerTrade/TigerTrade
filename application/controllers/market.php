@@ -38,7 +38,7 @@ class Market extends CI_Controller
 		}
 		else
 		{
-			$data['link'] = base_url('json/getJson2/') . $cat; . '/'.$sub;
+			$data['link'] = base_url('json/getJson2/') . $cat . '/'.$sub;
 			$category = $this->category_model->get_category($cat);
 			$subcategory = $this->subcategory_model->get_subcategory($sub);
 
