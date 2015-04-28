@@ -31,7 +31,7 @@
     var string = "";
     var array = value.split(",");
     for (index = 0; index < array.length; ++index) {
-      string = string + '<span class="label label-default">' + a[index] + '</span> ';
+      string = string + '<span class="label label-default">' + array[index] + '</span> ';
     }
     return string;
    }
