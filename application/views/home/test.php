@@ -28,7 +28,7 @@
    }
 
    function tagFormatter(value) {
-    return '<span class="label label-default">' . value. '</span>';
+    return '<span class="label label-default">' + value + '</span>';
    }
 
 	 
