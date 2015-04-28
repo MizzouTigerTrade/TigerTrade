@@ -24,11 +24,20 @@
 	  </div>
 	  <?php }; ?>
       
+	  <form action="<?php echo base_url('auth/forgot_password') ?>" method="POST" class="form-horizontal" id="ad-form" data-toggle="validator" role="form">
 
-      <?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
+      <div class="form-group">
+            <label for="first_name" class="col-sm-4 control-label label-20">Email</label>
+            <div class="col-sm-4">
+                  <input type="text" name="identity" class="form-control" id="identity" placeholder="example@mail.missouri.edu" required>
+            </div>
+            <div class="help-block with-errors"></div>
+      </div>
+
+      <!-- <?php echo form_open("auth/forgot_password", array('class' => 'form-horizontal', 'id' => 'ad-form'));?> -->
             <div class="form-group">
-                  <label for="identity" class="col-sm-4 control-label label-20">Email</label>
-                  <div class="col-sm-4">
+                <div class="col-sm-4 col-sm-offset-4">
+					<div class="input">
                         <?php
 	                         $data = array(
 					          'name'        => 'identity',
@@ -37,10 +46,10 @@
 					        );
 	                        echo form_input($data);
 	                    ?>
-						<button type="submit" style="float: right;" class="btn btn-default">Send Email</button>
+						<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Send Email</button>
                   </div>
             </div>
-
+		</div>
 
       <?php echo form_close();?>
 	</div>
