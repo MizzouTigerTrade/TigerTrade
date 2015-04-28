@@ -14,10 +14,10 @@
     };
 
     function imageFormatter(value) {
-    	var url = "<?php echo base_url(); ?>" + value;
-    	console.log(url);
     	//return '<a href="' + url + '">' + value + '</a>';
-	return '<a href="http://thetigertrade.com/assets/Images/defaultImage.jpg">Test</a>';
+    	
+									
+	return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
 	}
 
 
