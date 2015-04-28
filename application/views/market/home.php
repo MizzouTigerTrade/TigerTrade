@@ -21,7 +21,7 @@ $(document).ready(function(){
 
         if(count == 0)
         {
-        	$("#emptySearch").html("There are no ads that match your search results");
+        	$("#emptySearch").html("NO RESULTS");
         	$("#emptySearch").show();
         }
         // Update the count
@@ -182,7 +182,7 @@ $(document).ready(function(){
 				<!-- Display Ads: rows of 1 -->
 				<br>
 				
-				<div class="row" style="padding-bottom: 15px;" id="emptySearch"></div>
+				<div class="row text-center" style="padding-bottom: 15px;" id="emptySearch"></div>
 				<?php if(count($ads->result()) == 0)
 					{ ?>
 						<div class="row">No ads available.</div>
