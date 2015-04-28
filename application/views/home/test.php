@@ -13,14 +13,11 @@
         page: 1
     };
 
-    function imageFormatter(value) {
-    	//return '<a href="' + url + '">' + value + '</a>';
+	 function imageFormatter(value) {
+		return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+	};
 
-									
-	return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
-	}
-
-
+ 
 }
 </script>
 <table data-toggle="table"
