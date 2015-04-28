@@ -59,6 +59,11 @@
           </div>
         </div>
 
+		<div class="">
+			<div class="col-sm-4">
+				<p>New to TigerTrade? </p><a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a>
+			</div>
+		</div>
       <?php echo form_close();?>
         </div>
 
