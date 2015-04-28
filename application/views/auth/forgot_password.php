@@ -52,7 +52,7 @@
 	                        echo form_checkbox($data);
 	                    ?>Remember me
 					    </label>
-					    <button type="submit" style="float: right;" class="btn btn-default">Login</button>
+					    <button type="submit" style="float: right;" class="btn btn-primary">Submit</button>
 	                </div>
 	                
                 </div>
