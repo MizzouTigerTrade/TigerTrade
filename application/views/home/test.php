@@ -40,6 +40,7 @@
         <th data-field="ad_id">Ad id</th>
         <th data-field="image" data-formatter="imageFormatter">Image</th>
         <th data-field="title">title</th>
+        <th data-field="tags">tags</th>
         <th data-field="description">Description</th>
     </tr>
     </thead>
