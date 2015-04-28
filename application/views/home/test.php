@@ -30,7 +30,7 @@
 	 
 </script>
 <table data-toggle="table"
-       data-url="<?php echo base_url('json/getJson2/2');?>"
+       data-url="<?php echo base_url('json/getJson2');?>"
        data-query-params="queryParams"
        data-pagination="true"
        data-search="true"

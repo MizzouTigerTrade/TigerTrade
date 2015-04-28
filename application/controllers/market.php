@@ -31,7 +31,7 @@ class Market extends CI_Controller
 		}
 		elseif($sub == null)
 		{
-			$data['link'] = base_url('json/getJson2/') . $cat;
+			$data['link'] = base_url('json/getJson2/') . '/' . $cat;
 			$category = $this->category_model->get_category($cat);
 			$data['market_name'] = ucwords($category->name);
 			$data['ads'] = $this->ad_model->get_ads_category($cat);
