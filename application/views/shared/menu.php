@@ -25,7 +25,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href='<?= base_url() ?>'><span id='left-header'>Tiger</span><span id='right-header'>Trade</span></a>
+			<a class="navbar-brand" href='<?= base_url() ?>'>
+				<!--
+				<span id='left-header'>Tiger</span>
+				<span id='right-header'>Trade</span>
+				-->
+				<img style="max-width:100px; margin-top: -7px;" src="<?= base_url('assets/Images/market/white_logo.png') ?>">
+			</a>
 		</div>
 		<!-- MENU OPTIONS -->
 		<nav class="collapse navbar-collapse bs-navbar-collapse" id="navbar">

@@ -171,7 +171,7 @@ $(document).ready(function(){
                     <div class="input-group col-sm-12 col-md-10 col-md-offset-1">
                         <input type="text" class="search-query input-sm form-control" id="filter" placeholder="Search" />
                         <span class="input-group-btn">
-                            <button class="btn btn-warning" type="button">
+                            <button class="btn btn-warning" type="button" style="background-color: rgb(238, 179, 40);">
                                 <span class=" glyphicon glyphicon-search"></span>
                             </button>
                         </span>
@@ -205,9 +205,9 @@ $(document).ready(function(){
 									}
 									
 									if($flag == 0) { ?> 
-									<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">
+									<img class="img-thumbnail" src="<?php echo base_url('/assets/Images/defaultImage.jpg')?>" alt="" width="100%" height="100%">
 								<?php } else { ?>
-									<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='http://thetigertrade.com/assets/Images/defaultImage.jpg'" width="100%" height="100%">
+									<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='<?php echo base_url('/assets/Images/defaultImage.jpg')?>'" width="100%" height="100%">
 							<?php } ?>
 							</div>
 							
