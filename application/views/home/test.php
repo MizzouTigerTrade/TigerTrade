@@ -18,6 +18,9 @@
 		return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
 	 }
 
+   function starsFormatter(value) {
+    return '<i class="glyphicon glyphicon-star"></i> ' + value;
+}
 
 
    
@@ -35,7 +38,7 @@
     <tr>
         <th data-field="ad_id">Ad id</th>
         <th data-field="image" data-formatter="imageFormatter">Image</th>
-        <th data-field="title">title</th>
+        <th data-field="title" data-formatter="starsFormatter">title</th>
         <th data-field="description">Description</th>
     </tr>
     </thead>
