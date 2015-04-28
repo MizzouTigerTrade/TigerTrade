@@ -1,4 +1,45 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap-table.min.js') ?>"></script>
+
+<script type="text/javascript">
+
+	function queryParams() {
+    return {
+        type: 'owner',
+        sort: 'updated',
+        direction: 'desc',
+        per_page: 100,
+        page: 1
+    };
+  }
+  
+  function imageFormatter(value) {
+    if(value == null)
+    {
+      return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+    }
+    else
+    {
+      var link = "<?php echo base_url(); ?>" + value;
+      var defaultLink = "http://thetigertrade.com/assets/Images/defaultImage.jpg";
+      return '<img class="img-thumbnail" src="'+link+'" onerror="this.src='+defaultLink+'" alt="" width="100%" height="100%">';
+    }
+   }
+
+   function tagFormatter(value) {
+    var string = "";
+    var array = value.split(",");
+    for (index = 0; index < array.length; ++index) {
+      string = string + '<span class="label label-default">' + array[index] + '</span> ';
+    }
+    return string;
+   }
+
+	 
+</script>
+
+<!--
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -74,6 +115,8 @@ $(document).ready(function(){
     });
 });
 </script>
+-->
+
 
 <div class="container padding-top-20">
 <div class="container-border">
@@ -102,7 +145,7 @@ $(document).ready(function(){
 			
 			<div class="col-xs-12">
 				
-				<!-- SMALL+ Screen Menu -->
+				<!-- SMALL+ Screen Menu
 				<div class="row hidden-xs text-center">
 					<div class="col-sm-3 col-md-offset-1">
 						<select class="form-control input-sm" id="categorySelectForm" name="category"> 
@@ -134,8 +177,9 @@ $(document).ready(function(){
 						</div>
 					</div>
 				</div>
+				-->
 				
-				<!-- EXTRA SMALL Screen Menu -->
+				<!-- EXTRA SMALL Screen Menu
 				<div class="row visible-xs">
 					<div class="col-xs-12">
 						<select class="form-control input-sm" id="categorySelectFormSmall" name="category"> 
@@ -165,8 +209,9 @@ $(document).ready(function(){
 						<?php } ?>
 					</div>
 				</div>
+				-->
 
-				<!-- custom search bar -->
+				<!-- custom search bar
 				<div id="custom-search-input" style="margin-top: 10px">
                     <div class="input-group col-sm-12 col-md-10 col-md-offset-1">
                         <input type="text" class="search-query input-sm form-control" id="filter" placeholder="Search" />
@@ -177,7 +222,7 @@ $(document).ready(function(){
                         </span>
                     </div>
                 </div>
-                
+                -->
                 
 				<!-- Display Ads: rows of 1 
 				<br>
