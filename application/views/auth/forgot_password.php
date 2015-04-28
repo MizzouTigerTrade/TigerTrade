@@ -44,7 +44,7 @@
 					          'id'          => 'identity',
 					          'class'       => 'form-control'
 					        );
-	                        echo form_input($data);
+	                        //echo form_input($data);
 	                    ?>
 						<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Send Email</button>
                   </div>
