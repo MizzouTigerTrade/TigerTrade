@@ -1,39 +1,81 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap-table.min.js') ?>"></script>
+
 <script type="text/javascript">
 
-function queryParams() {
-    return {
-        type: 'owner',
-        sort: 'updated',
-        direction: 'desc',
-        per_page: 100,
-        page: 1
-    };
-  }
-  
-  function imageFormatter(value) {
-    if(value == null)
-    {
-      return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
-    }
-    else
-    {
-      var link = "<?php echo base_url(); ?>" + value;
-      var defaultLink = "http://thetigertrade.com/assets/Images/defaultImage.jpg";
-      return '<img class="img-thumbnail" src="'+link+'" onerror="this.src='+defaultLink+'" alt="" width="100%" height="100%">';
-    }
-   }
+$(document).ready(function(){
+    $("#filter").keyup(function(){
+ 		$("#emptySearch").hide();
+        // Retrieve the input field text and reset the count to zero
+        var filter = $(this).val(), count = 0;
+        // Loop through the comment list
+        $(".ad_display").each(function(){
+            // If the list item does not contain the text phrase fade it out
+            if ($(this).find('.search').text().search(new RegExp(filter, "i")) < 0) {
+                $(this).fadeOut();
+ 
+            // Show the list item if the phrase matches and increase the count by 1
+            } else {
+            	count++;
+                $(this).show();
+            }
+        });
 
-   function tagFormatter(value) {
-    var string = "";
-    var array = value.split(",");
-    for (index = 0; index < array.length; ++index) {
-      string = string + '<span class="label label-default">' + array[index] + '</span> ';
-    }
-    return string;
-   }
+        if(count == 0)
+        {
+        	$("#emptySearch").html("NO RESULTS FOUND");
+        	$("#emptySearch").show();
+        }
+        // Update the count
+        var numberItems = count;
+        $("#filter-count").text("Number of Comments = "+count);
+    });
+
+	$(function(){
+      // bind change event to select
+      $('#categorySelectForm').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+
+    $(function(){
+      // bind change event to select
+      $('#subCategory').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+	
+	$(function(){
+      // bind change event to select
+      $('#categorySelectFormSmall').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+
+    $(function(){
+      // bind change event to select
+      $('#subCategorySmall').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+});
 </script>
 
 <div class="container padding-top-20">
@@ -143,22 +185,61 @@ function queryParams() {
 				<!-- Display Ads: rows of 1 -->
 				<br>
 				
-				<table data-toggle="table"
-			       data-url="<?php echo base_url('json/getJson2');?>"
-			       data-query-params="queryParams"
-			       data-pagination="true"
-			       data-search="true"
-			       data-height="700">
-			    <thead>
-			    <tr>
-			        <th data-field="ad_id">Ad id</th>
-			        <th data-field="image" data-formatter="imageFormatter">Image</th>
-			        <th data-field="title">title</th>
-			        <th data-field="tags" data-formatter="tagFormatter">tags</th>
-			        <th data-field="description">Description</th>
-			    </tr>
-			    </thead>
-			</table>
+				<div class="row text-center" style="padding-bottom: 15px;" id="emptySearch"></div>
+				<?php if(count($ads->result()) == 0)
+					{ ?>
+						<div class="row">No ads available.</div>
+				<?php } ?>
+				<?php foreach ($ads->result() as $row) { ?>
+				<a href="<?php echo base_url('/ad/details/' . $row->ad_id) ?>">
+					
+					<div class="row ad_display" style="padding-bottom: 15px;" id="<?= $row->ad_id ?>">
+						<div class="" style="margin-top: 20px; margin-bottom: 20px;">
+							
+							<div class="col-xs-3 col-md-2 col-md-offset-1">
+							<?php 	
+									$flag = 0;
+									foreach($images->result() as $img) { 
+										if($img->ad_id == $row->ad_id && $flag == 0)
+										{
+											$image_link = base_url('/'.$img->image_path);
+											$flag++;
+										}
+									}
+									
+									if($flag == 0) { ?> 
+									<img class="img-thumbnail" src="<?php echo base_url('/assets/Images/defaultImage.jpg')?>" alt="" width="100%" height="100%">
+								<?php } else { ?>
+									<img class="img-thumbnail" src="<?php echo $image_link; ?>" onerror="this.src='<?php echo base_url('/assets/Images/defaultImage.jpg')?>'" width="100%" height="100%">
+							<?php } ?>
+							</div>
+							
+							<div class="col-xs-9 col-md-8 search">
+								<h4 class="media-heading"><?php echo $row->title; ?>: $<?php echo $row->price; ?></h4>
+								<div class="row">
+									<div class="col-xs-12">
+								<?php
+								foreach($tags->result() as $tag) { 
+									if($tag->ad_id == $row->ad_id)
+									{
+										echo '<span class="label label-default">' . $tag->description . '</span> ';
+									}
+								}
+								?>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12" style="margin-top: 5px;">
+										<?php echo $row->description; ?>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</a>
+				<? } ?>
 			</div>
 		</div>
 	</div>
