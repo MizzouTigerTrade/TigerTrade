@@ -40,7 +40,7 @@
             <div class="help-block with-errors"></div>
       </div>
 	  <div class="col-sm-offset-4 col-sm-6">
-			<p style="padding: 5px;">New to TigerTrade? <a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a></p>
+			<p style="">New to TigerTrade? <a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a></p>
 	  </div>
 
       <div class="form-group">
