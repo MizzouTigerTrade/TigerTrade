@@ -11,8 +11,8 @@
 	<div style="padding: 0 15px;">
       <div class="row">
 			<div class="col-sm-offset-4 col-sm-8">
-			    <p>Enter your the email address you used to sign up.</p>
-                <p>We will send you an email about resetting your password.</p>
+			    <p>Enter the email address you used to sign up.</p>
+                <p>TigerTrade will send you an email about resetting your password.</p>
 			</div>
       </div>
       <?php if ($message != "") { ?>
