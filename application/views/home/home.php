@@ -46,6 +46,7 @@
       <div class="form-group">
           <div class="col-sm-offset-4 col-sm-4">
               <div class="checkbox">
+	              <button type="submit" style="float: right;" class="btn btn-primary">Login</button>
                 <label style="padding-top: 7px;">
                         <?php
                              $data = array(
@@ -60,7 +61,7 @@
 				<a style="padding: 10px;" href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
 				
 			 </div>
-              <button type="submit" style="float: right;" class="btn btn-primary">Login</button>
+              
           </div>
         </div>
 
