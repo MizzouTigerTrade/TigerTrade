@@ -29,7 +29,7 @@
       <div class="form-group">
             <label for="first_name" class="col-sm-4 control-label label-20">Email</label>
             <div class="col-sm-4">
-                  <input type="text" name="identity" class="form-control" id="identity" placeholder="example@mail.missouri.edu" required>
+                  <input type="text" name="email" class="form-control" id="email" placeholder="example@mail.missouri.edu" required>
             </div>
             <div class="help-block with-errors"></div>
       </div>
