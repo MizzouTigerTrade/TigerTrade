@@ -15,6 +15,7 @@
 
     function imageFormatter(value) {
     	var url = "<?php echo base_url(); ?>" + value;
+    	console.log(url);
     	return '<a href="' + url + '">' + value + '</a>';
 	}
 }
