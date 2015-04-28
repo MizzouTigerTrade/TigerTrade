@@ -75,6 +75,48 @@ $(document).ready(function(){
 });
 </script>
 
+
+<!-- START PAGINATED SEARCH -->
+<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap-table.min.js') ?>"></script>
+
+<script type="text/javascript">
+
+	function queryParams() {
+    return {
+        type: 'owner',
+        sort: 'updated',
+        direction: 'desc',
+        per_page: 100,
+        page: 1
+    };
+  }
+  
+  function imageFormatter(value) {
+    if(value == null)
+    {
+      return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+    }
+    else
+    {
+      var link = "<?php echo base_url(); ?>" + value;
+      var defaultLink = "http://thetigertrade.com/assets/Images/defaultImage.jpg";
+      return '<img class="img-thumbnail" src="'+link+'" onerror="this.src='+defaultLink+'" alt="" width="100%" height="100%">';
+    }
+   }
+
+   function tagFormatter(value) {
+    var string = "";
+    var array = value.split(",");
+    for (index = 0; index < array.length; ++index) {
+      string = string + '<span class="label label-default">' + array[index] + '</span> ';
+    }
+    return string;
+   }
+</script>
+<!-- END PAGINATED SEARCH -->
+
+
 <div class="container padding-top-20">
 <div class="container-border">
 	
@@ -179,7 +221,7 @@ $(document).ready(function(){
                 </div>
                 
                 
-				<!-- Display Ads: rows of 1 -->
+				<!-- Display Ads: rows of 1 
 				<br>
 				
 				<div class="row text-center" style="padding-bottom: 15px;" id="emptySearch"></div>
@@ -237,6 +279,7 @@ $(document).ready(function(){
 					
 				</a>
 				<? } ?>
+				-->
 			</div>
 		</div>
 	</div>
