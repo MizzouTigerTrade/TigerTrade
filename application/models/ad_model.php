@@ -391,14 +391,8 @@ class Ad_model extends CI_Model
 		$all_ads = $all_ads->result();
 		foreach($all_ads as $ad)
 		{
-			$data['image_link'] = $this->get_image($ad->ad_id);
-			$data['ad_id'] = $ad->ad_id;
-			$data['title'] = $ad->title;
-			$data['description'] = $ad->description;
-			$data['price'] = $ad->price;
-			$data['user_id'] = $ad->user_id;
-			$data['category_id'] = $ad->category_id;
-			$data['subcategory_id'] = $ad->subcategory_id;
+			$data = array('image_link' => $this->get_image($ad->ad_id), 'ad_id' => $ad->ad_id, 'title' => $ad->title, 'description' => $ad->description, 
+						'price' => $ad->price, 'user_id' => $ad->user_id, 'category_id' => $ad->category_id, 'subcategory_id' => $ad->subcategory_id);
 
 			$ads->append($data);
 		}
