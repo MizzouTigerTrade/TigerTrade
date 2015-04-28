@@ -13,6 +13,7 @@
     <link href="<?php echo base_url('assets/css/bootstrap-tagsinput.css') ?>" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url('assets/css/bootstrap-table.min.css') ?>" rel="stylesheet">
 
 </head>
