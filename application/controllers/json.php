@@ -53,8 +53,6 @@ class Json extends CI_Controller {
 		{
 			$ads = $this->ad_model->get_all_ads_json();
 			//$ads = $ads->result();
-
-			
 		}
 		elseif($sub == null)
 		{

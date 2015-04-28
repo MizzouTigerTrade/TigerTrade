@@ -405,7 +405,7 @@ class Ad_model extends CI_Model
 	{
 		$ads = array();
 		$j=0;
-		$all_ads = $this->get_all_ads_category($cat);
+		$all_ads = $this->get_ads_category($cat);
 		$all_ads = $all_ads->result();
 		foreach($all_ads as $ad)
 		{
@@ -422,7 +422,7 @@ class Ad_model extends CI_Model
 	{
 		$ads = array();
 		$j=0;
-		$all_ads = $this->get_all_ads_subcategory($sub);
+		$all_ads = $this->get_ads_subcategory($sub);
 		$all_ads = $all_ads->result();
 		foreach($all_ads as $ad)
 		{
