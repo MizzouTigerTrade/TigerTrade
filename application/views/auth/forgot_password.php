@@ -32,8 +32,12 @@
                   <input type="text" name="identity" class="form-control" id="identity" placeholder="example@mail.missouri.edu" required>
             </div>
             <div class="help-block with-errors"></div>
-			<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Send Email</button>
       </div>
+	  <div class="form-group">
+		<div class="col-sm-4 col-sm-offset-4">
+			<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Send Email</button>
+		</div>
+	  </div>
 
       <!-- <?php echo form_open("auth/forgot_password", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
             <div class="form-group">
