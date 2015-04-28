@@ -15,7 +15,7 @@
 
     function imageFormatter(value) {
     	//return '<a href="' + url + '">' + value + '</a>';
-    	
+
 									
 	return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
 	}
@@ -32,7 +32,7 @@
     <thead>
     <tr>
         <th data-field="ad_id">Ad id</th>
-        <th data-field="image_link" data-formatter="imageFormatter">Image</th>
+        <th data-field="image" data-formatter="imageFormatter">Image</th>
         <th data-field="title">title</th>
         <th data-field="description">Description</th>
     </tr>
