@@ -30,7 +30,7 @@
 				<span id='left-header'>Tiger</span>
 				<span id='right-header'>Trade</span>
 				-->
-				<img style="max-width:100px; margin-top: -7px;" src="<?= base_url('assets/Images/market/gray_logo_fancy.png') ?>">
+				<img style="max-width:100px; margin-top: -7px;" src="<?= base_url('assets/Images/market/white_logo.png') ?>">
 			</a>
 		</div>
 		<!-- MENU OPTIONS -->
