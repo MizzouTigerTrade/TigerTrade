@@ -1,35 +1,10 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap-table.min.js') ?>"></script>
 <script type="text/javascript">
 
 $(document).ready(function(){
-    $("#filter").keyup(function(){
- 		$("#emptySearch").hide();
-        // Retrieve the input field text and reset the count to zero
-        var filter = $(this).val(), count = 0;
-        // Loop through the comment list
-        $(".ad_display").each(function(){
-            // If the list item does not contain the text phrase fade it out
-            if ($(this).find('.search').text().search(new RegExp(filter, "i")) < 0) {
-                $(this).fadeOut();
- 
-            // Show the list item if the phrase matches and increase the count by 1
-            } else {
-            	count++;
-                $(this).show();
-            }
-        });
-
-        if(count == 0)
-        {
-        	$("#emptySearch").html("There are no ads that match your search results");
-        	$("#emptySearch").show();
-        }
-        // Update the count
-        var numberItems = count;
-        $("#filter-count").text("Number of Comments = "+count);
-    });
-
-	$(function(){
+  	$(function(){
       // bind change event to select
       $('#categorySelectForm').bind('change', function () {
           var url = $(this).val(); // get selected value
@@ -71,8 +46,40 @@ $(document).ready(function(){
           }
           return false;
       });
-    });
+    }); 
 });
+
+function queryParams() {
+    return {
+        type: 'owner',
+        sort: 'updated',
+        direction: 'desc',
+        per_page: 100,
+        page: 1
+    };
+  }
+  
+  function imageFormatter(value) {
+    if(value == null)
+    {
+      return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+    }
+    else
+    {
+      var link = "<?php echo base_url(); ?>" + value;
+      var defaultLink = "http://thetigertrade.com/assets/Images/defaultImage.jpg";
+      return '<img class="img-thumbnail" src="'+link+'" onerror="this.src='+defaultLink+'" alt="" width="100%" height="100%">';
+    }
+   }
+
+   function tagFormatter(value) {
+    var string = "";
+    var array = value.split(",");
+    for (index = 0; index < array.length; ++index) {
+      string = string + '<span class="label label-default">' + array[index] + '</span> ';
+    }
+    return string;
+   }
 </script>
 
 <div class="container padding-top-20">
