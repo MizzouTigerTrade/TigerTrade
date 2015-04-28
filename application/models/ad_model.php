@@ -386,7 +386,7 @@ class Ad_model extends CI_Model
 
 	public function get_all_ads_json()
 	{
-		$ads = new Array();
+		$ads = new ArrayObject();
 		$all_ads = $this->get_all_ads();
 		$all_ads = $all_ads->result();
 		foreach($all_ads as $ad)
