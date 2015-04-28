@@ -38,11 +38,8 @@
                   <input type="password" name="password" class="form-control" id="password" placeholder="password" required>
             </div>
             <div class="help-block with-errors"></div>
-			<div class="col-sm-4">
-				<a href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
-			</div>
       </div>
-	  <div class="col-sm-4">
+	  <div class="col-sm-offset-4 col-sm-4">
 				<a href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
 	  </div>
 
