@@ -23,12 +23,6 @@
     return '<i class="glyphicon glyphicon-star"></i> ' + value;
   }
 	 
-
-
-   
-
-
-}
 </script>
 <table data-toggle="table"
        data-url="<?php echo base_url('json/getJson');?>"
