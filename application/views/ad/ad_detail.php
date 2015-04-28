@@ -371,40 +371,14 @@
 									<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
 								</div>
 								<div class="modal-footer">
-									<input class="btn btn-primary" type="submit" value="Post Comment">
+									<input class="btn btn-sm btn-primary" type="submit" value="Post Comment">
 									<input type="hidden" name="source" value="market">
 									</form>
-									<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
 			</div>
 		</div>
-		
-		
-			<?php /*
-			<div class="col-xs-12">
-				<h3>Leave a Comment/Question:</h3>
-			</div>
-			<?php echo form_open("ad/comment", array('class' => 'form-horizontal', 'id' => 'comment-form', 'enctype' => 'multipart/form-data'));?>
-			<div class="col-xs-12">
-				<?php echo form_hidden('ad_id', $ad->ad_id); ?>
-				<div class="form-group">				
-					<div class="col-xs-12">
-						<textarea type="text" class="form-control description-box" style="width: 100%;" name="comment" id="comment" placeholder="Please keep comments limited to questions about this ad." rows="5" required="true"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-12">
-						<div class="row">
-							<div class="col-xs-6 text-right">
-								<button type="submit" class="btn btn-primary">Post Comment</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<?php echo form_close();?>
-		</div> */ ?>
 		
 		<hr>
 			<div class="row">
