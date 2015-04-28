@@ -21,7 +21,7 @@
 	
 <table class="table table-hover">
 	<thead>
-	<tr>
+	<tr style="background-color: white;">
 		<th><?php echo lang('index_fname_th');?></th>
 		<th><?php echo lang('index_lname_th');?></th>
 		<th><?php echo lang('index_email_th');?></th>
