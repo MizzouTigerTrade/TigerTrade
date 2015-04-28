@@ -3,52 +3,6 @@
 <script src="<?php echo base_url('assets/js/bootstrap-table.min.js') ?>"></script>
 <script type="text/javascript">
 
-$(document).ready(function(){
-  	$(function(){
-      // bind change event to select
-      $('#categorySelectForm').bind('change', function () {
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              window.location = url; // redirect
-          }
-          return false;
-      });
-    });
-
-    $(function(){
-      // bind change event to select
-      $('#subCategory').bind('change', function () {
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              window.location = url; // redirect
-          }
-          return false;
-      });
-    });
-	
-	$(function(){
-      // bind change event to select
-      $('#categorySelectFormSmall').bind('change', function () {
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              window.location = url; // redirect
-          }
-          return false;
-      });
-    });
-
-    $(function(){
-      // bind change event to select
-      $('#subCategorySmall').bind('change', function () {
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              window.location = url; // redirect
-          }
-          return false;
-      });
-    }); 
-});
-
 function queryParams() {
     return {
         type: 'owner',
