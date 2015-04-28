@@ -9,7 +9,7 @@
 
 	<div class="row text-center">
 	<img src="http://thetigertrade.com/assets/Images/ttradehome.png" alt="" width="70%">
-	</div><br>
+	</div><br><br>
 	
 	<!--
 	<div class="row" style="margin-top: 20px;">
@@ -72,5 +72,6 @@
 		
 		</form>
 	</div>
+	<br>
 </div>
 </div>
