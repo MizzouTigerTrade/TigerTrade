@@ -44,8 +44,8 @@
 	<div class="row" style="padding: 0 15px;">
 		<div class="col-xs-10 col-xs-offset-1"><h2>Jason McQuinn</h2></div>
 		<div class="col-sm-3 col-sm-offset-1"><img class="img-thumbnail" src="/assets/Images/team/jason.JPG" width="100%" height="100%"></div>
-		<div class="col-sm-7 team-member-description"><p style="text-indent: 40px;">I was born and raised in a small community of Stanberry, MO. Being the youngest of five, I always knew I had big shoes to fill. I enjoy spending time with family, friends, and my girlfriend. I enjoy programming and playing any kind of sports.</p>
-			<p style="text-indent: 40px;">I am now a senior at the University of Missouri-Columbia and will be graduating in December 2015.</p>
+		<div class="col-sm-7 team-member-description"><p style="text-indent: 40px;">I was born and raised in a small community of Stanberry, MO. Being the youngest of five, I always knew I had big shoes to fill. I enjoy spending time with family, friends, and my girlfriend. I enjoy programming and playing any kind of sport, including fishing.</p>
+			<p style="text-indent: 40px;">After graduating high school, I began attending the University of Missouri-Columbia and started off majoring in Mechanical Engineering, but then switched my major to Computer Science during my sophomore year. I am now a senior and will be graduating in December 2015.</p>
 		</div>		
 	</div>
 </div>
