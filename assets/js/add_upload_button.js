@@ -26,7 +26,7 @@ $(document).ready(function() {
 			$(this).hide();
 			$("#abcd" + abc).append($("<img/>", {
 				id: 'img',
-				src: '../Images/trash.png',
+				src: '../../../Images/trash.png',
 				alt: '  delete'
 				}).click(function() {
 				$(this).parent().parent().remove();
