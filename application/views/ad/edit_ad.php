@@ -39,9 +39,7 @@ function deleteImage(img_id)
 	
 	$.ajax({
 	  type: "POST",
-	  url: url,
-	  success: success,
-	  dataType: dataType
+	  url: url
 	});
 }
 
