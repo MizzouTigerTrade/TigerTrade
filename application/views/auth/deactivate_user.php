@@ -23,8 +23,12 @@
 			</div>
 
 		<?php echo form_hidden(array('id'=>$user->id)); ?>
-
-		<p><button type="submit" class="btn btn-primary">Submit</button></p>
+		
+		<div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-6">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+        </div>
 
 		<?php echo form_close();?>
 		</div>
