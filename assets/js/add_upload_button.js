@@ -26,7 +26,7 @@ $(document).ready(function() {
 			$(this).hide();
 			$("#abcd" + abc).append($("<img/>", {
 				id: 'img',
-				src: 'x.png',
+				src: 'https://cdn3.iconfinder.com/data/icons/flatforlinux/256/24-Empty%20Trash.png',
 				alt: '  delete'
 				}).click(function() {
 				$(this).parent().parent().remove();
