@@ -13,12 +13,14 @@
 		<p><?php echo sprintf(lang('deactivate_subheading'), $user->username);?></p>
 		
 		<?php echo form_open('auth/deactivate/' . $user->id, array('class' => 'form-horizontal'));?>
+		
+		
 
 			<div class="form-group">
-				<div class="radio">
+				<div class="radio col-sm-offset-3">
 				  <label><input type="radio" name="optradio" value="yes">Yes</label>
 				</div>
-				<div class="radio">
+				<div class="radio col-sm-offset-3">
 				  <label><input type="radio" name="optradio" value="no">No</label>
 				</div>
 			</div>
