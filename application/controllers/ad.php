@@ -25,6 +25,11 @@ class Ad extends CI_Controller
 		$this->layout->view('ad/ad_view', $data);
 	}
 
+	function removeImage($img_id)
+	{
+		$this->ad_model->remove_image($img_id);
+	}
+
 	//shows details of a specific ad
 	function details($ad_id)
 	{	
