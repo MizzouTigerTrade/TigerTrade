@@ -35,8 +35,8 @@
 	<div class="row" style="padding: 0 15px;">		
 		<div class="col-xs-10 col-xs-offset-1"><h2>Tim Gilman</h2></div>
 		<div class="col-sm-3 col-sm-offset-1"><img class="img-thumbnail" src="/assets/Images/team/timg.JPG" width="100%" height="100%"></div>
-		<div class="col-sm-7 team-member-description"><p style="text-indent: 40px;">Paragraph description.</p>
-			<p style="text-indent: 40px;">New paragraph description.</p>
+		<div class="col-sm-7 team-member-description"><p style="text-indent: 40px;">I'm a senior at Mizzou graduating in May 2015 with a degree in Computer Science. I was born in Eureka, MO and have lived in the St. Louis area since high school. I'm a big Rams fan despite their poor performance these past few years but I have faith they are gonna pick it up this year.</p>
+			<p style="text-indent: 40px;">After graduating from high school in St. Louis I came to Mizzou to run track and pursue a degree in computer science. After graduation I am moving back to St. Louis to start a job at ATT.</p>
 		</div>	
 	</div>
 	<br>
