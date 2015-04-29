@@ -437,6 +437,13 @@ class Ad_model extends CI_Model
 
 		return $ads;
 	}
+
+	public function remove_image($img_id)
+	{
+		$result = $this->db->query("DELETE FROM images WHERE tag_id = '$img_id'");
+
+		return 0;
+	}
 }
 
 ?>
