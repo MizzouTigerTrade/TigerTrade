@@ -1,4 +1,5 @@
 <div class="container padding-top-20">
+<div class="container-border">
 	<div class="row">
 		<div class="col-xs-12">
 			<h1>Create Group</h1>
@@ -51,4 +52,5 @@
                   </div>
             </div>
       <?php echo form_close();?>
+</div>
 </div>
