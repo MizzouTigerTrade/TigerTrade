@@ -58,7 +58,7 @@ class Offer_model extends CI_Model
 	
 	public function get_buyer_accepted_offers($buyer_id)
 	{
-		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE buyer_id = '$buyer_id' AND status = 'Accepted'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id JOIN users ON offers.seller_id = users.id WHERE buyer_id = '$buyer_id' AND status = 'Accepted'");
 		return $result;
 	}
 
@@ -76,7 +76,7 @@ class Offer_model extends CI_Model
 	
 	public function get_seller_accepted_offers($seller_id)
 	{
-		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id WHERE seller_id = '$seller_id' AND status = 'Accepted'");
+		$result = $this->db->query("SELECT *, offers.price AS offer_price, ads.price AS asking_price FROM offers JOIN ads ON offers.ad_id = ads.ad_id JOIN users ON offers.buyer_id = users.id WHERE seller_id = '$seller_id' AND status = 'Accepted'");
 		return $result;
 	}
 	

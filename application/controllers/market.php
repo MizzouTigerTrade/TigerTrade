@@ -25,17 +25,20 @@ class Market extends CI_Controller
 		
 		if($cat == null)
 		{
+			$data['link'] = base_url('json/getJson2');
 			$data['market_name'] = 'All';
 			$data['ads'] = $this->ad_model->get_all_ads();
 		}
 		elseif($sub == null)
 		{
+			$data['link'] = base_url('json/getJson2/') . '/' . $cat;
 			$category = $this->category_model->get_category($cat);
 			$data['market_name'] = ucwords($category->name);
 			$data['ads'] = $this->ad_model->get_ads_category($cat);
 		}
 		else
 		{
+			$data['link'] = base_url('json/getJson2/') . '/' . $cat . '/'.$sub;
 			$category = $this->category_model->get_category($cat);
 			$subcategory = $this->subcategory_model->get_subcategory($sub);
 

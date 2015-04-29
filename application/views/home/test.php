@@ -4,7 +4,7 @@
 
 <script type="text/javascript">
 
-	/*function queryParams() {
+	function queryParams() {
     return {
         type: 'owner',
         sort: 'updated',
@@ -12,7 +12,7 @@
         per_page: 100,
         page: 1
     };
-  }*/
+  }
   
   function imageFormatter(value) {
     if(value == null)
@@ -27,10 +27,19 @@
     }
    }
 
+   function tagFormatter(value) {
+    var string = "";
+    var array = value.split(",");
+    for (index = 0; index < array.length; ++index) {
+      string = string + '<span class="label label-default">' + array[index] + '</span> ';
+    }
+    return string;
+   }
+
 	 
 </script>
 <table data-toggle="table"
-       data-url="<?php echo base_url('json/getJson');?>"
+       data-url="<?php echo base_url('json/getJson2');?>"
        data-query-params="queryParams"
        data-pagination="true"
        data-search="true"
@@ -40,6 +49,7 @@
         <th data-field="ad_id">Ad id</th>
         <th data-field="image" data-formatter="imageFormatter">Image</th>
         <th data-field="title">title</th>
+        <th data-field="tags" data-formatter="tagFormatter">tags</th>
         <th data-field="description">Description</th>
     </tr>
     </thead>

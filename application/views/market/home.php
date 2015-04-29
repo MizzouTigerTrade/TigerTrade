@@ -1,34 +1,9 @@
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap-table.min.js') ?>"></script>
+
 <script type="text/javascript">
 
 $(document).ready(function(){
-    $("#filter").keyup(function(){
- 		$("#emptySearch").hide();
-        // Retrieve the input field text and reset the count to zero
-        var filter = $(this).val(), count = 0;
-        // Loop through the comment list
-        $(".ad_display").each(function(){
-            // If the list item does not contain the text phrase fade it out
-            if ($(this).find('.search').text().search(new RegExp(filter, "i")) < 0) {
-                $(this).fadeOut();
- 
-            // Show the list item if the phrase matches and increase the count by 1
-            } else {
-            	count++;
-                $(this).show();
-            }
-        });
-
-        if(count == 0)
-        {
-        	$("#emptySearch").html("There are no ads that match your search results");
-        	$("#emptySearch").show();
-        }
-        // Update the count
-        var numberItems = count;
-        $("#filter-count").text("Number of Comments = "+count);
-    });
-
 	$(function(){
       // bind change event to select
       $('#categorySelectForm').bind('change', function () {
@@ -73,6 +48,38 @@ $(document).ready(function(){
       });
     });
 });
+
+function queryParams() {
+    return {
+        type: 'owner',
+        sort: 'updated',
+        direction: 'desc',
+        per_page: 100,
+        page: 1
+    };
+  }
+  
+  function imageFormatter(value) {
+    if(value == null)
+    {
+      return '<img class="img-thumbnail" src="http://thetigertrade.com/assets/Images/defaultImage.jpg" alt="" width="100%" height="100%">';
+    }
+    else
+    {
+      var link = "<?php echo base_url(); ?>" + value;
+      var defaultLink = "http://thetigertrade.com/assets/Images/defaultImage.jpg";
+      return '<img class="img-thumbnail" src="'+link+'" onerror="this.src='+defaultLink+'" alt="" width="100%" height="100%">';
+    }
+   }
+
+   function tagFormatter(value) {
+    var string = "";
+    var array = value.split(",");
+    for (index = 0; index < array.length; ++index) {
+      string = string + '<span class="label label-default">' + array[index] + '</span> ';
+    }
+    return string;
+   }
 </script>
 
 <div class="container padding-top-20">
@@ -165,24 +172,27 @@ $(document).ready(function(){
 						<?php } ?>
 					</div>
 				</div>
-
-				<!-- custom search bar -->
-				<div id="custom-search-input" style="margin-top: 10px">
-                    <div class="input-group col-sm-12 col-md-10 col-md-offset-1">
-                        <input type="text" class="search-query input-sm form-control" id="filter" placeholder="Search" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-warning" type="button" style="background-color: rgb(238, 179, 40);">
-                                <span class=" glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
                 
-                
-				<!-- Display Ads: rows of 1 -->
+                <table data-toggle="table"
+			       data-url="<?php echo $link;?>"
+			       data-query-params="queryParams"
+			       data-pagination="true"
+			       data-search="true"
+			       data-height="700">
+			    <thead>
+				    <tr>
+				        <th data-field="ad_id">Ad id</th>
+				        <th data-field="image" data-formatter="imageFormatter">Image</th>
+				        <th data-field="title">title</th>
+				        <th data-field="tags" data-formatter="tagFormatter">tags</th>
+				        <th data-field="description">Description</th>
+				    </tr>
+			    </thead>
+				</table>
+				<!-- Display Ads: rows of 1
 				<br>
 				
-				<div class="row" style="padding-bottom: 15px;" id="emptySearch"></div>
+				<div class="row text-center" style="padding-bottom: 15px;" id="emptySearch"></div>
 				<?php if(count($ads->result()) == 0)
 					{ ?>
 						<div class="row">No ads available.</div>
@@ -236,7 +246,7 @@ $(document).ready(function(){
 					</div>
 					
 				</a>
-				<? } ?>
+				<? } ?> -->
 			</div>
 		</div>
 	</div>
