@@ -166,7 +166,7 @@ function deleteImage(img_id)
 						<div id="filediv">
 							<div id="abcd<?= $inc ?>" class="abcd">
 								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" max-width="100%" max-height="100%">
-								<img id="img" src="x.png" alt=" delete" onclick="$(this).parent().parent().remove();deleteImage(<?php echo $img->tag_id; ?>);"></img>
+								<img id="img" src="https://cdn3.iconfinder.com/data/icons/flatforlinux/256/24-Empty%20Trash.png" alt=" delete" onclick="$(this).parent().parent().remove();deleteImage(<?php echo $img->tag_id; ?>);"></img>
 							</div>
 						</div>
 					</div>
