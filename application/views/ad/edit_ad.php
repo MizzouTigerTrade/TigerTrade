@@ -35,7 +35,7 @@ $(document).ready(function (){
 
 function deleteImage(ad_id)
 {
-	var url = "<?php echo base_url(/ad/removeImage/); ?>" + ad_id;
+	var url = "<?php echo base_url('/ad/removeImage/'); ?>" + ad_id;
 	
 	/*$.ajax({
 	  type: "POST",
