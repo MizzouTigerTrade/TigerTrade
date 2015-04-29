@@ -15,14 +15,12 @@
 
 		<?php echo form_open('auth/deactivate/' .$user->id, array('class' => 'form-horizontal')); ?>
 
-		<p>
 			<div class="form-group">
 			<?php echo lang('deactivate_confirm_y_label', 'confirm');?>
 			<input type="radio" name="confirm" value="yes" checked="checked" />
 			<?php echo lang('deactivate_confirm_n_label', 'confirm');?>
 			<input type="radio" name="confirm" value="no" />
 			</div>
-		</p>
 
 		<?php echo form_hidden(array('id'=>$user->id)); ?>
 
