@@ -16,10 +16,10 @@
 		<?php echo form_open('auth/deactivate/' .$user->id, array('class' => 'form-horizontal')); ?>
 
 			<div class="form-group">
-				<label for="confirm" class="col-sm-3 control-label label-20">Yes</label>
-				<input type="radio" name="confirm" value="yes" checked="checked" />
-				<label for="confirm" class="col-sm-3 control-label label-20">No</label>
-				<input type="radio" name="confirm" value="no" />
+				<label for="yes" class="col-sm-3 control-label label-20">Yes</label>
+				<input type="radio" name="yes" value="yes" checked="checked" />
+				<label for="no" class="col-sm-3 control-label label-20">No</label>
+				<input type="radio" name="no" value="no" />
 			</div>
 
 		<?php echo form_hidden(array('id'=>$user->id)); ?>
