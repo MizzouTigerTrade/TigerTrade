@@ -219,14 +219,14 @@ $(document).ready(function(){
 								foreach($tags->result() as $tag) { 
 									if($tag->ad_id == $row->ad_id)
 									{
-										echo '<span style="font-size: 1.3em;" class="label label-default">' . $tag->description . '</span> ';
+										echo '<span class="label label-default">' . $tag->description . '</span> ';
 									}
 								}
 								?>
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-xs-12" style="margin-top: 5px;">
+									<div class="col-xs-12" style="margin-top: 5px; font-size: 1.3em;">
 										<?php echo $row->description; ?>
 									</div>
 								</div>
