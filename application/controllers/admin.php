@@ -82,7 +82,7 @@ class Admin extends CI_Controller {
 			$subcategory_name = $this->input->post('subcategory_name');
 			$subcategory_description = $this->input->post('subcategory_description');
 			
-			if($this->subcategory_model->get_subcategory_by_name($subcategory_name))
+			if($this->subcategory_model->get_subcategory_by_name($category_id, $subcategory_name))
 			{
 					$data['error'] = "Subcategory already exists";
 			}
