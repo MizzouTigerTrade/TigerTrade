@@ -219,7 +219,7 @@ $(document).ready(function(){
 								foreach($tags->result() as $tag) { 
 									if($tag->ad_id == $row->ad_id)
 									{
-										echo '<span class="label label-default">' . $tag->description . '</span> ';
+										echo '<span style="font-size: 1.1em;" class="label label-default">' . $tag->description . '</span> ';
 									}
 								}
 								?>
