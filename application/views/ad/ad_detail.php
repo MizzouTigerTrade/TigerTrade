@@ -36,7 +36,7 @@
 				?>
 				</div>
 			</div>
-			<h2 style="margin-top: 10px;">Asking Price: <span style="color: #4CBD95;">$<?php echo $ad->price; ?></span></h2>
+			<h2 style="margin-top: 10px;">Asking Price: <span style="color: #3d9c79;">$<?php echo $ad->price; ?></span></h2>
 			
 			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#makeOffer">Make Offer</button>
 			
