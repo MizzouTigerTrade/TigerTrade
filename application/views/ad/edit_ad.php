@@ -35,7 +35,7 @@ $(document).ready(function (){
 
 function deleteImage(ad_id)
 {
-	alert("Hello");
+	alert(ad_id);
 	$(this).parent().parent().remove();
 }
 
