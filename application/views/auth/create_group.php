@@ -18,7 +18,7 @@
 	  <?php }; ?>
       
 
-      <?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
+      <?php echo form_open("auth/login", array('class' => 'form-horizontal'));?>
             <div class="form-group">
                   <label for="group_name" class="col-sm-3 control-label label-20">Group Name</label>
                   <div class="col-sm-6">
