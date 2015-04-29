@@ -121,7 +121,7 @@ class Ad_model extends CI_Model
 		$result = $this->db->query("SELECT * FROM tags WHERE ad_id = '$ad_id'");
 		foreach($result->result() as $tag)
 		{
-			$ad_tags = $ad_tags . $tag->description . ", ";
+			$ad_tags = $ad_tags . $tag->description . ",";
 		}
 		return $ad_tags;
 	}
@@ -368,6 +368,74 @@ class Ad_model extends CI_Model
 		{
 			return $this->db->affected_rows();
 		}
+	}
+
+	public function get_image($ad_id)
+	{
+		$result = $this->db->query("SELECT * FROM images Where ad_id = '$ad_id'");
+		if($result->num_rows() > 0)
+		{
+			$result = $result->row();
+			return $result->image_path;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public function get_all_ads_json()
+	{
+		$ads = array();
+		$j=0;
+		$all_ads = $this->get_all_ads();
+		$all_ads = $all_ads->result();
+		foreach($all_ads as $ad)
+		{
+			$ads[$j] = array('image' => $this->get_image($ad->ad_id), 'ad_id' => $ad->ad_id, 'title' => $ad->title, 'description' => $ad->description, 
+						'price' => $ad->price, 'user_id' => $ad->user_id, 'category_id' => $ad->category_id, 'subcategory_id' => $ad->subcategory_id,
+						'tags' => $this->get_ad_tags($ad->ad_id));
+
+			$j++;
+		}
+
+		return $ads;
+	}
+
+	public function get_ads_category_json($cat)
+	{
+		$ads = array();
+		$j=0;
+		$all_ads = $this->get_ads_category($cat);
+		$all_ads = $all_ads->result();
+		foreach($all_ads as $ad)
+		{
+			$ads[$j] = array('image' => $this->get_image($ad->ad_id), 'ad_id' => $ad->ad_id, 'title' => $ad->title, 'description' => $ad->description, 
+						'price' => $ad->price, 'user_id' => $ad->user_id, 'category_id' => $ad->category_id, 'subcategory_id' => $ad->subcategory_id,
+						'tags' => $this->get_ad_tags($ad->ad_id));
+
+			$j++;
+		}
+
+		return $ads;
+	}
+
+	public function get_ads_subcategory_json($sub)
+	{
+		$ads = array();
+		$j=0;
+		$all_ads = $this->get_ads_subcategory($sub);
+		$all_ads = $all_ads->result();
+		foreach($all_ads as $ad)
+		{
+			$ads[$j] = array('image' => $this->get_image($ad->ad_id), 'ad_id' => $ad->ad_id, 'title' => $ad->title, 'description' => $ad->description, 
+						'price' => $ad->price, 'user_id' => $ad->user_id, 'category_id' => $ad->category_id, 'subcategory_id' => $ad->subcategory_id,
+						'tags' => $this->get_ad_tags($ad->ad_id));
+
+			$j++;
+		}
+
+		return $ads;
 	}
 }
 

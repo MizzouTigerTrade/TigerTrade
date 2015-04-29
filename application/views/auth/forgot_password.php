@@ -11,8 +11,8 @@
 	<div style="padding: 0 15px;">
       <div class="row">
 			<div class="col-sm-offset-4 col-sm-8">
-			    <p>Enter your the email address you used to sign up.</p>
-                <p>We will send you an email about resetting your password.</p>
+			    <p>Enter the email address you used to sign up.</p>
+                <p>TigerTrade will send you an email about resetting your password.</p>
 			</div>
       </div>
       <?php if ($message != "") { ?>
@@ -24,39 +24,20 @@
 	  </div>
 	  <?php }; ?>
       
+	  <form action="<?php echo base_url('auth/forgot_password') ?>" method="POST" class="form-horizontal" id="ad-form" data-toggle="validator" role="form">
 
-      <?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
-            <div class="form-group">
-                  <label for="identity" class="col-sm-4 control-label label-20">Email</label>
-                  <div class="col-sm-4">
-                        <?php
-	                         $data = array(
-					          'name'        => 'identity',
-					          'id'          => 'identity',
-					          'class'       => 'form-control'
-					        );
-	                        echo form_input($data);
-	                    ?>
-                  </div>
+      <div class="form-group">
+            <label for="first_name" class="col-sm-4 control-label label-20">Email</label>
+            <div class="col-sm-4">
+                  <input type="text" name="email" class="form-control" id="email" placeholder="example@mail.missouri.edu" required>
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-4">
-	                <div class="checkbox">
-					    <label style="padding-top: 7px;">
-                        <?php
-	                         $data = array(
-					          'name'        => 'remember',
-					          'id'          => 'remember',
-					          'class'       => ''
-					        );
-	                        echo form_checkbox($data);
-	                    ?>Remember me
-					    </label>
-					    <button type="submit" style="float: right;" class="btn btn-default">Login</button>
-	                </div>
-	                
-                </div>
-            </div>
+            <div class="help-block with-errors"></div>
+      </div>
+	  <div class="form-group">
+		<div class="col-sm-4 col-sm-offset-4">
+			<button type="submit" style="padding: 7px; float: right;" class="btn btn-primary">Send Email</button>
+		</div>
+	  </div>
 
       <?php echo form_close();?>
 	</div>
