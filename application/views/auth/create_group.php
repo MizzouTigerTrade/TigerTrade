@@ -1,6 +1,8 @@
 <div class="container padding-top-20">
+<div class="container-border">
+	
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
 			<h1>Create Group</h1>
 		</div>
 	</div>
@@ -16,7 +18,7 @@
 	  <?php }; ?>
       
 
-      <?php echo form_open("auth/login", array('class' => 'form-horizontal', 'id' => 'ad-form'));?>
+      <?php echo form_open("auth/login", array('class' => 'form-horizontal'));?>
             <div class="form-group">
                   <label for="group_name" class="col-sm-3 control-label label-20">Group Name</label>
                   <div class="col-sm-6">
@@ -51,4 +53,5 @@
                   </div>
             </div>
       <?php echo form_close();?>
+</div>
 </div>

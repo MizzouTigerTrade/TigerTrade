@@ -33,6 +33,11 @@ $(document).ready(function (){
 
 });
 
+function deleteImage(ad_id)
+{
+	alert(ad_id);
+}
+
 
 
 
@@ -156,7 +161,7 @@ $(document).ready(function (){
 						<div id="filediv">
 							<div id="abcd<?= $inc ?>" class="abcd">
 								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" max-width="100%" max-height="100%">
-								<img id="img" src="x.png" alt=" delete" onclick="$(this).parent().parent().remove();"></img>
+								<img id="img" src="x.png" alt=" delete" onclick="$(this).parent().parent().remove();deleteImage(<?php echo $img->tag_id; ?>);"></img>
 							</div>
 						</div>
 					</div>
