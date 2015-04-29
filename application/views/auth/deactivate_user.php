@@ -18,10 +18,10 @@
 
 			<div class="form-group">
 				<div class="radio col-sm-offset-3">
-				  <label><input type="radio" name="optradio" value="yes">Yes</label>
+				  <label><input type="radio" name="confirm" value="yes">Yes</label>
 				</div>
 				<div class="radio col-sm-offset-3">
-				  <label><input type="radio" name="optradio" value="no">No</label>
+				  <label><input type="radio" name="confirm" value="no">No</label>
 				</div>
 			</div>
 

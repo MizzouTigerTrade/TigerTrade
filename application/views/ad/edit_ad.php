@@ -33,9 +33,14 @@ $(document).ready(function (){
 
 });
 
-function deleteImage(ad_id)
+function deleteImage(img_id)
 {
-	alert(ad_id);
+	var url = "<?php echo base_url('/ad/removeImage/'); ?>" + '/' + img_id;
+	
+	$.ajax({
+	  type: "POST",
+	  url: url
+	});
 }
 
 
@@ -161,7 +166,7 @@ function deleteImage(ad_id)
 						<div id="filediv">
 							<div id="abcd<?= $inc ?>" class="abcd">
 								<img class="img-thumbnail" src="<?php echo base_url('/' . $img->image_path); ?>" alt="<?php echo base_url('/' . $img->image_path); ?>" max-width="100%" max-height="100%">
-								<img id="img" src="x.png" alt=" delete" onclick="$(this).parent().parent().remove();deleteImage(<?php echo $img->tag_id; ?>);"></img>
+								<img id="img" src="../../../assets/Images/trash.png" alt=" delete" onclick="$(this).parent().parent().remove();deleteImage(<?php echo $img->tag_id; ?>);" height="60" width="50"></img>
 							</div>
 						</div>
 					</div>
