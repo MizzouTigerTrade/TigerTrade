@@ -41,11 +41,12 @@
             <div class="help-block with-errors"></div>
       </div>
 	  <div class="col-sm-offset-4 col-sm-6">
-			<p style="padding: 5px;">New to TigerTrade? <a href="<?php echo base_url('/auth/create_user'); ?>">Click here to create a new account.</a></p>
+			<p style="">New to TigerTrade? <a href="<?php echo base_url('/auth/create_user'); ?>">Create an account.</a></p>
 	  </div>
       <div class="form-group">
           <div class="col-sm-offset-4 col-sm-4">
               <div class="checkbox">
+	               <button type="submit" style="float: right;" class="btn btn-primary">Login</button>
                 <label style="padding-top: 7px;">
                         <?php
                              $data = array(
@@ -56,8 +57,9 @@
                             echo form_checkbox($data);
                         ?>Remember me
                 </label>
+                <br class="visible-md visible-sm">
 				<a style="padding: 10px;" href="<?php echo base_url('/auth/forgot_password'); ?>">Forgot Password?</a>
-                <button type="submit" style="float: right;" class="btn btn-primary">Login</button>
+               
               </div>
               
           </div>
