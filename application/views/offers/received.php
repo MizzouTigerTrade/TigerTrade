@@ -149,7 +149,7 @@
 			<tr style="background-color: white;">
 				<th>Ad Title</th>
 				<th>Buyer Message</th>
-				<th>Your Response</th>
+				<th>Buyer Email</th>
 				<th>Offer Price</th>
 				<th>Asking Price</th>
 			</tr>
@@ -164,7 +164,7 @@
 			<tr style="cursor: hand;" class='clickable-row' data-href='<?php echo base_url('/offers/detail/' . $row->offer_id) ?>'>
 				<td><?php echo $row->title; ?></td>
 				<td><?php echo $row->buyer_message; ?></td>
-				<td><?php echo $row->seller_response; ?></td>
+				<td><?php echo $row->email; ?></td>
 				<td><?php echo "$" . $row->offer_price; ?></td>
 				<td><?php echo "$" . $row->asking_price; ?></td>
 			</tr>
