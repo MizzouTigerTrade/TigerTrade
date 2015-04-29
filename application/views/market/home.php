@@ -226,7 +226,7 @@ $(document).ready(function(){
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-xs-12" style="margin-top: 5px; font-size: 1.3em;">
+									<div class="col-xs-12" style="margin-top: 5px; font-size: 1.1em;">
 										<?php echo $row->description; ?>
 									</div>
 								</div>
