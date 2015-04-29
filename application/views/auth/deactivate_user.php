@@ -10,12 +10,10 @@
 		
 		<hr>
 		
-		<div class="col-sm-offset-2 col-sm-10">
 		<p><?php echo sprintf(lang('deactivate_subheading'), $user->username);?></p>
+		
+		<?php echo form_open('auth/deactivate/' . $user->id, array('class' => 'form-horizontal'));?>
 
-		<?php echo form_open('auth/deactivate/' . $user->id, array('class' => 'form-horizontal')); ?>
-
-			
 			<div class="form-group">
 				<div class="radio">
 				  <label><input type="radio" name="optradio" value="yes">Yes</label>
@@ -34,7 +32,6 @@
         </div>
 
 		<?php echo form_close();?>
-		</div>
 	
 	</div>
 </div>
