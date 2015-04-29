@@ -13,13 +13,16 @@
 		<div class="col-sm-offset-2 col-sm-10">
 		<p><?php echo sprintf(lang('deactivate_subheading'), $user->username);?></p>
 
-		<?php echo form_open('auth/deactivate/' .$user->id, array('class' => 'form-horizontal')); ?>
+		<?php echo form_open('auth/deactivate/' . $user->id, array('class' => 'form-horizontal')); ?>
 
+			
 			<div class="form-group">
-				<label for="yes" class="col-sm-3 control-label label-20">Yes</label>
-				<input type="radio" name="yes" value="yes" checked="checked" />
-				<label for="no" class="col-sm-3 control-label label-20">No</label>
-				<input type="radio" name="no" value="no" />
+				<div class="radio">
+				  <label><input type="radio" name="optradio" value="yes">Yes</label>
+				</div>
+				<div class="radio">
+				  <label><input type="radio" name="optradio" value="no">No</label>
+				</div>
 			</div>
 
 		<?php echo form_hidden(array('id'=>$user->id)); ?>
