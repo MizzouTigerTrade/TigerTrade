@@ -95,7 +95,7 @@
 			<a class="btn btn-warning" href="<?php echo base_url('/ad/flag_ad/' . $ad->ad_id) ?>">Report Ad</a>
 			<?php }; ?> 
 			
-			<?php if ($admin == true) { ?>
+			<?php if ($admin == true || $ad->user_id == $this->ion_auth->user()->row()->id) { ?>
 			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Ad</button>
 	
 					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
